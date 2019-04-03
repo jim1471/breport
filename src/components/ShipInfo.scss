@@ -1,0 +1,75 @@
+:local {
+  .root {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    padding-right: 2px;
+  }
+
+  .otherShips {
+
+  }
+
+  .ship {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: top;
+    padding-left: 5px;
+    text-decoration: none;
+    color: #e0e0e0;
+    overflow: hidden;
+
+    .char {
+      font-weight: bold;
+      color: gold;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 3px;
+
+      display: flex;
+      justify-content: space-between;
+
+      &.charWithPod {
+        justify-content: flex-start;
+      }
+    }
+
+    .moreShipsBtn {
+      cursor: pointer;
+      color: gold;
+      font-size: 10px;
+      &:hover, &:active {
+        text-decoration: underline;
+      }
+    }
+
+    .pod {
+      color: #ddd;
+      margin-left: 5px;
+      font-size: 10px;
+      &:hover, &:active {
+        text-decoration: underline;
+      }
+    }
+
+    .unknownShip {
+      color: gold;
+      font-size: 12px;
+      &:hover, &:active {
+        text-decoration: underline;
+      }
+    }
+
+    .shiptype {
+      font-weight: normal;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+}

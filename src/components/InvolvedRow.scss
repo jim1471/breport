@@ -1,0 +1,65 @@
+:local {
+  .destroyed {
+    background-color: #480000;
+  }
+
+  .destroyed:hover {
+    background-color: #580000;
+  }
+
+  .lossValue {
+    width: 55px;
+    min-width: 55px;
+    text-align: right;
+  }
+
+  .involvedRoot {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .teamRow, .destroyed {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 2px;
+    margin: 1px 0;
+
+    .dmgGroup {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      font-size: 10px;
+      font-weight: normal;
+      text-align: right;
+      color: #e0e0e0;
+      text-decoration: none;
+    }
+
+    .dmg {
+      white-space: nowrap;
+    }
+
+    .top {
+      color: #00FF00;
+    }
+  }
+
+  .teamRow:hover:not(.destroyed) {
+    background-color: #282828;
+  }
+
+  .iconCont {
+    width: 32px;
+    height: 34px;
+    background-color: #222;
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: .1px;
+  }
+
+  .unknownShipWeapons {
+    font-style: italic;
+    color: #888;
+  }
+}

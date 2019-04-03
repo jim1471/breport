@@ -1,0 +1,115 @@
+:local {
+
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    color: #fff;
+    margin: 2px;
+    padding-left: 32px;
+
+    .body {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      border-left: 1px solid #000;
+      border-right: 1px solid #000;
+      padding: 3px 5px;
+    }
+
+    .ally {
+      min-width: 32px;
+      text-align: center;
+    }
+  }
+
+  .emptySpace {
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+
+  .members {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px;
+    margin-bottom: 10px;
+
+    .member {
+      height: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .name {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        margin: 0 5px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .moveBtn {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        width: 30px;
+        border-radius: 15px;
+        background-color: #0005a3;
+
+        &:hover {
+          background-color: #007ead;
+        }
+        &:active {
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+
+  .team {
+    width: 50%;
+    min-width: 290px;
+    max-width: 290px;
+    display: flex;
+    flex-direction: column;
+    background-color: #000011;
+    color: #e0e0e0;
+    border-collapse: separate;
+    border-spacing: 1px;
+    border: 1px solid #444;
+
+    .stats {
+      padding: 5px 10px;
+      border-top: 1px solid #444;
+    }
+
+    hr {
+      width: 100%;
+    }
+
+    h4 {
+      text-align: center;
+      /*margin: 10px 0;*/
+      background-color: #333;
+      padding: 10px 0;
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+/*$g-base-font-family: 'Helvetica Neue', Helvetica, Arial, pts-rouble, sans-serif;*/
+$g-base-font-family: Verdana, Helvetica, Arial, sans-serif;
+
+@import 'normalize';
+@import '~@blueprintjs/core/src/blueprint.scss';
+@import '~@blueprintjs/datetime/src/blueprint-datetime.scss';
+
+:global {
+  html, body {
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+    font-family: Verdana;
+    background-color: #181818;
+    font-size: 10px;
+
+/*    @media (max-width: 600px) {
+      font-size: 10px;
+    }
+    @media (max-width: 800px) {
+      font-size: 12px;
+    }
+    @media (min-width: 1000px) {
+      font-size: 14px;
+    }*/
+  }
+
+  #react-root {
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+}
+
+.g-app {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  user-select: text;
+}
+
+.g-wrapper {
+  display: flex;
+  flex: 1 0;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 15px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #888;
+
+  hr {
+    width: 100%;
+  }
+}
+
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: #106ba3;
+}
+
+.img-32 {
+  width: 32px;
+  vertical-align: middle;
+  /*margin: 1px 0;*/
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #fff;
+}

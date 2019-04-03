@@ -1,0 +1,63 @@
+/* eslint react/jsx-no-bind: 0 */
+import React, { Component } from 'react'
+import InvolvedRow from 'components/InvolvedRow'
+import styles from './Team.scss'
+
+
+class Team extends Component {
+
+  renderHeader() {
+    return (
+      <div className={styles.head}>
+        <div className={styles.body}>
+          <div className={styles.row}>
+            <span style={{ color: 'gold' }}>Pilot</span>
+            <span style={{ color: 'gold' }}>used ships</span>
+          </div>
+          <div className={styles.row}>
+            <span>Ship</span>
+            <span>Dmg [Kills]</span>
+          </div>
+        </div>
+        <div className={styles.ally}>Ally</div>
+      </div>
+    )
+  }
+
+  render() {
+    const { data, names, teamStats } = this.props
+    const { totalDmg, maxDmg, maxCnt } = teamStats
+
+    if (!data) {
+      console.error('undefined data:', data)
+      return null
+    }
+
+    let shipsData = data
+    if (process.env.NODE_ENV === 'development') {
+      shipsData = data
+      // shipsData = data.slice(0, 20)
+    }
+
+    return (
+      <div className={styles.team}>
+        {this.renderHeader()}
+        {shipsData.map((ship, i) => {
+          const shipKey = `${ship.id}-${i}`
+          return (
+            <InvolvedRow
+              key={shipKey}
+              data={ship}
+              totalDmg={totalDmg}
+              maxDmg={maxDmg}
+              maxCnt={maxCnt}
+              names={names}
+            />
+          )
+        })}
+      </div>
+    )
+  }
+}
+
+export default Team

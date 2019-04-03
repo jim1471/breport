@@ -1,0 +1,103 @@
+.bp3-datepicker-caption select + .bp3-icon {
+  right: 2px !important;
+}
+
+:local {
+  .root {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    user-select: text;
+  }
+
+  .wrapper {
+    display: flex;
+    flex: 1 0;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #888;
+    padding: 15px;
+
+    @media (max-width: 360px) { padding: 10px; }
+
+    table tbody tr td {
+      color: #888;
+      font-size: 14px;
+      @media (max-width: 768px) { font-size: 12px; }
+      @media (max-width: 530px) {
+        font-size: 10px;
+
+        &.linkCell {
+          padding-left: 10px;
+        }
+
+        &.systemCell {
+          max-width: 90px;
+          padding-left: 0;
+          padding-right: 10px;
+        }
+
+        &.commentCell {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 318px;
+    height: 200px;
+    min-height: 130px;
+    padding: 20px;
+    padding-bottom: 5px;
+    border-radius: 3px;
+    border: 1px solid #555;
+    background: black;
+
+    &.zkill {
+      width: 100%;
+      max-width: 600px;
+      /*min-height: 250px;*/
+      /*justify-content: flex-start;*/
+      padding-bottom: 20px;
+    }
+
+    .cardRow {
+      display: flex;
+      /*justify-content: space-between;*/
+
+      .inputHour {
+        :global(.bp3-input-group) {
+          width: 60px;
+          color: #eee;
+        }
+      }
+
+      :global(.bp3-input-group) {
+        width: 130px;
+        color: #eee;
+      }
+
+      :global(.bp3-input-group .bp3-input) {
+        color: #eee;
+        background: #222;
+        border: 1px solid #555;
+      }
+    }
+
+
+  }
+}

@@ -1,0 +1,47 @@
+:local {
+  .root {
+    display: flex;
+    /*align-items: center;*/
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-bottom: 1px;
+
+    &:hover:not(.destroyed) {
+      background-color: #282828;
+    }
+  }
+
+  .body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    padding-right: 10px;
+  }
+
+  .ship, .info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .shipName {
+    font-weight: bold;
+    margin-bottom: 3px;
+    line-height: 1.28581;
+  }
+
+  .destroyed {
+    background-color: #480000;
+  }
+
+  .destroyed:hover {
+    background-color: #580000;
+  }
+
+  .iconCont {
+    width: 32px;
+    height: 32px;
+  }
+}

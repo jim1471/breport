@@ -1,0 +1,3327 @@
+{
+  "582": {
+    "name": "Bantam",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "583": {
+    "name": "Condor",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "584": {
+    "name": "Griffin",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "585": {
+    "name": "Slasher",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "586": {
+    "name": "Probe",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "587": {
+    "name": "Rifter",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "588": {
+    "name": "Reaper",
+    "groupID": 237,
+    "groupName": "Corvette",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "589": {
+    "name": "Executioner",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "590": {
+    "name": "Inquisitor",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "591": {
+    "name": "Tormentor",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "592": {
+    "name": "Navitas",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "593": {
+    "name": "Tristan",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "594": {
+    "name": "Incursus",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "596": {
+    "name": "Impairor",
+    "groupID": 237,
+    "groupName": "Corvette",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "597": {
+    "name": "Punisher",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "598": {
+    "name": "Breacher",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "599": {
+    "name": "Burst",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "601": {
+    "name": "Ibis",
+    "groupID": 237,
+    "groupName": "Corvette",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "602": {
+    "name": "Kestrel",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "603": {
+    "name": "Merlin",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "605": {
+    "name": "Heron",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "606": {
+    "name": "Velator",
+    "groupID": 237,
+    "groupName": "Corvette",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "607": {
+    "name": "Imicus",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "608": {
+    "name": "Atron",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "609": {
+    "name": "Maulus",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "615": {
+    "name": "Immolator",
+    "groupID": 237,
+    "groupName": "Corvette",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "617": {
+    "name": "Echo",
+    "groupID": 237,
+    "groupName": "Corvette",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "620": {
+    "name": "Osprey",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "621": {
+    "name": "Caracal",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "622": {
+    "name": "Stabber",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "623": {
+    "name": "Moa",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "624": {
+    "name": "Maller",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "625": {
+    "name": "Augoror",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "626": {
+    "name": "Vexor",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "627": {
+    "name": "Thorax",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "628": {
+    "name": "Arbitrator",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "629": {
+    "name": "Rupture",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "630": {
+    "name": "Bellicose",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "631": {
+    "name": "Scythe",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "632": {
+    "name": "Blackbird",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "633": {
+    "name": "Celestis",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "634": {
+    "name": "Exequror",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "635": {
+    "name": "Opux Luxury Yacht",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "638": {
+    "name": "Raven",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "639": {
+    "name": "Tempest",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "640": {
+    "name": "Scorpion",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "641": {
+    "name": "Megathron",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "642": {
+    "name": "Apocalypse",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "643": {
+    "name": "Armageddon",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "644": {
+    "name": "Typhoon",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "645": {
+    "name": "Dominix",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "648": {
+    "name": "Badger",
+    "groupID": 28,
+    "groupName": "Industrial",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "649": {
+    "name": "Tayra",
+    "groupID": 28,
+    "groupName": "Industrial",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "650": {
+    "name": "Nereus",
+    "groupID": 28,
+    "groupName": "Industrial",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "651": {
+    "name": "Hoarder",
+    "groupID": 28,
+    "groupName": "Industrial",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "652": {
+    "name": "Mammoth",
+    "groupID": 28,
+    "groupName": "Industrial",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "653": {
+    "name": "Wreathe",
+    "groupID": 28,
+    "groupName": "Industrial",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "654": {
+    "name": "Kryos",
+    "groupID": 28,
+    "groupName": "Industrial",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "655": {
+    "name": "Epithal",
+    "groupID": 28,
+    "groupName": "Industrial",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "656": {
+    "name": "Miasmos",
+    "groupID": 28,
+    "groupName": "Industrial",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "657": {
+    "name": "Iteron Mark V",
+    "groupID": 28,
+    "groupName": "Industrial",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "670": {
+    "name": "Capsule",
+    "groupID": 29,
+    "groupName": "Capsule",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "671": {
+    "name": "Erebus",
+    "groupID": 30,
+    "groupName": "Titan",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "672": {
+    "name": "Caldari Shuttle",
+    "groupID": 31,
+    "groupName": "Shuttle",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "1944": {
+    "name": "Bestower",
+    "groupID": 28,
+    "groupName": "Industrial",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "2006": {
+    "name": "Omen",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "2078": {
+    "name": "Zephyr",
+    "groupID": 1022,
+    "groupName": "Prototype Exploration Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "2161": {
+    "name": "Crucifier",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "2233": {
+    "name": "Customs Office",
+    "groupID": 1025,
+    "groupName": "Orbital Infrastructure",
+    "categoryID": 46,
+    "categoryName": "Orbitals"
+  },
+  "2834": {
+    "name": "Utu",
+    "groupID": 324,
+    "groupName": "Assault Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "2836": {
+    "name": "Adrestia",
+    "groupID": 358,
+    "groupName": "Heavy Assault Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "2863": {
+    "name": "Primae",
+    "groupID": 28,
+    "groupName": "Industrial",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "2948": {
+    "name": "Shadow",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "2998": {
+    "name": "Noctis",
+    "groupID": 28,
+    "groupName": "Industrial",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "3514": {
+    "name": "Revenant",
+    "groupID": 659,
+    "groupName": "Supercarrier",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "3516": {
+    "name": "Malice",
+    "groupID": 324,
+    "groupName": "Assault Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "3518": {
+    "name": "Vangel",
+    "groupID": 358,
+    "groupName": "Heavy Assault Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "3532": {
+    "name": "Echelon",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "3756": {
+    "name": "Gnosis",
+    "groupID": 419,
+    "groupName": "Combat Battlecruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "3764": {
+    "name": "Leviathan",
+    "groupID": 30,
+    "groupName": "Titan",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "3766": {
+    "name": "Vigil",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "4302": {
+    "name": "Oracle",
+    "groupID": 1201,
+    "groupName": "Attack Battlecruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "4306": {
+    "name": "Naga",
+    "groupID": 1201,
+    "groupName": "Attack Battlecruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "4308": {
+    "name": "Talos",
+    "groupID": 1201,
+    "groupName": "Attack Battlecruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "4310": {
+    "name": "Tornado",
+    "groupID": 1201,
+    "groupName": "Attack Battlecruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "4363": {
+    "name": "Miasmos Quafe Ultra Edition",
+    "groupID": 28,
+    "groupName": "Industrial",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "4388": {
+    "name": "Miasmos Quafe Ultramarine Edition",
+    "groupID": 28,
+    "groupName": "Industrial",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11011": {
+    "name": "Guardian-Vexor",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11129": {
+    "name": "Gallente Shuttle",
+    "groupID": 31,
+    "groupName": "Shuttle",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11132": {
+    "name": "Minmatar Shuttle",
+    "groupID": 31,
+    "groupName": "Shuttle",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11134": {
+    "name": "Amarr Shuttle",
+    "groupID": 31,
+    "groupName": "Shuttle",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11172": {
+    "name": "Helios",
+    "groupID": 830,
+    "groupName": "Covert Ops",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11174": {
+    "name": "Keres",
+    "groupID": 893,
+    "groupName": "Electronic Attack Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11176": {
+    "name": "Crow",
+    "groupID": 831,
+    "groupName": "Interceptor",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11178": {
+    "name": "Raptor",
+    "groupID": 831,
+    "groupName": "Interceptor",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11182": {
+    "name": "Cheetah",
+    "groupID": 830,
+    "groupName": "Covert Ops",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11184": {
+    "name": "Crusader",
+    "groupID": 831,
+    "groupName": "Interceptor",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11186": {
+    "name": "Malediction",
+    "groupID": 831,
+    "groupName": "Interceptor",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11188": {
+    "name": "Anathema",
+    "groupID": 830,
+    "groupName": "Covert Ops",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11190": {
+    "name": "Sentinel",
+    "groupID": 893,
+    "groupName": "Electronic Attack Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11192": {
+    "name": "Buzzard",
+    "groupID": 830,
+    "groupName": "Covert Ops",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11194": {
+    "name": "Kitsune",
+    "groupID": 893,
+    "groupName": "Electronic Attack Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11196": {
+    "name": "Claw",
+    "groupID": 831,
+    "groupName": "Interceptor",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11198": {
+    "name": "Stiletto",
+    "groupID": 831,
+    "groupName": "Interceptor",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11200": {
+    "name": "Taranis",
+    "groupID": 831,
+    "groupName": "Interceptor",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11202": {
+    "name": "Ares",
+    "groupID": 831,
+    "groupName": "Interceptor",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11365": {
+    "name": "Vengeance",
+    "groupID": 324,
+    "groupName": "Assault Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11371": {
+    "name": "Wolf",
+    "groupID": 324,
+    "groupName": "Assault Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11377": {
+    "name": "Nemesis",
+    "groupID": 834,
+    "groupName": "Stealth Bomber",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11379": {
+    "name": "Hawk",
+    "groupID": 324,
+    "groupName": "Assault Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11381": {
+    "name": "Harpy",
+    "groupID": 324,
+    "groupName": "Assault Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11387": {
+    "name": "Hyena",
+    "groupID": 893,
+    "groupName": "Electronic Attack Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11393": {
+    "name": "Retribution",
+    "groupID": 324,
+    "groupName": "Assault Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11400": {
+    "name": "Jaguar",
+    "groupID": 324,
+    "groupName": "Assault Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11567": {
+    "name": "Avatar",
+    "groupID": 30,
+    "groupName": "Titan",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11936": {
+    "name": "Apocalypse Imperial Issue",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11938": {
+    "name": "Armageddon Imperial Issue",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11940": {
+    "name": "Gold Magnate",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11942": {
+    "name": "Silver Magnate",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11957": {
+    "name": "Falcon",
+    "groupID": 833,
+    "groupName": "Force Recon Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11959": {
+    "name": "Rook",
+    "groupID": 906,
+    "groupName": "Combat Recon Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11961": {
+    "name": "Huginn",
+    "groupID": 906,
+    "groupName": "Combat Recon Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11963": {
+    "name": "Rapier",
+    "groupID": 833,
+    "groupName": "Force Recon Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11965": {
+    "name": "Pilgrim",
+    "groupID": 833,
+    "groupName": "Force Recon Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11969": {
+    "name": "Arazu",
+    "groupID": 833,
+    "groupName": "Force Recon Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11971": {
+    "name": "Lachesis",
+    "groupID": 906,
+    "groupName": "Combat Recon Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11978": {
+    "name": "Scimitar",
+    "groupID": 832,
+    "groupName": "Logistics",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11985": {
+    "name": "Basilisk",
+    "groupID": 832,
+    "groupName": "Logistics",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11987": {
+    "name": "Guardian",
+    "groupID": 832,
+    "groupName": "Logistics",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11989": {
+    "name": "Oneiros",
+    "groupID": 832,
+    "groupName": "Logistics",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11993": {
+    "name": "Cerberus",
+    "groupID": 358,
+    "groupName": "Heavy Assault Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11995": {
+    "name": "Onyx",
+    "groupID": 894,
+    "groupName": "Heavy Interdiction Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "11999": {
+    "name": "Vagabond",
+    "groupID": 358,
+    "groupName": "Heavy Assault Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12003": {
+    "name": "Zealot",
+    "groupID": 358,
+    "groupName": "Heavy Assault Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12005": {
+    "name": "Ishtar",
+    "groupID": 358,
+    "groupName": "Heavy Assault Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12011": {
+    "name": "Eagle",
+    "groupID": 358,
+    "groupName": "Heavy Assault Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12013": {
+    "name": "Broadsword",
+    "groupID": 894,
+    "groupName": "Heavy Interdiction Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12015": {
+    "name": "Muninn",
+    "groupID": 358,
+    "groupName": "Heavy Assault Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12017": {
+    "name": "Devoter",
+    "groupID": 894,
+    "groupName": "Heavy Interdiction Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12019": {
+    "name": "Sacrilege",
+    "groupID": 358,
+    "groupName": "Heavy Assault Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12021": {
+    "name": "Phobos",
+    "groupID": 894,
+    "groupName": "Heavy Interdiction Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12023": {
+    "name": "Deimos",
+    "groupID": 358,
+    "groupName": "Heavy Assault Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12032": {
+    "name": "Manticore",
+    "groupID": 834,
+    "groupName": "Stealth Bomber",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12034": {
+    "name": "Hound",
+    "groupID": 834,
+    "groupName": "Stealth Bomber",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12038": {
+    "name": "Purifier",
+    "groupID": 834,
+    "groupName": "Stealth Bomber",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12042": {
+    "name": "Ishkur",
+    "groupID": 324,
+    "groupName": "Assault Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12044": {
+    "name": "Enyo",
+    "groupID": 324,
+    "groupName": "Assault Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12198": {
+    "name": "Mobile Small Warp Disruptor I",
+    "groupID": 361,
+    "groupName": "Mobile Warp Disruptor",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "12199": {
+    "name": "Mobile Medium Warp Disruptor I",
+    "groupID": 361,
+    "groupName": "Mobile Warp Disruptor",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "12200": {
+    "name": "Mobile Large Warp Disruptor I",
+    "groupID": 361,
+    "groupName": "Mobile Warp Disruptor",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "12729": {
+    "name": "Crane",
+    "groupID": 1202,
+    "groupName": "Blockade Runner",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12731": {
+    "name": "Bustard",
+    "groupID": 380,
+    "groupName": "Deep Space Transport",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12733": {
+    "name": "Prorator",
+    "groupID": 1202,
+    "groupName": "Blockade Runner",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12735": {
+    "name": "Prowler",
+    "groupID": 1202,
+    "groupName": "Blockade Runner",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12743": {
+    "name": "Viator",
+    "groupID": 1202,
+    "groupName": "Blockade Runner",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12745": {
+    "name": "Occator",
+    "groupID": 380,
+    "groupName": "Deep Space Transport",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12747": {
+    "name": "Mastodon",
+    "groupID": 380,
+    "groupName": "Deep Space Transport",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "12753": {
+    "name": "Impel",
+    "groupID": 380,
+    "groupName": "Deep Space Transport",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "13202": {
+    "name": "Megathron Federate Issue",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "16227": {
+    "name": "Ferox",
+    "groupID": 419,
+    "groupName": "Combat Battlecruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "16229": {
+    "name": "Brutix",
+    "groupID": 419,
+    "groupName": "Combat Battlecruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "16231": {
+    "name": "Cyclone",
+    "groupID": 419,
+    "groupName": "Combat Battlecruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "16233": {
+    "name": "Prophecy",
+    "groupID": 419,
+    "groupName": "Combat Battlecruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "16236": {
+    "name": "Coercer",
+    "groupID": 420,
+    "groupName": "Destroyer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "16238": {
+    "name": "Cormorant",
+    "groupID": 420,
+    "groupName": "Destroyer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "16240": {
+    "name": "Catalyst",
+    "groupID": 420,
+    "groupName": "Destroyer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "16242": {
+    "name": "Thrasher",
+    "groupID": 420,
+    "groupName": "Destroyer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17476": {
+    "name": "Covetor",
+    "groupID": 463,
+    "groupName": "Mining Barge",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17478": {
+    "name": "Retriever",
+    "groupID": 463,
+    "groupName": "Mining Barge",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17480": {
+    "name": "Procurer",
+    "groupID": 463,
+    "groupName": "Mining Barge",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17619": {
+    "name": "Caldari Navy Hookbill",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17634": {
+    "name": "Caracal Navy Issue",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17636": {
+    "name": "Raven Navy Issue",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17703": {
+    "name": "Imperial Navy Slicer",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17709": {
+    "name": "Omen Navy Issue",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17713": {
+    "name": "Stabber Fleet Issue",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17715": {
+    "name": "Gila",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17718": {
+    "name": "Phantasm",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17720": {
+    "name": "Cynabal",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17722": {
+    "name": "Vigilant",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17726": {
+    "name": "Apocalypse Navy Issue",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17728": {
+    "name": "Megathron Navy Issue",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17732": {
+    "name": "Tempest Fleet Issue",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17736": {
+    "name": "Nightmare",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17738": {
+    "name": "Machariel",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17740": {
+    "name": "Vindicator",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17812": {
+    "name": "Republic Fleet Firetail",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17841": {
+    "name": "Federation Navy Comet",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17843": {
+    "name": "Vexor Navy Issue",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17918": {
+    "name": "Rattlesnake",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17920": {
+    "name": "Bhaalgorn",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17922": {
+    "name": "Ashimmu",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17924": {
+    "name": "Succubus",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17926": {
+    "name": "Cruor",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17928": {
+    "name": "Daredevil",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17930": {
+    "name": "Worm",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "17932": {
+    "name": "Dramiel",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "19720": {
+    "name": "Revelation",
+    "groupID": 485,
+    "groupName": "Dreadnought",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "19722": {
+    "name": "Naglfar",
+    "groupID": 485,
+    "groupName": "Dreadnought",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "19724": {
+    "name": "Moros",
+    "groupID": 485,
+    "groupName": "Dreadnought",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "19726": {
+    "name": "Phoenix",
+    "groupID": 485,
+    "groupName": "Dreadnought",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "19744": {
+    "name": "Sigil",
+    "groupID": 28,
+    "groupName": "Industrial",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "20125": {
+    "name": "Curse",
+    "groupID": 906,
+    "groupName": "Combat Recon Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "20183": {
+    "name": "Providence",
+    "groupID": 513,
+    "groupName": "Freighter",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "20185": {
+    "name": "Charon",
+    "groupID": 513,
+    "groupName": "Freighter",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "20187": {
+    "name": "Obelisk",
+    "groupID": 513,
+    "groupName": "Freighter",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "20189": {
+    "name": "Fenrir",
+    "groupID": 513,
+    "groupName": "Freighter",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "21097": {
+    "name": "Goru's Shuttle",
+    "groupID": 31,
+    "groupName": "Shuttle",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "21628": {
+    "name": "Guristas Shuttle",
+    "groupID": 31,
+    "groupName": "Shuttle",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "22428": {
+    "name": "Redeemer",
+    "groupID": 898,
+    "groupName": "Black Ops",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "22430": {
+    "name": "Sin",
+    "groupID": 898,
+    "groupName": "Black Ops",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "22436": {
+    "name": "Widow",
+    "groupID": 898,
+    "groupName": "Black Ops",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "22440": {
+    "name": "Panther",
+    "groupID": 898,
+    "groupName": "Black Ops",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "22442": {
+    "name": "Eos",
+    "groupID": 540,
+    "groupName": "Command Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "22444": {
+    "name": "Sleipnir",
+    "groupID": 540,
+    "groupName": "Command Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "22446": {
+    "name": "Vulture",
+    "groupID": 540,
+    "groupName": "Command Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "22448": {
+    "name": "Absolution",
+    "groupID": 540,
+    "groupName": "Command Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "22452": {
+    "name": "Heretic",
+    "groupID": 541,
+    "groupName": "Interdictor",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "22456": {
+    "name": "Sabre",
+    "groupID": 541,
+    "groupName": "Interdictor",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "22460": {
+    "name": "Eris",
+    "groupID": 541,
+    "groupName": "Interdictor",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "22464": {
+    "name": "Flycatcher",
+    "groupID": 541,
+    "groupName": "Interdictor",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "22466": {
+    "name": "Astarte",
+    "groupID": 540,
+    "groupName": "Command Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "22468": {
+    "name": "Claymore",
+    "groupID": 540,
+    "groupName": "Command Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "22470": {
+    "name": "Nighthawk",
+    "groupID": 540,
+    "groupName": "Command Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "22474": {
+    "name": "Damnation",
+    "groupID": 540,
+    "groupName": "Command Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "22544": {
+    "name": "Hulk",
+    "groupID": 543,
+    "groupName": "Exhumer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "22546": {
+    "name": "Skiff",
+    "groupID": 543,
+    "groupName": "Exhumer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "22548": {
+    "name": "Mackinaw",
+    "groupID": 543,
+    "groupName": "Exhumer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "22852": {
+    "name": "Hel",
+    "groupID": 659,
+    "groupName": "Supercarrier",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "23055": {
+    "name": "Templar I",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "23057": {
+    "name": "Dragonfly I",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "23059": {
+    "name": "Firbolg I",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "23061": {
+    "name": "Einherji I",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "23757": {
+    "name": "Archon",
+    "groupID": 547,
+    "groupName": "Carrier",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "23773": {
+    "name": "Ragnarok",
+    "groupID": 30,
+    "groupName": "Titan",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "23911": {
+    "name": "Thanatos",
+    "groupID": 547,
+    "groupName": "Carrier",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "23913": {
+    "name": "Nyx",
+    "groupID": 659,
+    "groupName": "Supercarrier",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "23915": {
+    "name": "Chimera",
+    "groupID": 547,
+    "groupName": "Carrier",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "23917": {
+    "name": "Wyvern",
+    "groupID": 659,
+    "groupName": "Supercarrier",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "23919": {
+    "name": "Aeon",
+    "groupID": 659,
+    "groupName": "Supercarrier",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "24483": {
+    "name": "Nidhoggur",
+    "groupID": 547,
+    "groupName": "Carrier",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "24688": {
+    "name": "Rokh",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "24690": {
+    "name": "Hyperion",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "24692": {
+    "name": "Abaddon",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "24694": {
+    "name": "Maelstrom",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "24696": {
+    "name": "Harbinger",
+    "groupID": 419,
+    "groupName": "Combat Battlecruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "24698": {
+    "name": "Drake",
+    "groupID": 419,
+    "groupName": "Combat Battlecruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "24700": {
+    "name": "Myrmidon",
+    "groupID": 419,
+    "groupName": "Combat Battlecruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "24702": {
+    "name": "Hurricane",
+    "groupID": 419,
+    "groupName": "Combat Battlecruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "26840": {
+    "name": "Raven State Issue",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "26842": {
+    "name": "Tempest Tribal Issue",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "26888": {
+    "name": "Mobile Large Warp Disruptor II",
+    "groupID": 361,
+    "groupName": "Mobile Warp Disruptor",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "26890": {
+    "name": "Mobile Medium Warp Disruptor II",
+    "groupID": 361,
+    "groupName": "Mobile Warp Disruptor",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "26892": {
+    "name": "Mobile Small Warp Disruptor II",
+    "groupID": 361,
+    "groupName": "Mobile Warp Disruptor",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "28352": {
+    "name": "Rorqual",
+    "groupID": 883,
+    "groupName": "Capital Industrial Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "28606": {
+    "name": "Orca",
+    "groupID": 941,
+    "groupName": "Industrial Command Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "28659": {
+    "name": "Paladin",
+    "groupID": 900,
+    "groupName": "Marauder",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "28661": {
+    "name": "Kronos",
+    "groupID": 900,
+    "groupName": "Marauder",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "28665": {
+    "name": "Vargur",
+    "groupID": 900,
+    "groupName": "Marauder",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "28710": {
+    "name": "Golem",
+    "groupID": 900,
+    "groupName": "Marauder",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "28770": {
+    "name": "Syndicate Mobile Large Warp Disruptor",
+    "groupID": 361,
+    "groupName": "Mobile Warp Disruptor",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "28772": {
+    "name": "Syndicate Mobile Medium Warp Disruptor",
+    "groupID": 361,
+    "groupName": "Mobile Warp Disruptor",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "28774": {
+    "name": "Syndicate Mobile Small Warp Disruptor",
+    "groupID": 361,
+    "groupName": "Mobile Warp Disruptor",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "28844": {
+    "name": "Rhea",
+    "groupID": 902,
+    "groupName": "Jump Freighter",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "28846": {
+    "name": "Nomad",
+    "groupID": 902,
+    "groupName": "Jump Freighter",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "28848": {
+    "name": "Anshar",
+    "groupID": 902,
+    "groupName": "Jump Freighter",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "28850": {
+    "name": "Ark",
+    "groupID": 902,
+    "groupName": "Jump Freighter",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "29248": {
+    "name": "Magnate",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "29266": {
+    "name": "Apotheosis",
+    "groupID": 31,
+    "groupName": "Shuttle",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "29336": {
+    "name": "Scythe Fleet Issue",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "29337": {
+    "name": "Augoror Navy Issue",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "29340": {
+    "name": "Osprey Navy Issue",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "29344": {
+    "name": "Exequror Navy Issue",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "29984": {
+    "name": "Tengu",
+    "groupID": 963,
+    "groupName": "Strategic Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "29986": {
+    "name": "Legion",
+    "groupID": 963,
+    "groupName": "Strategic Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "29988": {
+    "name": "Proteus",
+    "groupID": 963,
+    "groupName": "Strategic Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "29990": {
+    "name": "Loki",
+    "groupID": 963,
+    "groupName": "Strategic Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "30842": {
+    "name": "InterBus Shuttle",
+    "groupID": 31,
+    "groupName": "Shuttle",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "32207": {
+    "name": "Freki",
+    "groupID": 324,
+    "groupName": "Assault Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "32209": {
+    "name": "Mimir",
+    "groupID": 358,
+    "groupName": "Heavy Assault Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "32305": {
+    "name": "Armageddon Navy Issue",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "32307": {
+    "name": "Dominix Navy Issue",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "32309": {
+    "name": "Scorpion Navy Issue",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "32311": {
+    "name": "Typhoon Fleet Issue",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "32325": {
+    "name": "Cyclops I",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "32340": {
+    "name": "Malleus I",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "32342": {
+    "name": "Tyrfing I",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "32344": {
+    "name": "Mantis I",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "32788": {
+    "name": "Cambion",
+    "groupID": 324,
+    "groupName": "Assault Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "32790": {
+    "name": "Etana",
+    "groupID": 832,
+    "groupName": "Logistics",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "32811": {
+    "name": "Miasmos Amastris Edition",
+    "groupID": 28,
+    "groupName": "Industrial",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "32872": {
+    "name": "Algos",
+    "groupID": 420,
+    "groupName": "Destroyer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "32874": {
+    "name": "Dragoon",
+    "groupID": 420,
+    "groupName": "Destroyer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "32876": {
+    "name": "Corax",
+    "groupID": 420,
+    "groupName": "Destroyer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "32878": {
+    "name": "Talwar",
+    "groupID": 420,
+    "groupName": "Destroyer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "32880": {
+    "name": "Venture",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33079": {
+    "name": "Hematos",
+    "groupID": 237,
+    "groupName": "Corvette",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33081": {
+    "name": "Taipan",
+    "groupID": 237,
+    "groupName": "Corvette",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33083": {
+    "name": "Violator",
+    "groupID": 237,
+    "groupName": "Corvette",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33151": {
+    "name": "Brutix Navy Issue",
+    "groupID": 419,
+    "groupName": "Combat Battlecruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33153": {
+    "name": "Drake Navy Issue",
+    "groupID": 419,
+    "groupName": "Combat Battlecruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33155": {
+    "name": "Harbinger Navy Issue",
+    "groupID": 419,
+    "groupName": "Combat Battlecruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33157": {
+    "name": "Hurricane Fleet Issue",
+    "groupID": 419,
+    "groupName": "Combat Battlecruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33328": {
+    "name": "Capsule - Genolution 'Auroral' 197-variant",
+    "groupID": 29,
+    "groupName": "Capsule",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33395": {
+    "name": "Moracha",
+    "groupID": 833,
+    "groupName": "Force Recon Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33397": {
+    "name": "Chremoas",
+    "groupID": 830,
+    "groupName": "Covert Ops",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33468": {
+    "name": "Astero",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33470": {
+    "name": "Stratios",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33472": {
+    "name": "Nestor",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33474": {
+    "name": "Mobile Depot",
+    "groupID": 1246,
+    "groupName": "Mobile Depot",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "33475": {
+    "name": "Mobile Tractor Unit",
+    "groupID": 1250,
+    "groupName": "Mobile Tractor Unit",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "33476": {
+    "name": "Mobile Cynosural Inhibitor",
+    "groupID": 1249,
+    "groupName": "Mobile Cyno Inhibitor",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "33477": {
+    "name": "Small Mobile Siphon Unit",
+    "groupID": 1247,
+    "groupName": "Mobile Siphon Unit",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "33513": {
+    "name": "Leopard",
+    "groupID": 31,
+    "groupName": "Shuttle",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33520": {
+    "name": "'Wetu' Mobile Depot",
+    "groupID": 1246,
+    "groupName": "Mobile Depot",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "33522": {
+    "name": "'Yurt' Mobile Depot",
+    "groupID": 1246,
+    "groupName": "Mobile Depot",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "33553": {
+    "name": "Stratios Emergency Responder",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33581": {
+    "name": "Small Mobile 'Hybrid' Siphon Unit",
+    "groupID": 1247,
+    "groupName": "Mobile Siphon Unit",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "33583": {
+    "name": "Small Mobile 'Rote' Siphon Unit",
+    "groupID": 1247,
+    "groupName": "Mobile Siphon Unit",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "33585": {
+    "name": "Amarr Encounter Surveillance System",
+    "groupID": 1273,
+    "groupName": "Encounter Surveillance System",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "33589": {
+    "name": "Mobile Scan Inhibitor",
+    "groupID": 1275,
+    "groupName": "Mobile Scan Inhibitor",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "33591": {
+    "name": "Mobile Micro Jump Unit",
+    "groupID": 1276,
+    "groupName": "Mobile Micro Jump Unit",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "33595": {
+    "name": "Caldari Encounter Surveillance System",
+    "groupID": 1273,
+    "groupName": "Encounter Surveillance System",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "33608": {
+    "name": "Gallente Encounter Surveillance System",
+    "groupID": 1273,
+    "groupName": "Encounter Surveillance System",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "33610": {
+    "name": "Minmatar Encounter Surveillance System",
+    "groupID": 1273,
+    "groupName": "Encounter Surveillance System",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "33673": {
+    "name": "Whiptail",
+    "groupID": 831,
+    "groupName": "Interceptor",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33675": {
+    "name": "Chameleon",
+    "groupID": 833,
+    "groupName": "Force Recon Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33697": {
+    "name": "Prospect",
+    "groupID": 1283,
+    "groupName": "Expedition Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33700": {
+    "name": "'Packrat' Mobile Tractor Unit",
+    "groupID": 1250,
+    "groupName": "Mobile Tractor Unit",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "33702": {
+    "name": "'Magpie' Mobile Tractor Unit",
+    "groupID": 1250,
+    "groupName": "Mobile Tractor Unit",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "33816": {
+    "name": "Garmur",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33818": {
+    "name": "Orthrus",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33820": {
+    "name": "Barghest",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "33990": {
+    "name": "Tournament Micro Jump Unit",
+    "groupID": 1276,
+    "groupName": "Mobile Micro Jump Unit",
+    "categoryID": 22,
+    "categoryName": "Deployable"
+  },
+  "34317": {
+    "name": "Confessor",
+    "groupID": 1305,
+    "groupName": "Tactical Destroyer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "34328": {
+    "name": "Bowhead",
+    "groupID": 513,
+    "groupName": "Freighter",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "34496": {
+    "name": "Council Diplomatic Shuttle",
+    "groupID": 31,
+    "groupName": "Shuttle",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "34562": {
+    "name": "Svipul",
+    "groupID": 1305,
+    "groupName": "Tactical Destroyer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "34590": {
+    "name": "Victorieux Luxury Yacht",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "34828": {
+    "name": "Jackdaw",
+    "groupID": 1305,
+    "groupName": "Tactical Destroyer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "35683": {
+    "name": "Hecate",
+    "groupID": 1305,
+    "groupName": "Tactical Destroyer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "35779": {
+    "name": "Imp",
+    "groupID": 831,
+    "groupName": "Interceptor",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "35781": {
+    "name": "Fiend",
+    "groupID": 894,
+    "groupName": "Heavy Interdiction Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "35825": {
+    "name": "Raitaru",
+    "groupID": 1404,
+    "groupName": "Engineering Complex",
+    "categoryID": 65,
+    "categoryName": "Structure"
+  },
+  "35826": {
+    "name": "Azbel",
+    "groupID": 1404,
+    "groupName": "Engineering Complex",
+    "categoryID": 65,
+    "categoryName": "Structure"
+  },
+  "35827": {
+    "name": "Sotiyo",
+    "groupID": 1404,
+    "groupName": "Engineering Complex",
+    "categoryID": 65,
+    "categoryName": "Structure"
+  },
+  "35832": {
+    "name": "Astrahus",
+    "groupID": 1657,
+    "groupName": "Citadel",
+    "categoryID": 65,
+    "categoryName": "Structure"
+  },
+  "35833": {
+    "name": "Fortizar",
+    "groupID": 1657,
+    "groupName": "Citadel",
+    "categoryID": 65,
+    "categoryName": "Structure"
+  },
+  "35834": {
+    "name": "Keepstar",
+    "groupID": 1657,
+    "groupName": "Citadel",
+    "categoryID": 65,
+    "categoryName": "Structure"
+  },
+  "35835": {
+    "name": "Athanor",
+    "groupID": 1406,
+    "groupName": "Refinery",
+    "categoryID": 65,
+    "categoryName": "Structure"
+  },
+  "35836": {
+    "name": "Tatara",
+    "groupID": 1406,
+    "groupName": "Refinery",
+    "categoryID": 65,
+    "categoryName": "Structure"
+  },
+  "37135": {
+    "name": "Endurance",
+    "groupID": 1283,
+    "groupName": "Expedition Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "37453": {
+    "name": "Crucifier Navy Issue",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "37454": {
+    "name": "Vigil Fleet Issue",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "37455": {
+    "name": "Griffin Navy Issue",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "37456": {
+    "name": "Maulus Navy Issue",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "37457": {
+    "name": "Deacon",
+    "groupID": 1527,
+    "groupName": "Logistics Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "37458": {
+    "name": "Kirin",
+    "groupID": 1527,
+    "groupName": "Logistics Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "37459": {
+    "name": "Thalia",
+    "groupID": 1527,
+    "groupName": "Logistics Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "37460": {
+    "name": "Scalpel",
+    "groupID": 1527,
+    "groupName": "Logistics Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "37480": {
+    "name": "Bifrost",
+    "groupID": 1534,
+    "groupName": "Command Destroyer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "37481": {
+    "name": "Pontifex",
+    "groupID": 1534,
+    "groupName": "Command Destroyer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "37482": {
+    "name": "Stork",
+    "groupID": 1534,
+    "groupName": "Command Destroyer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "37483": {
+    "name": "Magus",
+    "groupID": 1534,
+    "groupName": "Command Destroyer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "37599": {
+    "name": "Cenobite I",
+    "groupID": 1537,
+    "groupName": "Support Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "37604": {
+    "name": "Apostle",
+    "groupID": 1538,
+    "groupName": "Force Auxiliary",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "37605": {
+    "name": "Minokawa",
+    "groupID": 1538,
+    "groupName": "Force Auxiliary",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "37606": {
+    "name": "Lif",
+    "groupID": 1538,
+    "groupName": "Force Auxiliary",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "37607": {
+    "name": "Ninazu",
+    "groupID": 1538,
+    "groupName": "Force Auxiliary",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "37846": {
+    "name": "Standup Cruise Missile",
+    "groupID": 1547,
+    "groupName": "Structure Anti-Subcapital Missile",
+    "categoryID": 8,
+    "categoryName": "Charge"
+  },
+  "37847": {
+    "name": "Standup Heavy Missile",
+    "groupID": 1547,
+    "groupName": "Structure Anti-Subcapital Missile",
+    "categoryID": 8,
+    "categoryName": "Charge"
+  },
+  "37848": {
+    "name": "Standup Light Missile",
+    "groupID": 1547,
+    "groupName": "Structure Anti-Subcapital Missile",
+    "categoryID": 8,
+    "categoryName": "Charge"
+  },
+  "37849": {
+    "name": "Standup Heavy Guided Bomb",
+    "groupID": 1548,
+    "groupName": "Structure Guided Bomb",
+    "categoryID": 8,
+    "categoryName": "Charge"
+  },
+  "37850": {
+    "name": "Standup Light Guided Bomb",
+    "groupID": 1548,
+    "groupName": "Structure Guided Bomb",
+    "categoryID": 8,
+    "categoryName": "Charge"
+  },
+  "40340": {
+    "name": "Upwell Palatine Keepstar",
+    "groupID": 1657,
+    "groupName": "Citadel",
+    "categoryID": 65,
+    "categoryName": "Structure"
+  },
+  "40345": {
+    "name": "Scarab I",
+    "groupID": 1537,
+    "groupName": "Support Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40346": {
+    "name": "Siren I",
+    "groupID": 1537,
+    "groupName": "Support Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40347": {
+    "name": "Dromi I",
+    "groupID": 1537,
+    "groupName": "Support Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40358": {
+    "name": "Equite I",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40359": {
+    "name": "Locust I",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40360": {
+    "name": "Satyr I",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40361": {
+    "name": "Gram I",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40362": {
+    "name": "Ametat I",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40363": {
+    "name": "Termite I",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40364": {
+    "name": "Antaeus I",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40365": {
+    "name": "Gungnir I",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40552": {
+    "name": "Equite II",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40553": {
+    "name": "Gram II",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40554": {
+    "name": "Locust II",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40555": {
+    "name": "Satyr II",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40556": {
+    "name": "Templar II",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40557": {
+    "name": "Dragonfly II",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40558": {
+    "name": "Firbolg II",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40559": {
+    "name": "Einherji II",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40560": {
+    "name": "Ametat II",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40561": {
+    "name": "Malleus II",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40562": {
+    "name": "Antaeus II",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40563": {
+    "name": "Cyclops II",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40564": {
+    "name": "Gungnir II",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40565": {
+    "name": "Tyrfing II",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40566": {
+    "name": "Termite II",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40567": {
+    "name": "Mantis II",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40568": {
+    "name": "Cenobite II",
+    "groupID": 1537,
+    "groupName": "Support Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40569": {
+    "name": "Scarab II",
+    "groupID": 1537,
+    "groupName": "Support Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40570": {
+    "name": "Siren II",
+    "groupID": 1537,
+    "groupName": "Support Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "40571": {
+    "name": "Dromi II",
+    "groupID": 1537,
+    "groupName": "Support Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "42124": {
+    "name": "Vehement",
+    "groupID": 485,
+    "groupName": "Dreadnought",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "42125": {
+    "name": "Vendetta",
+    "groupID": 659,
+    "groupName": "Supercarrier",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "42126": {
+    "name": "Vanquisher",
+    "groupID": 30,
+    "groupName": "Titan",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "42241": {
+    "name": "Molok",
+    "groupID": 30,
+    "groupName": "Titan",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "42242": {
+    "name": "Dagon",
+    "groupID": 1538,
+    "groupName": "Force Auxiliary",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "42243": {
+    "name": "Chemosh",
+    "groupID": 485,
+    "groupName": "Dreadnought",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "42244": {
+    "name": "Porpoise",
+    "groupID": 941,
+    "groupName": "Industrial Command Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "42245": {
+    "name": "Rabisu",
+    "groupID": 832,
+    "groupName": "Logistics",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "42246": {
+    "name": "Caedes",
+    "groupID": 830,
+    "groupName": "Covert Ops",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "42685": {
+    "name": "Sunesis",
+    "groupID": 420,
+    "groupName": "Destroyer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "44993": {
+    "name": "Pacifier",
+    "groupID": 830,
+    "groupName": "Covert Ops",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "44995": {
+    "name": "Enforcer",
+    "groupID": 833,
+    "groupName": "Force Recon Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "44996": {
+    "name": "Marshal",
+    "groupID": 898,
+    "groupName": "Black Ops",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "45530": {
+    "name": "Virtuoso",
+    "groupID": 834,
+    "groupName": "Stealth Bomber",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "45531": {
+    "name": "Victor",
+    "groupID": 833,
+    "groupName": "Force Recon Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "45534": {
+    "name": "Monitor",
+    "groupID": 1972,
+    "groupName": "Flag Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "45645": {
+    "name": "Loggerhead",
+    "groupID": 1538,
+    "groupName": "Force Auxiliary",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "45647": {
+    "name": "Caiman",
+    "groupID": 485,
+    "groupName": "Dreadnought",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "45649": {
+    "name": "Komodo",
+    "groupID": 30,
+    "groupName": "Titan",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "47035": {
+    "name": "Standup Templar I",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47036": {
+    "name": "Standup Gram I",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47037": {
+    "name": "Standup Siren I",
+    "groupID": 1537,
+    "groupName": "Support Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47038": {
+    "name": "Standup Mantis I",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47039": {
+    "name": "Standup Gungnir I",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47116": {
+    "name": "Standup Malleus I",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47117": {
+    "name": "Standup Cyclops I",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47118": {
+    "name": "Standup Tyrfing I",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47119": {
+    "name": "Standup Malleus II",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47120": {
+    "name": "Standup Mantis II",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47121": {
+    "name": "Standup Cyclops II",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47122": {
+    "name": "Standup Tyrfing II",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47123": {
+    "name": "Standup Shadow",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47124": {
+    "name": "Standup Ametat I",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47125": {
+    "name": "Standup Termite I",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47126": {
+    "name": "Standup Antaeus I",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47127": {
+    "name": "Standup Ametat II",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47128": {
+    "name": "Standup Termite II",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47129": {
+    "name": "Standup Antaeus II",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47130": {
+    "name": "Standup Gungnir II",
+    "groupID": 1653,
+    "groupName": "Heavy Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47131": {
+    "name": "Standup Cenobite I",
+    "groupID": 1537,
+    "groupName": "Support Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47132": {
+    "name": "Standup Scarab I",
+    "groupID": 1537,
+    "groupName": "Support Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47133": {
+    "name": "Standup Dromi I",
+    "groupID": 1537,
+    "groupName": "Support Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47134": {
+    "name": "Standup Cenobite II",
+    "groupID": 1537,
+    "groupName": "Support Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47135": {
+    "name": "Standup Scarab II",
+    "groupID": 1537,
+    "groupName": "Support Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47136": {
+    "name": "Standup Siren II",
+    "groupID": 1537,
+    "groupName": "Support Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47137": {
+    "name": "Standup Dromi II",
+    "groupID": 1537,
+    "groupName": "Support Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47138": {
+    "name": "Standup Dragonfly I",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47139": {
+    "name": "Standup Firbolg I",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47140": {
+    "name": "Standup Einherji I",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47141": {
+    "name": "Standup Templar II",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47142": {
+    "name": "Standup Dragonfly II",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47143": {
+    "name": "Standup Firbolg II",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47144": {
+    "name": "Standup Einherji II",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47145": {
+    "name": "Standup Equite I",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47146": {
+    "name": "Standup Locust I",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47147": {
+    "name": "Standup Satyr I",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47148": {
+    "name": "Standup Equite II",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47149": {
+    "name": "Standup Locust II",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47150": {
+    "name": "Standup Satyr II",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47151": {
+    "name": "Standup Gram II",
+    "groupID": 1652,
+    "groupName": "Light Fighter",
+    "categoryID": 87,
+    "categoryName": "Fighter"
+  },
+  "47269": {
+    "name": "Damavik",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "47270": {
+    "name": "Vedmak",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "47271": {
+    "name": "Leshak",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "48635": {
+    "name": "Tiamat",
+    "groupID": 833,
+    "groupName": "Force Recon Ship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "48636": {
+    "name": "Hydra",
+    "groupID": 830,
+    "groupName": "Covert Ops",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "49710": {
+    "name": "Kikimora",
+    "groupID": 420,
+    "groupName": "Destroyer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "49711": {
+    "name": "Drekavac",
+    "groupID": 419,
+    "groupName": "Combat Battlecruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "49712": {
+    "name": "Rodiva",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "49713": {
+    "name": "Zarmazd",
+    "groupID": 832,
+    "groupName": "Logistics",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  }
+}

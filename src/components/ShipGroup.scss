@@ -1,0 +1,51 @@
+:local {
+  .root {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    margin: 1px 0;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    padding-left: 10px;
+    flex-grow: 2;
+
+    .shipName {
+      font-weight: bold;
+      color: gold;
+    }
+
+    .counts {
+      /*width: 60px;*/
+      display: flex;
+
+      > div {
+        width: 50%;
+        text-align: right;
+      }
+    }
+
+    .red {
+      color: #f00000;
+    }
+
+    .bold {
+      font-weight: 800;
+    }
+  }
+
+  .allys {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+}

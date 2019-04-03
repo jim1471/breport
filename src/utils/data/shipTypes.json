@@ -1,0 +1,3802 @@
+[
+  [
+    40340,
+    "Upwell Palatine Keepstar",
+    1657,
+    "Citadel",
+    65,
+    "Structure"
+  ],
+  [
+    35834,
+    "Keepstar",
+    1657,
+    "Citadel",
+    65,
+    "Structure"
+  ],
+  [
+    35827,
+    "Sotiyo",
+    1404,
+    "Engineering Complex",
+    65,
+    "Structure"
+  ],
+  [
+    35833,
+    "Fortizar",
+    1657,
+    "Citadel",
+    65,
+    "Structure"
+  ],
+  [
+    35836,
+    "Tatara",
+    1406,
+    "Refinery",
+    65,
+    "Structure"
+  ],
+  [
+    35826,
+    "Azbel",
+    1404,
+    "Engineering Complex",
+    65,
+    "Structure"
+  ],
+  [
+    35832,
+    "Astrahus",
+    1657,
+    "Citadel",
+    65,
+    "Structure"
+  ],
+  [
+    35835,
+    "Athanor",
+    1406,
+    "Refinery",
+    65,
+    "Structure"
+  ],
+  [
+    35825,
+    "Raitaru",
+    1404,
+    "Engineering Complex",
+    65,
+    "Structure"
+  ],
+  [
+    2233,
+    "Customs Office",
+    1025,
+    "Orbital Infrastructure",
+    46,
+    "Orbitals"
+  ],
+  [
+    42126,
+    "Vanquisher",
+    30,
+    "Titan",
+    6,
+    "Ship"
+  ],
+  [
+    42241,
+    "Molok",
+    30,
+    "Titan",
+    6,
+    "Ship"
+  ],
+  [
+    45649,
+    "Komodo",
+    30,
+    "Titan",
+    6,
+    "Ship"
+  ],
+  [
+    671,
+    "Erebus",
+    30,
+    "Titan",
+    6,
+    "Ship"
+  ],
+  [
+    3764,
+    "Leviathan",
+    30,
+    "Titan",
+    6,
+    "Ship"
+  ],
+  [
+    11567,
+    "Avatar",
+    30,
+    "Titan",
+    6,
+    "Ship"
+  ],
+  [
+    23773,
+    "Ragnarok",
+    30,
+    "Titan",
+    6,
+    "Ship"
+  ],
+  [
+    3514,
+    "Revenant",
+    659,
+    "Supercarrier",
+    6,
+    "Ship"
+  ],
+  [
+    42125,
+    "Vendetta",
+    659,
+    "Supercarrier",
+    6,
+    "Ship"
+  ],
+  [
+    22852,
+    "Hel",
+    659,
+    "Supercarrier",
+    6,
+    "Ship"
+  ],
+  [
+    23913,
+    "Nyx",
+    659,
+    "Supercarrier",
+    6,
+    "Ship"
+  ],
+  [
+    23917,
+    "Wyvern",
+    659,
+    "Supercarrier",
+    6,
+    "Ship"
+  ],
+  [
+    23919,
+    "Aeon",
+    659,
+    "Supercarrier",
+    6,
+    "Ship"
+  ],
+  [
+    42124,
+    "Vehement",
+    485,
+    "Dreadnought",
+    6,
+    "Ship"
+  ],
+  [
+    42243,
+    "Chemosh",
+    485,
+    "Dreadnought",
+    6,
+    "Ship"
+  ],
+  [
+    45647,
+    "Caiman",
+    485,
+    "Dreadnought",
+    6,
+    "Ship"
+  ],
+  [
+    19720,
+    "Revelation",
+    485,
+    "Dreadnought",
+    6,
+    "Ship"
+  ],
+  [
+    19722,
+    "Naglfar",
+    485,
+    "Dreadnought",
+    6,
+    "Ship"
+  ],
+  [
+    19724,
+    "Moros",
+    485,
+    "Dreadnought",
+    6,
+    "Ship"
+  ],
+  [
+    19726,
+    "Phoenix",
+    485,
+    "Dreadnought",
+    6,
+    "Ship"
+  ],
+  [
+    23757,
+    "Archon",
+    547,
+    "Carrier",
+    6,
+    "Ship"
+  ],
+  [
+    23911,
+    "Thanatos",
+    547,
+    "Carrier",
+    6,
+    "Ship"
+  ],
+  [
+    23915,
+    "Chimera",
+    547,
+    "Carrier",
+    6,
+    "Ship"
+  ],
+  [
+    24483,
+    "Nidhoggur",
+    547,
+    "Carrier",
+    6,
+    "Ship"
+  ],
+  [
+    42242,
+    "Dagon",
+    1538,
+    "Force Auxiliary",
+    6,
+    "Ship"
+  ],
+  [
+    45645,
+    "Loggerhead",
+    1538,
+    "Force Auxiliary",
+    6,
+    "Ship"
+  ],
+  [
+    37604,
+    "Apostle",
+    1538,
+    "Force Auxiliary",
+    6,
+    "Ship"
+  ],
+  [
+    37605,
+    "Minokawa",
+    1538,
+    "Force Auxiliary",
+    6,
+    "Ship"
+  ],
+  [
+    37606,
+    "Lif",
+    1538,
+    "Force Auxiliary",
+    6,
+    "Ship"
+  ],
+  [
+    37607,
+    "Ninazu",
+    1538,
+    "Force Auxiliary",
+    6,
+    "Ship"
+  ],
+  [
+    28352,
+    "Rorqual",
+    883,
+    "Capital Industrial Ship",
+    6,
+    "Ship"
+  ],
+  [
+    28844,
+    "Rhea",
+    902,
+    "Jump Freighter",
+    6,
+    "Ship"
+  ],
+  [
+    28846,
+    "Nomad",
+    902,
+    "Jump Freighter",
+    6,
+    "Ship"
+  ],
+  [
+    28848,
+    "Anshar",
+    902,
+    "Jump Freighter",
+    6,
+    "Ship"
+  ],
+  [
+    28850,
+    "Ark",
+    902,
+    "Jump Freighter",
+    6,
+    "Ship"
+  ],
+  [
+    20183,
+    "Providence",
+    513,
+    "Freighter",
+    6,
+    "Ship"
+  ],
+  [
+    20185,
+    "Charon",
+    513,
+    "Freighter",
+    6,
+    "Ship"
+  ],
+  [
+    20187,
+    "Obelisk",
+    513,
+    "Freighter",
+    6,
+    "Ship"
+  ],
+  [
+    20189,
+    "Fenrir",
+    513,
+    "Freighter",
+    6,
+    "Ship"
+  ],
+  [
+    34328,
+    "Bowhead",
+    513,
+    "Freighter",
+    6,
+    "Ship"
+  ],
+  [
+    44996,
+    "Marshal",
+    898,
+    "Black Ops",
+    6,
+    "Ship"
+  ],
+  [
+    22428,
+    "Redeemer",
+    898,
+    "Black Ops",
+    6,
+    "Ship"
+  ],
+  [
+    22430,
+    "Sin",
+    898,
+    "Black Ops",
+    6,
+    "Ship"
+  ],
+  [
+    22436,
+    "Widow",
+    898,
+    "Black Ops",
+    6,
+    "Ship"
+  ],
+  [
+    22440,
+    "Panther",
+    898,
+    "Black Ops",
+    6,
+    "Ship"
+  ],
+  [
+    28659,
+    "Paladin",
+    900,
+    "Marauder",
+    6,
+    "Ship"
+  ],
+  [
+    28661,
+    "Kronos",
+    900,
+    "Marauder",
+    6,
+    "Ship"
+  ],
+  [
+    28665,
+    "Vargur",
+    900,
+    "Marauder",
+    6,
+    "Ship"
+  ],
+  [
+    28710,
+    "Golem",
+    900,
+    "Marauder",
+    6,
+    "Ship"
+  ],
+  [
+    45534,
+    "Monitor",
+    1972,
+    "Flag Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    28606,
+    "Orca",
+    941,
+    "Industrial Command Ship",
+    6,
+    "Ship"
+  ],
+  [
+    47271,
+    "Leshak",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    26840,
+    "Raven State Issue",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    26842,
+    "Tempest Tribal Issue",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    32305,
+    "Armageddon Navy Issue",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    32307,
+    "Dominix Navy Issue",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    32309,
+    "Scorpion Navy Issue",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    32311,
+    "Typhoon Fleet Issue",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    33472,
+    "Nestor",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    33820,
+    "Barghest",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    17736,
+    "Nightmare",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    17738,
+    "Machariel",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    17740,
+    "Vindicator",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    17918,
+    "Rattlesnake",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    17920,
+    "Bhaalgorn",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    11936,
+    "Apocalypse Imperial Issue",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    11938,
+    "Armageddon Imperial Issue",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    13202,
+    "Megathron Federate Issue",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    17636,
+    "Raven Navy Issue",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    17726,
+    "Apocalypse Navy Issue",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    17728,
+    "Megathron Navy Issue",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    17732,
+    "Tempest Fleet Issue",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    638,
+    "Raven",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    639,
+    "Tempest",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    640,
+    "Scorpion",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    641,
+    "Megathron",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    642,
+    "Apocalypse",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    643,
+    "Armageddon",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    644,
+    "Typhoon",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    645,
+    "Dominix",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    24688,
+    "Rokh",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    24690,
+    "Hyperion",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    24692,
+    "Abaddon",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    24694,
+    "Maelstrom",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
+    22442,
+    "Eos",
+    540,
+    "Command Ship",
+    6,
+    "Ship"
+  ],
+  [
+    22444,
+    "Sleipnir",
+    540,
+    "Command Ship",
+    6,
+    "Ship"
+  ],
+  [
+    22446,
+    "Vulture",
+    540,
+    "Command Ship",
+    6,
+    "Ship"
+  ],
+  [
+    22448,
+    "Absolution",
+    540,
+    "Command Ship",
+    6,
+    "Ship"
+  ],
+  [
+    22466,
+    "Astarte",
+    540,
+    "Command Ship",
+    6,
+    "Ship"
+  ],
+  [
+    22468,
+    "Claymore",
+    540,
+    "Command Ship",
+    6,
+    "Ship"
+  ],
+  [
+    22470,
+    "Nighthawk",
+    540,
+    "Command Ship",
+    6,
+    "Ship"
+  ],
+  [
+    22474,
+    "Damnation",
+    540,
+    "Command Ship",
+    6,
+    "Ship"
+  ],
+  [
+    29984,
+    "Tengu",
+    963,
+    "Strategic Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    29986,
+    "Legion",
+    963,
+    "Strategic Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    29988,
+    "Proteus",
+    963,
+    "Strategic Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    29990,
+    "Loki",
+    963,
+    "Strategic Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    49711,
+    "Drekavac",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    33151,
+    "Brutix Navy Issue",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    33153,
+    "Drake Navy Issue",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    33155,
+    "Harbinger Navy Issue",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    33157,
+    "Hurricane Fleet Issue",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    4302,
+    "Oracle",
+    1201,
+    "Attack Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    4306,
+    "Naga",
+    1201,
+    "Attack Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    4308,
+    "Talos",
+    1201,
+    "Attack Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    4310,
+    "Tornado",
+    1201,
+    "Attack Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    16227,
+    "Ferox",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    16229,
+    "Brutix",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    24702,
+    "Hurricane",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    24696,
+    "Harbinger",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    24698,
+    "Drake",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    16231,
+    "Cyclone",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    16233,
+    "Prophecy",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    24700,
+    "Myrmidon",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    3756,
+    "Gnosis",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    2836,
+    "Adrestia",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    3518,
+    "Vangel",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    32209,
+    "Mimir",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    11993,
+    "Cerberus",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    11999,
+    "Vagabond",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    12003,
+    "Zealot",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    12005,
+    "Ishtar",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    12011,
+    "Eagle",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    12015,
+    "Muninn",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    12019,
+    "Sacrilege",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    12023,
+    "Deimos",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    33395,
+    "Moracha",
+    833,
+    "Force Recon Ship",
+    6,
+    "Ship"
+  ],
+  [
+    33675,
+    "Chameleon",
+    833,
+    "Force Recon Ship",
+    6,
+    "Ship"
+  ],
+  [
+    45531,
+    "Victor",
+    833,
+    "Force Recon Ship",
+    6,
+    "Ship"
+  ],
+  [
+    48635,
+    "Tiamat",
+    833,
+    "Force Recon Ship",
+    6,
+    "Ship"
+  ],
+  [
+    44995,
+    "Enforcer",
+    833,
+    "Force Recon Ship",
+    6,
+    "Ship"
+  ],
+  [
+    11957,
+    "Falcon",
+    833,
+    "Force Recon Ship",
+    6,
+    "Ship"
+  ],
+  [
+    11963,
+    "Rapier",
+    833,
+    "Force Recon Ship",
+    6,
+    "Ship"
+  ],
+  [
+    11965,
+    "Pilgrim",
+    833,
+    "Force Recon Ship",
+    6,
+    "Ship"
+  ],
+  [
+    11969,
+    "Arazu",
+    833,
+    "Force Recon Ship",
+    6,
+    "Ship"
+  ],
+  [
+    11959,
+    "Rook",
+    906,
+    "Combat Recon Ship",
+    6,
+    "Ship"
+  ],
+  [
+    11961,
+    "Huginn",
+    906,
+    "Combat Recon Ship",
+    6,
+    "Ship"
+  ],
+  [
+    11971,
+    "Lachesis",
+    906,
+    "Combat Recon Ship",
+    6,
+    "Ship"
+  ],
+  [
+    20125,
+    "Curse",
+    906,
+    "Combat Recon Ship",
+    6,
+    "Ship"
+  ],
+  [
+    35781,
+    "Fiend",
+    894,
+    "Heavy Interdiction Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    11995,
+    "Onyx",
+    894,
+    "Heavy Interdiction Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    12013,
+    "Broadsword",
+    894,
+    "Heavy Interdiction Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    12017,
+    "Devoter",
+    894,
+    "Heavy Interdiction Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    12021,
+    "Phobos",
+    894,
+    "Heavy Interdiction Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    32790,
+    "Etana",
+    832,
+    "Logistics",
+    6,
+    "Ship"
+  ],
+  [
+    42245,
+    "Rabisu",
+    832,
+    "Logistics",
+    6,
+    "Ship"
+  ],
+  [
+    49713,
+    "Zarmazd",
+    832,
+    "Logistics",
+    6,
+    "Ship"
+  ],
+  [
+    11978,
+    "Scimitar",
+    832,
+    "Logistics",
+    6,
+    "Ship"
+  ],
+  [
+    11985,
+    "Basilisk",
+    832,
+    "Logistics",
+    6,
+    "Ship"
+  ],
+  [
+    11987,
+    "Guardian",
+    832,
+    "Logistics",
+    6,
+    "Ship"
+  ],
+  [
+    11989,
+    "Oneiros",
+    832,
+    "Logistics",
+    6,
+    "Ship"
+  ],
+  [
+    47270,
+    "Vedmak",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    17715,
+    "Gila",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    17718,
+    "Phantasm",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    17720,
+    "Cynabal",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    17722,
+    "Vigilant",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    17922,
+    "Ashimmu",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    33470,
+    "Stratios",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    33818,
+    "Orthrus",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    635,
+    "Opux Luxury Yacht",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    11011,
+    "Guardian-Vexor",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    33553,
+    "Stratios Emergency Responder",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    17634,
+    "Caracal Navy Issue",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    17709,
+    "Omen Navy Issue",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    17713,
+    "Stabber Fleet Issue",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    17843,
+    "Vexor Navy Issue",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    29336,
+    "Scythe Fleet Issue",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    29337,
+    "Augoror Navy Issue",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    29340,
+    "Osprey Navy Issue",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    29344,
+    "Exequror Navy Issue",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    34590,
+    "Victorieux Luxury Yacht",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    49712,
+    "Rodiva",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    620,
+    "Osprey",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    621,
+    "Caracal",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    622,
+    "Stabber",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    623,
+    "Moa",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    624,
+    "Maller",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    625,
+    "Augoror",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    626,
+    "Vexor",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    627,
+    "Thorax",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    628,
+    "Arbitrator",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    629,
+    "Rupture",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    630,
+    "Bellicose",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    631,
+    "Scythe",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    632,
+    "Blackbird",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    633,
+    "Celestis",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    634,
+    "Exequror",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    2006,
+    "Omen",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    37480,
+    "Bifrost",
+    1534,
+    "Command Destroyer",
+    6,
+    "Ship"
+  ],
+  [
+    37481,
+    "Pontifex",
+    1534,
+    "Command Destroyer",
+    6,
+    "Ship"
+  ],
+  [
+    37482,
+    "Stork",
+    1534,
+    "Command Destroyer",
+    6,
+    "Ship"
+  ],
+  [
+    37483,
+    "Magus",
+    1534,
+    "Command Destroyer",
+    6,
+    "Ship"
+  ],
+  [
+    34317,
+    "Confessor",
+    1305,
+    "Tactical Destroyer",
+    6,
+    "Ship"
+  ],
+  [
+    34562,
+    "Svipul",
+    1305,
+    "Tactical Destroyer",
+    6,
+    "Ship"
+  ],
+  [
+    34828,
+    "Jackdaw",
+    1305,
+    "Tactical Destroyer",
+    6,
+    "Ship"
+  ],
+  [
+    35683,
+    "Hecate",
+    1305,
+    "Tactical Destroyer",
+    6,
+    "Ship"
+  ],
+  [
+    11174,
+    "Keres",
+    893,
+    "Electronic Attack Ship",
+    6,
+    "Ship"
+  ],
+  [
+    11190,
+    "Sentinel",
+    893,
+    "Electronic Attack Ship",
+    6,
+    "Ship"
+  ],
+  [
+    11194,
+    "Kitsune",
+    893,
+    "Electronic Attack Ship",
+    6,
+    "Ship"
+  ],
+  [
+    11387,
+    "Hyena",
+    893,
+    "Electronic Attack Ship",
+    6,
+    "Ship"
+  ],
+  [
+    2834,
+    "Utu",
+    324,
+    "Assault Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    3516,
+    "Malice",
+    324,
+    "Assault Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    32207,
+    "Freki",
+    324,
+    "Assault Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    32788,
+    "Cambion",
+    324,
+    "Assault Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    11365,
+    "Vengeance",
+    324,
+    "Assault Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    11371,
+    "Wolf",
+    324,
+    "Assault Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    11379,
+    "Hawk",
+    324,
+    "Assault Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    11381,
+    "Harpy",
+    324,
+    "Assault Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    11393,
+    "Retribution",
+    324,
+    "Assault Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    11400,
+    "Jaguar",
+    324,
+    "Assault Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    12042,
+    "Ishkur",
+    324,
+    "Assault Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    12044,
+    "Enyo",
+    324,
+    "Assault Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    45530,
+    "Virtuoso",
+    834,
+    "Stealth Bomber",
+    6,
+    "Ship"
+  ],
+  [
+    11377,
+    "Nemesis",
+    834,
+    "Stealth Bomber",
+    6,
+    "Ship"
+  ],
+  [
+    12032,
+    "Manticore",
+    834,
+    "Stealth Bomber",
+    6,
+    "Ship"
+  ],
+  [
+    12034,
+    "Hound",
+    834,
+    "Stealth Bomber",
+    6,
+    "Ship"
+  ],
+  [
+    12038,
+    "Purifier",
+    834,
+    "Stealth Bomber",
+    6,
+    "Ship"
+  ],
+  [
+    22452,
+    "Heretic",
+    541,
+    "Interdictor",
+    6,
+    "Ship"
+  ],
+  [
+    22456,
+    "Sabre",
+    541,
+    "Interdictor",
+    6,
+    "Ship"
+  ],
+  [
+    22460,
+    "Eris",
+    541,
+    "Interdictor",
+    6,
+    "Ship"
+  ],
+  [
+    22464,
+    "Flycatcher",
+    541,
+    "Interdictor",
+    6,
+    "Ship"
+  ],
+  [
+    37457,
+    "Deacon",
+    1527,
+    "Logistics Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    37458,
+    "Kirin",
+    1527,
+    "Logistics Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    37459,
+    "Thalia",
+    1527,
+    "Logistics Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    37460,
+    "Scalpel",
+    1527,
+    "Logistics Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    33397,
+    "Chremoas",
+    830,
+    "Covert Ops",
+    6,
+    "Ship"
+  ],
+  [
+    42246,
+    "Caedes",
+    830,
+    "Covert Ops",
+    6,
+    "Ship"
+  ],
+  [
+    44993,
+    "Pacifier",
+    830,
+    "Covert Ops",
+    6,
+    "Ship"
+  ],
+  [
+    48636,
+    "Hydra",
+    830,
+    "Covert Ops",
+    6,
+    "Ship"
+  ],
+  [
+    11172,
+    "Helios",
+    830,
+    "Covert Ops",
+    6,
+    "Ship"
+  ],
+  [
+    11182,
+    "Cheetah",
+    830,
+    "Covert Ops",
+    6,
+    "Ship"
+  ],
+  [
+    11188,
+    "Anathema",
+    830,
+    "Covert Ops",
+    6,
+    "Ship"
+  ],
+  [
+    11192,
+    "Buzzard",
+    830,
+    "Covert Ops",
+    6,
+    "Ship"
+  ],
+  [
+    49710,
+    "Kikimora",
+    420,
+    "Destroyer",
+    6,
+    "Ship"
+  ],
+  [
+    16236,
+    "Coercer",
+    420,
+    "Destroyer",
+    6,
+    "Ship"
+  ],
+  [
+    16238,
+    "Cormorant",
+    420,
+    "Destroyer",
+    6,
+    "Ship"
+  ],
+  [
+    16240,
+    "Catalyst",
+    420,
+    "Destroyer",
+    6,
+    "Ship"
+  ],
+  [
+    16242,
+    "Thrasher",
+    420,
+    "Destroyer",
+    6,
+    "Ship"
+  ],
+  [
+    32872,
+    "Algos",
+    420,
+    "Destroyer",
+    6,
+    "Ship"
+  ],
+  [
+    32874,
+    "Dragoon",
+    420,
+    "Destroyer",
+    6,
+    "Ship"
+  ],
+  [
+    32876,
+    "Corax",
+    420,
+    "Destroyer",
+    6,
+    "Ship"
+  ],
+  [
+    32878,
+    "Talwar",
+    420,
+    "Destroyer",
+    6,
+    "Ship"
+  ],
+  [
+    42685,
+    "Sunesis",
+    420,
+    "Destroyer",
+    6,
+    "Ship"
+  ],
+  [
+    33673,
+    "Whiptail",
+    831,
+    "Interceptor",
+    6,
+    "Ship"
+  ],
+  [
+    35779,
+    "Imp",
+    831,
+    "Interceptor",
+    6,
+    "Ship"
+  ],
+  [
+    11176,
+    "Crow",
+    831,
+    "Interceptor",
+    6,
+    "Ship"
+  ],
+  [
+    11178,
+    "Raptor",
+    831,
+    "Interceptor",
+    6,
+    "Ship"
+  ],
+  [
+    11184,
+    "Crusader",
+    831,
+    "Interceptor",
+    6,
+    "Ship"
+  ],
+  [
+    11186,
+    "Malediction",
+    831,
+    "Interceptor",
+    6,
+    "Ship"
+  ],
+  [
+    11196,
+    "Claw",
+    831,
+    "Interceptor",
+    6,
+    "Ship"
+  ],
+  [
+    11198,
+    "Stiletto",
+    831,
+    "Interceptor",
+    6,
+    "Ship"
+  ],
+  [
+    11200,
+    "Taranis",
+    831,
+    "Interceptor",
+    6,
+    "Ship"
+  ],
+  [
+    11202,
+    "Ares",
+    831,
+    "Interceptor",
+    6,
+    "Ship"
+  ],
+  [
+    47269,
+    "Damavik",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    582,
+    "Bantam",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    583,
+    "Condor",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    584,
+    "Griffin",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    585,
+    "Slasher",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    586,
+    "Probe",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    587,
+    "Rifter",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    589,
+    "Executioner",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    590,
+    "Inquisitor",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    591,
+    "Tormentor",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    592,
+    "Navitas",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    593,
+    "Tristan",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    594,
+    "Incursus",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    597,
+    "Punisher",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    598,
+    "Breacher",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    599,
+    "Burst",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    602,
+    "Kestrel",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    603,
+    "Merlin",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    605,
+    "Heron",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    607,
+    "Imicus",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    608,
+    "Atron",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    609,
+    "Maulus",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    2161,
+    "Crucifier",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    3532,
+    "Echelon",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    3766,
+    "Vigil",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    11940,
+    "Gold Magnate",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    11942,
+    "Silver Magnate",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    17619,
+    "Caldari Navy Hookbill",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    17703,
+    "Imperial Navy Slicer",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    17812,
+    "Republic Fleet Firetail",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    17841,
+    "Federation Navy Comet",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    17924,
+    "Succubus",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    17926,
+    "Cruor",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    17928,
+    "Daredevil",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    17930,
+    "Worm",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    17932,
+    "Dramiel",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    29248,
+    "Magnate",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    32880,
+    "Venture",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    33468,
+    "Astero",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    33816,
+    "Garmur",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    37453,
+    "Crucifier Navy Issue",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    37454,
+    "Vigil Fleet Issue",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    37455,
+    "Griffin Navy Issue",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    37456,
+    "Maulus Navy Issue",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    33697,
+    "Prospect",
+    1283,
+    "Expedition Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    37135,
+    "Endurance",
+    1283,
+    "Expedition Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    42244,
+    "Porpoise",
+    941,
+    "Industrial Command Ship",
+    6,
+    "Ship"
+  ],
+  [
+    12731,
+    "Bustard",
+    380,
+    "Deep Space Transport",
+    6,
+    "Ship"
+  ],
+  [
+    12745,
+    "Occator",
+    380,
+    "Deep Space Transport",
+    6,
+    "Ship"
+  ],
+  [
+    12747,
+    "Mastodon",
+    380,
+    "Deep Space Transport",
+    6,
+    "Ship"
+  ],
+  [
+    12753,
+    "Impel",
+    380,
+    "Deep Space Transport",
+    6,
+    "Ship"
+  ],
+  [
+    12729,
+    "Crane",
+    1202,
+    "Blockade Runner",
+    6,
+    "Ship"
+  ],
+  [
+    12733,
+    "Prorator",
+    1202,
+    "Blockade Runner",
+    6,
+    "Ship"
+  ],
+  [
+    12735,
+    "Prowler",
+    1202,
+    "Blockade Runner",
+    6,
+    "Ship"
+  ],
+  [
+    12743,
+    "Viator",
+    1202,
+    "Blockade Runner",
+    6,
+    "Ship"
+  ],
+  [
+    22544,
+    "Hulk",
+    543,
+    "Exhumer",
+    6,
+    "Ship"
+  ],
+  [
+    22546,
+    "Skiff",
+    543,
+    "Exhumer",
+    6,
+    "Ship"
+  ],
+  [
+    22548,
+    "Mackinaw",
+    543,
+    "Exhumer",
+    6,
+    "Ship"
+  ],
+  [
+    17476,
+    "Covetor",
+    463,
+    "Mining Barge",
+    6,
+    "Ship"
+  ],
+  [
+    17478,
+    "Retriever",
+    463,
+    "Mining Barge",
+    6,
+    "Ship"
+  ],
+  [
+    17480,
+    "Procurer",
+    463,
+    "Mining Barge",
+    6,
+    "Ship"
+  ],
+  [
+    648,
+    "Badger",
+    28,
+    "Industrial",
+    6,
+    "Ship"
+  ],
+  [
+    649,
+    "Tayra",
+    28,
+    "Industrial",
+    6,
+    "Ship"
+  ],
+  [
+    650,
+    "Nereus",
+    28,
+    "Industrial",
+    6,
+    "Ship"
+  ],
+  [
+    651,
+    "Hoarder",
+    28,
+    "Industrial",
+    6,
+    "Ship"
+  ],
+  [
+    652,
+    "Mammoth",
+    28,
+    "Industrial",
+    6,
+    "Ship"
+  ],
+  [
+    653,
+    "Wreathe",
+    28,
+    "Industrial",
+    6,
+    "Ship"
+  ],
+  [
+    654,
+    "Kryos",
+    28,
+    "Industrial",
+    6,
+    "Ship"
+  ],
+  [
+    655,
+    "Epithal",
+    28,
+    "Industrial",
+    6,
+    "Ship"
+  ],
+  [
+    656,
+    "Miasmos",
+    28,
+    "Industrial",
+    6,
+    "Ship"
+  ],
+  [
+    657,
+    "Iteron Mark V",
+    28,
+    "Industrial",
+    6,
+    "Ship"
+  ],
+  [
+    1944,
+    "Bestower",
+    28,
+    "Industrial",
+    6,
+    "Ship"
+  ],
+  [
+    2863,
+    "Primae",
+    28,
+    "Industrial",
+    6,
+    "Ship"
+  ],
+  [
+    2998,
+    "Noctis",
+    28,
+    "Industrial",
+    6,
+    "Ship"
+  ],
+  [
+    4363,
+    "Miasmos Quafe Ultra Edition",
+    28,
+    "Industrial",
+    6,
+    "Ship"
+  ],
+  [
+    4388,
+    "Miasmos Quafe Ultramarine Edition",
+    28,
+    "Industrial",
+    6,
+    "Ship"
+  ],
+  [
+    32811,
+    "Miasmos Amastris Edition",
+    28,
+    "Industrial",
+    6,
+    "Ship"
+  ],
+  [
+    19744,
+    "Sigil",
+    28,
+    "Industrial",
+    6,
+    "Ship"
+  ],
+  [
+    2078,
+    "Zephyr",
+    1022,
+    "Prototype Exploration Ship",
+    6,
+    "Ship"
+  ],
+  [
+    588,
+    "Reaper",
+    237,
+    "Corvette",
+    6,
+    "Ship"
+  ],
+  [
+    596,
+    "Impairor",
+    237,
+    "Corvette",
+    6,
+    "Ship"
+  ],
+  [
+    601,
+    "Ibis",
+    237,
+    "Corvette",
+    6,
+    "Ship"
+  ],
+  [
+    606,
+    "Velator",
+    237,
+    "Corvette",
+    6,
+    "Ship"
+  ],
+  [
+    615,
+    "Immolator",
+    237,
+    "Corvette",
+    6,
+    "Ship"
+  ],
+  [
+    617,
+    "Echo",
+    237,
+    "Corvette",
+    6,
+    "Ship"
+  ],
+  [
+    33079,
+    "Hematos",
+    237,
+    "Corvette",
+    6,
+    "Ship"
+  ],
+  [
+    33081,
+    "Taipan",
+    237,
+    "Corvette",
+    6,
+    "Ship"
+  ],
+  [
+    33083,
+    "Violator",
+    237,
+    "Corvette",
+    6,
+    "Ship"
+  ],
+  [
+    33513,
+    "Leopard",
+    31,
+    "Shuttle",
+    6,
+    "Ship"
+  ],
+  [
+    21097,
+    "Goru's Shuttle",
+    31,
+    "Shuttle",
+    6,
+    "Ship"
+  ],
+  [
+    21628,
+    "Guristas Shuttle",
+    31,
+    "Shuttle",
+    6,
+    "Ship"
+  ],
+  [
+    30842,
+    "InterBus Shuttle",
+    31,
+    "Shuttle",
+    6,
+    "Ship"
+  ],
+  [
+    29266,
+    "Apotheosis",
+    31,
+    "Shuttle",
+    6,
+    "Ship"
+  ],
+  [
+    34496,
+    "Council Diplomatic Shuttle",
+    31,
+    "Shuttle",
+    6,
+    "Ship"
+  ],
+  [
+    672,
+    "Caldari Shuttle",
+    31,
+    "Shuttle",
+    6,
+    "Ship"
+  ],
+  [
+    11129,
+    "Gallente Shuttle",
+    31,
+    "Shuttle",
+    6,
+    "Ship"
+  ],
+  [
+    11132,
+    "Minmatar Shuttle",
+    31,
+    "Shuttle",
+    6,
+    "Ship"
+  ],
+  [
+    11134,
+    "Amarr Shuttle",
+    31,
+    "Shuttle",
+    6,
+    "Ship"
+  ],
+  [
+    37846,
+    "Standup Cruise Missile",
+    1547,
+    "Structure Anti-Subcapital Missile",
+    8,
+    "Charge"
+  ],
+  [
+    37847,
+    "Standup Heavy Missile",
+    1547,
+    "Structure Anti-Subcapital Missile",
+    8,
+    "Charge"
+  ],
+  [
+    37848,
+    "Standup Light Missile",
+    1547,
+    "Structure Anti-Subcapital Missile",
+    8,
+    "Charge"
+  ],
+  [
+    37849,
+    "Standup Heavy Guided Bomb",
+    1548,
+    "Structure Guided Bomb",
+    8,
+    "Charge"
+  ],
+  [
+    37850,
+    "Standup Light Guided Bomb",
+    1548,
+    "Structure Guided Bomb",
+    8,
+    "Charge"
+  ],
+  [
+    2948,
+    "Shadow",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    32325,
+    "Cyclops I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    32340,
+    "Malleus I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    32342,
+    "Tyrfing I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    32344,
+    "Mantis I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40362,
+    "Ametat I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40363,
+    "Termite I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40364,
+    "Antaeus I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40365,
+    "Gungnir I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40560,
+    "Ametat II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40561,
+    "Malleus II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40562,
+    "Antaeus II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40563,
+    "Cyclops II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40564,
+    "Gungnir II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40565,
+    "Tyrfing II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40566,
+    "Termite II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40567,
+    "Mantis II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47038,
+    "Standup Mantis I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47039,
+    "Standup Gungnir I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47116,
+    "Standup Malleus I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47117,
+    "Standup Cyclops I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47118,
+    "Standup Tyrfing I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47119,
+    "Standup Malleus II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47120,
+    "Standup Mantis II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47121,
+    "Standup Cyclops II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47122,
+    "Standup Tyrfing II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47123,
+    "Standup Shadow",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47124,
+    "Standup Ametat I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47125,
+    "Standup Termite I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47126,
+    "Standup Antaeus I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47127,
+    "Standup Ametat II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47128,
+    "Standup Termite II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47129,
+    "Standup Antaeus II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47130,
+    "Standup Gungnir II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    37599,
+    "Cenobite I",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40345,
+    "Scarab I",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40346,
+    "Siren I",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40347,
+    "Dromi I",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40568,
+    "Cenobite II",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40569,
+    "Scarab II",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40570,
+    "Siren II",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40571,
+    "Dromi II",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47037,
+    "Standup Siren I",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47131,
+    "Standup Cenobite I",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47132,
+    "Standup Scarab I",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47133,
+    "Standup Dromi I",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47134,
+    "Standup Cenobite II",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47135,
+    "Standup Scarab II",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47136,
+    "Standup Siren II",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47137,
+    "Standup Dromi II",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    23055,
+    "Templar I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    23057,
+    "Dragonfly I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    23059,
+    "Firbolg I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    23061,
+    "Einherji I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40358,
+    "Equite I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40359,
+    "Locust I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40360,
+    "Satyr I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40361,
+    "Gram I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40552,
+    "Equite II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40553,
+    "Gram II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40554,
+    "Locust II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40555,
+    "Satyr II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40556,
+    "Templar II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40557,
+    "Dragonfly II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40558,
+    "Firbolg II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40559,
+    "Einherji II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47035,
+    "Standup Templar I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47036,
+    "Standup Gram I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47138,
+    "Standup Dragonfly I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47139,
+    "Standup Firbolg I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47140,
+    "Standup Einherji I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47141,
+    "Standup Templar II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47142,
+    "Standup Dragonfly II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47143,
+    "Standup Firbolg II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47144,
+    "Standup Einherji II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47145,
+    "Standup Equite I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47146,
+    "Standup Locust I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47147,
+    "Standup Satyr I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47148,
+    "Standup Equite II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47149,
+    "Standup Locust II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47150,
+    "Standup Satyr II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47151,
+    "Standup Gram II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    12198,
+    "Mobile Small Warp Disruptor I",
+    361,
+    "Mobile Warp Disruptor",
+    22,
+    "Deployable"
+  ],
+  [
+    12199,
+    "Mobile Medium Warp Disruptor I",
+    361,
+    "Mobile Warp Disruptor",
+    22,
+    "Deployable"
+  ],
+  [
+    12200,
+    "Mobile Large Warp Disruptor I",
+    361,
+    "Mobile Warp Disruptor",
+    22,
+    "Deployable"
+  ],
+  [
+    26888,
+    "Mobile Large Warp Disruptor II",
+    361,
+    "Mobile Warp Disruptor",
+    22,
+    "Deployable"
+  ],
+  [
+    26890,
+    "Mobile Medium Warp Disruptor II",
+    361,
+    "Mobile Warp Disruptor",
+    22,
+    "Deployable"
+  ],
+  [
+    26892,
+    "Mobile Small Warp Disruptor II",
+    361,
+    "Mobile Warp Disruptor",
+    22,
+    "Deployable"
+  ],
+  [
+    28770,
+    "Syndicate Mobile Large Warp Disruptor",
+    361,
+    "Mobile Warp Disruptor",
+    22,
+    "Deployable"
+  ],
+  [
+    28772,
+    "Syndicate Mobile Medium Warp Disruptor",
+    361,
+    "Mobile Warp Disruptor",
+    22,
+    "Deployable"
+  ],
+  [
+    28774,
+    "Syndicate Mobile Small Warp Disruptor",
+    361,
+    "Mobile Warp Disruptor",
+    22,
+    "Deployable"
+  ],
+  [
+    33474,
+    "Mobile Depot",
+    1246,
+    "Mobile Depot",
+    22,
+    "Deployable"
+  ],
+  [
+    33520,
+    "'Wetu' Mobile Depot",
+    1246,
+    "Mobile Depot",
+    22,
+    "Deployable"
+  ],
+  [
+    33522,
+    "'Yurt' Mobile Depot",
+    1246,
+    "Mobile Depot",
+    22,
+    "Deployable"
+  ],
+  [
+    33477,
+    "Small Mobile Siphon Unit",
+    1247,
+    "Mobile Siphon Unit",
+    22,
+    "Deployable"
+  ],
+  [
+    33581,
+    "Small Mobile 'Hybrid' Siphon Unit",
+    1247,
+    "Mobile Siphon Unit",
+    22,
+    "Deployable"
+  ],
+  [
+    33583,
+    "Small Mobile 'Rote' Siphon Unit",
+    1247,
+    "Mobile Siphon Unit",
+    22,
+    "Deployable"
+  ],
+  [
+    33476,
+    "Mobile Cynosural Inhibitor",
+    1249,
+    "Mobile Cyno Inhibitor",
+    22,
+    "Deployable"
+  ],
+  [
+    33475,
+    "Mobile Tractor Unit",
+    1250,
+    "Mobile Tractor Unit",
+    22,
+    "Deployable"
+  ],
+  [
+    33700,
+    "'Packrat' Mobile Tractor Unit",
+    1250,
+    "Mobile Tractor Unit",
+    22,
+    "Deployable"
+  ],
+  [
+    33702,
+    "'Magpie' Mobile Tractor Unit",
+    1250,
+    "Mobile Tractor Unit",
+    22,
+    "Deployable"
+  ],
+  [
+    33585,
+    "Amarr Encounter Surveillance System",
+    1273,
+    "Encounter Surveillance System",
+    22,
+    "Deployable"
+  ],
+  [
+    33595,
+    "Caldari Encounter Surveillance System",
+    1273,
+    "Encounter Surveillance System",
+    22,
+    "Deployable"
+  ],
+  [
+    33608,
+    "Gallente Encounter Surveillance System",
+    1273,
+    "Encounter Surveillance System",
+    22,
+    "Deployable"
+  ],
+  [
+    33610,
+    "Minmatar Encounter Surveillance System",
+    1273,
+    "Encounter Surveillance System",
+    22,
+    "Deployable"
+  ],
+  [
+    33589,
+    "Mobile Scan Inhibitor",
+    1275,
+    "Mobile Scan Inhibitor",
+    22,
+    "Deployable"
+  ],
+  [
+    33591,
+    "Mobile Micro Jump Unit",
+    1276,
+    "Mobile Micro Jump Unit",
+    22,
+    "Deployable"
+  ],
+  [
+    33990,
+    "Tournament Micro Jump Unit",
+    1276,
+    "Mobile Micro Jump Unit",
+    22,
+    "Deployable"
+  ],
+  [
+    33328,
+    "Capsule - Genolution 'Auroral' 197-variant",
+    29,
+    "Capsule",
+    6,
+    "Ship"
+  ],
+  [
+    670,
+    "Capsule",
+    29,
+    "Capsule",
+    6,
+    "Ship"
+  ]
+]

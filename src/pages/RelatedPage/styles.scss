@@ -1,0 +1,86 @@
+:local {
+  .appRoot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    user-select: text;
+    color: #888;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .headWrapper {
+    flex: 1 1;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    padding-bottom: 0;
+    @media (max-width: 360px) {
+      padding: 10px;
+      padding-bottom: 0;
+    }
+  }
+
+  .errWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    min-height: 60px;
+    padding: 10px 0;
+    color: red;
+  }
+
+  .head {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    min-height: 50px;
+    display: flex;
+    justify-content: space-between;
+
+    .header {
+      margin-bottom: 10px;
+    }
+
+    .radioGrp {
+      width: 80px;
+      max-width: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      :global(label.bp3-control.bp3-radio.bp3-inline:last-child) {
+        margin-bottom: 2px;
+      }
+    }
+  }
+
+  .controls {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .buttons {
+      display: flex;
+    }
+  }
+
+  .separator {
+    width: 100%;
+    border: 1px solid #eee;
+    border-style: inset;
+  }
+}
