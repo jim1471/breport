@@ -70,6 +70,10 @@ module.exports = {
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'development') { ... }. See `./env.js`.
     new webpack.DefinePlugin(env.stringified),
+    new webpack.NormalModuleReplacementPlugin(
+      /.*\/generated\/iconSvgPaths.*/,
+      path.resolve(__dirname, '../src/assets/bpIcons.js'),
+    ),
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
