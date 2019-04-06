@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import cn from 'classnames'
 import ItemIcon from './ItemIcon'
 import styles from './ShipInfo.scss'
 
@@ -28,7 +27,7 @@ export default class ShipInfo extends Component {
   }
 
   render() {
-    const { id, shipName, killID, podKillID, onRenderDmg, inv, onToggleExpanded } = this.props
+    const { id, shipName, killID, podKillID, onRenderDmg, inv, onToggleExpanded, lossValue } = this.props
 
     return (
       <div className={styles.root}>
@@ -46,25 +45,29 @@ export default class ShipInfo extends Component {
           <ItemIcon id={id} />
         }
         <span className={styles.ship}>
-          <div className={cn(styles.char, podKillID && styles.charWithPod)}>
-            {this.renderCharName()}
+          <div className={styles.char}>
+            <div>
+              {this.renderCharName()}
+              {podKillID &&
+                <a
+                  className={styles.pod}
+                  href={`https://zkillboard.com/detail/${podKillID}/`}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  [pod]
+                </a>
+              }
+            </div>
             {inv &&
-              <span
-                className={styles.moreShipsBtn}
-                onClick={onToggleExpanded}
-              >
+              <span className={styles.moreShipsBtn} onClick={onToggleExpanded}>
                 {`+++ ${Object.keys(inv.ships).length}`}
               </span>
             }
-            {podKillID &&
-              <a
-                className={styles.pod}
-                href={`https://zkillboard.com/detail/${podKillID}/`}
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                [pod]
-              </a>
+            {!inv && lossValue &&
+              <span className={styles.lossValue}>
+                {lossValue}
+              </span>
             }
           </div>
           <div className={styles.shiptype}>

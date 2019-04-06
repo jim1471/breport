@@ -154,6 +154,7 @@ export default class InvolvedRow extends Component {
             onToggleExpanded={this.toggleExpanded}
             shipName={this.getShipName()}
             onRenderDmg={this.renderDmg}
+            lossValue={formattedLossValue}
           />
 
           {/* TODO: Expanded style for Parent row */}

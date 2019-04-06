@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-// import Tooltip from 'components/Tooltip'
 import styles from './AllyIcon.scss'
 
 
@@ -44,13 +43,5 @@ export default class AllyIcon extends PureComponent {
         {icon}
       </div>
     )
-    // incorrect placing in mobile markup
-    // return (
-    //   <Tooltip content={this.getTooltipContent()}>
-    //     <div className={styles.iconCont}>
-    //       {icon}
-    //     </div>
-    //   </Tooltip>
-    // )
   }
 }

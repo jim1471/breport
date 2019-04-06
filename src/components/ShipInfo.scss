@@ -32,10 +32,6 @@
 
       display: flex;
       justify-content: space-between;
-
-      &.charWithPod {
-        justify-content: flex-start;
-      }
     }
 
     .moreShipsBtn {
@@ -45,6 +41,12 @@
       &:hover, &:active {
         text-decoration: underline;
       }
+    }
+
+    .lossValue {
+      color: #e0e0e0;
+      font-weight: 400;
+      font-size: 10px;
     }
 
     .pod {

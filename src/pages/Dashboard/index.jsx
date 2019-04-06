@@ -7,6 +7,8 @@ import styles from './styles.scss'
 const SYSTEMS_DATA = require('utils/data/systems.json')
 
 const relateds = [
+  ['/related/30004662/201904051900/', '4 titans and nyx'],
+  ['/related/30000511/201904051000/', '1077 killmails'],
   ['/related/31002071/201903290500/', ''],
   ['/related/30005259/201903281600/', ''],
   ['/related/31000743/201903291600/', 'Marginis Fortzar'],
