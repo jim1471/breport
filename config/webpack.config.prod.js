@@ -5,14 +5,12 @@ process.env.NODE_ENV = 'production'
 const webpack = require('webpack')
 const path = require('path')
 const fs = require('fs')
-const glob = require('glob')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-// const PurgecssPlugin = require('purgecss-webpack-plugin')
 
 const eslintFormatter = require('react-dev-utils/eslintFormatter')
 const getClientEnvironment = require('./env')
@@ -22,12 +20,6 @@ const outputDir = path.resolve(appDirectory, 'dist')
 // Get environment variables to inject into our app.
 const env = getClientEnvironment()
 
-// const PATHS = {
-//   src: path.resolve(appDirectory, 'src'),
-//   // nodeModules: path.resolve(appDirectory, 'node_modules'),
-// }
-
-// console.warn('SRC:', PATHS.src)
 
 module.exports = {
   mode: 'production',
@@ -66,16 +58,56 @@ module.exports = {
   performance: {
     hints: false,
   },
-  // splitting vendor code in separate chunks (css also)
-  // https://webpack.js.org/plugins/split-chunks-plugin/
   optimization: {
     minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
+      new TerserPlugin({
+        terserOptions: {
+          parse: {
+            // we want terser to parse ecma 8 code. However, we don't want it
+            // to apply any minfication steps that turns valid ecma 5 code
+            // into invalid ecma 5 code. This is why the 'compress' and 'output'
+            // sections only apply transformations that are ecma 5 safe
+            // https://github.com/facebook/create-react-app/pull/4234
+            ecma: 8,
+          },
+          compress: {
+            ecma: 5,
+            warnings: false,
+            // Disabled because of an issue with Uglify breaking seemingly valid code:
+            // https://github.com/facebook/create-react-app/issues/2376
+            // Pending further investigation:
+            // https://github.com/mishoo/UglifyJS2/issues/2011
+            comparisons: false,
+            // drop_console: true,
+          },
+          mangle: {
+            safari10: true,
+          },
+          output: {
+            ecma: 5,
+            comments: false,
+            // Turned on because emoji and regex is not minified properly using default
+            // https://github.com/facebook/create-react-app/issues/2488
+            ascii_only: true,
+          },
+        },
+        // Use multi-process parallel running to improve the build speed
+        // Default number of concurrent runs: os.cpus().length - 1
         parallel: true,
+        // Enable file caching
+        cache: true,
         sourceMap: false,
       }),
-      new OptimizeCSSAssetsPlugin({}),
+      new OptimizeCSSAssetsPlugin({
+        cssProcessor: require('cssnano'),
+        cssProcessorPluginOptions: {
+          preset: ['advanced', {
+            discardComments: { removeAll: true },
+            discardUnused: { removeAll: true },
+          }],
+        },
+        canPrint: true,
+      }),
     ],
     runtimeChunk: {
       name: 'manifest',
@@ -95,20 +127,14 @@ module.exports = {
           name: 'vendors',
           chunks: 'all',
         },
-        // styles: {
-        //   name: 'styles',
-        //   test: /\.css$/,
-        //   chunks: 'all',
-        //   enforce: true
-        // },
       },
     },
   },
   plugins: [
-    new CleanWebpackPlugin(
-      [outputDir],
-      { root: appDirectory },
-    ),
+    new CleanWebpackPlugin({
+      verbose: true,
+      cleanOnceBeforeBuildPatterns: ['**/*', '!stats.json'],
+    }),
     new CopyWebpackPlugin([{
       from: 'public/',
       to: outputDir,
@@ -132,15 +158,9 @@ module.exports = {
     // if (process.env.NODE_ENV === 'development') { ... }. See `./env.js`.
     new webpack.DefinePlugin(env.stringified),
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
       filename: '[name].[hash].css',
       // chunkFilename: '[id].[hash].css',
     }),
-    // new PurgecssPlugin({
-    //   paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
-    //   // only: ['commons', 'vendors'],
-    // }),
   ],
   module: {
     rules: [
@@ -178,53 +198,53 @@ module.exports = {
           },
         ],
       },
-      // {
-      //   test: /\.(scss|css)$/,
-      //   include: /node_modules/,
-      //   use: [
-      //     MiniCssExtractPlugin.loader,
-      //     { loader: 'css-loader' },
-      //   ],
-      // },
       {
         test: /\.(scss|css)$/,
         exclude: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,
-          { loader: require.resolve('css-loader'), options: {
-            importLoaders: 2,
-            minimize: false,
-            import: false,
-            modules: false,
-            camelCase: true,
-            localIdentName: '[hash:base64:8]',
-          } },
-          { loader: require.resolve('postcss-loader'), options: {
-            // Necessary for external CSS imports to work
-            // https://github.com/facebookincubator/create-react-app/issues/2677
-            ident: 'postcss',
-            plugins: () => [
-              require('postcss-flexbugs-fixes'),
-              require('autoprefixer')({
-                browsers: [
-                  'last 5 versions',
-                  'Firefox ESR',
-                  'not ie < 11',
-                ],
-              }),
-              // uncomment for build and test prod-like styles
-              require('cssnano')({
-                svgo: false,
-                reduceIdents: false,
-              }),
-            ],
-          } },
-          { loader: require.resolve('fast-sass-loader'), options: {
-            includePaths: [
-              path.resolve(appDirectory, 'src/assets/styles'),
-              path.resolve(appDirectory, 'src'),
-            ],
-          } },
+          {
+            loader: require.resolve('css-loader'),
+            options: {
+              importLoaders: 2,
+              minimize: false,
+              import: false,
+              modules: false,
+              camelCase: true,
+              localIdentName: '[hash:base64:8]',
+            },
+          },
+          {
+            loader: require.resolve('postcss-loader'),
+            options: {
+              // Necessary for external CSS imports to work
+              // https://github.com/facebookincubator/create-react-app/issues/2677
+              ident: 'postcss',
+              plugins: () => [
+                require('postcss-flexbugs-fixes'),
+                require('autoprefixer')({
+                  browsers: [
+                    'last 5 versions',
+                    'Firefox ESR',
+                    'not ie < 11',
+                  ],
+                }),
+                require('cssnano')({
+                  svgo: false,
+                  reduceIdents: false,
+                }),
+              ],
+            },
+          },
+          {
+            loader: require.resolve('fast-sass-loader'),
+            options: {
+              includePaths: [
+                path.resolve(appDirectory, 'src/assets/styles'),
+                path.resolve(appDirectory, 'src'),
+              ],
+            },
+          },
         ],
       },
       {
