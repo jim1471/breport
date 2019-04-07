@@ -63,8 +63,13 @@
     position: relative;
     height: 100px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    div {
+      margin-bottom: 10px;
+    }
 
     span {
       margin-right: 5px;
