@@ -70,14 +70,11 @@
     &.zkill {
       width: 100%;
       max-width: 600px;
-      /*min-height: 250px;*/
-      /*justify-content: flex-start;*/
       padding-bottom: 20px;
     }
 
     .cardRow {
       display: flex;
-      /*justify-content: space-between;*/
 
       .inputHour {
         :global(.bp3-input-group) {
@@ -97,7 +94,13 @@
         border: 1px solid #555;
       }
     }
+  }
 
+  .matchedLink {
+    color: #106ba3;
+  }
 
+  .matchedSystem {
+    color: #eee;
   }
 }

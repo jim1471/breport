@@ -53,8 +53,7 @@ class Dashboard extends Component {
     return (
       <div className={styles.root}>
         <div className={styles.wrapper}>
-          {false /* && <InputRelatedPanel /> */}
-          <InputZkillLinkPanel />
+          <InputZkillLinkPanel getSystemName={this.getSystemName} />
 
           <h1>Example Battle Reports:</h1>
           <table className='bp3-html-table'>
