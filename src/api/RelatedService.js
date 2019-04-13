@@ -15,7 +15,23 @@ class RelatedService extends BaseAPI {
     })
   }
 
+  saveComposition(teams, related) {
+    return this.call({
+      method: 'post',
+      url: `${base}/api/v1/composition/add`,
+      data: {
+        related,
+        teams,
+      },
+    })
+  }
 
+  getComposition(compositionID) {
+    return this.call({
+      method: 'get',
+      url: `${base}/api/v1/composition/get/${compositionID}`,
+    })
+  }
 }
 
 export default new RelatedService()

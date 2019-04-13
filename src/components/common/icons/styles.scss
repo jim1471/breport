@@ -1,0 +1,24 @@
+:local {
+  .iconCont {
+    width: 32px;
+    flex-shrink: 0;
+    margin: 1px;
+    background-color: #222;
+    border-radius: 6px;
+    overflow: hidden;
+
+    &.empty {
+      background-color: transparent;
+    }
+  }
+
+  .icon {
+    vertical-align: middle;
+  }
+
+  .emptyIcon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+}

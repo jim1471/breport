@@ -1,20 +1,11 @@
 import React, { Component } from 'react'
 import cn from 'classnames'
 import numeral from 'numeral'
-import AllyIcon from './AllyIcon'
-import ShipInfo from './ShipInfo'
-import InvolvedShipInfo from './InvolvedShipInfo'
-import styles from './InvolvedRow.scss'
+import { formatSum, formatDmg } from 'utils/FormatUtils'
+import { AllyIcon, ShipInfo, InvolvedShipInfo } from 'components'
+import styles from './styles.scss'
 
 
-const SHOW_ROW_LOSS = false
-const rawDmg = dmg => {
-  let format = '0a'
-  if (dmg > 1000000) {
-    format = '0.00a'
-  }
-  return dmg === 0 || !dmg ? '' : `${numeral(dmg).format(format)}`
-}
 const dmgPercent = dmg => (
   dmg === 0 || !dmg ? '0%' : `(${numeral(dmg).format('0,0.0%')})`
 )
@@ -55,10 +46,10 @@ export default class InvolvedRow extends Component {
         isTopDmg,
         isTopWhored,
         data, names, totalDmg, maxDmg, maxCnt,
-        rawDmgValue: rawDmg(dmg),
+        rawDmgValue: formatDmg(dmg),
         dmgPercentValue: dmgPercent(dmg / totalDmg),
         cntWhoredValue: cntWhored(cnt),
-        formattedLossValue: loss ? numeral(loss.lossValue).format('0.0a') : '',
+        formattedLossValue: loss ? formatSum(loss.lossValue) : '',
       }
     }
     return null
@@ -164,13 +155,8 @@ export default class InvolvedRow extends Component {
             </div>
           }
 
-          <AllyIcon allyID={allyID} corpID={corpID} names={names} />
-
-          {SHOW_ROW_LOSS &&
-            <div className={styles.lossValue}>
-              {formattedLossValue}
-            </div>
-          }
+          <AllyIcon corpID={corpID} names={names} />
+          <AllyIcon allyID={allyID} names={names} />
         </div>
         {expanded && data.inv &&
           this.renderOtherShips()

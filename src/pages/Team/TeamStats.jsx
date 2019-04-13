@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import numeral from 'numeral'
 import { Icon } from '@blueprintjs/core/lib/esm/components/icon/icon'
-import AllyIcon from 'components/AllyIcon'
+import AllyIcon from 'icons/AllyIcon'
 import { moveToTeam } from 'reducers/br'
-import styles from './Team.scss'
+import styles from './styles.scss'
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E']
 

@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router'
+import { Link, browserHistory } from 'react-router'
 import { Button } from '@blueprintjs/core/lib/esm/components/button/buttons'
 import { Radio } from '@blueprintjs/core/lib/esm/components/forms/controls'
 import { RadioGroup } from '@blueprintjs/core/lib/esm/components/forms/radioGroup'
 import { getRelatedData, getRelatedDataStub, parseData } from 'reducers/br'
+import RelatedService from 'api/RelatedService'
 import Report from 'pages/Report'
 import styles from './styles.scss'
 
@@ -14,6 +15,7 @@ class RelatedPage extends Component {
   state = {
     // reportType: 'grouped',
     reportType: 'plane',
+    saving: false,
   }
 
   componentDidMount() {
@@ -46,6 +48,46 @@ class RelatedPage extends Component {
     }
   }
 
+  handleSaveBR = () => {
+    const { params: { systemID, time }, isStub } = this.props
+    if (isStub || this.state.saving) return
+    const { teams, ...rest } = this.props
+    console.log('teams:', teams, rest.location.pathname)
+
+    this.setState({ saving: true }, async () => {
+      RelatedService.saveComposition(teams, `${systemID}/${time}`)
+        .then(({ data }) => {
+          this.setState({ saving: false })
+          browserHistory.push({
+            pathname: rest.location.pathname,
+            search: `?br=${data.id}`,
+          })
+          console.log('data', data)
+        })
+        .catch(err => {
+          this.setState({ saving: false })
+          console.error('err:', err)
+        })
+    })
+  }
+
+  handleGetBR = () => {
+    const { query: { br } } = this.props.location
+    if (!br || this.state.saving) return
+    console.log('br', br)
+    this.setState({ saving: true }, async () => {
+      RelatedService.getComposition(br)
+        .then(({ data }) => {
+          this.setState({ saving: false })
+          console.log('data', data)
+        })
+        .catch(err => {
+          this.setState({ saving: false })
+          console.error('err:', err)
+        })
+    })
+  }
+
   renderError(error) {
     if (error === 'processing') {
       return (
@@ -68,7 +110,7 @@ class RelatedPage extends Component {
   }
 
   renderContent() {
-    const { reportType } = this.state
+    const { reportType, saving } = this.state
     const { data = [], teams, names, router, kmLoading } = this.props
     const isError = names.error
     const isLoading = !names || names.isLoading || kmLoading
@@ -107,14 +149,30 @@ class RelatedPage extends Component {
                   text='Reload'
                   small
                 />
-                &nbsp;
                 {process.env.NODE_ENV === 'development' &&
-                  <Button
-                    loading={isLoading}
-                    onClick={this.handleReparse}
-                    text='Reparse'
-                    small
-                  />
+                  <Fragment>
+                    &nbsp;
+                    <Button
+                      loading={isLoading}
+                      onClick={this.handleReparse}
+                      text='Reparse'
+                      small
+                    />
+                    &nbsp;
+                    <Button
+                      loading={isLoading || saving}
+                      onClick={this.handleSaveBR}
+                      text='Save Composition'
+                      small
+                    />
+                    &nbsp;
+                    <Button
+                      loading={isLoading || saving}
+                      onClick={this.handleGetBR}
+                      text='get BR'
+                      small
+                    />
+                  </Fragment>
                 }
               </div>
             </div>

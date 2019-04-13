@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import classnames from 'classnames'
 import numeral from 'numeral'
-import AllyIcon from './AllyIcon'
-import ItemIcon from './ItemIcon'
-import styles from './ShipGroup.scss'
+import { AllyIcon, ItemIcon } from 'components'
+import styles from './styles.scss'
 
 
 const formatSum = value => {

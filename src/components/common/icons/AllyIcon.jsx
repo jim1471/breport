@@ -1,6 +1,13 @@
 import React, { PureComponent } from 'react'
-import styles from './AllyIcon.scss'
+import cn from 'classnames'
+import styles from './styles.scss'
 
+
+const EmptyImg = () => (
+  <div className={cn(styles.iconCont, styles.empty)}>
+    <div className={styles.emptyIcon} />
+  </div>
+)
 
 const Img = ({ alt, iconUrl, mini }) => (
   <img
@@ -27,6 +34,8 @@ export default class AllyIcon extends PureComponent {
 
   render() {
     const { allyID, corpID, mini } = this.props
+    if (!allyID && !corpID) return <EmptyImg />
+
     const iconUrl = allyID
       ? `https://imageserver.eveonline.com/Alliance/${allyID}_64.png`
       : `https://imageserver.eveonline.com/Corporation/${corpID}_64.png`

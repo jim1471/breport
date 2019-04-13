@@ -1,7 +1,7 @@
 /* eslint react/jsx-no-bind: 0 */
 import React, { Component } from 'react'
 import InvolvedRow from 'components/InvolvedRow'
-import styles from './Team.scss'
+import styles from './styles.scss'
 
 
 class Team extends Component {
@@ -12,13 +12,14 @@ class Team extends Component {
         <div className={styles.body}>
           <div className={styles.row}>
             <span style={{ color: 'gold' }}>Pilot</span>
-            <span style={{ color: 'gold' }}>used ships</span>
+            <span style={{ color: 'gold' }}>loss value | used ships</span>
           </div>
           <div className={styles.row}>
             <span>Ship</span>
             <span>Dmg [Kills]</span>
           </div>
         </div>
+        <div className={styles.corp}>Corp</div>
         <div className={styles.ally}>Ally</div>
       </div>
     )

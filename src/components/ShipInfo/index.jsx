@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import ItemIcon from './ItemIcon'
-import styles from './ShipInfo.scss'
+import ItemIcon from 'icons/ItemIcon'
+import styles from './styles.scss'
 
 
 export default class ShipInfo extends Component {
@@ -59,16 +59,19 @@ export default class ShipInfo extends Component {
                 </a>
               }
             </div>
-            {inv &&
-              <span className={styles.moreShipsBtn} onClick={onToggleExpanded}>
-                {`+++ ${Object.keys(inv.ships).length}`}
-              </span>
-            }
-            {!inv && lossValue &&
-              <span className={styles.lossValue}>
-                {lossValue}
-              </span>
-            }
+            <span>
+              {inv &&
+                <span className={styles.moreShipsBtn} onClick={onToggleExpanded}>
+                  {`(+ ${Object.keys(inv.ships).length})`}
+                </span>
+              }
+              {lossValue &&
+                <span className={styles.lossValue}>
+                  &nbsp;
+                  {lossValue}
+                </span>
+              }
+            </span>
           </div>
           <div className={styles.shiptype}>
             {shipName}

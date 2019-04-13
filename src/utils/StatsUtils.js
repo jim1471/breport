@@ -59,7 +59,8 @@ const getInvolvedCount = (involved, allyIDstr, names) => { // eslint-disable-lin
     count = Object.keys(involved).reduce((total, charID) => {
       const char = involved[charID]
       // do not count structures
-      if (char.structure) return total
+      // if (char.structure) return total
+
       // !char.allyID - MTU losses come without allyID :facepalm:
       if (char.corpID === corpID && !char.allyID) {
         return (total + 1)
@@ -72,7 +73,7 @@ const getInvolvedCount = (involved, allyIDstr, names) => { // eslint-disable-lin
     count = Object.keys(involved).reduce((total, charID) => {
       const char = involved[charID]
       // do not count structures
-      if (char.structure) return total
+      // if (char.structure) return total
 
       if (char.allyID === allyID) {
         // if (allyIDstr === '1614483120') {

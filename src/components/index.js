@@ -1,11 +1,15 @@
-import Spinner from './Spinner'
-import ItemIcon from './ItemIcon'
 import ShipInfo from './ShipInfo'
-import AllyIcon from './AllyIcon'
+import InvolvedShipInfo from './InvolvedShipInfo'
+import InvolvedRow from './InvolvedRow'
+import Spinner from './common/Spinner'
+import AllyIcon from './common/icons/AllyIcon'
+import ItemIcon from './common/icons/ItemIcon'
 
 export {
-  Spinner,
-  ItemIcon,
   ShipInfo,
+  InvolvedShipInfo,
+  InvolvedRow,
+  Spinner,
   AllyIcon,
+  ItemIcon,
 }

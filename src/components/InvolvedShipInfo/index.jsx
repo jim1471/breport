@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import cn from 'classnames'
 import numeral from 'numeral'
-import styles from './InvolvedShipInfo.scss'
+import styles from './styles.scss'
 
 
 const fmtValue = losses => {
