@@ -5,7 +5,7 @@ import ParseUtils from 'utils/ParseUtils'
 import NamesUtils from 'utils/NamesUtils'
 import { moveMemberToTeam } from 'utils/TeamsUtils'
 
-const FETCH_INTERVAL = 10000
+const FETCH_INTERVAL = 4000
 
 let stubData = []
 const isStub = false

@@ -167,7 +167,6 @@ export const getTeams = data => {
         first.push(allyID)
       }
     } else {
-      // console.warn('allyID dont have victims:', allyID)
       const maxWhoredEnemyAllyID = victims.damageDealt[allyID][0][0] // max whored enemy ally
       if (first.includes(maxWhoredEnemyAllyID)) {
         second.push(allyID)

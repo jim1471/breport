@@ -188,9 +188,14 @@ class ParseUtils {
         charID,
         corpID: inv.corpID,
         allyID: inv.allyID,
-        loss: false,
         cnt: inv.cnt,
         dmg: inv.dmg,
+        allLossesValue: 0,
+        // id: 0,
+        // loss: null,
+        // killID: 0,
+        // podLoss: null,
+        // podKillID: 0,
       }
 
       // 0. Uknown ship, whored & no lossmail
@@ -209,6 +214,14 @@ class ParseUtils {
       // 670: "Capsule" // 33328: "Capsule - Genolution 'Auroral' 197-variant"
       const withoutPods = allShipsIds.filter(shipID => (shipID !== 33328 && shipID !== 670))
       const pods = allShipsIds.filter(shipID => (shipID === 33328 || shipID === 670))
+      // calculate loss value of all char ship losses
+      const allLossesValue = Object.keys(inv.ships).reduce((totalSum, shipID) => {
+        const shipLosses = inv.ships[shipID].losses
+        if (shipLosses) {
+          return totalSum + shipLosses.reduce((sum, loss) => sum + loss.lossValue, 0)
+        }
+        return totalSum
+      }, 0)
 
       // 1. only POD[s]
       if (withoutPods.length === 0) {
@@ -301,56 +314,20 @@ class ParseUtils {
       }
 
       // I. Group all ships in one row by Char
-      const InternalRowGrouping = true
-      if (InternalRowGrouping) {
-        const sortedShips = this.getTopShip(allShipsIds)
-        const topShipID = sortedShips[0]
-        const lossKm = inv.ships[topShipID].losses && inv.ships[topShipID].losses[0]
-        const item = {
-          id: topShipID,
-          ...charStats,
-          sortedShips,
-          inv,
-          loss: lossKm,
-        }
-        if (lossKm) item.killID = lossKm.id
-        // if (charIDKey === '92532650') {
-        //   console.warn('item:', item)
-        // }
-        return item
+      const sortedShips = this.sortCharShips(allShipsIds)
+      const topShipID = sortedShips[0]
+      const lossKm = inv.ships[topShipID].losses && inv.ships[topShipID].losses[0]
+      const item = {
+        id: topShipID,
+        ...charStats,
+        sortedShips,
+        inv,
+        loss: lossKm,
       }
-
-      // II. Render all in separate rows
-      // 3. multiple ships, losses, etc
-      const parsePods = false
-      let charShipsAndLosses
-      if (!parsePods) {
-        charShipsAndLosses = withoutPods
-      } else {
-        charShipsAndLosses = allShipsIds
+      if (lossKm) {
+        item.killID = lossKm.id
       }
-      const multipleShips = []
-      charShipsAndLosses.forEach(shipID => {
-        const item = {
-          ...charStats,
-          id: shipID,
-        }
-        if (inv.ships[shipID].loss > 0) {
-          inv.ships[shipID].losses.forEach(lossKm => {
-            multipleShips.push({
-              ...item,
-              loss: lossKm,
-              killID: lossKm.id,
-            })
-          })
-        } else {
-          multipleShips.push(item)
-        }
-      })
-      return multipleShips
-
-      // ? 4. links PODs to ships losses
-      // ...
+      return item
     })
 
     // flat()
@@ -360,7 +337,7 @@ class ParseUtils {
     return ships
   }
 
-  getTopShip(shipsIds) {
+  sortCharShips(shipsIds) {
     const positionForUnknown = 0
     shipsIds.sort((shipA, shipB) => {
       const ixA = SHIP_TYPES.findIndex(type => type[0] === shipA) || positionForUnknown

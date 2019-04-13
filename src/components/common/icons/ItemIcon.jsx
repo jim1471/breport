@@ -1,24 +1,33 @@
 import React from 'react'
+import styles from './styles.scss'
 
 const quality = 64 // 32
 
 const ItemIcon = ({ id }) => {
+  let icon
   if (!id) {
-    return (
+    icon = (
       <img
-        className='img-32'
+        className={styles.itemIcon}
         alt='typeID-undefined-ship'
         src='https://zkillboard.com/img/eve-question.png'
       />
     )
+  } else {
+    icon = (
+      <img
+        className={styles.itemIcon}
+        alt={`typeID-${id}`}
+        src={`https://imageserver.eveonline.com/Type/${id}_${quality}.png`}
+      />
+    )
   }
 
+
   return (
-    <img
-      className='img-32'
-      alt={`typeID-${id}`}
-      src={`https://imageserver.eveonline.com/Type/${id}_${quality}.png`}
-    />
+    <div className={styles.itemIconCont}>
+      {icon}
+    </div>
   )
 }
 

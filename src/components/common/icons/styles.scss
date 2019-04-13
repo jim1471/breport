@@ -4,7 +4,7 @@
     flex-shrink: 0;
     margin: 1px;
     background-color: #222;
-    border-radius: 6px;
+    border-radius: 2px;
     overflow: hidden;
 
     &.empty {
@@ -20,5 +20,18 @@
     width: 32px;
     height: 32px;
     flex-shrink: 0;
+  }
+
+  .itemIconCont {
+    width: 32px;
+    flex-shrink: 0;
+    /*margin: 1px;*/
+    border-radius: 2px;
+    overflow: hidden;
+
+    img {
+      width: 32px;
+      vertical-align: middle;
+    }
   }
 }

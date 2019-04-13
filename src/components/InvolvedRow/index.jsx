@@ -7,7 +7,7 @@ import styles from './styles.scss'
 
 
 const dmgPercent = dmg => (
-  dmg === 0 || !dmg ? '0%' : `(${numeral(dmg).format('0,0.0%')})`
+  dmg === 0 || !dmg ? '(0%)' : `(${numeral(dmg).format('0,0.0%')})`
 )
 const cntWhored = cnt => (
   cnt === 0 || !cnt ? '[0]' : ` [${cnt}]`
@@ -38,7 +38,7 @@ export default class InvolvedRow extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.data && !prevState.data && prevState.data !== nextProps.data) {
       const { data, names, totalDmg, maxDmg, maxCnt } = nextProps
-      const { loss, dmg, cnt } = data
+      const { loss, dmg, cnt, allLossesValue } = data
       const isTopDmg = dmg === maxDmg && dmg > 0
       const isTopWhored = cnt === maxCnt && cnt > 0
       return {
@@ -49,7 +49,8 @@ export default class InvolvedRow extends Component {
         rawDmgValue: formatDmg(dmg),
         dmgPercentValue: dmgPercent(dmg / totalDmg),
         cntWhoredValue: cntWhored(cnt),
-        formattedLossValue: loss ? formatSum(loss.lossValue) : '',
+        fmtLossValue: loss ? formatSum(loss.lossValue) : '',
+        allLossesValue: allLossesValue ? formatSum(allLossesValue) : '',
       }
     }
     return null
@@ -129,7 +130,7 @@ export default class InvolvedRow extends Component {
   }
 
   renderContent() {
-    const { expanded, data, names, formattedLossValue } = this.state
+    const { expanded, data, names, fmtLossValue, allLossesValue } = this.state
     const { killID, loss, id, charID, allyID, corpID } = data
 
     return (
@@ -145,7 +146,7 @@ export default class InvolvedRow extends Component {
             onToggleExpanded={this.toggleExpanded}
             shipName={this.getShipName()}
             onRenderDmg={this.renderDmg}
-            lossValue={formattedLossValue}
+            lossValue={allLossesValue || fmtLossValue}
           />
 
           {/* TODO: Expanded style for Parent row */}

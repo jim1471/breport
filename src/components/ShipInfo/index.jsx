@@ -13,7 +13,7 @@ export default class ShipInfo extends Component {
   renderCharName() {
     const { id, names, charID } = this.props
     const charName = names.chars[charID] || ''
-    if (id) return <span>{charName}</span>
+    if (id) return charName
     return (
       <a
         className={styles.unknownShip}
@@ -46,7 +46,7 @@ export default class ShipInfo extends Component {
         }
         <span className={styles.ship}>
           <div className={styles.char}>
-            <div>
+            <div className={styles.charName}>
               {this.renderCharName()}
               {podKillID &&
                 <a

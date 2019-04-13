@@ -17,11 +17,16 @@ export const formatSum = sum => {
 
 export const formatDmg = dmg => {
   if (dmg === 0 || !dmg) {
-    return ''
+    return '0'
   }
   const result = numeral(dmg)
   if (dmg >= oneMillion) {
-    return result.format('0.00a')
+    return (
+      <b>{result.format('0.00a')}</b>
+    )
+  }
+  if (dmg < 10000) {
+    return dmg // result.format('0a')
   }
   return result.format('0.0a')
 }
