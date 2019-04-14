@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux'
-import br from './br'
+import related from './related'
+import battlereport from './battlereport'
 
 const reducers = combineReducers({
-  br,
+  related,
+  battlereport,
 })
 
 export default reducers

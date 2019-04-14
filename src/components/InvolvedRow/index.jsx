@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import cn from 'classnames'
 import numeral from 'numeral'
 import { formatSum, formatDmg } from 'utils/FormatUtils'
-import { AllyIcon, ShipInfo, InvolvedShipInfo } from 'components'
+import { AllyIcon, ShipInfo } from 'components'
+import InvolvedShipInfo from 'components/InvolvedShipInfo'
 import styles from './styles.scss'
 
 
