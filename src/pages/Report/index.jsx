@@ -163,10 +163,10 @@ class RelatedReport extends Component {
 }
 
 const mapDispatchToProps = {}
-const mapStateToProps = ({ br }) => ({
-  ...br,
-  names: br.involvedNames,
-  systemStats: br.systemStats,
+const mapStateToProps = ({ related }) => ({
+  ...related,
+  names: related.involvedNames,
+  systemStats: related.systemStats,
 })
 
 const ConnectedReport = connect(mapStateToProps, mapDispatchToProps)(RelatedReport)

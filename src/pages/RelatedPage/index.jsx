@@ -215,12 +215,12 @@ class RelatedPage extends Component {
 }
 
 const mapDispatchToProps = { getRelatedData, getRelatedDataStub, parseData }
-const mapStateToProps = ({ br }) => ({
-  isStub: br.isStub,
-  data: br.kmData || [],
-  teams: br.teams,
-  names: br.involvedNames,
-  kmLoading: br.kmLoading,
+const mapStateToProps = ({ related }) => ({
+  isStub: related.isStub,
+  data: related.kmData || [],
+  teams: related.teams,
+  names: related.involvedNames,
+  kmLoading: related.kmLoading,
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(RelatedPage)

@@ -34,7 +34,7 @@ export const moveToTeam = (ixFrom, ixTo, member) => dispatch => {
 }
 
 export const getNames = () => (dispatch, getState) => {
-  const { br: { involvedIds } } = getState()
+  const { related: { involvedIds } } = getState()
   const ids = NamesUtils.plainIds(involvedIds)
   const cuttedIds = ids.slice(0, 999)
   let cuttedIdsSec = ids.slice(1000)
