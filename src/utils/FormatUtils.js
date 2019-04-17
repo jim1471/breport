@@ -30,3 +30,37 @@ export const formatDmg = dmg => {
   }
   return result.format('0.0a')
 }
+
+const getMinutes = minutes => {
+  if (minutes < 10) return `0${minutes}`
+  return minutes
+}
+
+export const getLocalTime = date => {
+  let result = ''
+  result += `${date.getHours()}`
+  result += `:${getMinutes(date.getMinutes())}`
+  return result
+}
+
+export const getUTCTime = date => {
+  let result = ''
+  result += `${date.getUTCHours()}`
+  result += `:${getMinutes(date.getUTCMinutes())}`
+  return result
+}
+
+export const localStorageSpace = () => {
+  let data = ''
+  console.log('Current local storage: ')
+  for (const key in window.localStorage) { // eslint-disable-line
+    if (window.localStorage.hasOwnProperty(key)) { // eslint-disable-line
+      data += window.localStorage[key]
+      const size = ((window.localStorage[key].length * 16) / (8 * 1024)).toFixed(2)
+      console.log(`  ${key}: ${size} KB`)
+    }
+  }
+  const totalSize = ((data.length * 16) / (8 * 1024)).toFixed(2)
+  console.log(data ? `Total space used: ${totalSize} KB` : 'Empty (0 KB)')
+  console.log(data ? `Approx. space remaining: ${5120 - totalSize} KB` : '5 MB')
+}

@@ -71,23 +71,6 @@ class RelatedPage extends Component {
     })
   }
 
-  handleGetBR = () => {
-    const { query: { br } } = this.props.location
-    if (!br || this.state.saving) return
-    console.log('br', br)
-    this.setState({ saving: true }, async () => {
-      RelatedService.getComposition(br)
-        .then(({ data }) => {
-          this.setState({ saving: false })
-          console.log('data', data)
-        })
-        .catch(err => {
-          this.setState({ saving: false })
-          console.error('err:', err)
-        })
-    })
-  }
-
   renderError(error) {
     if (error === 'processing') {
       return (
@@ -163,13 +146,6 @@ class RelatedPage extends Component {
                       loading={isLoading || saving}
                       onClick={this.handleSaveBR}
                       text='Save Composition'
-                      small
-                    />
-                    &nbsp;
-                    <Button
-                      loading={isLoading || saving}
-                      onClick={this.handleGetBR}
-                      text='get BR'
                       small
                     />
                   </Fragment>
