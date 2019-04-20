@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Spinner } from 'components'
-import { getLocalTime, getUTCTime, localStorageSpace } from 'utils/FormatUtils'
+import { getLocalTime, getUTCTime } from 'utils/FormatUtils'
+import NamesUtils from 'utils/NamesUtils'
 import Team from '../Team/Team'
 import TeamStats from '../Team/TeamStats'
 import TeamGrouped from '../Team/TeamGrouped'
@@ -13,7 +14,7 @@ const SYSTEMS_DATA = require('utils/data/systems.json')
 class RelatedReport extends Component {
 
   componentDidMount() {
-    localStorageSpace()
+    NamesUtils.printLocalStorageSpace()
   }
 
   renderSystemAndTime() {
@@ -129,9 +130,9 @@ class RelatedReport extends Component {
 }
 
 const mapDispatchToProps = {}
-const mapStateToProps = ({ related }) => ({
+const mapStateToProps = ({ related, names }) => ({
   ...related,
-  names: related.involvedNames,
+  names: names.involvedNames,
   systemStats: related.systemStats,
 })
 

@@ -1,13 +1,19 @@
-// TODO: investigate probable bug in production
-// const initialNames = {
-//   allys: {},
-//   corps: {},
-//   chars: {},
-//   types: {},
-//   systems: {},
-// }
-
 class NamesUtils {
+
+  printLocalStorageSpace(titleLog = 'Current local storage:') {
+    let data = ''
+    console.log(titleLog)
+    for (const key in window.localStorage) { // eslint-disable-line
+      if (window.localStorage.hasOwnProperty(key)) { // eslint-disable-line
+        data += window.localStorage[key]
+        const size = ((window.localStorage[key].length * 16) / (8 * 1024)).toFixed(2)
+        console.log(`  ${key}: ${size} KB`)
+      }
+    }
+    const totalSize = ((data.length * 16) / (8 * 1024)).toFixed(2)
+    console.log(data ? `Total space used: ${totalSize} KB` : 'Empty (0 KB)')
+    console.log(data ? `Approx. space remaining: ${5120 - totalSize} KB` : '5 MB')
+  }
 
   extractUnknownNames(data, alreadyExistNames) {
     const all = {

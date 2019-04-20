@@ -1,38 +1,31 @@
 import RelatedService from 'api/RelatedService'
+import { getNames } from 'reducers/names'
 
-
-const SAVE_BR_START = 'SAVE_BR_START'
-const SAVE_BR_SUCCESS = 'SAVE_BR_SUCCESS'
-const SAVE_BR_ERROR = 'SAVE_BR_ERROR'
+const SAVE_BR = 'SAVE_BR'
 const GET_BR = 'GET_BR'
 
 
-export const saveBR = (teams, systemID, time) => dispatch => {
-  dispatch({ type: SAVE_BR_START })
-  RelatedService.saveComposition(teams, `${systemID}/${time}`)
-    .then(({ data }) => {
-      console.log('data', data)
-      if (data && data.id) {
-        dispatch({ type: SAVE_BR_SUCCESS, brID: data.id })
-      }
-    })
-    .catch(error => {
-      dispatch({ type: SAVE_BR_ERROR, error })
-      console.error('error:', error)
-    })
-}
-
-export const getBR = brID => ({
+export const saveBR = (teams, systemID, time) => ({
   type: GET_BR,
-  apiCall: () => RelatedService.getComposition(brID),
+  apiCall: () => RelatedService.saveComposition(teams, systemID, time),
 })
+
+export const getBR = brID => dispatch => {
+  dispatch({
+    type: GET_BR,
+    apiCall: () => RelatedService.getComposition(brID),
+  }).then(data => {
+    if (data.status === 'SUCCESS') {
+      const killmailsData = data.relateds.reduce((allKms, related) => allKms.concat(related.kms), [])
+      dispatch(getNames(killmailsData))
+    }
+  })
+}
 
 
 const initialState = {
-  brID: null,
-  br: null,
-  data: null,
-  // names: null,
+  br: {},
+  saving: {},
 }
 
 
@@ -40,36 +33,20 @@ export default (state = initialState, action) => {
 
   switch (action.type) {
 
-    case SAVE_BR_START: {
+    case SAVE_BR:
       return {
         ...state,
-        isLoading: true,
-        error: null,
+        saving: {
+          ...action.result,
+        },
       }
-    }
-
-    case SAVE_BR_SUCCESS: {
-      return {
-        ...state,
-        isLoading: false,
-        brID: action.brID,
-      }
-    }
-
-    case SAVE_BR_ERROR: {
-      return {
-        ...state,
-        isLoading: false,
-        brID: null,
-        error: action.error,
-      }
-    }
 
     case GET_BR:
       return {
         ...state,
         br: {
-          ...action.result,
+          // success: !!action.data.relateds,
+          ...action.data,
         },
       }
 
