@@ -1,26 +1,13 @@
 import React, { Component } from 'react'
 import cn from 'classnames'
-import numeral from 'numeral'
+import { formatSum, formatDmg, dmgPercent, cntWhored } from 'utils/FormatUtils'
 import styles from './styles.scss'
 
 
-const fmtValue = losses => {
+const fmtLosses = losses => {
   const lossesValue = losses && losses.reduce((sum, loss) => sum + loss.lossValue, 0)
-  return numeral(lossesValue).format('0.0a')
+  return formatSum(lossesValue)
 }
-const rawDmg = dmg => {
-  let format = '0a'
-  if (dmg > 1000000) {
-    format = '0.00a'
-  }
-  return dmg === 0 ? '' : `${numeral(dmg).format(format)}`
-}
-const dmgPercent = dmg => (
-  dmg === 0 ? '' : `(${numeral(dmg).format('0,0.0%')})`
-)
-const cntWhored = cnt => (
-  cnt === 0 || !cnt ? '' : ` [${cnt}]`
-)
 
 export default class InvolvedShipInfo extends Component {
   renderIcon() {
@@ -50,9 +37,11 @@ export default class InvolvedShipInfo extends Component {
 
   render() {
     const { shipID, ship, names, totalDmg } = this.props
-    const dmg = ship.dmg ? `dmg: ${rawDmg(ship.dmg)}` : ''
+    const dmg = ship.dmg ? `dmg: ${formatDmg(ship.dmg)}` : ''
     const dmgPrc = dmgPercent((ship.dmg || 0) / totalDmg)
     const cnt = ship.cnt ? cntWhored(ship.cnt) : ''
+
+
     return (
       <div className={cn(styles.root, ship.loss && styles.destroyed)}>
         <div className={styles.iconCont}>
@@ -64,9 +53,12 @@ export default class InvolvedShipInfo extends Component {
             <span className={styles.shipName}>
               {names.types[shipID]}
             </span>
-            <div>
-              {ship.loss ? `${ship.loss} lost, ${fmtValue(ship.losses)}` : ''}
-            </div>
+            {ship.loss &&
+              <div>
+                <span>{`${ship.loss} lost, `}</span>
+                {fmtLosses(ship.losses)}
+              </div>
+            }
           </div>
 
           <div className={styles.info}>

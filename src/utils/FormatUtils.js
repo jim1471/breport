@@ -6,6 +6,9 @@ const oneBillion = 1000000000
 const oneMillion = 1000000
 
 export const formatSum = sum => {
+  if (sum === 0 || !sum) {
+    return '0'
+  }
   const result = numeral(sum)
   if (sum >= oneBillion) {
     return (
@@ -30,6 +33,26 @@ export const formatDmg = dmg => {
   }
   return result.format('0.0a')
 }
+
+export const dmgPercent = dmg => (
+  dmg === 0 || !dmg
+    ? ''
+    : `(${numeral(dmg).format('0,0.0%')})`
+)
+
+export const dmgPercentZero = dmg => (
+  dmg === 0 || !dmg
+    ? '(0%)'
+    : `(${numeral(dmg).format('0,0.0%')})`
+)
+
+export const cntWhored = cnt => (
+  cnt === 0 || !cnt ? '' : ` [${cnt}]`
+)
+
+export const cntWhoredZero = cnt => (
+  cnt === 0 || !cnt ? '[0]' : ` [${cnt}]`
+)
 
 const getMinutes = minutes => {
   if (minutes < 10) return `0${minutes}`

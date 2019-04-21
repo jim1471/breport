@@ -222,6 +222,7 @@ class ParseUtils {
         }
         return totalSum
       }, 0)
+      charStats.allLossesValue = allLossesValue
 
       // 1. only POD[s]
       if (withoutPods.length === 0) {

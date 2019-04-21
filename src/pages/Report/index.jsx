@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Spinner } from 'components'
 import { getLocalTime, getUTCTime } from 'utils/FormatUtils'
-import NamesUtils from 'utils/NamesUtils'
 import Team from '../Team/Team'
 import TeamStats from '../Team/TeamStats'
 import TeamGrouped from '../Team/TeamGrouped'
@@ -12,10 +11,6 @@ const SYSTEMS_DATA = require('utils/data/systems.json')
 
 
 class RelatedReport extends Component {
-
-  componentDidMount() {
-    NamesUtils.printLocalStorageSpace()
-  }
 
   renderSystemAndTime() {
     const { systemStats = {}, routerParams } = this.props

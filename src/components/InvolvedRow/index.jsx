@@ -1,18 +1,9 @@
 import React, { Component } from 'react'
 import cn from 'classnames'
-import numeral from 'numeral'
-import { formatSum, formatDmg } from 'utils/FormatUtils'
+import { formatSum, formatDmg, dmgPercent, cntWhored } from 'utils/FormatUtils'
 import { AllyIcon, ShipInfo } from 'components'
 import InvolvedShipInfo from 'components/InvolvedShipInfo'
 import styles from './styles.scss'
-
-
-const dmgPercent = dmg => (
-  dmg === 0 || !dmg ? '(0%)' : `(${numeral(dmg).format('0,0.0%')})`
-)
-const cntWhored = cnt => (
-  cnt === 0 || !cnt ? '[0]' : ` [${cnt}]`
-)
 
 
 export default class InvolvedRow extends Component {

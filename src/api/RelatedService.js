@@ -1,8 +1,8 @@
 import BaseAPI from './BaseAPI'
 
 // const base = 'http://localhost:4000'
-const base = 'http://192.168.0.13:4000'
-// const base = process.env.API_SERVER
+// const base = 'http://192.168.0.13:4000'
+const base = process.env.API_SERVER
 
 
 class RelatedService extends BaseAPI {
