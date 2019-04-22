@@ -1,6 +1,7 @@
 import BaseAPI from './BaseAPI'
 
 // const base = 'http://localhost:4000'
+// const base = 'http://192.168.0.13:4000'
 const base = process.env.API_SERVER
 
 
@@ -17,12 +18,12 @@ class RelatedService extends BaseAPI {
     })
   }
 
-  saveComposition(teams, related) {
+  saveComposition(teams, systemID, time) {
     return this.call({
       method: 'post',
       url: `${base}/api/v1/composition/add`,
       data: {
-        related,
+        related: `${systemID}/${time}`,
         teams,
       },
     })

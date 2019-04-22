@@ -24,10 +24,9 @@ const apiCallMiddleware = ({ dispatch, getState }) => next => action => {
   dispatch({ type, subtype: requestType, payload: {}, params }) // isLoading
 
   return apiCall()
-    .then(response => {
-      const { data } = response
+    .then(({ data }) => {
       if (data.status === 'SUCCESS') {
-        dispatch({ type, subtype: successType, payload: { result: data.result }, params })
+        dispatch({ type, subtype: successType, payload: { data }, params })
 
       } else if (data.status === 'ERROR') {
         console.error(type, 'application error:', data.applicationError) // eslint-disable-line
@@ -39,8 +38,13 @@ const apiCallMiddleware = ({ dispatch, getState }) => next => action => {
       } else {
         dispatch({ type, subtype: failureType, payload: { error: `UNKNOWN STATUS: ${data.status}` }, params })
       }
+
+      return data
     })
-    .catch(error => dispatch({ type, subtype: failureType, payload: { error }, params }))
+    .catch(error => {
+      dispatch({ type, subtype: failureType, payload: { error }, params })
+      return error
+    })
 }
 
 export default apiCallMiddleware

@@ -62,7 +62,7 @@ export default class ShipInfo extends Component {
             <span>
               {inv &&
                 <span className={styles.moreShipsBtn} onClick={onToggleExpanded}>
-                  {`(+ ${Object.keys(inv.ships).length})`}
+                  {`(${Object.keys(inv.ships).length} ships)`}
                 </span>
               }
               {lossValue &&

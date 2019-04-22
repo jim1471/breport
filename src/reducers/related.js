@@ -1,9 +1,8 @@
-import isEmpty from 'lodash/isEmpty'
 import RelatedService from 'api/RelatedService'
-import EsiService from 'api/EsiService'
 import ParseUtils from 'utils/ParseUtils'
-import NamesUtils from 'utils/NamesUtils'
 import { moveMemberToTeam } from 'utils/TeamsUtils'
+import { getNames } from 'reducers/names'
+
 
 const FETCH_INTERVAL = 4000
 
@@ -16,119 +15,80 @@ if (process.env.NODE_ENV === 'development' && isStub) {
 
 const REPARSE_TEAMS = 'REPARSE_TEAMS'
 const GET_RELATED_DATA_STARTED = 'GET_RELATED_DATA_STARTED'
-const GET_RELATED_DATA_FINISHED = 'GET_RELATED_DATA_FINISHED'
-const GET_RELATED_DATA = 'GET_RELATED_DATA'
+const GET_RELATED_DATA_ERROR = 'GET_RELATED_DATA_ERROR'
+const GET_RELATED_DATA_SUCCESS = 'GET_RELATED_DATA_SUCCESS'
 const PARSE_DATA_STARTED = 'PARSE_DATA_STARTED'
 const PARSE_DATA = 'PARSE_DATA'
-const PARSE_NAMES_STARTED = 'PARSE_NAMES_STARTED'
-const PARSE_NAMES = 'PARSE_NAMES'
-const PARSE_NAMES_FAILED = 'PARSE_NAMES_FAILED'
 const MOVE_TO_TEAM = 'MOVE_TO_TEAM'
-
-export const moveToTeam = (ixFrom, ixTo, member) => dispatch => {
-  dispatch({
-    type: MOVE_TO_TEAM,
-    payload: { ixFrom, ixTo, member },
-  })
-  dispatch({ type: REPARSE_TEAMS })
-}
-
-export const getNames = () => (dispatch, getState) => {
-  const { related: { involvedIds } } = getState()
-  const ids = NamesUtils.plainIds(involvedIds)
-  const cuttedIds = ids.slice(0, 999)
-  let cuttedIdsSec = ids.slice(1000)
-  let cuttedIdsThird = null
-  let pages = cuttedIdsSec && cuttedIdsSec.length > 0 ? 2 : 1
-  if (cuttedIds.length === 0) {
-    dispatch({ type: PARSE_NAMES_STARTED, pages: 0 })
-    console.log('no names to fetch. cache used.')
-    setTimeout(() => dispatch({ type: PARSE_NAMES, payload: { data: {} } }), 100)
-    return
-  }
-  if (cuttedIdsSec.length > 1000) {
-    console.error('sec ids size', cuttedIdsSec.length)
-    cuttedIdsThird = cuttedIdsSec.slice(1000)
-    cuttedIdsSec = cuttedIdsSec.slice(0, 999)
-    pages = 3
-  }
-  // TODO: more than 3000? hm...
-
-  dispatch({ type: PARSE_NAMES_STARTED, pages })
-  EsiService.fetchNames(cuttedIds)
-    .then(({ data }) => dispatch({ type: PARSE_NAMES, payload: { data } }))
-    .catch(err => dispatch({ type: PARSE_NAMES_FAILED, payload: { err } }))
-  if (pages === 2) {
-    EsiService.fetchNames(cuttedIdsSec)
-      .then(({ data }) => dispatch({ type: PARSE_NAMES, payload: { data } }))
-      .catch(err => dispatch({ type: PARSE_NAMES_FAILED, payload: { err } }))
-  }
-  if (pages === 3 && cuttedIdsThird) {
-    EsiService.fetchNames(cuttedIdsThird)
-      .then(({ data }) => dispatch({ type: PARSE_NAMES, payload: { data } }))
-      .catch(err => dispatch({ type: PARSE_NAMES_FAILED, payload: { err } }))
-  }
-}
 
 export const getRelatedDataStub = () => dispatch => {
   dispatch({ type: GET_RELATED_DATA_STARTED })
   setTimeout(
     () => {
-      dispatch({ type: GET_RELATED_DATA, payload: { data: stubData } })
-      dispatch(getNames())
+      dispatch({ type: GET_RELATED_DATA_SUCCESS, payload: { data: stubData } })
+      const killmailsData = stubData.kms
+      dispatch(getNames(killmailsData))
       console.log(`received kms: ${stubData.kms.length} count`)
     },
     200,
   )
 }
 
-export const getRelatedData = (systemID, time) => dispatch => {
-  dispatch({ type: GET_RELATED_DATA_STARTED })
+export const getRelatedData = (systemID, time, stillProcessing) => dispatch => {
+  dispatch({ type: GET_RELATED_DATA_STARTED, stillProcessing })
   return RelatedService.fetchRelatedData(systemID, time)
     .then(({ data }) => {
       if (data.result === 'processing') {
         console.log('related still processing.........')
-        setTimeout(() => dispatch(getRelatedData(systemID, time)), FETCH_INTERVAL)
-        dispatch({ type: GET_RELATED_DATA_FINISHED })
-        dispatch({ type: PARSE_NAMES_FAILED, payload: { err: 'processing' } })
+        setTimeout(() => dispatch(getRelatedData(systemID, time, true)), FETCH_INTERVAL)
+        // dispatch({ type: GET_RELATED_DATA_ERROR })
       } else if (data.result === 'success') {
-        console.log('related data:', { result: data.result })
-        dispatch({ type: GET_RELATED_DATA, payload: { data } })
-        dispatch(getNames())
+        if (process.env.NODE_ENV === 'development') {
+          console.log('related data:', data)
+        }
+        dispatch({ type: GET_RELATED_DATA_SUCCESS, payload: { data } })
+        const killmailsData = data.kms
+        dispatch(getNames(killmailsData))
       } else {
-        console.log('response:', { result: data.result }, data)
-        dispatch({ type: GET_RELATED_DATA_FINISHED })
+        const error = `unknown response: ${data.result}`
+        console.error(error, data)
+        dispatch({ type: GET_RELATED_DATA_ERROR, error })
       }
     })
-    .catch(err => {
-      console.log('error:', err)
-      dispatch({ type: GET_RELATED_DATA_FINISHED })
-      // TODO: handle Zkillboard API errors
-      dispatch({ type: PARSE_NAMES_FAILED, payload: { err } })
+    .catch(error => {
+      console.log('error:', error)
+      dispatch({ type: GET_RELATED_DATA_ERROR, error })
     })
 }
 
-export const parseData = () => dispatch => {
+export const parseData = () => (dispatch, getState) => {
+  const { names: { involvedNames } } = getState()
   dispatch(({ type: PARSE_DATA_STARTED }))
-  setTimeout(() => dispatch(({ type: PARSE_DATA })), 200)
+  setTimeout(() => dispatch(({ type: PARSE_DATA, involvedNames })), 200)
 }
 
-// const savedNames = {
-//   allys: {},
-//   corps: {},
-//   chars: {},
-//   types: {},
-//   systems: {},
-// }
-const savedNames = JSON.parse(localStorage.getItem('names')) || {}
+export const moveToTeam = (ixFrom, ixTo, member) => (dispatch, getState) => {
+  const { names: { involvedNames } } = getState()
+  dispatch({ type: MOVE_TO_TEAM, payload: { ixFrom, ixTo, member } })
+  dispatch({ type: REPARSE_TEAMS, involvedNames })
+}
+
 
 const initialState = {
   isStub,
+  kmLoading: false,
+  stillProcessing: false,
+  error: '',
   kmData: null,
-  involvedNames: {
-    ...savedNames,
-    isLoading: true,
-  },
+  datetime: '',
+  systemID: '',
+  teams: null,
+  teamLossesA: null,
+  teamLossesB: null,
+  teamInvolvedA: null,
+  teamInvolvedB: null,
+  teamShipsA: null,
+  teamShipsB: null,
 }
 
 
@@ -138,116 +98,54 @@ export default (state = initialState, action) => {
 
     case GET_RELATED_DATA_STARTED: {
       return {
-        ...state,
-        kmData: null,
+        ...initialState,
         kmLoading: true,
-        involvedNames: {
-          ...state.involvedNames,
-          error: null,
-        },
+        stillProcessing: action.stillProcessing,
       }
     }
 
-    case GET_RELATED_DATA_FINISHED: {
+    case GET_RELATED_DATA_ERROR: {
       return {
         ...state,
         kmLoading: false,
+        stillProcessing: false,
+        error: action.error,
       }
     }
 
-    case GET_RELATED_DATA: {
+    case GET_RELATED_DATA_SUCCESS: {
       const { data } = action.payload
-      const unknownIds = NamesUtils.extractUnknownNames(data.kms, state.involvedNames)
-      // console.warn('unknownIds:', NamesUtils.plainIds(unknownIds).length)
       return {
         ...state,
         kmLoading: false,
+        stillProcessing: false,
+        error: '',
         kmData: data.kms,
         datetime: data.datetime,
         systemID: data.systemID,
-        involvedIds: unknownIds,
-      }
-    }
-
-    case PARSE_NAMES_STARTED: {
-      return {
-        ...state,
-        involvedNames: {
-          ...state.involvedNames,
-          error: null,
-          pages: action.pages,
-          isLoading: true,
-        },
-      }
-    }
-
-    case PARSE_NAMES_FAILED: {
-      const { err } = action.payload
-      return {
-        ...state,
-        involvedNames: {
-          ...state.involvedNames,
-          error: err,
-          pages: 0,
-          isLoading: false,
-        },
-      }
-    }
-
-    case PARSE_NAMES: {
-      const { data = {} } = action.payload
-      if (isEmpty(data) || data.error) {
-        return {
-          ...state,
-          involvedNames: {
-            ...state.involvedNames,
-            error: data.error,
-            pages: 0,
-            isLoading: false,
-          },
-        }
-      }
-
-      const remainingPages = state.involvedNames.pages - 1
-      const involvedNames = {
-        ...NamesUtils.parseNames(data, state.involvedNames),
-        pages: remainingPages,
-        isLoading: remainingPages > 0,
-      }
-      if (remainingPages === 0) {
-        // console.warn('save to localStorage', NamesUtils.plainIds(involvedNames).length, 'names')
-        localStorage.setItem('names', JSON.stringify(involvedNames))
-      }
-      return {
-        ...state,
-        involvedNames,
       }
     }
 
     case PARSE_DATA_STARTED: {
       return {
-        ...state,
-        teams: null,
-        teamLossesA: null,
-        teamLossesB: null,
-        teamInvolvedA: null,
-        teamInvolvedB: null,
-        teamShipsA: null,
-        teamShipsB: null,
+        ...initialState,
+        kmData: state.kmData,
+        datetime: state.datetime,
+        systemID: state.systemID,
       }
     }
 
     case PARSE_DATA: {
       return {
         ...state,
-        ...ParseUtils.mainParse(state.kmData, state.involvedNames),
+        ...ParseUtils.mainParse(state.kmData, action.involvedNames),
       }
     }
 
     case REPARSE_TEAMS: {
       return {
         ...state,
-        ...ParseUtils.parseTeams(state.teams, state.kmData, state.involvedNames),
+        ...ParseUtils.parseTeams(state.teams, state.kmData, action.involvedNames),
       }
     }
 

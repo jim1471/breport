@@ -71,23 +71,6 @@ class RelatedPage extends Component {
     })
   }
 
-  handleGetBR = () => {
-    const { query: { br } } = this.props.location
-    if (!br || this.state.saving) return
-    console.log('br', br)
-    this.setState({ saving: true }, async () => {
-      RelatedService.getComposition(br)
-        .then(({ data }) => {
-          this.setState({ saving: false })
-          console.log('data', data)
-        })
-        .catch(err => {
-          this.setState({ saving: false })
-          console.error('err:', err)
-        })
-    })
-  }
-
   renderError(error) {
     if (error === 'processing') {
       return (
@@ -111,12 +94,12 @@ class RelatedPage extends Component {
 
   renderContent() {
     const { reportType, saving } = this.state
-    const { data = [], teams, names, router, kmLoading } = this.props
-    const isError = names.error
-    const isLoading = !names || names.isLoading || kmLoading
+    const { error, stillProcessing, data = [], teams, names, router, kmLoading } = this.props
+    const isError = error || names.error
+    const isLoading = names.isLoading || kmLoading
 
     let header = ''
-    if (isError === 'processing') {
+    if (stillProcessing || isError === 'processing') {
       header = 'Related data: processing...'
     } else if (isError) {
       header = 'Related data: failed to fetch.'
@@ -165,13 +148,6 @@ class RelatedPage extends Component {
                       text='Save Composition'
                       small
                     />
-                    &nbsp;
-                    <Button
-                      loading={isLoading || saving}
-                      onClick={this.handleGetBR}
-                      text='get BR'
-                      small
-                    />
                   </Fragment>
                 }
               </div>
@@ -190,7 +166,7 @@ class RelatedPage extends Component {
           </div>
           <div className={styles.separator} />
           {isError &&
-            this.renderError(names.error)
+            this.renderError(error || names.error)
           }
         </div>
         {!isError &&
@@ -215,12 +191,14 @@ class RelatedPage extends Component {
 }
 
 const mapDispatchToProps = { getRelatedData, getRelatedDataStub, parseData }
-const mapStateToProps = ({ related }) => ({
+const mapStateToProps = ({ related, names }) => ({
   isStub: related.isStub,
+  error: related.error,
   data: related.kmData || [],
   teams: related.teams,
-  names: related.involvedNames,
+  names: names.involvedNames,
   kmLoading: related.kmLoading,
+  stillProcessing: related.stillProcessing,
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(RelatedPage)
