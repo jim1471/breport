@@ -7,7 +7,7 @@ import { Spinner } from 'components'
 import Report from 'pages/Report'
 import styles from './styles.scss'
 
-// http://localhost:3200/br/5cc501e9fb679941931e38d1
+// http://localhost:3200/br/5cc513267996865911654dca
 class BattleReportPage extends Component {
 
   constructor(props) {
@@ -46,7 +46,6 @@ class BattleReportPage extends Component {
 
   render() {
     const { status, br, teams, teamsLosses, router } = this.props
-    const brData = (br.relateds || [])[0]
     return (
       <div className={styles.root}>
 

@@ -38,6 +38,7 @@
 
   .title {
     .systemName {
+      margin-left: 5px;
       white-space: nowrap;
       @media (max-width: 360px) { font-size: 16px; }
     }

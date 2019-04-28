@@ -12,6 +12,11 @@ const SYSTEMS_DATA = require('utils/data/systems.json')
 
 class RelatedReport extends Component {
 
+  getDotlanLink(region, systemName) {
+    const encodedRegion = region.replace(' ', '_')
+    return `http://evemaps.dotlan.net/map/${encodedRegion}/${systemName}`
+  }
+
   renderSystemAndTime() {
     const { systemStats = {}, routerParams } = this.props
     const { systemID, fromTime, toTime } = systemStats
@@ -28,14 +33,14 @@ class RelatedReport extends Component {
         <div className={styles.title}>
           <h1>
             <small>Battle Report:</small>
-            <span className={styles.systemName}>{` ${systemName} (${region}) `}</span>
+            <span className={styles.systemName}>
+              <a href={this.getDotlanLink(region, systemName)} target='_blank' rel='noopener noreferrer'>
+                {`${systemName}`}
+              </a>
+              {` (${region}) `}
+            </span>
             <small className={styles.zkill}>
-              <a
-                href={`http://zkillboard.com/related/${systemID}/${routerParams.time}/`}
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-
+              <a href={`http://zkillboard.com/related/${systemID}/${routerParams.time}/`} target='_blank' rel='noopener noreferrer'>
                 {` zkillboard`}
               </a>
             </small>
