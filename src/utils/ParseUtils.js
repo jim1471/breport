@@ -168,7 +168,7 @@ class ParseUtils {
     return result
   }
 
-  aggregateShipsExt(involved, losses, names) {
+  aggregateShips(involved, losses, names) {
     let ships = []
     const unprocessedLosses = losses
     ships = Object.keys(involved).map(charIDKey => {
@@ -435,10 +435,11 @@ class ParseUtils {
       console.time(`members: ${ix}`)
       const involvedMembers = this.getInvolved(kills, otherTeams, selfLosses, names)
       console.timeEnd(`members: ${ix}`)
+
       console.time(`ships: ${ix}`)
-      // const involvedByShips = this.aggregateShips(involvedMembers, selfLosses, names)
-      const involvedByShips = this.aggregateShipsExt(involvedMembers, selfLosses, names)
+      const involvedByShips = this.aggregateShips(involvedMembers, selfLosses, names)
       console.timeEnd(`ships: ${ix}`)
+
       teamsLosses.push(selfLosses)
       teamsInvolved.push(involvedMembers)
       teamsShips.push(involvedByShips)

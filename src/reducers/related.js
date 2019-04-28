@@ -20,6 +20,7 @@ const GET_RELATED_DATA_SUCCESS = 'GET_RELATED_DATA_SUCCESS'
 const PARSE_DATA_STARTED = 'PARSE_DATA_STARTED'
 const PARSE_DATA = 'PARSE_DATA'
 const MOVE_TO_TEAM = 'MOVE_TO_TEAM'
+const INITIALIZE_BR_DATA = 'INITIALIZE_BR_DATA'
 
 export const getRelatedDataStub = () => dispatch => {
   dispatch({ type: GET_RELATED_DATA_STARTED })
@@ -73,6 +74,15 @@ export const moveToTeam = (ixFrom, ixTo, member) => (dispatch, getState) => {
   dispatch({ type: REPARSE_TEAMS, involvedNames })
 }
 
+export const initializeBrData = initialBrData => dispatch => {
+  dispatch({ type: INITIALIZE_BR_DATA, initialBrData })
+}
+
+export const brParseTeams = () => (dispatch, getState) => {
+  const { names: { involvedNames } } = getState()
+  dispatch({ type: REPARSE_TEAMS, involvedNames })
+}
+
 
 const initialState = {
   isStub,
@@ -80,15 +90,14 @@ const initialState = {
   stillProcessing: false,
   error: '',
   kmData: null,
+  teams: null,
   datetime: '',
   systemID: '',
-  teams: null,
-  teamLossesA: null,
-  teamLossesB: null,
-  teamInvolvedA: null,
-  teamInvolvedB: null,
-  teamShipsA: null,
-  teamShipsB: null,
+
+  teamsLosses: null,
+  teamsInvolved: null,
+  teamsShips: null,
+  teamsStats: null,
 }
 
 
@@ -142,6 +151,15 @@ export default (state = initialState, action) => {
       }
     }
 
+    case MOVE_TO_TEAM: {
+      return {
+        ...state,
+        teams: [
+          ...moveMemberToTeam(state.teams, action.payload),
+        ],
+      }
+    }
+
     case REPARSE_TEAMS: {
       return {
         ...state,
@@ -149,12 +167,15 @@ export default (state = initialState, action) => {
       }
     }
 
-    case MOVE_TO_TEAM: {
+    case INITIALIZE_BR_DATA: {
+      const data = action.initialBrData
       return {
-        ...state,
-        teams: [
-          ...moveMemberToTeam(state.teams, action.payload),
-        ],
+        ...initialState,
+        kmData: data.kmData,
+        teams: data.teams,
+        // TODO: multiple relateds systems / timings
+        datetime: data.datetime,
+        systemID: data.systemID,
       }
     }
 

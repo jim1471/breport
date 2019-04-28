@@ -55,12 +55,12 @@ class RelatedPage extends Component {
     console.log('teams:', teams, rest.location.pathname)
 
     this.setState({ saving: true }, async () => {
-      RelatedService.saveComposition(teams, `${systemID}/${time}`)
+      RelatedService.saveComposition(teams, systemID, time)
         .then(({ data }) => {
           this.setState({ saving: false })
           browserHistory.push({
             pathname: rest.location.pathname,
-            search: `?br=${data.id}`,
+            search: `?br=${data.result.id}`,
           })
           console.log('data', data)
         })

@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { browserHistory } from 'react-router'
 import { connect } from 'react-redux'
-import { getBR } from 'reducers/battlereport'
-import { getRelatedData, getRelatedDataStub, parseData } from 'reducers/related'
+import { getBR, setStatus } from 'reducers/battlereport'
+import { brParseTeams, getRelatedData, getRelatedDataStub, parseData } from 'reducers/related'
 import { Spinner } from 'components'
 import Report from 'pages/Report'
 import styles from './styles.scss'
 
-// /br/5cb7a1bca236fcd1190f23e0
+// http://localhost:3200/br/5cc501e9fb679941931e38d1
 class BattleReportPage extends Component {
 
   constructor(props) {
@@ -29,7 +29,7 @@ class BattleReportPage extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { br } = this.props
+    const { br, involvedNames } = this.props
     if (prevProps.br !== br && !br.isLoading && !br.error) {
       const brData = (br.relateds || [])[0]
       if (brData) {
@@ -38,21 +38,29 @@ class BattleReportPage extends Component {
         console.log('br:', br)
       }
     }
+    if (prevProps.involvedNames.isLoading && !involvedNames.isLoading) {
+      this.props.setStatus('names fetched')
+      this.props.brParseTeams()
+    }
   }
 
   render() {
-    const { br, router } = this.props
+    const { status, br, teams, teamsLosses, router } = this.props
     const brData = (br.relateds || [])[0]
     return (
       <div className={styles.root}>
-        BattleReportPage
+
+        <div>BattleReportPage</div>
+        {status &&
+          <div>Status: <span>{status}</span></div>
+        }
         <hr />
         {br.isLoading &&
           <Spinner />
         }
-        {false && brData &&
+        {teams && teamsLosses &&
           <Report
-            teams={brData.teams}
+            teams={teams}
             isLoading={false}
             reportType='plane'
             routerParams={router.params}
@@ -64,13 +72,13 @@ class BattleReportPage extends Component {
 
 }
 
-const mapDispatchToProps = { getBR, getRelatedData, getRelatedDataStub, parseData }
-const mapStateToProps = ({ related, battlereport }) => ({
+const mapDispatchToProps = { getBR, setStatus, brParseTeams, getRelatedData, getRelatedDataStub, parseData }
+const mapStateToProps = ({ names, related, battlereport }) => ({
+  involvedNames: names.involvedNames,
+  status: battlereport.status,
   br: battlereport.br,
   saving: battlereport.saving,
-  data: related.kmData || [],
-  // teams: related.teams,
-  // names: related.involvedNames,
-  // kmLoading: related.kmLoading,
+  teams: related.teams,
+  teamsLosses: related.teamsLosses,
 })
 export default connect(mapStateToProps, mapDispatchToProps)(BattleReportPage)
