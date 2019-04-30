@@ -162,9 +162,11 @@ export default (state = initialState, action) => {
     }
 
     case REPARSE_TEAMS: {
+      const parseResult = ParseUtils.parseTeams(state.teams, state.kmData, action.involvedNames)
       return {
         ...state,
-        ...ParseUtils.parseTeams(state.teams, state.kmData, action.involvedNames),
+        ...parseResult,
+        origTeams: state.origTeams,
       }
     }
 

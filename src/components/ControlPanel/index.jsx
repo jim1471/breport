@@ -39,7 +39,10 @@ export default class ControlPanel extends Component {
   }
 
   render() {
-    const { header, isLoading, error, saving, onReload, onReparse, onSaveBR } = this.props
+    const {
+      header, isLoading, error, saving,
+      onReload, onReparse, onSaveBR, canSave,
+    } = this.props
     return (
       <div className={styles.headWrapper}>
         <div className={styles.head}>
@@ -67,12 +70,14 @@ export default class ControlPanel extends Component {
             {header}
           </div>
 
-          <Button
-            loading={isLoading || saving}
-            onClick={onSaveBR}
-            text='Save'
-            icon='floppy-disk'
-          />
+          {canSave && !isLoading &&
+            <Button
+              loading={saving}
+              onClick={onSaveBR}
+              text='Save'
+              icon='floppy-disk'
+            />
+          }
         </div>
         <div className={styles.separator} />
         {error &&

@@ -418,7 +418,7 @@ class ParseUtils {
     return teams
   }
 
-  parseTeams(teams, data, names) {
+  parseTeams(teams, data, names, isTeamsConstructed = false) {
     console.time('parse teams')
     const systemStats = this.getSystemStat(data)
     const teamsLosses = []
@@ -457,13 +457,14 @@ class ParseUtils {
       teamsInvolved,
       teamsShips,
       teamsStats,
+      origTeams: isTeamsConstructed ? [...teams] : null,
     }
   }
 
   mainParse(data, involvedNames) {
     if (!data) return null
     const teams = this.constructTeams(data)
-    return this.parseTeams(teams, data, involvedNames)
+    return this.parseTeams(teams, data, involvedNames, true)
   }
 
 }

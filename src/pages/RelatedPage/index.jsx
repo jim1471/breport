@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
+import isEqual from 'lodash/isEqual'
 import { getRelatedData, getRelatedDataStub, parseData } from 'reducers/related'
 import { Spinner, ControlPanel, BrInfo, TabsPanel, Footer } from 'components'
 import RelatedService from 'api/RelatedService'
@@ -64,6 +65,14 @@ class RelatedPage extends Component {
     })
   }
 
+  isTeamsChanged() {
+    const { teams, origTeams } = this.props
+    if (!teams) {
+      return false
+    }
+    return !isEqual(teams, origTeams)
+  }
+
   renderContent() {
     const { reportType, saving } = this.state
     const { error, stillProcessing, data = [], teams, names, router, kmLoading } = this.props
@@ -91,6 +100,7 @@ class RelatedPage extends Component {
           onReload={this.fetchData}
           onReparse={this.handleReparse}
           onSaveBR={this.handleSaveBR}
+          canSave={this.isTeamsChanged()}
         />
         {!isError && !isLoading &&
           <Fragment>
@@ -127,6 +137,7 @@ const mapStateToProps = ({ related, names }) => ({
   error: related.error,
   data: related.kmData || [],
   teams: related.teams,
+  origTeams: related.origTeams,
   names: names.involvedNames,
   kmLoading: related.kmLoading,
   stillProcessing: related.stillProcessing,
