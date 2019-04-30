@@ -15,9 +15,7 @@ class RelatedReport extends Component {
       teamsInvolved, teamsShips, teamsStats,
     } = this.props
 
-    if (!teams) return null
-
-    if (isLoading) {
+    if (!teams || isLoading) {
       return <Spinner />
     }
 
