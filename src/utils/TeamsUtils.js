@@ -184,8 +184,8 @@ export const getTeams = data => {
 
 export const moveMemberToTeam = (teams, { ixFrom, ixTo, member }) => {
   if (ixTo >= teams.length || ixTo < 0) {
-    if (teams.length >= 5) {
-      console.log('Cannot create more than 5 teams')
+    if (teams.length >= 7) {
+      console.log('Cannot create more than 7 teams')
       return teams
     }
 

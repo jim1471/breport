@@ -1,0 +1,21 @@
+:local {
+  .systemStats {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    padding: 0 20px;
+    @media (max-width: 360px) { padding: 0 10px; }
+  }
+
+  .title {
+    .systemName {
+      margin-left: 5px;
+      white-space: nowrap;
+      @media (max-width: 360px) { font-size: 16px; }
+    }
+    .zkill {
+      /*margin-left: 10px;*/
+    }
+  }
+}

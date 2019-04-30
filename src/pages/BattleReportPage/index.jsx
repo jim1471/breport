@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { browserHistory } from 'react-router'
 import { connect } from 'react-redux'
 import { getBR, setStatus } from 'reducers/battlereport'
 import { brParseTeams, getRelatedData, getRelatedDataStub, parseData } from 'reducers/related'
-import { Spinner } from 'components'
+import { Spinner, BrInfo } from 'components'
 import Report from 'pages/Report'
 import styles from './styles.scss'
 
@@ -23,13 +23,16 @@ class BattleReportPage extends Component {
     const { brID } = this.state
     if (!brID) {
       browserHistory.push('/')
-    } else {
+      return
+    }
+    const { teamsLosses } = this.props
+    if (!teamsLosses) {
       this.props.getBR(brID)
     }
   }
 
   componentDidUpdate(prevProps) {
-    const { br, involvedNames } = this.props
+    const { br, involvedNames, teamsLosses } = this.props
     if (prevProps.br !== br && !br.isLoading && !br.error) {
       const brData = (br.relateds || [])[0]
       if (brData) {
@@ -42,20 +45,30 @@ class BattleReportPage extends Component {
       this.props.setStatus('names fetched')
       this.props.brParseTeams()
     }
+    if (!prevProps.teamsLosses && teamsLosses) {
+      this.props.setStatus('parse completed')
+    }
   }
 
   render() {
-    const { status, br, teams, teamsLosses, router } = this.props
+    const { status, teams, teamsLosses, router } = this.props
     return (
       <div className={styles.root}>
-
-        <div>BattleReportPage</div>
-        {status &&
-          <div>Status: <span>{status}</span></div>
+        {false && process.env.NODE_ENV === 'development' &&
+          <Fragment>
+            <div>BattleReportPage</div>
+            {status &&
+              <div>Status: <span>{status}</span></div>
+            }
+            <hr />
+          </Fragment>
         }
-        <hr />
-        {br.isLoading &&
+
+        {!teamsLosses &&
           <Spinner />
+        }
+        {teams && teamsLosses &&
+          <BrInfo routerParams={router.params} />
         }
         {teams && teamsLosses &&
           <Report

@@ -5,6 +5,7 @@ import { Button } from '@blueprintjs/core/lib/esm/components/button/buttons'
 import { Radio } from '@blueprintjs/core/lib/esm/components/forms/controls'
 import { RadioGroup } from '@blueprintjs/core/lib/esm/components/forms/radioGroup'
 import { getRelatedData, getRelatedDataStub, parseData } from 'reducers/related'
+import { BrInfo } from 'components'
 import RelatedService from 'api/RelatedService'
 import Report from 'pages/Report'
 import styles from './styles.scss'
@@ -19,7 +20,10 @@ class RelatedPage extends Component {
   }
 
   componentDidMount() {
-    this.handleClick()
+    const { names } = this.props
+    if (names.isLoading) {
+      this.handleClick()
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -52,17 +56,15 @@ class RelatedPage extends Component {
     const { params: { systemID, time }, isStub } = this.props
     if (isStub || this.state.saving) return
     const { teams, ...rest } = this.props
-    console.log('teams:', teams, rest.location.pathname)
+    if (process.env.NODE_ENV === 'development') {
+      console.log('teams:', teams, rest.location.pathname)
+    }
 
     this.setState({ saving: true }, async () => {
       RelatedService.saveComposition(teams, systemID, time)
         .then(({ data }) => {
           this.setState({ saving: false })
-          browserHistory.push({
-            pathname: rest.location.pathname,
-            search: `?br=${data.result.id}`,
-          })
-          console.log('data', data)
+          browserHistory.push(`/br/${data.result.id}`)
         })
         .catch(err => {
           this.setState({ saving: false })
@@ -141,15 +143,15 @@ class RelatedPage extends Component {
                       text='Reparse'
                       small
                     />
-                    &nbsp;
-                    <Button
-                      loading={isLoading || saving}
-                      onClick={this.handleSaveBR}
-                      text='Save Composition'
-                      small
-                    />
                   </Fragment>
                 }
+                &nbsp;
+                <Button
+                  loading={isLoading || saving}
+                  onClick={this.handleSaveBR}
+                  text='Save'
+                  small
+                />
               </div>
             </div>
             {!isError && !isLoading &&
@@ -169,6 +171,9 @@ class RelatedPage extends Component {
             this.renderError(error || names.error)
           }
         </div>
+        {!isError &&
+          <BrInfo routerParams={router.params} />
+        }
         {!isError &&
           <Report
             teams={teams}

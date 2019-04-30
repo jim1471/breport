@@ -90,6 +90,8 @@ const config = {
     // -------------------------------
 
     // WARNINGS
+    'prefer-destructuring': 'warn',
+    'comma-dangle': 'warn',
     'no-debugger': 'warn',
     'no-empty': 'warn',
     'no-console': 'off', // 'warn',

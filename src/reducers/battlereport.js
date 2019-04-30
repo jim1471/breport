@@ -27,6 +27,11 @@ export const getBR = brID => dispatch => {
         time: data.relateds[0].time,
         kmData: killmailsData,
         teams: data.teams,
+        relateds: data.relateds.map(rel => ({
+          relatedKey: rel.relatedKey,
+          systemID: rel.systemID,
+          time: rel.time,
+        })),
       }))
       dispatch(setStatus('fetching names'))
       dispatch(getNames(killmailsData))

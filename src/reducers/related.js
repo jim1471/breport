@@ -91,6 +91,7 @@ const initialState = {
   error: '',
   kmData: null,
   teams: null,
+  relateds: [],
   datetime: '',
   systemID: '',
 
@@ -173,6 +174,7 @@ export default (state = initialState, action) => {
         ...initialState,
         kmData: data.kmData,
         teams: data.teams,
+        relateds: data.relateds,
         // TODO: multiple relateds systems / timings
         datetime: data.datetime,
         systemID: data.systemID,
