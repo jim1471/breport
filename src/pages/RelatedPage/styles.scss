@@ -4,26 +4,23 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    position: relative;
     height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    user-select: text;
-    color: #888;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    user-select: text;
+    color: #888;
   }
 
   .headWrapper {
-    flex: 1 1;
     position: relative;
     width: 100%;
     max-width: 600px;
-    margin: auto;
-    padding: 20px;
+    padding: 10px 20px;
     padding-bottom: 0;
     @media (max-width: 360px) {
       padding: 10px;
@@ -44,26 +41,12 @@
   .head {
     position: relative;
     width: 100%;
-    height: 50px;
-    min-height: 50px;
+    padding-bottom: 10px;
     display: flex;
     justify-content: space-between;
 
     .header {
       margin-bottom: 10px;
-    }
-
-    .radioGrp {
-      width: 80px;
-      max-width: 80px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-
-      :global(label.bp3-control.bp3-radio.bp3-inline:last-child) {
-        margin-bottom: 2px;
-      }
     }
   }
 

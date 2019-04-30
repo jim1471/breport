@@ -2,9 +2,7 @@
   .reportRoot {
     position: relative;
     width: 100%;
-    /*height: 100%;*/
-    /* WTF WTF WTF WTF WTF */
-    overflow-y: auto;
+    /*overflow-y: auto;*/
     color: #888;
     background-color: #181818;
     margin: 0;
@@ -17,15 +15,6 @@
     transform: translate3d(0, 0, 0);
     display: flex;
     flex-direction: column;
-  }
-
-  .spinnerContainer {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .teamsRoot {

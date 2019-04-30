@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Spinner, Footer } from 'components'
+import { Spinner } from 'components'
 import Team from '../Team/Team'
 import TeamStats from '../Team/TeamStats'
 import TeamGrouped from '../Team/TeamGrouped'
@@ -11,21 +11,17 @@ class RelatedReport extends Component {
 
   render() {
     const {
-      isLoading, names, teams, reportType,
+      isLoading, names, teams, currTab,
       teamsInvolved, teamsShips, teamsStats,
     } = this.props
 
     if (!teams) return null
 
     if (isLoading) {
-      return (
-        <div className={styles.spinnerContainer}>
-          <Spinner size='60' />
-        </div>
-      )
+      return <Spinner />
     }
 
-    const TeamView = reportType === 'grouped' ? TeamGrouped : Team
+    const TeamView = currTab === 'summary' ? TeamGrouped : Team
 
     return (
       <div className={styles.reportRoot}>
@@ -64,8 +60,6 @@ class RelatedReport extends Component {
           </div>
 
         </div>
-
-        <Footer />
       </div>
     )
   }
@@ -73,7 +67,7 @@ class RelatedReport extends Component {
 }
 
 const mapDispatchToProps = {}
-const mapStateToProps = ({ related, names }) => ({
+const mapStateToProps = ({ related, names, tabs }) => ({
   names: names.involvedNames,
   relateds: related.relateds,
   teams: related.teams,
@@ -81,6 +75,7 @@ const mapStateToProps = ({ related, names }) => ({
   teamsShips: related.teamsShips,
   teamsStats: related.teamsStats,
   systemStats: related.systemStats,
+  currTab: tabs.currTab,
 })
 
 const ConnectedReport = connect(mapStateToProps, mapDispatchToProps)(RelatedReport)

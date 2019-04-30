@@ -3,7 +3,7 @@ import { browserHistory } from 'react-router'
 import { connect } from 'react-redux'
 import { getBR, setStatus } from 'reducers/battlereport'
 import { brParseTeams, getRelatedData, getRelatedDataStub, parseData } from 'reducers/related'
-import { Spinner, BrInfo } from 'components'
+import { Spinner, BrInfo, TabsPanel, Footer } from 'components'
 import Report from 'pages/Report'
 import styles from './styles.scss'
 
@@ -68,16 +68,18 @@ class BattleReportPage extends Component {
           <Spinner />
         }
         {teams && teamsLosses &&
-          <BrInfo routerParams={router.params} />
+          <Fragment>
+            <BrInfo routerParams={router.params} />
+            <TabsPanel />
+            <Report
+              teams={teams}
+              isLoading={false}
+              reportType='plane'
+              routerParams={router.params}
+            />
+          </Fragment>
         }
-        {teams && teamsLosses &&
-          <Report
-            teams={teams}
-            isLoading={false}
-            reportType='plane'
-            routerParams={router.params}
-          />
-        }
+        <Footer />
       </div>
     )
   }

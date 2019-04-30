@@ -2,10 +2,8 @@ import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { Link, browserHistory } from 'react-router'
 import { Button } from '@blueprintjs/core/lib/esm/components/button/buttons'
-import { Radio } from '@blueprintjs/core/lib/esm/components/forms/controls'
-import { RadioGroup } from '@blueprintjs/core/lib/esm/components/forms/radioGroup'
 import { getRelatedData, getRelatedDataStub, parseData } from 'reducers/related'
-import { BrInfo } from 'components'
+import { Spinner, BrInfo, TabsPanel, Footer } from 'components'
 import RelatedService from 'api/RelatedService'
 import Report from 'pages/Report'
 import styles from './styles.scss'
@@ -14,8 +12,6 @@ import styles from './styles.scss'
 class RelatedPage extends Component {
 
   state = {
-    // reportType: 'grouped',
-    reportType: 'plane',
     saving: false,
   }
 
@@ -31,10 +27,6 @@ class RelatedPage extends Component {
     if (names.isLoading && !nextProps.names.isLoading) {
       this.props.parseData()
     }
-  }
-
-  handleReportTypeChange = event => {
-    this.setState({ reportType: event.currentTarget.value })
   }
 
   handleReparse = () => {
@@ -116,7 +108,11 @@ class RelatedPage extends Component {
         <div className={styles.headWrapper}>
           <div className={styles.head}>
             <div className={styles.controls}>
-              <div className={styles.header}>{header}</div>
+              {false &&
+                <div className={styles.header}>
+                  {header}
+                </div>
+              }
               <div className={styles.buttons}>
                 <span>
                   <Link to='/'>
@@ -154,34 +150,28 @@ class RelatedPage extends Component {
                 />
               </div>
             </div>
-            {!isError && !isLoading &&
-              <RadioGroup
-                inline
-                className={styles.radioGrp}
-                onChange={this.handleReportTypeChange}
-                selectedValue={reportType}
-              >
-                <Radio label='Grouped' value='grouped' />
-                <Radio label='Plane' value='plane' />
-              </RadioGroup>
-            }
           </div>
           <div className={styles.separator} />
           {isError &&
             this.renderError(error || names.error)
           }
         </div>
-        {!isError &&
-          <BrInfo routerParams={router.params} />
+        {!isError && !isLoading &&
+          <Fragment>
+            <BrInfo routerParams={router.params} />
+            <TabsPanel />
+            <Report
+              teams={teams}
+              isLoading={isLoading}
+              reportType={reportType}
+              routerParams={router.params}
+            />
+          </Fragment>
         }
-        {!isError &&
-          <Report
-            teams={teams}
-            isLoading={isLoading}
-            reportType={reportType}
-            routerParams={router.params}
-          />
+        {isLoading &&
+          <Spinner />
         }
+        <Footer />
       </Fragment>
     )
   }
