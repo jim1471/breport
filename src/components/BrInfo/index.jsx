@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
+import { SYSTEMS_DATA } from 'utils/data/constants'
 import { getLocalTime, getUTCTime } from 'utils/FormatUtils'
 import styles from './styles.scss'
-
-const SYSTEMS_DATA = require('utils/data/systems.json')
-
 
 class BrInfo extends Component {
 
@@ -30,6 +28,7 @@ class BrInfo extends Component {
 
   render() {
     const { routerParams: { systemID, time }, relateds } = this.props
+    if (SYSTEMS_DATA) return null
 
     const relSystemID = systemID - 30000000
     const system = SYSTEMS_DATA.systems.find(sys => sys[1] === relSystemID)

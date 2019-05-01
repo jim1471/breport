@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router'
 import { Footer } from 'components'
+import { SYSTEMS_DATA } from 'utils/data/constants'
 // import InputRelatedPanel from './InputRelatedPanel'
 import InputZkillLinkPanel from './InputZkillLinkPanel'
 import styles from './styles.scss'
 
-const SYSTEMS_DATA = require('utils/data/systems.json')
 
 const relateds = [
   ['/related/30000478/201904120800/', 'capital brawl'],
@@ -90,8 +90,8 @@ class Dashboard extends Component {
     return (
       <div className={styles.root}>
         <div className={styles.wrapper}>
-          <InputZkillLinkPanel getSystemName={this.getSystemName} />
-          {this.renderExamples()}
+          {SYSTEMS_DATA && <InputZkillLinkPanel getSystemName={this.getSystemName} />}
+          {SYSTEMS_DATA && this.renderExamples()}
           <Footer />
         </div>
       </div>

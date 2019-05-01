@@ -1,3 +1,15 @@
+import React from 'react'
+import Loadable from 'react-loadable'
+import SmallSpinner from 'components/common/SmallSpinner'
+
+
+// const systemsFile = require('./utils/data/systems.json')
+const systemsFile = Loadable({
+  loader: () => import(/* webpackChunkName: "systems" */'./systems.json'),
+  loading: () => <SmallSpinner />,
+})
+export const SYSTEMS_DATA = systemsFile
+
 const file = require('./SHIP_TYPES.json')
 
 let npcs

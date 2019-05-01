@@ -5,6 +5,7 @@ import TabsPanel from './TabsPanel'
 import ControlPanel from './ControlPanel'
 
 import Spinner from './common/Spinner'
+import SmallSpinner from './common/SmallSpinner'
 import AllyIcon from './common/icons/AllyIcon'
 import ItemIcon from './common/icons/ItemIcon'
 
@@ -16,6 +17,7 @@ export {
   ControlPanel,
 
   Spinner,
+  SmallSpinner,
   AllyIcon,
   ItemIcon,
 }
