@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setTab } from 'reducers/tabs'
-import { Tabs } from '@blueprintjs/core/lib/esm/components/tabs/tabs'
-import { Tab } from '@blueprintjs/core/lib/esm/components/tabs/tab'
+import { Tabs, Tab } from 'components/common/blueprint'
 import styles from './styles.scss'
 
 class TabsPanel extends Component {

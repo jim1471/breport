@@ -16,8 +16,9 @@ class RelatedPage extends Component {
   }
 
   componentDidMount() {
-    const { names } = this.props
-    if (names.isLoading) {
+    const { names, params: { systemID, time }, relatedSystemID, relatedDatetime } = this.props
+    const isNewRelated = parseInt(systemID, 10) !== relatedSystemID || time !== relatedDatetime
+    if (names.isLoading || isNewRelated) {
       this.fetchData()
     }
   }
@@ -141,6 +142,8 @@ const mapStateToProps = ({ related, names }) => ({
   names: names.involvedNames,
   kmLoading: related.kmLoading,
   stillProcessing: related.stillProcessing,
+  relatedSystemID: related.systemID,
+  relatedDatetime: related.datetime,
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(RelatedPage)

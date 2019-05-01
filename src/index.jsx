@@ -2,7 +2,7 @@ import 'babel-polyfill'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { FocusStyleManager } from '@blueprintjs/core/lib/esm/accessibility/focusStyleManager'
+import { FocusStyleManager } from 'components/common/blueprint'
 import configureStore from './store'
 import Router from './router'
 

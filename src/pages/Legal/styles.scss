@@ -1,0 +1,29 @@
+:local {
+  .root {
+    position: relative;
+    color: #aaa;
+    font-size: 14px;
+
+    :global(.bp3-navbar) {
+      background-color: black;
+    }
+  }
+
+  .heading {
+    display: flex;
+    align-items: center;
+  }
+
+  .iconText {
+    margin-left: 10px;
+  }
+
+  .body {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    min-height: 40px;
+    margin: 100px auto;
+    padding: 0 20px;
+  }
+}

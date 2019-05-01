@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import classnames from 'classnames'
 import startsWith from 'lodash/startsWith'
 import { browserHistory } from 'react-router'
-import { InputGroup, Button } from '@blueprintjs/core'
+import { InputGroup, Button } from 'components/common/blueprint'
 import styles from './styles.scss'
 
 
@@ -66,10 +66,9 @@ export default class InputZkillLinkPanel extends Component {
           intent='primary'
           fill={false}
           icon='list-columns'
-          rightIcon='arrow-right'
           onClick={this.handleGetReport}
         >
-          Get report
+          Analyze related
         </Button>
       </div>
     )

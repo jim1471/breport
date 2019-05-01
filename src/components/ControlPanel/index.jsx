@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router'
-import { Button } from '@blueprintjs/core/lib/esm/components/button/buttons'
+import { Button } from 'components/common/blueprint'
 import styles from './styles.scss'
 
 export default class ControlPanel extends Component {

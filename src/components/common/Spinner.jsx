@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Spinner as BpSpinner } from '@blueprintjs/core/lib/esm/components/spinner/spinner'
+import { Spinner as BpSpinner } from 'components/common/blueprint'
 import styles from './styles.scss'
 
 
