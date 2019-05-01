@@ -1,9 +1,9 @@
 /* eslint no-unused-vars: 0, no-empty: 0 */
 import sortBy from 'lodash/sortBy'
 import isEmpty from 'lodash/isEmpty'
+import { SHIP_TYPES, CITADELS, NPC_SHIPS } from 'data/constants'
 import * as TeamsUtils from './TeamsUtils'
 import * as StatsUtils from './StatsUtils'
-import { SHIP_TYPES, CITADELS, NPC_SHIPS } from './data/constants'
 
 
 class ParseUtils {

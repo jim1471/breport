@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /br/
+Disallow: /relateds/
+Disallow: /api/
+Host: https://br.evetools.org
+Sitemap: http://br.evetools.org/sitemap.xml

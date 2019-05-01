@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router'
 import { Footer } from 'components'
-import { SYSTEMS_DATA } from 'utils/data/constants'
+import { SYSTEMS_DATA } from 'data/constants'
 // import InputRelatedPanel from './InputRelatedPanel'
 import InputZkillLinkPanel from './InputZkillLinkPanel'
 import styles from './styles.scss'
@@ -90,8 +90,8 @@ class Dashboard extends Component {
     return (
       <div className={styles.root}>
         <div className={styles.wrapper}>
-          {SYSTEMS_DATA && <InputZkillLinkPanel getSystemName={this.getSystemName} />}
-          {SYSTEMS_DATA && this.renderExamples()}
+          {SYSTEMS_DATA.systems && <InputZkillLinkPanel getSystemName={this.getSystemName} />}
+          {SYSTEMS_DATA.systems && this.renderExamples()}
           <Footer />
         </div>
       </div>
