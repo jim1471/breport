@@ -14,12 +14,23 @@ class BrInfo extends Component {
     return `http://evemaps.dotlan.net/map/${encodedRegion}/${systemName}`
   }
 
-  render() {
-    const { systemStats = {}, routerParams, relateds } = this.props
+  renderStartEndTime() {
+    const { systemStats = {} } = this.props
     const { systemID, fromTime, toTime } = systemStats
     if (!systemID) return null
     const dateStart = new Date(fromTime)
     const dateEnd = new Date(toTime)
+    return (
+      <div>
+        {`${dateStart.toLocaleDateString()}, ${getUTCTime(dateStart)} - ${getUTCTime(dateEnd)} ET`}
+        {` (${getLocalTime(dateStart)} - ${getLocalTime(dateEnd)})`}
+      </div>
+    )
+  }
+
+  render() {
+    const { routerParams: { systemID, time }, relateds } = this.props
+
     const relSystemID = systemID - 30000000
     const system = SYSTEMS_DATA.systems.find(sys => sys[1] === relSystemID)
     const region = system && SYSTEMS_DATA.regions[system[2]]
@@ -38,7 +49,7 @@ class BrInfo extends Component {
               {` (${region}) `}
             </span>
             <small className={styles.zkill}>
-              <a href={`http://zkillboard.com/related/${systemID}/${routerParams.time}/`} target='_blank' rel='noopener noreferrer'>
+              <a href={`http://zkillboard.com/related/${systemID}/${time}/`} target='_blank' rel='noopener noreferrer'>
                 {` zkillboard`}
               </a>
             </small>
@@ -52,10 +63,7 @@ class BrInfo extends Component {
         </div>
 
         {false &&
-          <div>
-            {`${dateStart.toLocaleDateString()}, ${getUTCTime(dateStart)} - ${getUTCTime(dateEnd)} ET`}
-            {` (${getLocalTime(dateStart)} - ${getLocalTime(dateEnd)})`}
-          </div>
+          this.renderStartEndTime()
         }
       </div>
     )

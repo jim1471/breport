@@ -29,11 +29,11 @@ export default class ControlPanel extends Component {
   renderBackButton() {
     return (
       <span>
-        <Link to='/'>
-          <Button icon='double-chevron-left' title='return to Dashboard' small={false}>
+        <Button icon='double-chevron-left' title='return to Dashboard' small={false}>
+          <Link to='/'>
             <span className={styles.backBtn}>Back</span>
-          </Button>
-        </Link>
+          </Link>
+        </Button>
       </span>
     )
   }
