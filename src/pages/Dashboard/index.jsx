@@ -51,44 +51,47 @@ class Dashboard extends Component {
     )
   }
 
+  renderExamples() {
+    // if (process.env.NODE_ENV === 'development')
+    return (
+      <Fragment>
+        <h1>Example Battle Reports:</h1>
+        <table className='bp3-html-table'>
+          <tbody>
+            {relateds.map(path => (
+              <tr key={path[0]}>
+                <td className={styles.commentCell}>
+                  <a
+                    href={`http://zkillboard.com${path[0]}`}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    Zkill
+                  </a>
+                </td>
+                <td className={styles.linkCell}>
+                  <Link to={path[0]}>{path[0]}</Link>
+                </td>
+                <td className={styles.systemCell}>
+                  {this.getSystemName(path[0])}
+                </td>
+                <td className={styles.commentCell}>
+                  {path[1]}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </Fragment>
+    )
+  }
+
   render() {
     return (
       <div className={styles.root}>
         <div className={styles.wrapper}>
           <InputZkillLinkPanel getSystemName={this.getSystemName} />
-
-          {process.env.NODE_ENV === 'development' &&
-            <Fragment>
-              <h1>Example Battle Reports:</h1>
-              <table className='bp3-html-table'>
-                <tbody>
-                  {relateds.map(path => (
-                    <tr key={path[0]}>
-                      <td className={styles.commentCell}>
-                        <a
-                          href={`http://zkillboard.com${path[0]}`}
-                          target='_blank'
-                          rel='noopener noreferrer'
-                        >
-                          Zkill
-                        </a>
-                      </td>
-                      <td className={styles.linkCell}>
-                        <Link to={path[0]}>{path[0]}</Link>
-                      </td>
-                      <td className={styles.systemCell}>
-                        {this.getSystemName(path[0])}
-                      </td>
-                      <td className={styles.commentCell}>
-                        {path[1]}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </Fragment>
-          }
-
+          {this.renderExamples()}
           <Footer />
         </div>
       </div>

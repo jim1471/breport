@@ -11,9 +11,10 @@ export const formatSum = sum => {
   }
   const result = numeral(sum)
   if (sum >= oneBillion) {
-    return (
-      <b>{result.format('0.00a')}</b>
-    )
+    return result.format('0.00a')
+    // return (
+    //   <b>{result.format('0.00a')}</b>
+    // )
   }
   return result.format('0a')
 }
@@ -24,9 +25,10 @@ export const formatDmg = dmg => {
   }
   const result = numeral(dmg)
   if (dmg >= oneMillion) {
-    return (
-      <b>{result.format('0.00a')}</b>
-    )
+    return result.format('0.00a')
+    // return (
+    //   <b>{result.format('0.00a')}</b>
+    // )
   }
   if (dmg < 10000) {
     return dmg // result.format('0a')
