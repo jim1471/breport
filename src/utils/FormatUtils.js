@@ -1,5 +1,5 @@
 /* eslint react/jsx-filename-extension: off */
-import React from 'react'
+// import React from 'react'
 import numeral from 'numeral'
 
 const oneBillion = 1000000000
