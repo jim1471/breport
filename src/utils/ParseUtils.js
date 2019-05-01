@@ -1,9 +1,9 @@
 /* eslint no-unused-vars: 0, no-empty: 0 */
 import sortBy from 'lodash/sortBy'
 import isEmpty from 'lodash/isEmpty'
+import { SHIP_TYPES, CITADELS, NPC_SHIPS } from 'data/constants'
 import * as TeamsUtils from './TeamsUtils'
 import * as StatsUtils from './StatsUtils'
-import { SHIP_TYPES, CITADELS, NPC_SHIPS } from './data/constants'
 
 
 class ParseUtils {
@@ -168,7 +168,7 @@ class ParseUtils {
     return result
   }
 
-  aggregateShipsExt(involved, losses, names) {
+  aggregateShips(involved, losses, names) {
     let ships = []
     const unprocessedLosses = losses
     ships = Object.keys(involved).map(charIDKey => {
@@ -418,7 +418,7 @@ class ParseUtils {
     return teams
   }
 
-  parseTeams(teams, data, names) {
+  parseTeams(teams, data, names, isTeamsConstructed = false) {
     console.time('parse teams')
     const systemStats = this.getSystemStat(data)
     const teamsLosses = []
@@ -435,10 +435,11 @@ class ParseUtils {
       console.time(`members: ${ix}`)
       const involvedMembers = this.getInvolved(kills, otherTeams, selfLosses, names)
       console.timeEnd(`members: ${ix}`)
+
       console.time(`ships: ${ix}`)
-      // const involvedByShips = this.aggregateShips(involvedMembers, selfLosses, names)
-      const involvedByShips = this.aggregateShipsExt(involvedMembers, selfLosses, names)
+      const involvedByShips = this.aggregateShips(involvedMembers, selfLosses, names)
       console.timeEnd(`ships: ${ix}`)
+
       teamsLosses.push(selfLosses)
       teamsInvolved.push(involvedMembers)
       teamsShips.push(involvedByShips)
@@ -456,13 +457,14 @@ class ParseUtils {
       teamsInvolved,
       teamsShips,
       teamsStats,
+      origTeams: isTeamsConstructed ? [...teams] : null,
     }
   }
 
   mainParse(data, involvedNames) {
     if (!data) return null
     const teams = this.constructTeams(data)
-    return this.parseTeams(teams, data, involvedNames)
+    return this.parseTeams(teams, data, involvedNames, true)
   }
 
 }

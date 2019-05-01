@@ -2,9 +2,7 @@
   .reportRoot {
     position: relative;
     width: 100%;
-    /*height: 100%;*/
-    /* WTF WTF WTF WTF WTF */
-    overflow-y: auto;
+    /*overflow-y: auto;*/
     color: #888;
     background-color: #181818;
     margin: 0;
@@ -19,33 +17,6 @@
     flex-direction: column;
   }
 
-  .spinnerContainer {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .systemStats {
-    position: relative;
-    max-width: 600px;
-    margin: 0 auto 20px auto;
-    padding: 0 20px;
-    @media (max-width: 360px) { padding: 0 10px; }
-  }
-
-  .title {
-    .systemName {
-      white-space: nowrap;
-      @media (max-width: 360px) { font-size: 16px; }
-    }
-    .zkill {
-      /*margin-left: 10px;*/
-    }
-  }
-
   .teamsRoot {
     display: flex;
     flex-direction: row;
@@ -56,23 +27,6 @@
       flex-grow: 1;
       flex-shrink: 1;
       flex-basis: 100%;
-    }
-  }
-
-  .footer {
-    position: relative;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    div {
-      margin-bottom: 10px;
-    }
-
-    span {
-      margin-right: 5px;
     }
   }
 

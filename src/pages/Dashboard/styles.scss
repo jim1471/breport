@@ -67,10 +67,15 @@
     border: 1px solid #555;
     background: black;
 
+    input {
+      font-size: 16px;
+    }
+
     &.zkill {
       width: 100%;
       max-width: 600px;
       padding-bottom: 20px;
+      flex: 0 1;
     }
 
     .cardRow {
@@ -97,7 +102,7 @@
   }
 
   .matchedLink {
-    color: #106ba3;
+    color: #42AFF0;
   }
 
   .matchedSystem {

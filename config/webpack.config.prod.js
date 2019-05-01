@@ -143,11 +143,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: path.resolve(appDirectory, 'public/index.html'),
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeRedundantAttributes: true,
-      },
+      minify: false,
     }),
     new webpack.NormalModuleReplacementPlugin(
       /.*\/generated\/iconSvgPaths.*/,

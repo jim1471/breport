@@ -1,0 +1,43 @@
+:local {
+  .root {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    min-height: 40px;
+    margin: 0 auto 0 auto;
+    padding: 0 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    :global(.bp3-tab)[aria-selected="false"] {
+      color: #888;
+    }
+    :global(.bp3-tab)[aria-disabled="true"] {
+      color: rgba(92, 112, 128, 0.5);
+    }
+    :global(.bp3-tab)[aria-selected="true"],
+    :global(.bp3-tab):not([aria-disabled="true"]):hover {
+      color: #eee;
+    }
+
+    :global(.bp3-tab-indicator-wrapper .bp3-tab-indicator) {
+      background-color: #eee;
+    }
+
+    :global(.bp3-tab) {
+      line-height: 40px;
+      font-size: 16px;
+    }
+
+    @media (max-width: 360px) {
+      min-height: 30px;
+      padding: 0 10px;
+
+      :global(.bp3-tab) {
+        line-height: 30px;
+        font-size: 14px;
+      }
+    }
+  }
+}

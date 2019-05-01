@@ -13,4 +13,5 @@ module.exports = {
   utils: path.resolve(appDirectory, 'src/utils'),
   middlewares: path.resolve(appDirectory, 'src/middlewares'),
   styles: path.resolve(appDirectory, 'src/assets/styles'),
+  data: path.resolve(appDirectory, 'src/data'),
 }

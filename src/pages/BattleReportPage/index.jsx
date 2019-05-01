@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { browserHistory } from 'react-router'
 import { connect } from 'react-redux'
-import { getBR } from 'reducers/battlereport'
-import { getRelatedData, getRelatedDataStub, parseData } from 'reducers/related'
-import { Spinner } from 'components'
+import { getBR, setStatus } from 'reducers/battlereport'
+import { brParseTeams, getRelatedData, getRelatedDataStub, parseData } from 'reducers/related'
+import { Spinner, BrInfo, TabsPanel, Footer } from 'components'
 import Report from 'pages/Report'
 import styles from './styles.scss'
 
-// /br/5cb7a1bca236fcd1190f23e0
+// http://localhost:3200/br/5cc513267996865911654dca
 class BattleReportPage extends Component {
 
   constructor(props) {
@@ -23,13 +23,16 @@ class BattleReportPage extends Component {
     const { brID } = this.state
     if (!brID) {
       browserHistory.push('/')
-    } else {
+      return
+    }
+    const { teamsLosses } = this.props
+    if (!teamsLosses) {
       this.props.getBR(brID)
     }
   }
 
   componentDidUpdate(prevProps) {
-    const { br } = this.props
+    const { br, involvedNames, teamsLosses } = this.props
     if (prevProps.br !== br && !br.isLoading && !br.error) {
       const brData = (br.relateds || [])[0]
       if (brData) {
@@ -38,39 +41,58 @@ class BattleReportPage extends Component {
         console.log('br:', br)
       }
     }
+    if (prevProps.involvedNames.isLoading && !involvedNames.isLoading) {
+      this.props.setStatus('names fetched')
+      this.props.brParseTeams()
+    }
+    if (!prevProps.teamsLosses && teamsLosses) {
+      this.props.setStatus('parse completed')
+    }
   }
 
   render() {
-    const { br, router } = this.props
-    const brData = (br.relateds || [])[0]
+    const { status, teams, teamsLosses, router } = this.props
     return (
       <div className={styles.root}>
-        BattleReportPage
-        <hr />
-        {br.isLoading &&
+        {false && process.env.NODE_ENV === 'development' &&
+          <Fragment>
+            <div>BattleReportPage</div>
+            {status &&
+              <div>Status: <span>{status}</span></div>
+            }
+            <hr />
+          </Fragment>
+        }
+
+        {!teamsLosses &&
           <Spinner />
         }
-        {false && brData &&
-          <Report
-            teams={brData.teams}
-            isLoading={false}
-            reportType='plane'
-            routerParams={router.params}
-          />
+        {teams && teamsLosses &&
+          <Fragment>
+            <BrInfo routerParams={router.params} />
+            <TabsPanel />
+            <Report
+              teams={teams}
+              isLoading={false}
+              reportType='plane'
+              routerParams={router.params}
+            />
+          </Fragment>
         }
+        <Footer />
       </div>
     )
   }
 
 }
 
-const mapDispatchToProps = { getBR, getRelatedData, getRelatedDataStub, parseData }
-const mapStateToProps = ({ related, battlereport }) => ({
+const mapDispatchToProps = { getBR, setStatus, brParseTeams, getRelatedData, getRelatedDataStub, parseData }
+const mapStateToProps = ({ names, related, battlereport }) => ({
+  involvedNames: names.involvedNames,
+  status: battlereport.status,
   br: battlereport.br,
   saving: battlereport.saving,
-  data: related.kmData || [],
-  // teams: related.teams,
-  // names: related.involvedNames,
-  // kmLoading: related.kmLoading,
+  teams: related.teams,
+  teamsLosses: related.teamsLosses,
 })
 export default connect(mapStateToProps, mapDispatchToProps)(BattleReportPage)

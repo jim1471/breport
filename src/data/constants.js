@@ -1,4 +1,25 @@
-const file = require('./SHIP_TYPES.json')
+/* eslint import/no-mutable-exports: off */
+let SHIP_TYPES = null
+let SYSTEMS_DATA = null
+
+function loadData() {
+  if (SHIP_TYPES && SYSTEMS_DATA) {
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('already loaded!')
+    }
+    return Promise.resolve()
+  }
+  const m1 = import('./systems.json')
+    .then(module => { SYSTEMS_DATA = module })
+  const m2 = import('./SHIP_TYPES.json')
+    .then(module => { SHIP_TYPES = module.default })
+  return Promise.all([m1, m2])
+}
+// const file = require('./SHIP_TYPES.json')
+
+// export const SYSTEMS_DATA = SYSTEMS_DATA
+// export const SHIP_TYPES = SHIP_TYPES
+
 
 let npcs
 if (process.env.NODE_ENV === 'development') {
@@ -7,9 +28,7 @@ if (process.env.NODE_ENV === 'development') {
   npcs = []
 }
 
-export const SHIP_TYPES = file
-
-export const CITADELS = [
+const CITADELS = [
   40340, // "Upwell Palatine Keepstar"
   35834, // "Keepstar"
   35827, // "Sotiyo"
@@ -40,8 +59,16 @@ export const CITADELS = [
   47334, // Standup Focused Warp Disruptor II
 ]
 
-export const NPC_SHIPS = npcs
+const NPC_SHIPS = npcs
 // [
 //   11899, // Angel General
 //   11024, // Angel Impaler
 // ]
+
+export {
+  loadData,
+  SYSTEMS_DATA,
+  SHIP_TYPES,
+  CITADELS,
+  NPC_SHIPS,
+}

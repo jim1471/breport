@@ -42,7 +42,7 @@
     .moreShipsBtn {
       cursor: pointer;
       color: gold;
-      font-size: 10px;
+      /*font-size: 10px;*/
       &:hover, &:active {
         text-decoration: underline;
       }
@@ -51,13 +51,13 @@
     .lossValue {
       color: #e0e0e0;
       font-weight: 400;
-      font-size: 10px;
+      /*font-size: 10px;*/
     }
 
     .pod {
       color: #ddd;
       margin-left: 5px;
-      font-size: 10px;
+      /*font-size: 10px;*/
       &:hover, &:active {
         text-decoration: underline;
       }
