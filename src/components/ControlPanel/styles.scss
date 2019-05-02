@@ -43,4 +43,10 @@
       display: none;
     }
   }
+
+  .linkButton a,
+  .linkButton a:hover {
+    color: black;
+    text-decoration: none;
+  }
 }
