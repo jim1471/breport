@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { SYSTEMS_DATA } from 'data/constants'
-import { getLocalTime, getUTCTime } from 'utils/FormatUtils'
+import { getUTCTime } from 'utils/FormatUtils'
 import styles from './styles.scss'
 
 class BrInfo extends Component {
@@ -19,16 +19,21 @@ class BrInfo extends Component {
     const dateStart = new Date(fromTime)
     const dateEnd = new Date(toTime)
     return (
-      <div>
+      <div className={styles.timing}>
         {`${dateStart.toLocaleDateString()}, ${getUTCTime(dateStart)} - ${getUTCTime(dateEnd)} ET`}
-        {` (${getLocalTime(dateStart)} - ${getLocalTime(dateEnd)})`}
       </div>
     )
   }
 
   render() {
-    const { routerParams: { systemID, time }, relateds } = this.props
-    if (SYSTEMS_DATA.systems) return null
+    if (!SYSTEMS_DATA.systems) {
+      return null
+    }
+    const { routerParams, relateds } = this.props
+    let { systemID, time } = routerParams
+    if (!systemID) {
+      [systemID, time] = relateds[0].relatedKey.split('/')
+    }
 
     const relSystemID = systemID - 30000000
     const system = SYSTEMS_DATA.systems.find(sys => sys[1] === relSystemID)
@@ -39,31 +44,26 @@ class BrInfo extends Component {
     return (
       <div className={styles.systemStats}>
         <div className={styles.title}>
-          <h1>
-            <small>Battle Report:</small>
-            <span className={styles.systemName}>
-              <a href={this.getDotlanLink(region, systemName)} target='_blank' rel='noopener noreferrer'>
-                {`${systemName}`}
-              </a>
-              {` (${region}) `}
-            </span>
+          <span className={styles.systemName}>
+            <a href={this.getDotlanLink(region, systemName)} target='_blank' rel='noopener noreferrer'>
+              {`${systemName}`}
+            </a>
+            {` (${region}) `}
             <small className={styles.zkill}>
               <a href={`http://zkillboard.com/related/${systemID}/${time}/`} target='_blank' rel='noopener noreferrer'>
                 {` zkillboard`}
               </a>
             </small>
-            {process.env.NODE_ENV === 'development' && relatedKey &&
-              <small>
-                &nbsp;
-                <Link to={`/related/${relatedKey}`}>link to related</Link>
-              </small>
-            }
-          </h1>
-        </div>
+          </span>
 
-        {false &&
-          this.renderStartEndTime()
-        }
+          {process.env.NODE_ENV === 'development' && relatedKey &&
+            <small>
+              &nbsp;
+              <Link to={`/related/${relatedKey}`}>link to related</Link>
+            </small>
+          }
+          {this.renderStartEndTime()}
+        </div>
       </div>
     )
   }

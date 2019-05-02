@@ -16,7 +16,7 @@ export default class Legal extends Component {
           src='/icons/favicon-32x32.png'
         />
         <span className={styles.iconText}>
-          Battle Report Tool
+          Legal
         </span>
       </div>
     )
@@ -32,7 +32,9 @@ export default class Legal extends Component {
             </Navbar.Heading>
 
             <Navbar.Divider />
+          </Navbar.Group>
 
+          <Navbar.Group className='bp3-align-right'>
             <Link to='/'>
               <Icon icon='link' iconSize={16} />
               <span className={styles.iconText}>

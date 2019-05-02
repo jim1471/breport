@@ -10,7 +10,7 @@ function loadData() {
     return Promise.resolve()
   }
   const m1 = import('./systems.json')
-    .then(module => { SYSTEMS_DATA = module })
+    .then(module => { SYSTEMS_DATA = module.default })
   const m2 = import('./SHIP_TYPES.json')
     .then(module => { SHIP_TYPES = module.default })
   return Promise.all([m1, m2])

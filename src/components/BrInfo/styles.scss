@@ -4,18 +4,33 @@
     width: 100%;
     max-width: 600px;
     margin: 0 auto 0 auto;
-    padding: 0 20px;
-    @media (max-width: 360px) { padding: 0 10px; }
+    padding: 20px;
+    font-size: 16px;
+    border: 1px solid #444;
+
+    @media (max-width: 360px) { padding: 10px; }
   }
 
   .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 360px) {
+      display: block;
+    }
+
     .systemName {
-      margin-left: 5px;
       white-space: nowrap;
       @media (max-width: 360px) { font-size: 16px; }
     }
+
     .zkill {
-      /*margin-left: 10px;*/
+
     }
+  }
+
+  .timing {
+    font-size: 12px;
   }
 }

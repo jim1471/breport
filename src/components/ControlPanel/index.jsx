@@ -79,7 +79,7 @@ export default class ControlPanel extends Component {
             />
           }
         </div>
-        <div className={styles.separator} />
+
         {error &&
           this.renderError(error)
         }
