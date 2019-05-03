@@ -10,11 +10,11 @@ export default class Legal extends Component {
   renderLogo() {
     return (
       <div className={styles.heading}>
-        <img
-          className={styles.logo}
-          alt='breport-logo'
-          src='/icons/favicon-32x32.png'
-        />
+        <div className={styles.logo}>
+          <Link to='/'>
+            <img alt='breport-logo' src='/icons/favicon-32x32.png' />
+          </Link>
+        </div>
         <span className={styles.iconText}>
           Legal
         </span>
@@ -26,22 +26,24 @@ export default class Legal extends Component {
     return (
       <div className={styles.root}>
         <Navbar fixedToTop>
-          <Navbar.Group>
-            <Navbar.Heading>
-              {this.renderLogo()}
-            </Navbar.Heading>
+          <div className={styles.headWrapper}>
+            <Navbar.Group>
+              <Navbar.Heading>
+                {this.renderLogo()}
+              </Navbar.Heading>
 
-            <Navbar.Divider />
-          </Navbar.Group>
+              <Navbar.Divider />
+            </Navbar.Group>
 
-          <Navbar.Group className='bp3-align-right'>
-            <Link to='/'>
-              <Icon icon='link' iconSize={16} />
-              <span className={styles.iconText}>
-                Home
-              </span>
-            </Link>
-          </Navbar.Group>
+            <Navbar.Group className='bp3-align-right'>
+              <Link to='/'>
+                <Icon icon='link' iconSize={16} />
+                <span className={styles.iconText}>
+                  Home
+                </span>
+              </Link>
+            </Navbar.Group>
+          </div>
         </Navbar>
         <div className={styles.body}>
           {LEGAL_TEXT}

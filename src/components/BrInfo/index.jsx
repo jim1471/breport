@@ -31,8 +31,10 @@ class BrInfo extends Component {
     }
     const { routerParams, relateds } = this.props
     let { systemID, time } = routerParams
-    if (!systemID) {
+    if (!systemID && relateds && relateds[0]) {
       [systemID, time] = relateds[0].relatedKey.split('/')
+    } else {
+      return null
     }
 
     const relSystemID = systemID - 30000000

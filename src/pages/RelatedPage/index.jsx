@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
 import isEqual from 'lodash/isEqual'
-import { getRelatedData, getRelatedDataStub, parseData } from 'reducers/related'
+import { getRelatedData, getRelatedDataStub, parseData, setBrInfo } from 'reducers/related'
 import { Spinner, ControlPanel, BrInfo, TabsPanel, Footer } from 'components'
 import RelatedService from 'api/RelatedService'
 import Report from 'pages/Report'
@@ -57,6 +57,10 @@ class RelatedPage extends Component {
       RelatedService.saveComposition(teams, systemID, time)
         .then(({ data }) => {
           this.setState({ saving: false })
+          this.props.setBrInfo([{
+            relatedKey: `${systemID}/${time}`,
+            teams,
+          }])
           browserHistory.push(`/br/${data.result.id}`)
         })
         .catch(err => {
@@ -132,7 +136,7 @@ class RelatedPage extends Component {
   }
 }
 
-const mapDispatchToProps = { getRelatedData, getRelatedDataStub, parseData }
+const mapDispatchToProps = { getRelatedData, getRelatedDataStub, parseData, setBrInfo }
 const mapStateToProps = ({ related, names }) => ({
   isStub: related.isStub,
   error: related.error,

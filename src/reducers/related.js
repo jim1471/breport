@@ -21,6 +21,13 @@ const PARSE_DATA_STARTED = 'PARSE_DATA_STARTED'
 const PARSE_DATA = 'PARSE_DATA'
 const MOVE_TO_TEAM = 'MOVE_TO_TEAM'
 const INITIALIZE_BR_DATA = 'INITIALIZE_BR_DATA'
+const SET_BR_INFO = 'SET_BR_INFO'
+
+
+export const setBrInfo = relateds => ({
+  type: SET_BR_INFO,
+  relateds,
+})
 
 export const getRelatedDataStub = () => dispatch => {
   dispatch({ type: GET_RELATED_DATA_STARTED })
@@ -180,6 +187,13 @@ export default (state = initialState, action) => {
         // TODO: multiple relateds systems / timings
         datetime: data.datetime,
         systemID: data.systemID,
+      }
+    }
+
+    case SET_BR_INFO: {
+      return {
+        ...state,
+        relateds: action.relateds,
       }
     }
 
