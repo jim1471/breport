@@ -47,7 +47,9 @@ export default class ShipInfo extends Component {
         <span className={styles.ship}>
           <div className={styles.char}>
             <div className={styles.charName}>
-              {this.renderCharName()}
+              <span>
+                {this.renderCharName()}
+              </span>
               {podKillID &&
                 <a
                   className={styles.pod}

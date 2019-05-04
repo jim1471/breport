@@ -3,37 +3,57 @@
 import numeral from 'numeral'
 
 const oneBillion = 1000000000
+const tenMillion = 10000000
 const oneMillion = 1000000
+const tenThousand = 10000
+const oneThousand = 1000
+
+
+// only three significant digits
+const numberFormat = sum => {
+  if (sum >= 100 * oneBillion) {
+    return '0.0a'
+  }
+  if (sum >= 10 * oneBillion) {
+    return '0.0a'
+  }
+  if (sum >= oneBillion) {
+    return '0.00a'
+  }
+  if (sum >= 100 * oneMillion) {
+    return '0a'
+  }
+  if (sum >= tenMillion) {
+    return '0.0a'
+  }
+  if (sum >= oneMillion) {
+    return '0.00a'
+  }
+  if (sum >= 100 * oneThousand) {
+    return '0a'
+  }
+  if (sum >= tenThousand) {
+    return '0.0a'
+  }
+  if (sum >= oneThousand) {
+    return '0.00a'
+  }
+  return '0a'
+}
+
 
 export const formatSum = sum => {
   if (sum === 0 || !sum) {
     return '0'
   }
-  const result = numeral(sum)
-  if (sum >= oneBillion) {
-    return result.format('0.00a')
-    // return (
-    //   <b>{result.format('0.00a')}</b>
-    // )
-  }
-  return result.format('0a')
+  return numeral(sum).format(numberFormat(sum))
 }
 
 export const formatDmg = dmg => {
   if (dmg === 0 || !dmg) {
     return '0'
   }
-  const result = numeral(dmg)
-  if (dmg >= oneMillion) {
-    return result.format('0.00a')
-    // return (
-    //   <b>{result.format('0.00a')}</b>
-    // )
-  }
-  if (dmg < 10000) {
-    return dmg // result.format('0a')
-  }
-  return result.format('0.0a')
+  return numeral(dmg).format(numberFormat(dmg))
 }
 
 export const dmgPercent = dmg => (
