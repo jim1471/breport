@@ -43,8 +43,8 @@ class Team extends Component {
     return (
       <div className={styles.team}>
         {this.renderHeader()}
-        {shipsData.map((ship, i) => {
-          const shipKey = `${ship.id}-${i}`
+        {shipsData.map(ship => {
+          const shipKey = `${ship.charID}-${ship.id}`
           return (
             <InvolvedRow
               key={shipKey}
