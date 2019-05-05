@@ -72,7 +72,7 @@ export default class InputSystems extends Component {
       : string
 
     return (
-      <div className={cn(styles.card, styles.zkill)}>
+      <div className={styles.card}>
         <div className={styles.inputGroup}>
           <div className={styles.systemInputGroup}>
             {system &&

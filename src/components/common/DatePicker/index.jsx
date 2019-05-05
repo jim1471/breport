@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import dateFnsParse from 'date-fns/parse'
 import dateFnsFormat from 'date-fns/format'
 import { DateUtils } from 'react-day-picker'
@@ -23,15 +24,21 @@ function formatDate(date, format, locale) {
 
 export default class DatePicker extends Component {
 
-  state = { selectedDay: '' }
+  static propTypes = {
+    selectedDay: PropTypes.string,
+    onDaySelect: PropTypes.func,
+  }
+
+  static defaultProps = {
+    selectedDay: dateFnsFormat(new Date(), FORMAT),
+  }
 
   handleDayChange = day => {
-    const { onDaySelect } = this.props
-    this.setState({ selectedDay: day }, () => onDaySelect(day))
+    this.props.onDaySelect(day)
   }
 
   render() {
-    const { selectedDay } = this.state
+    const { selectedDay } = this.props
     return (
       <DayPickerInput
         showOverlay

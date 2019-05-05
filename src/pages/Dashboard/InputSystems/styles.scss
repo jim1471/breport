@@ -5,9 +5,11 @@
     flex-direction: column;
     justify-content: space-between;
 
+    flex: 0 1;
+    width: 100%;
+    max-width: 600px;
     margin-top: 15px;
     padding: 20px;
-    padding-bottom: 5px;
     border-radius: 3px;
     border: 1px solid #555;
     background: black;
@@ -16,11 +18,8 @@
       font-size: 16px;
     }
 
-    &.zkill {
-      width: 100%;
-      max-width: 600px;
-      padding-bottom: 20px;
-      flex: 0 1;
+    @media (max-width: 400px) {
+      padding: 10px;
     }
   }
 

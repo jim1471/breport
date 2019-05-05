@@ -44,12 +44,7 @@ class Dashboard extends Component {
     const relSystemID = systemID - 30000000
     const system = SYSTEMS_DATA.systems.find(sys => sys[1] === relSystemID)
     const region = system && SYSTEMS_DATA.regions[system[2]]
-    return (
-      <span>
-        <span>{system[0]}</span>
-        <span style={{ whiteSpace: 'nowrap' }}>{` (${region})`}</span>
-      </span>
-    )
+    return `${system[0]} (${region})`
   }
 
   renderExamples() {
