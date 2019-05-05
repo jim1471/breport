@@ -4,6 +4,7 @@ import { Footer } from 'components'
 import { SYSTEMS_DATA } from 'data/constants'
 // import InputRelatedPanel from './InputRelatedPanel'
 import InputZkillLinkPanel from './InputZkillLinkPanel'
+import InputSystems from './InputSystems'
 import styles from './styles.scss'
 
 
@@ -90,8 +91,15 @@ class Dashboard extends Component {
     return (
       <div className={styles.root}>
         <div className={styles.wrapper}>
-          {SYSTEMS_DATA.systems && <InputZkillLinkPanel getSystemName={this.getSystemName} />}
-          {SYSTEMS_DATA.systems && this.renderExamples()}
+          {SYSTEMS_DATA.systems &&
+            <InputZkillLinkPanel getSystemName={this.getSystemName} />
+          }
+          {SYSTEMS_DATA.systems &&
+            <InputSystems SYSTEMS_DATA={SYSTEMS_DATA} />
+          }
+          {true &&
+            this.renderExamples()
+          }
           <Footer />
         </div>
       </div>

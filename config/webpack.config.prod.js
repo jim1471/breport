@@ -196,6 +196,14 @@ module.exports = {
       },
       {
         test: /\.(scss|css)$/,
+        include: /node_modules/,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+        ],
+      },
+      {
+        test: /\.(scss|css)$/,
         exclude: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,

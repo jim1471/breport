@@ -110,19 +110,4 @@
     color: #eee;
   }
 
-  .dropdown {
-    z-index: 100;
-    margin-top: 2px;
-    background-color: white;
-    color: black;
-
-    .item {
-      padding: 5px;
-      cursor: pointer;
-
-      &:hover {
-        background-color: #888;
-      }
-    }
-  }
 }

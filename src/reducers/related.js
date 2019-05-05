@@ -4,7 +4,7 @@ import { moveMemberToTeam } from 'utils/TeamsUtils'
 import { getNames } from 'reducers/names'
 
 
-const FETCH_INTERVAL = 4000
+const FETCH_INTERVAL = 2000
 
 let stubData = []
 const isStub = false

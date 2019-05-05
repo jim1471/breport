@@ -1,11 +1,30 @@
 import { hot } from 'react-hot-loader'
 import React from 'react'
+import Loadable from 'react-loadable'
 import { browserHistory, Router, Route, IndexRoute, Redirect } from 'react-router'
-import RelatedPage from 'pages/RelatedPage'
-import BattleReportPage from 'pages/BattleReportPage'
-import Dashboard from 'pages/Dashboard'
-import Legal from 'pages/Legal'
+import { Spinner } from 'components'
 import App from './App'
+
+
+const Dashboard = Loadable({
+  loader: () => import(/* webpackChunkName: "Dashboard" */'pages/Dashboard'),
+  loading: () => <Spinner />,
+})
+
+const RelatedPage = Loadable({
+  loader: () => import(/* webpackChunkName: "RelatedPage" */'pages/RelatedPage'),
+  loading: () => <Spinner />,
+})
+
+const BattleReportPage = Loadable({
+  loader: () => import(/* webpackChunkName: "BattleReportPage" */'pages/BattleReportPage'),
+  loading: () => <Spinner />,
+})
+
+const Legal = Loadable({
+  loader: () => import(/* webpackChunkName: "Legal" */'pages/Legal'),
+  loading: () => <Spinner />,
+})
 
 
 const routes = () => (

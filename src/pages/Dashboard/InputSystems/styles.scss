@@ -1,0 +1,106 @@
+:local {
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-top: 15px;
+    padding: 20px;
+    padding-bottom: 5px;
+    border-radius: 3px;
+    border: 1px solid #555;
+    background: black;
+
+    input {
+      font-size: 16px;
+    }
+
+    &.zkill {
+      width: 100%;
+      max-width: 600px;
+      padding-bottom: 20px;
+      flex: 0 1;
+    }
+  }
+
+  .inputGroup {
+    display: flex;
+    /*flex-direction: column;*/
+    align-items: center;
+    /*justify-content: space-between;*/
+    margin-bottom: 5px;
+
+    > div:not(:last-child) {
+      position: relative;
+      margin-right: 5px;
+    }
+  }
+
+  .systemInputGroup {
+    /*max-width: 160px;*/
+  }
+
+  .regionPlaceholder {
+    position: absolute;
+    left: 0;
+    right: 10px;
+    z-index: 1;
+    padding: 0 40px 10px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: 400;
+    user-select: none;
+    pointer-events: none;
+    white-space: nowrap;
+    overflow: hidden;
+
+    .systemHidden {
+      visibility: hidden;
+    }
+  }
+
+  .numericInput {
+    width: 120px;
+    max-width: 120px;
+    flex-basis: 120px;
+    user-select: none;
+
+    & > :global(.bp3-input-group) {
+      flex-grow: 0;
+      flex-shrink: 1;
+    }
+
+    button span svg {
+      overflow: visible;
+      margin-top: -3px;
+    }
+  }
+
+  .dropdown {
+    position: relative;
+    z-index: 100;
+    font-size: 14px;
+    color: black;
+    background-color: white;
+
+    .overlay {
+      position: absolute;
+      left: 0;
+      z-index: 1;
+      padding: 10px 5px;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    .item {
+      padding: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #aaa;
+      }
+    }
+  }
+}
