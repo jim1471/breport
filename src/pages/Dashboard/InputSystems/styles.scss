@@ -5,7 +5,6 @@
     flex-direction: column;
     justify-content: space-between;
 
-    flex: 0 1;
     width: 100%;
     max-width: 600px;
     margin-top: 15px;
@@ -23,21 +22,44 @@
     }
   }
 
+  .label {
+    font-size: 14px;
+    line-height: 30px;
+  }
+
   .inputGroup {
     display: flex;
-    /*flex-direction: column;*/
     align-items: center;
-    /*justify-content: space-between;*/
     margin-bottom: 5px;
 
     > div:not(:last-child) {
       position: relative;
+      margin: 0;
       margin-right: 5px;
+    }
+
+    @media (max-width: 400px) {
+      flex-wrap: wrap;
+
+      :global(.bp3-input-group.bp3-large .bp3-input) {
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+      }
+
+      :global(.bp3-input-group.bp3-large > .bp3-icon) {
+        margin: 7px;
+      }
+
+      :global(.bp3-input-group.bp3-large .bp3-input:not(:first-child)) {
+        padding-left: 30px;
+      }
     }
   }
 
   .systemInputGroup {
-    /*max-width: 160px;*/
+    position: relative;
+    flex: 1 1 100%;
   }
 
   .regionPlaceholder {
@@ -54,6 +76,13 @@
     pointer-events: none;
     white-space: nowrap;
     overflow: hidden;
+
+    @media (max-width: 400px) {
+      height: 30px;
+      line-height: 30px;
+      font-size: 14px;
+      padding-left: 30px;
+    }
 
     .systemHidden {
       visibility: hidden;
@@ -74,6 +103,12 @@
     button span svg {
       overflow: visible;
       margin-top: -3px;
+    }
+
+    @media (max-width: 400px) {
+      width: 100px;
+      max-width: 100px;
+      flex-basis: 100px;
     }
   }
 

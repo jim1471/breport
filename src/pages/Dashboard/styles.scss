@@ -7,59 +7,27 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    height: 100%;
-    overflow: hidden;
     user-select: text;
   }
 
   .wrapper {
+    position: relative;
+    width: 100%;
     display: flex;
-    flex: 1 0;
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
     overflow-y: auto;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     color: #888;
     padding: 0 15px;
 
     @media (max-width: 360px) { padding: 10px; }
-
-    table tbody tr td {
-      color: #888;
-      font-size: 14px;
-      @media (max-width: 768px) { font-size: 12px; }
-      @media (max-width: 530px) {
-        font-size: 10px;
-
-        &.linkCell {
-          padding-left: 10px;
-        }
-
-        &.systemCell {
-          max-width: 90px;
-          padding-left: 0;
-          padding-right: 10px;
-        }
-
-        &.commentCell {
-          display: none;
-        }
-      }
-    }
   }
 
   .card {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-
-    flex: 0 1;
     width: 100%;
     max-width: 600px;
     margin-top: 15px;
@@ -98,4 +66,31 @@
     color: #eee;
   }
 
+  .examples {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    font-size: 14px;
+    margin-top: 40px;
+
+    .item {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-top: 20px;
+
+      .systemCell {
+        color: #ccc;
+      }
+
+      .commentCell {
+        text-align: right;
+        flex: 1 0;
+      }
+
+      > div:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
 }

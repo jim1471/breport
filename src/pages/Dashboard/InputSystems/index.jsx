@@ -2,10 +2,8 @@ import React, { Component } from 'react'
 import cn from 'classnames'
 import Loadable from 'react-loadable'
 import startsWith from 'lodash/startsWith'
-// import { browserHistory } from 'react-router'
-import { InputGroup, NumericInput, Button } from 'components/common/blueprint'
+import { InputGroup, NumericInput, Button, Icon } from 'components/common/blueprint'
 import { Spinner } from 'components'
-// import DatePicker from 'components/common/DatePicker'
 import styles from './styles.scss'
 
 
@@ -104,16 +102,23 @@ export default class InputSystems extends Component {
               </div>
             }
           </div>
-          <DatePicker value={selectedDay} onDaySelect={this.handleDaySelect} />
         </div>
 
+        <div className={styles.label}>
+          Start date and time
+        </div>
         <div className={styles.inputGroup}>
+          <DatePicker value={selectedDay} onDaySelect={this.handleDaySelect} />
           <NumericInput
             className={cn(styles.numericInput, 'bp3-fixed')}
             large
             value={0}
             min={0}
             max={23}
+            allowNumericCharactersOnly
+            clampValueOnBlur
+            selectAllOnFocus
+            minorStepSize={null}
             leftIcon='time'
             placeholder='Hour'
             onChange={null}
@@ -124,10 +129,16 @@ export default class InputSystems extends Component {
             value={0}
             min={0}
             max={59}
+            allowNumericCharactersOnly
+            clampValueOnBlur
+            selectAllOnFocus
+            minorStepSize={null}
             leftIcon='time'
             placeholder='Minute'
             onChange={null}
           />
+          <Icon iconSize={32} icon='tick-circle' intent='success' />
+          <Icon iconSize={32} icon='delete' intent='danger' />
         </div>
 
         <Button text='btn' intent='primary' />
