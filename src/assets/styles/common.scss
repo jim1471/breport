@@ -1,9 +1,7 @@
-/*$g-base-font-family: 'Helvetica Neue', Helvetica, Arial, pts-rouble, sans-serif;*/
 $g-base-font-family: Verdana, Helvetica, Arial, sans-serif;
 
 @import 'normalize';
 @import '~@blueprintjs/core/src/blueprint.scss';
-@import '~@blueprintjs/datetime/src/blueprint-datetime.scss';
 
 :global {
   html, body {
@@ -13,23 +11,11 @@ $g-base-font-family: Verdana, Helvetica, Arial, sans-serif;
     background-color: #181818;
     font-size: 12px;
     color: #888;
-/*
-    @media (max-width: 600px) {
-      font-size: 12px;
-    }
-    @media (max-width: 400px) {
-      font-size: 10px;
-    }*/
   }
 
   #react-root {
     height: 100%;
-    overflow: hidden;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    overflow: auto;
   }
 }
 

@@ -1,13 +1,14 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router'
 import { Footer } from 'components'
 import { SYSTEMS_DATA } from 'data/constants'
-// import InputRelatedPanel from './InputRelatedPanel'
 import InputZkillLinkPanel from './InputZkillLinkPanel'
+// import InputSystems from './InputSystems'
 import styles from './styles.scss'
 
 
 const relateds = [
+  ['/related/30002833/201905040200/', 'The Kalevala Expanse'],
   ['/related/30000478/201904120800/', 'capital brawl'],
   ['/related/30004662/201904051900/', '4 titans and nyx'],
   ['/related/30000511/201904051000/', '1077 killmails'],
@@ -43,46 +44,30 @@ class Dashboard extends Component {
     const relSystemID = systemID - 30000000
     const system = SYSTEMS_DATA.systems.find(sys => sys[1] === relSystemID)
     const region = system && SYSTEMS_DATA.regions[system[2]]
-    return (
-      <span>
-        <span>{system[0]}</span>
-        <span style={{ whiteSpace: 'nowrap' }}>{` (${region})`}</span>
-      </span>
-    )
+    return `${system[0]} (${region})`
   }
 
   renderExamples() {
-    // if (process.env.NODE_ENV === 'development')
+    if (process.env.NODE_ENV !== 'development') {
+      return null
+    }
     return (
-      <Fragment>
-        <h1>Example Battle Reports:</h1>
-        <table className='bp3-html-table'>
-          <tbody>
-            {relateds.map(path => (
-              <tr key={path[0]}>
-                <td className={styles.commentCell}>
-                  <a
-                    href={`http://zkillboard.com${path[0]}`}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    Zkill
-                  </a>
-                </td>
-                <td className={styles.linkCell}>
-                  <Link to={path[0]}>{path[0]}</Link>
-                </td>
-                <td className={styles.systemCell}>
-                  {this.getSystemName(path[0])}
-                </td>
-                <td className={styles.commentCell}>
-                  {path[1]}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </Fragment>
+      <div className={styles.examples}>
+        <div>Example Battle Reports:</div>
+        {relateds.map(path => (
+          <div key={path[0]} className={styles.item}>
+            <div className={styles.linkCell}>
+              <Link to={path[0]}>{path[0]}</Link>
+            </div>
+            <div className={styles.systemCell}>
+              {this.getSystemName(path[0])}
+            </div>
+            <div className={styles.commentCell}>
+              {path[1]}
+            </div>
+          </div>
+        ))}
+      </div>
     )
   }
 
@@ -90,8 +75,15 @@ class Dashboard extends Component {
     return (
       <div className={styles.root}>
         <div className={styles.wrapper}>
-          {SYSTEMS_DATA.systems && <InputZkillLinkPanel getSystemName={this.getSystemName} />}
-          {SYSTEMS_DATA.systems && this.renderExamples()}
+          {SYSTEMS_DATA.systems &&
+            <InputZkillLinkPanel getSystemName={this.getSystemName} />
+          }
+          {/* SYSTEMS_DATA.systems &&
+            <InputSystems SYSTEMS_DATA={SYSTEMS_DATA} />
+          */}
+          {true &&
+            this.renderExamples()
+          }
           <Footer />
         </div>
       </div>

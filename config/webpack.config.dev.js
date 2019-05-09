@@ -129,46 +129,51 @@ module.exports = {
         test: /\.(scss|css)$/,
         exclude: /node_modules/,
         use: [
-          // HMR doesn`t supported yet and we dont need it in development:
-          // MiniCssExtractPlugin.loader,
-          { loader: require.resolve('style-loader'), options: {
-            // singleton: true,
-          } },
-          { loader: require.resolve('css-loader'), options: {
-            importLoaders: 2,
-            // minimize: false,
-            import: false,
-            modules: false,
-            camelCase: true,
-            exportOnlyLocals: true,
-            localIdentName: '[path]-[local]-[hash:base64:5]',
-          } },
-          { loader: require.resolve('postcss-loader'), options: {
-            // Necessary for external CSS imports to work
-            // https://github.com/facebookincubator/create-react-app/issues/2677
-            ident: 'postcss',
-            plugins: () => [
-              require('postcss-flexbugs-fixes'),
-              require('autoprefixer')({
-                browsers: [
-                  'last 5 versions',
-                  'Firefox ESR',
-                  'not ie < 11',
-                ],
-              }),
-              // uncomment for build and test prod-like styles
-              // require('cssnano')({
-              //   svgo: false,
-              //   reduceIdents: false,
-              // }),
-            ],
-          } },
-          { loader: require.resolve('fast-sass-loader'), options: {
-            includePaths: [
-              path.resolve(appDirectory, 'src/assets/styles'),
-              path.resolve(appDirectory, 'src'),
-            ],
-          } },
+          {
+            loader: require.resolve('style-loader'),
+            options: {
+              hmr: false,
+            },
+          },
+          {
+            loader: require.resolve('css-loader'),
+            options: {
+              importLoaders: 2,
+              // minimize: false,
+              import: false,
+              modules: false,
+              camelCase: true,
+              exportOnlyLocals: true,
+              localIdentName: '[path]-[local]-[hash:base64:5]',
+            },
+          },
+          {
+            loader: require.resolve('postcss-loader'),
+            options: {
+              // Necessary for external CSS imports to work
+              // https://github.com/facebookincubator/create-react-app/issues/2677
+              ident: 'postcss',
+              plugins: () => [
+                require('postcss-flexbugs-fixes'),
+                require('autoprefixer')({
+                  browsers: [
+                    'last 5 versions',
+                    'Firefox ESR',
+                    'not ie < 11',
+                  ],
+                }),
+              ],
+            },
+          },
+          {
+            loader: require.resolve('fast-sass-loader'),
+            options: {
+              includePaths: [
+                path.resolve(appDirectory, 'src/assets/styles'),
+                path.resolve(appDirectory, 'src'),
+              ],
+            },
+          },
         ],
       },
       {

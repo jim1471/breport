@@ -82,7 +82,8 @@ class RelatedPage extends Component {
     const { reportType, saving } = this.state
     const { error, stillProcessing, data = [], teams, names, router, kmLoading } = this.props
     const isError = error || names.error
-    const isLoading = names.isLoading || kmLoading
+    // const isLoading = names.isLoading || kmLoading
+    const isLoading = kmLoading
 
     let header = ''
     if (stillProcessing || isError === 'processing') {

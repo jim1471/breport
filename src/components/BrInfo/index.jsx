@@ -52,10 +52,10 @@ class BrInfo extends Component {
             <a href={this.getDotlanLink(region, systemName)} target='_blank' rel='noopener noreferrer'>
               {`${systemName}`}
             </a>
-            {` (${region}) `}
-            <small className={styles.zkill}>
+            <small>{`(${region})`}</small>
+            <small>
               <a href={`http://zkillboard.com/related/${systemID}/${time}/`} target='_blank' rel='noopener noreferrer'>
-                {` zkillboard`}
+                zkillboard
               </a>
             </small>
           </span>

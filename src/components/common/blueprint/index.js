@@ -5,7 +5,9 @@ import { Tabs } from '@blueprintjs/core/lib/esm/components/tabs/tabs'
 import { Tab } from '@blueprintjs/core/lib/esm/components/tabs/tab'
 import { Spinner } from '@blueprintjs/core/lib/esm/components/spinner/spinner'
 import { Icon } from '@blueprintjs/core/lib/esm/components/icon/icon'
+import { FormGroup } from '@blueprintjs/core/lib/esm/components/forms/formGroup'
 import { InputGroup } from '@blueprintjs/core/lib/esm/components/forms/inputGroup'
+import { NumericInput } from '@blueprintjs/core/lib/esm/components/forms/numericInput'
 
 
 // import { DateRangeInput } from '@blueprintjs/datetime/lib/esm/dateRangeInput'
@@ -30,7 +32,9 @@ export {
   Tab,
   Spinner,
   Icon,
+  FormGroup,
   InputGroup,
+  NumericInput,
 
   // DateRangeInput,
   // ControlGroup,

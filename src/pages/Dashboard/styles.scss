@@ -7,63 +7,31 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    height: 100%;
-    overflow: hidden;
     user-select: text;
   }
 
   .wrapper {
+    position: relative;
+    width: 100%;
     display: flex;
-    flex: 1 0;
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
     overflow-y: auto;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     color: #888;
     padding: 0 15px;
 
     @media (max-width: 360px) { padding: 10px; }
-
-    table tbody tr td {
-      color: #888;
-      font-size: 14px;
-      @media (max-width: 768px) { font-size: 12px; }
-      @media (max-width: 530px) {
-        font-size: 10px;
-
-        &.linkCell {
-          padding-left: 10px;
-        }
-
-        &.systemCell {
-          max-width: 90px;
-          padding-left: 0;
-          padding-right: 10px;
-        }
-
-        &.commentCell {
-          display: none;
-        }
-      }
-    }
   }
 
   .card {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 318px;
-    height: 200px;
-    min-height: 130px;
+    width: 100%;
+    max-width: 600px;
     margin-top: 15px;
     padding: 20px;
-    padding-bottom: 5px;
     border-radius: 3px;
     border: 1px solid #555;
     background: black;
@@ -72,32 +40,20 @@
       font-size: 16px;
     }
 
-    &.zkill {
-      width: 100%;
-      max-width: 600px;
-      padding-bottom: 20px;
-      flex: 0 1;
+    > div {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 400px) {
+      padding: 10px;
     }
 
     .cardRow {
       display: flex;
+      flex-wrap: wrap;
 
-      .inputHour {
-        :global(.bp3-input-group) {
-          width: 60px;
-          color: #eee;
-        }
-      }
-
-      :global(.bp3-input-group) {
-        width: 130px;
-        color: #eee;
-      }
-
-      :global(.bp3-input-group .bp3-input) {
-        color: #eee;
-        background: #222;
-        border: 1px solid #555;
+      > span:not(:last-child) {
+        margin-right: 5px;
       }
     }
   }
@@ -110,18 +66,30 @@
     color: #eee;
   }
 
-  .dropdown {
-    z-index: 100;
-    margin-top: 2px;
-    background-color: white;
-    color: black;
+  .examples {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    font-size: 14px;
+    margin-top: 40px;
 
     .item {
-      padding: 5px;
-      cursor: pointer;
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-top: 20px;
 
-      &:hover {
-        background-color: #888;
+      .systemCell {
+        color: #ccc;
+      }
+
+      .commentCell {
+        text-align: right;
+        flex: 1 0;
+      }
+
+      > div:not(:last-child) {
+        margin-right: 10px;
       }
     }
   }
