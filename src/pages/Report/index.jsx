@@ -9,11 +9,21 @@ import styles from './styles.scss'
 
 class RelatedReport extends Component {
 
+  // example - /br/5cd5d7184a724f00173d85b9
+  state = {
+    teamStatsCollapsed: true,
+  }
+
+  handleExpand = () => {
+    this.setState({ teamStatsCollapsed: false })
+  }
+
   render() {
     const {
       isLoading, names, teams, currTab,
       teamsInvolved, teamsShips, teamsStats,
     } = this.props
+    const { teamStatsCollapsed } = this.state
 
     if (!teams || isLoading) {
       return <Spinner />
@@ -35,6 +45,8 @@ class RelatedReport extends Component {
                 data={teamsShips[ix]}
                 involved={teamsInvolved[ix]}
                 teamStats={teamsStats[ix]}
+                collapsed={teamStatsCollapsed}
+                onExpand={this.handleExpand}
                 key={`teamstat-${ix}`}
               />
             ))}

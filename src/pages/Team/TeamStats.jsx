@@ -7,15 +7,21 @@ import AllyIcon from 'icons/AllyIcon'
 import { moveToTeam } from 'reducers/related'
 import styles from './styles.scss'
 
+const MAX_TEAM_SIZE = 10
 const LETTERS = ['A', 'B', 'C', 'D', 'E']
 
 class TeamStats extends Component {
 
   renderTeam() {
-    const { team, names, index, teamStats } = this.props
+    const { team, names, index, teamStats, collapsed, onExpand } = this.props
+    const isReallyCollapsed = collapsed && team.length > MAX_TEAM_SIZE
+    const currTeam = isReallyCollapsed
+      ? team.slice(0, MAX_TEAM_SIZE - 1)
+      : team
+
     return (
       <div className={styles.members}>
-        {team.map(allyID => {
+        {currTeam.map(allyID => {
           let name = names.allys[allyID]
           let corpID = null
           if (allyID.startsWith('corp:')) {
@@ -52,6 +58,9 @@ class TeamStats extends Component {
             </div>
           )
         })}
+        {isReallyCollapsed &&
+          <div className={styles.btnExpand} onClick={onExpand}>...</div>
+        }
       </div>
     )
   }
