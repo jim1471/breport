@@ -77,10 +77,12 @@ class ParseUtils {
     // Summary cnt & dmg
     char.cnt = (char.cnt || 0) + 1
     char.dmg = char.dmg || 0
+
     // TODO: need customization mechanic to filter damage to Structures / to Capitals / from Capitals / etc
-    if (!CITADELS.includes(victim.ship)) {
-      char.dmg += (att.dmg || 0)
-    }
+    // if (!CITADELS.includes(victim.ship)) {
+    //   char.dmg += (att.dmg || 0)
+    // }
+    char.dmg += (att.dmg || 0)
 
     this.addShipStat(char, att, false)
   }
