@@ -30,7 +30,7 @@ export const getNames = killmailsData => (dispatch, getState) => {
     cuttedIdsSec = cuttedIdsSec.slice(0, 999)
     pages = 3
   }
-  if (cuttedIdsThird.length > 1000) {
+  if (cuttedIdsThird && cuttedIdsThird.length > 1000) {
     console.log('third ids size', cuttedIdsThird.length)
     cuttedIdsForth = cuttedIdsThird.slice(1000)
     cuttedIdsThird = cuttedIdsThird.slice(0, 999)
