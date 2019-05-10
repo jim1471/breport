@@ -103,19 +103,18 @@ export default class InvolvedRow extends Component {
 
   renderDmg = () => {
     const { rawDmgValue, dmgPercentValue, cntWhoredValue, isTopDmg, isTopWhored } = this.state
-    if (rawDmgValue === '0') {
-      return (
-        <span className={styles.dmgGroup}>
-          {rawDmgValue}
-        </span>
-      )
-    }
+
     return (
       <span className={styles.dmgGroup}>
         <div>
-          <span className={cn(isTopDmg && styles.top)}>
-            {`${rawDmgValue} ${dmgPercentValue}`}
-          </span>
+          {rawDmgValue === '0' &&
+            <span>{rawDmgValue}</span>
+          }
+          {rawDmgValue !== '0' &&
+            <span className={cn(isTopDmg && styles.top)}>
+              {`${rawDmgValue} ${dmgPercentValue}`}
+            </span>
+          }
           <span className={cn(isTopWhored && styles.top)}>
             {cntWhoredValue}
           </span>
