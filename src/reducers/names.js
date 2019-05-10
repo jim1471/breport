@@ -12,9 +12,11 @@ export const getNames = killmailsData => (dispatch, getState) => {
   const { names: { involvedNames } } = getState()
   const unknownIds = NamesUtils.extractUnknownNames(killmailsData, involvedNames)
   const ids = NamesUtils.plainIds(unknownIds)
+
   const cuttedIds = ids.slice(0, 999)
   let cuttedIdsSec = ids.slice(1000)
   let cuttedIdsThird = null
+  let cuttedIdsForth = null
   let pages = cuttedIdsSec && cuttedIdsSec.length > 0 ? 2 : 1
   if (cuttedIds.length === 0) {
     dispatch({ type: PARSE_NAMES_STARTED, pages: 0 })
@@ -23,24 +25,39 @@ export const getNames = killmailsData => (dispatch, getState) => {
     return
   }
   if (cuttedIdsSec.length > 1000) {
-    console.error('sec ids size', cuttedIdsSec.length)
+    console.log('sec ids size', cuttedIdsSec.length)
     cuttedIdsThird = cuttedIdsSec.slice(1000)
     cuttedIdsSec = cuttedIdsSec.slice(0, 999)
     pages = 3
   }
-  // TODO: more than 3000? hm...
+  if (cuttedIdsThird.length > 1000) {
+    console.log('third ids size', cuttedIdsThird.length)
+    cuttedIdsForth = cuttedIdsThird.slice(1000)
+    cuttedIdsThird = cuttedIdsThird.slice(0, 999)
+    pages = 4
+  }
+  // more than 3000? hm...
+  // damn yes, for example
+  // Keepstar in H-5GUI (Vale of the Silent) 20/11/2018
+  // /related/30000225/201811192300/
 
+  // TODO: refactor this shit
   dispatch({ type: PARSE_NAMES_STARTED, pages })
   EsiService.fetchNames(cuttedIds)
     .then(({ data }) => dispatch({ type: PARSE_NAMES, payload: { data } }))
     .catch(err => dispatch({ type: PARSE_NAMES_FAILED, payload: { err } }))
-  if (pages === 2) {
+  if (pages >= 2) {
     EsiService.fetchNames(cuttedIdsSec)
       .then(({ data }) => dispatch({ type: PARSE_NAMES, payload: { data } }))
       .catch(err => dispatch({ type: PARSE_NAMES_FAILED, payload: { err } }))
   }
-  if (pages === 3 && cuttedIdsThird) {
+  if (pages >= 3 && cuttedIdsThird) {
     EsiService.fetchNames(cuttedIdsThird)
+      .then(({ data }) => dispatch({ type: PARSE_NAMES, payload: { data } }))
+      .catch(err => dispatch({ type: PARSE_NAMES_FAILED, payload: { err } }))
+  }
+  if (pages >= 4 && cuttedIdsForth) {
+    EsiService.fetchNames(cuttedIdsForth)
       .then(({ data }) => dispatch({ type: PARSE_NAMES, payload: { data } }))
       .catch(err => dispatch({ type: PARSE_NAMES_FAILED, payload: { err } }))
   }
