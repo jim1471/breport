@@ -7,16 +7,16 @@ import AllyIcon from 'icons/AllyIcon'
 import { moveToTeam } from 'reducers/related'
 import styles from './styles.scss'
 
-const MAX_TEAM_SIZE = 10
-const LETTERS = ['A', 'B', 'C', 'D', 'E']
+const MAX_EXPANDED_SIZE = 10
+const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
 
 class TeamStats extends Component {
 
   renderTeam() {
     const { team, names, index, teamStats, collapsed, onExpand } = this.props
-    const isReallyCollapsed = collapsed && team.length > MAX_TEAM_SIZE
+    const isReallyCollapsed = collapsed && team.length > MAX_EXPANDED_SIZE
     const currTeam = isReallyCollapsed
-      ? team.slice(0, MAX_TEAM_SIZE - 1)
+      ? team.slice(0, MAX_EXPANDED_SIZE - 1)
       : team
 
     return (
@@ -66,12 +66,25 @@ class TeamStats extends Component {
   }
 
   renderStats() {
-    const { totalLossValue, lossCount } = this.props.teamStats
-    const lValue = `${numeral(totalLossValue).format('0.00a')} isk lost`
-    const lCount = lossCount ? `, ${lossCount} ships lost` : ''
+    const { totalLossValue, lossCount, totalDmg, efficiency } = this.props.teamStats
     return (
       <div className={styles.stats}>
-        {`${lValue}${lCount}`}
+        <div className={styles.statsRow}>
+          <span>ISK Lost:</span>
+          <span>{numeral(totalLossValue).format('0.00a')}</span>
+        </div>
+        <div className={styles.statsRow}>
+          <span>Ships Lost:</span>
+          <span>{`${lossCount} ships`}</span>
+        </div>
+        <div className={styles.statsRow}>
+          <span>Inflicted Damage:</span>
+          <span>{numeral(totalDmg).format('0.00a')}</span>
+        </div>
+        <div className={styles.statsRow}>
+          <span>Efficiency:</span>
+          <span>{efficiency}</span>
+        </div>
       </div>
     )
   }

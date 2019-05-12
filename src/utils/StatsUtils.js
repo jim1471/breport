@@ -1,3 +1,4 @@
+import numeral from 'numeral'
 // TODO: tune fighter lossValue
 // Support Fighter // value * 3
 // Heavy Fighter // value * 6
@@ -109,4 +110,30 @@ export const calculateStatistics = (involvedByShips, involvedMembers, team, name
   // sort Team by Count
   team.sort((a, b) => (stats.membersCount[b] - stats.membersCount[a]))
   return stats
+}
+
+export const calcGeneralStats = teamsStats => {
+  let generalStats = {
+    dmg: 0,
+    lossCount: 0,
+    pilotsCount: 0,
+    totalLossValue: 0,
+  }
+  generalStats = teamsStats.reduce((total, stat) => {
+    total.dmg += stat.totalDmg
+    total.lossCount += stat.lossCount
+    total.pilotsCount += stat.pilotsCount
+    total.totalLossValue += stat.totalLossValue
+    return total
+  }, generalStats)
+
+  // calc efficiency of each team
+  teamsStats.forEach(stat => {
+    const efficiency = 1 - stat.totalLossValue / generalStats.totalLossValue
+    stat.efficiency = numeral(efficiency).format('0,0.0%')
+  })
+  if (process.env.NODE_ENV === 'development') {
+    console.log('generalStats:', generalStats)
+  }
+  return generalStats
 }

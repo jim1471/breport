@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { SYSTEMS_DATA } from 'data/constants'
-import { getUTCTime } from 'utils/FormatUtils'
+import { getUTCTime, formatSum } from 'utils/FormatUtils'
 import styles from './styles.scss'
 
 class BrInfo extends Component {
@@ -21,6 +21,18 @@ class BrInfo extends Component {
     return (
       <div className={styles.timing}>
         {`${dateStart.toLocaleDateString()}, ${getUTCTime(dateStart)} - ${getUTCTime(dateEnd)} ET`}
+      </div>
+    )
+  }
+
+  renderGeneralStats() {
+    const { generalStats } = this.props
+    if (!generalStats) {
+      return null
+    }
+    return (
+      <div className={styles.generalStats}>
+        {`Total lost: ${formatSum(generalStats.totalLossValue)}, Pilots: ${generalStats.pilotsCount}`}
       </div>
     )
   }
@@ -68,6 +80,7 @@ class BrInfo extends Component {
           }
           {this.renderStartEndTime()}
         </div>
+        {this.renderGeneralStats()}
       </div>
     )
   }
@@ -77,6 +90,7 @@ const mapDispatchToProps = {}
 const mapStateToProps = ({ related }) => ({
   systemStats: related.systemStats,
   relateds: related.relateds,
+  generalStats: related.generalStats,
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(BrInfo)

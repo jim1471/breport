@@ -7,7 +7,7 @@ import TeamGrouped from '../Team/TeamGrouped'
 import styles from './styles.scss'
 
 
-class RelatedReport extends Component {
+class Report extends Component {
 
   // example - /br/5cd5d7184a724f00173d85b9
   state = {
@@ -88,6 +88,6 @@ const mapStateToProps = ({ related, names, tabs }) => ({
   currTab: tabs.currTab,
 })
 
-const ConnectedReport = connect(mapStateToProps, mapDispatchToProps)(RelatedReport)
+const ConnectedReport = connect(mapStateToProps, mapDispatchToProps)(Report)
 
 export default ConnectedReport

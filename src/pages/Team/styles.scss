@@ -116,14 +116,29 @@
     display: flex;
     flex-direction: column;
     background-color: #000011;
-    color: #e0e0e0;
+    color: #eee;
     border-collapse: separate;
     border-spacing: 1px;
     border: 1px solid #444;
 
     .stats {
+      display: flex;
+      flex-direction: column;
       padding: 5px 10px;
       border-top: 1px solid #444;
+      line-height: 16px;
+
+      .statsRow {
+        display: flex;
+        justify-content: space-between;
+
+        > span:first-child {
+          color: #ccc;
+        }
+        > span:last-child {
+          font-weight: bold;
+        }
+      }
     }
 
     hr {

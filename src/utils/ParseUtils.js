@@ -448,6 +448,7 @@ class ParseUtils {
       const stats = StatsUtils.calculateStatistics(involvedByShips, involvedMembers, team, names)
       teamsStats.push(stats)
     })
+    const generalStats = StatsUtils.calcGeneralStats(teamsStats)
     console.timeEnd('parse teams')
 
     return {
@@ -459,6 +460,7 @@ class ParseUtils {
       teamsInvolved,
       teamsShips,
       teamsStats,
+      generalStats,
       origTeams: isTeamsConstructed ? [...teams] : null,
     }
   }

@@ -27,16 +27,13 @@ export default class TeamGrouped extends Component {
   }
 
   render() {
-    const { data, names } = this.props
     const { ships } = this.state
-
+    const { names } = this.props
     return (
       <div className={styles.team}>
-        <h4>Team A ({data ? data.length : 0})</h4>
         {ships.map(group => {
           const ship = group[0]
           if (!ship.id) return null
-
           return (
             <ShipGroup data={group} names={names} key={ship.id} />
           )
