@@ -158,4 +158,19 @@
       color: inherit;
     }
   }
+
+  .timelineRow,
+  .timelineRowLoss {
+    display: flex;
+    min-height: 34px;
+    margin: 1px 0;
+    margin-left: 2px;
+  }
+  .timelineRowLoss {
+    background-color: #480000;
+
+    &:hover {
+      background-color: #580000;
+    }
+  }
 }

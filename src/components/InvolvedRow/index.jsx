@@ -142,14 +142,6 @@ export default class InvolvedRow extends Component {
             onRenderDmg={this.renderDmg}
             lossValue={allLossesValue || fmtLossValue}
           />
-
-          {/* TODO: Expanded style for Parent row */}
-          {false && expanded && data.inv &&
-            <div>
-              {names.chars[charID]}
-            </div>
-          }
-
           <AllyIcon corpID={corpID} names={names} />
           <AllyIcon allyID={allyID} names={names} />
         </div>

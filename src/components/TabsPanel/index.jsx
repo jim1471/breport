@@ -23,7 +23,7 @@ class TabsPanel extends Component {
         >
           <Tab id='involved' title='Involved' />
           <Tab id='summary' title='Summary' />
-          {false && <Tab id='timeline' title='Timeline' />}
+          <Tab id='timeline' title='Timeline' />
           {false && <Tab id='about' title='About' />}
         </Tabs>
       </div>

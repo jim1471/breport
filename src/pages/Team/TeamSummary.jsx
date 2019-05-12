@@ -17,7 +17,7 @@ function groupShips(data) {
 }
 
 
-export default class TeamGrouped extends Component {
+export default class TeamSummary extends Component {
 
   state = {
     ships: null,

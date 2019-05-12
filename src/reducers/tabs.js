@@ -6,6 +6,7 @@ export const setTab = currTab => ({ type: SET_CURR_TAB, currTab })
 
 const initialState = {
   currTab: 'involved',
+  // currTab: 'timeline',
 }
 
 

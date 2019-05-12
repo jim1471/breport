@@ -94,3 +94,13 @@ export const getUTCTime = date => {
   result += `:${getMinutes(date.getUTCMinutes())}`
   return result
 }
+
+export const timestampToLocal = timestamp => {
+  const date = new Date(timestamp)
+  return getLocalTime(date)
+}
+
+export const timestampToUTC = timestamp => {
+  const date = new Date(timestamp)
+  return getUTCTime(date)
+}

@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Spinner } from 'components'
-import Team from '../Team/Team'
 import TeamStats from '../Team/TeamStats'
-import TeamGrouped from '../Team/TeamGrouped'
+import TeamInvolved from '../Team/TeamInvolved'
+import TeamSummary from '../Team/TeamSummary'
+import TeamTimeline from '../Team/TeamTimeline'
 import styles from './styles.scss'
 
 
@@ -14,14 +15,26 @@ class Report extends Component {
     teamStatsCollapsed: true,
   }
 
+  getTeamComponent() {
+    const { currTab } = this.props
+    switch (currTab) {
+      case 'summary':
+        return TeamSummary
+      case 'timeline':
+        return TeamTimeline
+      default:
+        return TeamInvolved
+    }
+  }
+
   handleExpand = () => {
     this.setState({ teamStatsCollapsed: false })
   }
 
   render() {
     const {
-      isLoading, names, teams, currTab,
-      teamsInvolved, teamsShips, teamsStats,
+      isLoading, names, teams,
+      teamsInvolved, teamsShips, teamsStats, teamsLosses, kmData,
     } = this.props
     const { teamStatsCollapsed } = this.state
 
@@ -29,7 +42,7 @@ class Report extends Component {
       return <Spinner />
     }
 
-    const TeamView = currTab === 'summary' ? TeamGrouped : Team
+    const TeamView = this.getTeamComponent()
 
     return (
       <div className={styles.reportRoot}>
@@ -63,6 +76,8 @@ class Report extends Component {
                 data={teamsShips[ix]}
                 involved={teamsInvolved[ix]}
                 teamStats={teamsStats[ix]}
+                teamLosses={teamsLosses[ix]}
+                kmData={kmData}
                 key={`team-${ix}`}
               />
             ))}
@@ -73,17 +88,18 @@ class Report extends Component {
       </div>
     )
   }
-
 }
 
 const mapDispatchToProps = {}
 const mapStateToProps = ({ related, names, tabs }) => ({
   names: names.involvedNames,
   relateds: related.relateds,
+  kmData: related.kmData,
   teams: related.teams,
   teamsInvolved: related.teamsInvolved,
   teamsShips: related.teamsShips,
   teamsStats: related.teamsStats,
+  teamsLosses: related.teamsLosses,
   systemStats: related.systemStats,
   currTab: tabs.currTab,
 })

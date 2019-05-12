@@ -4,7 +4,7 @@ import InvolvedRow from 'components/InvolvedRow'
 import styles from './styles.scss'
 
 
-class Team extends Component {
+class TeamInvolved extends Component {
 
   renderHeader() {
     return (
@@ -61,4 +61,4 @@ class Team extends Component {
   }
 }
 
-export default Team
+export default TeamInvolved

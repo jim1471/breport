@@ -1,5 +1,4 @@
 /* eslint no-unused-vars: 0, no-empty: 0 */
-import sortBy from 'lodash/sortBy'
 import isEmpty from 'lodash/isEmpty'
 import { SHIP_TYPES, CITADELS, NPC_SHIPS } from 'data/constants'
 import * as TeamsUtils from './TeamsUtils'
@@ -19,8 +18,11 @@ class ParseUtils {
       }
     })
 
-    // Sort by timestamp Ascending
-    kms = sortBy(kms, km => km.time)
+    // Sort by timestamp, id ASC
+    kms.sort((a, b) => {
+      const diff = a.time - b.time
+      return diff === 0 ? b.id - a.id : diff
+    })
 
     return kms
   }
@@ -389,12 +391,12 @@ class ParseUtils {
     return ships
   }
 
-  getSystemStat(origData) {
-    const data = origData.map(km => ({
-      system: km.system,
-      time: new Date(km.time),
-    }))
-    data.sort((a, b) => a.time - b.time)
+  getSystemStat(data) {
+    // Sort by timestamp, id ASC
+    data.sort((a, b) => {
+      const diff = a.time - b.time
+      return diff === 0 ? b.id - a.id : diff
+    })
 
     return {
       systemID: data[0].system,
@@ -423,6 +425,7 @@ class ParseUtils {
   parseTeams(teams, data, names, isTeamsConstructed = false) {
     console.time('parse teams')
     const systemStats = this.getSystemStat(data)
+
     const teamsLosses = []
     const teamsInvolved = []
     const teamsShips = []
@@ -452,6 +455,7 @@ class ParseUtils {
     console.timeEnd('parse teams')
 
     return {
+      kmData: data,
       kmCount: data.length,
       involvedNames: names,
       systemStats,
