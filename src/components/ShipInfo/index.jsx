@@ -27,7 +27,10 @@ export default class ShipInfo extends Component {
   }
 
   render() {
-    const { id, shipName, killID, podKillID, onRenderDmg, inv, onToggleExpanded, lossValue, time } = this.props
+    const {
+      id, shipName, killID, podKillID, onRenderDmg,
+      inv, onToggleExpanded, lossValue, time, names, charID,
+    } = this.props
 
     return (
       <div className={styles.root}>
@@ -47,7 +50,7 @@ export default class ShipInfo extends Component {
         <span className={styles.ship}>
           <div className={styles.char}>
             <div className={styles.charName}>
-              <span>
+              <span title={names.chars[charID] || ''}>
                 {this.renderCharName()}
               </span>
               {podKillID &&

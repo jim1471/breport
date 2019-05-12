@@ -21,7 +21,6 @@ export default class InvolvedRow extends Component {
     cnt: 0,
   }
 
-  // state = { expanded: false }
   state = {
     expanded: false,
     data: null,

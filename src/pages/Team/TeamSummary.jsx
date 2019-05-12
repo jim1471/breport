@@ -1,4 +1,3 @@
-/* eslint array-callback-return: 'off' */
 import React, { Component } from 'react'
 import ShipGroup from 'components/ShipGroup'
 import styles from './styles.scss'

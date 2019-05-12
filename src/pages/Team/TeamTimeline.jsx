@@ -1,4 +1,3 @@
-/* eslint array-callback-return: 'off' */
 import React, { Component } from 'react'
 import { timestampToUTC, formatSum } from 'utils/FormatUtils'
 import { AllyIcon, ShipInfo } from 'components'

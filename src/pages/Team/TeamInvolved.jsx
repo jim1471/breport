@@ -1,4 +1,3 @@
-/* eslint react/jsx-no-bind: 0 */
 import React, { Component } from 'react'
 import InvolvedRow from 'components/InvolvedRow'
 import styles from './styles.scss'
