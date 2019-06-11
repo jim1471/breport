@@ -22,44 +22,43 @@
     }
   }
 
+  .helper {
+    overflow: hidden;
+    margin-bottom: 5px;
+    color: red;
+
+    &.valid {
+      color: green;
+    }
+
+    @media (max-width: 400px) {
+      font-size: 9px;
+    }
+  }
+
   .label {
     font-size: 14px;
     line-height: 30px;
   }
 
-  .inputGroup {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-
-    > div:not(:last-child) {
-      position: relative;
-      margin: 0;
-      margin-right: 5px;
-    }
-
-    @media (max-width: 400px) {
-      flex-wrap: wrap;
-
-      :global(.bp3-input-group.bp3-large .bp3-input) {
-        height: 30px;
-        line-height: 30px;
-        font-size: 14px;
-      }
-
-      :global(.bp3-input-group.bp3-large > .bp3-icon) {
-        margin: 7px;
-      }
-
-      :global(.bp3-input-group.bp3-large .bp3-input:not(:first-child)) {
-        padding-left: 30px;
-      }
-    }
-  }
-
   .systemInputGroup {
     position: relative;
     flex: 1 1 100%;
+
+    .systemInput > :global(input.bp3-input) {
+      @media (max-width: 400px) {
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+        padding-left: 30px !important;
+      }
+    }
+
+    @media (max-width: 400px) {
+      :global(.bp3-input-group.bp3-large > .bp3-icon) {
+        margin: 7px;
+      }
+    }
   }
 
   .regionPlaceholder {
@@ -86,29 +85,6 @@
 
     .systemHidden {
       visibility: hidden;
-    }
-  }
-
-  .numericInput {
-    width: 120px;
-    max-width: 120px;
-    flex-basis: 120px;
-    user-select: none;
-
-    & > :global(.bp3-input-group) {
-      flex-grow: 0;
-      flex-shrink: 1;
-    }
-
-    button span svg {
-      overflow: visible;
-      margin-top: -3px;
-    }
-
-    @media (max-width: 400px) {
-      width: 100px;
-      max-width: 100px;
-      flex-basis: 100px;
     }
   }
 

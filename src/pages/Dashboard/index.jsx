@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-import { Footer } from 'components'
+import { Button } from 'components/common/blueprint'
+import { BrInfo, Footer } from 'widgets'
 import { SYSTEMS_DATA } from 'data/constants'
 import InputZkillLinkPanel from './InputZkillLinkPanel'
-// import InputSystems from './InputSystems'
+import InputSystems from './InputSystems'
 import styles from './styles.scss'
 
 
@@ -39,12 +40,23 @@ const relateds = [
 
 class Dashboard extends Component {
 
+  state = {
+    related: 'single',
+    // related: 'multiple',
+  }
+
   getSystemName(link) {
     const [systemID] = link.replace('/related/', '').split('/')
     const relSystemID = systemID - 30000000
     const system = SYSTEMS_DATA.systems.find(sys => sys[1] === relSystemID)
     const region = system && SYSTEMS_DATA.regions[system[2]]
     return `${system[0]} (${region})`
+  }
+
+  toggleRelated = () => {
+    this.setState(state => ({
+      related: state.related === 'single' ? 'multiple' : 'single',
+    }))
   }
 
   renderExamples() {
@@ -71,19 +83,42 @@ class Dashboard extends Component {
     )
   }
 
+  renderPanel() {
+    if (!SYSTEMS_DATA.systems) return null
+    const { related } = this.state
+    if (related === 'single') {
+      return <InputZkillLinkPanel getSystemName={this.getSystemName} />
+    }
+    return (
+      <div>
+        <BrInfo dashboard />
+        <InputSystems SYSTEMS_DATA={SYSTEMS_DATA} />
+      </div>
+    )
+  }
+
+  renderControls() {
+    return null
+    // const { related } = this.state
+    // return (
+    //   <div className={styles.controls}>
+    //     <Button large active={related === 'single'} onClick={this.toggleRelated}>
+    //       Single
+    //     </Button>
+    //     <Button large active={related === 'multiple'} onClick={this.toggleRelated}>
+    //       Multiple
+    //     </Button>
+    //   </div>
+    // )
+  }
+
   render() {
     return (
       <div className={styles.root}>
         <div className={styles.wrapper}>
-          {SYSTEMS_DATA.systems &&
-            <InputZkillLinkPanel getSystemName={this.getSystemName} />
-          }
-          {/* SYSTEMS_DATA.systems &&
-            <InputSystems SYSTEMS_DATA={SYSTEMS_DATA} />
-          */}
-          {true &&
-            this.renderExamples()
-          }
+          {this.renderControls()}
+          {this.renderPanel()}
+          {this.renderExamples()}
           <Footer />
         </div>
       </div>

@@ -1,16 +1,11 @@
 import React, { Component } from 'react'
 import cn from 'classnames'
-import Loadable from 'react-loadable'
 import startsWith from 'lodash/startsWith'
-import { InputGroup, NumericInput, Button, Icon } from 'components/common/blueprint'
-import { Spinner } from 'components'
+import { connect } from 'react-redux'
+import { addInputRelated } from 'reducers/battlereport'
+import { InputGroup, Button } from 'components/common/blueprint'
+import DateTimeInput from 'components/common/DateTimeInput'
 import styles from './styles.scss'
-
-
-const DatePicker = Loadable({
-  loader: () => import(/* webpackChunkName: "DatePicker" */'components/common/DatePicker'),
-  loading: () => <Spinner />,
-})
 
 
 const DropdownItem = ({ item, onSelect }) => {
@@ -25,12 +20,14 @@ const DropdownItem = ({ item, onSelect }) => {
 }
 
 
-export default class InputSystems extends Component {
+class InputSystems extends Component {
   state = {
     string: '',
     system: null,
     matched: [],
-    selectedDay: '',
+    start: '',
+    end: '',
+    relateds: [],
   }
 
   getMatchedSystems(str) {
@@ -58,19 +55,51 @@ export default class InputSystems extends Component {
     this.setState({ system, string: '', matched: [] })
   }
 
-  handleDaySelect = day => {
-    this.setState({ selectedDay: day })
+  handleSubmit = () => {
+    const { system, start, end, relateds } = this.state
+    if (relateds.length >= 10) {
+      console.error('no more relateds pls') // eslint-disable-line
+      return
+    }
+    const related = `/api/kills/solarSystemID/${system[1] + 30000000}/startTime/${start}/endTime/${end}/`
+    console.log('related:', related)
+    relateds.push(related)
+    this.setState({ relateds: [...relateds] })
+    this.props.addInputRelated(related)
+  }
+
+  handleDateTimeUpdate = (start, end) => {
+    console.log(start, end)
+    this.setState({ start, end })
+  }
+
+  renderHelper() {
+    const { system, start, end } = this.state
+    const sysID = system ? system[1] + 30000000 : '?'
+    const startValid = !start.includes('?')
+    const endValid = !end.includes('?')
+    const isValid = system && startValid && endValid
+    return (
+      <div className={cn(styles.helper, isValid && styles.valid)}>
+        {`/${sysID}/startTime/${start}/endTime/${end}/`}
+      </div>
+    )
   }
 
   render() {
-    const { SYSTEMS_DATA } = this.props
-    const { system, string, matched, selectedDay } = this.state
+    const { SYSTEMS_DATA, inputRelateds } = this.props
+    const { system, string, matched, start, end } = this.state
     const value = system
       ? system[0]
       : string
 
+    const isValid = system && start && end
+    console.log('isValid', isValid, system, start, end)
+    console.log('inputRelateds length:', inputRelateds.length)
+
     return (
       <div className={styles.card}>
+        {this.renderHelper()}
         <div className={styles.inputGroup}>
           <div className={styles.systemInputGroup}>
             {system &&
@@ -107,42 +136,24 @@ export default class InputSystems extends Component {
         <div className={styles.label}>
           Start date and time
         </div>
-        <div className={styles.inputGroup}>
-          <DatePicker value={selectedDay} onDaySelect={this.handleDaySelect} />
-          <NumericInput
-            className={cn(styles.numericInput, 'bp3-fixed')}
-            large
-            value={0}
-            min={0}
-            max={23}
-            allowNumericCharactersOnly
-            clampValueOnBlur
-            selectAllOnFocus
-            minorStepSize={null}
-            leftIcon='time'
-            placeholder='Hour'
-            onChange={null}
-          />
-          <NumericInput
-            className={cn(styles.numericInput, 'bp3-fixed')}
-            large
-            value={0}
-            min={0}
-            max={59}
-            allowNumericCharactersOnly
-            clampValueOnBlur
-            selectAllOnFocus
-            minorStepSize={null}
-            leftIcon='time'
-            placeholder='Minute'
-            onChange={null}
-          />
-          <Icon iconSize={32} icon='tick-circle' intent='success' />
-          <Icon iconSize={32} icon='delete' intent='danger' />
-        </div>
 
-        <Button text='btn' intent='primary' />
+        <DateTimeInput onUpdate={this.handleDateTimeUpdate} />
+
+        &nbsp;
+
+        <Button
+          text='ADD'
+          intent='primary'
+          disabled={!isValid}
+          onClick={this.handleSubmit}
+        />
       </div>
     )
   }
 }
+
+const mapDispatchToProps = { addInputRelated }
+const mapStateToProps = ({ battlereport }) => ({
+  inputRelateds: battlereport.inputRelateds,
+})
+export default connect(mapStateToProps, mapDispatchToProps)(InputSystems)

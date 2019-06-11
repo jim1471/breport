@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
 import isEqual from 'lodash/isEqual'
 import { getRelatedData, getRelatedDataStub, parseData, setBrInfo } from 'reducers/related'
-import { Spinner, ControlPanel, BrInfo, TabsPanel, Footer } from 'components'
+import { Spinner } from 'components'
+import { ControlPanel, BrInfo, TabsPanel, Footer } from 'widgets'
 import RelatedService from 'api/RelatedService'
 import Report from 'pages/Report'
 import styles from './styles.scss'
@@ -87,13 +88,13 @@ class RelatedPage extends Component {
 
     let header = ''
     if (stillProcessing || isError === 'processing') {
-      header = 'Related data: processing...'
+      header = 'processing...'
     } else if (isError) {
-      header = 'Related data: failed to fetch.'
+      header = 'failed to fetch.'
     } else if (isLoading) {
-      header = 'Related data: loading...'
+      header = 'loading...'
     } else {
-      header = `Related data: ${data.length} killmails`
+      header = `${data.length} killmails`
     }
 
     return (

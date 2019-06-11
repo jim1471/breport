@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
+import cn from 'classnames'
 import { SYSTEMS_DATA } from 'data/constants'
 import { getUTCTime, formatSum } from 'utils/FormatUtils'
 import styles from './styles.scss'
@@ -37,11 +38,11 @@ class BrInfo extends Component {
     )
   }
 
-  render() {
+  renderSingle() {
     if (!SYSTEMS_DATA.systems) {
       return null
     }
-    const { routerParams, relateds } = this.props
+    const { routerParams = {}, relateds } = this.props
     let { systemID, time } = routerParams
     if (!systemID) {
       if (relateds && relateds[0]) {
@@ -84,13 +85,31 @@ class BrInfo extends Component {
       </div>
     )
   }
+
+  renderInputRelateds() {
+    const { inputRelateds } = this.props
+    return (
+      <div className={cn(styles.systemStats, styles.dashboard)}>
+        {`inputRelateds: ${inputRelateds.length}`}
+      </div>
+    )
+  }
+
+  render() {
+    const { dashboard } = this.props
+    if (!dashboard) {
+      return this.renderSingle()
+    }
+    return this.renderInputRelateds()
+  }
 }
 
 const mapDispatchToProps = {}
-const mapStateToProps = ({ related }) => ({
+const mapStateToProps = ({ related, battlereport }) => ({
   systemStats: related.systemStats,
   relateds: related.relateds,
   generalStats: related.generalStats,
+  inputRelateds: battlereport.inputRelateds,
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(BrInfo)

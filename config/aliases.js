@@ -9,6 +9,7 @@ module.exports = {
   pages: path.resolve(appDirectory, 'src/pages'),
   reducers: path.resolve(appDirectory, 'src/reducers'),
   components: path.resolve(appDirectory, 'src/components'),
+  widgets: path.resolve(appDirectory, 'src/components/widgets'),
   icons: path.resolve(appDirectory, 'src/components/common/icons'),
   utils: path.resolve(appDirectory, 'src/utils'),
   middlewares: path.resolve(appDirectory, 'src/middlewares'),

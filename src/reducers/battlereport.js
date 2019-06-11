@@ -5,6 +5,7 @@ import { initializeBrData } from 'reducers/related'
 const SAVE_BR = 'SAVE_BR'
 const GET_BR = 'GET_BR'
 const SET_STATUS = 'SET_STATUS'
+const ADD_RELATED = 'ADD_RELATED'
 
 
 export const setStatus = status => ({ type: SET_STATUS, status })
@@ -39,6 +40,8 @@ export const getBR = brID => dispatch => {
   })
 }
 
+export const addInputRelated = related => ({ type: ADD_RELATED, related })
+
 
 const initialState = {
   br: {
@@ -47,6 +50,7 @@ const initialState = {
     status: '',
     isLoading: false,
   },
+  inputRelateds: [],
   saving: {},
   status: '',
 }
@@ -55,6 +59,12 @@ const initialState = {
 export default (state = initialState, action) => {
 
   switch (action.type) {
+
+    case ADD_RELATED:
+      return {
+        ...state,
+        inputRelateds: state.inputRelateds.concat([action.relateds]),
+      }
 
     case SAVE_BR:
       return {

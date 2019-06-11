@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import cn from 'classnames'
 import startsWith from 'lodash/startsWith'
 import { browserHistory } from 'react-router'
 import { InputGroup, Button } from 'components/common/blueprint'
@@ -41,7 +42,7 @@ export default class InputZkillLinkPanel extends Component {
     const { getSystemName } = this.props
     return (
       <div className={styles.card}>
-        <div className={styles.cardRow}>
+        <div className={cn(styles.cardRow, relatedLink && styles.valid)}>
           <span>Related:</span>
           <span className={relatedLink ? styles.matchedLink : ''}>
             {relatedLink || '?'}

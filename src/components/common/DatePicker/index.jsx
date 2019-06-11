@@ -7,7 +7,8 @@ import DayPickerInput from 'react-day-picker/DayPickerInput'
 import 'react-day-picker/lib/style.css'
 import './styles.scss'
 
-const FORMAT = 'DD/MM/YYYY'
+// const FORMAT = 'DD/MM/YYYY'
+const FORMAT = 'YYYYMMDD'
 
 function parseDate(str, format, locale) {
   const parsed = dateFnsParse(str, format, { locale })
@@ -33,15 +34,20 @@ export default class DatePicker extends Component {
     selectedDay: dateFnsFormat(new Date(), FORMAT),
   }
 
+  componentDidMount() {
+    this.handleDayChange(dateFnsFormat(new Date(), FORMAT))
+  }
+
   handleDayChange = day => {
-    this.props.onDaySelect(day)
+    const date = formatDate(day, FORMAT)
+    this.props.onDaySelect(date)
   }
 
   render() {
     const { selectedDay } = this.props
     return (
       <DayPickerInput
-        showOverlay
+        // showOverlay
         keepFocus={false}
 
         value={selectedDay}

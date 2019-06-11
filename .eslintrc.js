@@ -47,6 +47,7 @@ const config = {
     'react/require-default-props': 'off',
     'react/prefer-stateless-function': 'off',
     'react/no-array-index-key': 'off',
+    'react/jsx-max-props-per-line': 'off',
     'object-property-newline': 'off',
     'object-curly-newline': 'off',
     'class-methods-use-this': 'off',

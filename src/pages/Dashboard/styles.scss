@@ -10,6 +10,18 @@
     user-select: text;
   }
 
+  .controls {
+    display: flex;
+    justify-content: space-around;
+    width: 320px;
+    max-width: 320px;
+    padding-top: 20px;
+
+    :global(button.bp3-button.bp3-active.bp3-large) {
+      background-color: #aaa;
+    }
+  }
+
   .wrapper {
     position: relative;
     width: 100%;
@@ -51,6 +63,11 @@
     .cardRow {
       display: flex;
       flex-wrap: wrap;
+      color: red;
+
+      &.valid {
+        color: #42AFF0;
+      }
 
       > span:not(:last-child) {
         margin-right: 5px;
@@ -60,6 +77,10 @@
 
   .matchedLink {
     color: #42AFF0;
+  }
+
+  .notValid {
+    color: red;
   }
 
   .matchedSystem {

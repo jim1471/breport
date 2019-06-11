@@ -11,7 +11,7 @@ class TeamInvolved extends Component {
         <div className={styles.body}>
           <div className={styles.row}>
             <span style={{ color: 'gold' }}>Pilot</span>
-            <span style={{ color: 'gold' }}>loss value | used ships</span>
+            <span style={{ color: 'gold' }}>used ships | loss value</span>
           </div>
           <div className={styles.row}>
             <span>Ship</span>
