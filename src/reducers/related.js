@@ -1,3 +1,4 @@
+import isEmpty from 'lodash/isEmpty'
 import RelatedService from 'api/RelatedService'
 import ParseUtils from 'utils/ParseUtils'
 import { moveMemberToTeam } from 'utils/TeamsUtils'
@@ -56,7 +57,13 @@ export const getRelatedData = (systemID, time, stillProcessing) => dispatch => {
         }
         dispatch({ type: GET_RELATED_DATA_SUCCESS, payload: { data } })
         const killmailsData = data.kms
-        dispatch(getNames(killmailsData))
+        if (isEmpty(killmailsData)) {
+          const error = 'No killmails for this system and datetime.'
+          console.error(error)
+          dispatch({ type: 'PARSE_NAMES_FAILED', payload: { err: error } })
+        } else {
+          dispatch(getNames(killmailsData))
+        }
       } else {
         const error = `unknown response: ${data.result}`
         console.error(error, data)
@@ -64,7 +71,7 @@ export const getRelatedData = (systemID, time, stillProcessing) => dispatch => {
       }
     })
     .catch(error => {
-      console.log('error:', error)
+      console.error('error:', error)
       dispatch({ type: GET_RELATED_DATA_ERROR, error })
     })
 }

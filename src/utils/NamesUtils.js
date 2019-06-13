@@ -37,7 +37,7 @@ class NamesUtils {
     }
 
     // console.log('allNames:', allNames)
-    if (!allNames.systems[data[0].system]) {
+    if (data[0] && !allNames.systems[data[0].system]) {
       all.systems[data[0].system] = 1
     }
     data.forEach(km => {

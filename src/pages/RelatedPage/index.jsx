@@ -2,12 +2,25 @@ import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
 import isEqual from 'lodash/isEqual'
+import startsWith from 'lodash/startsWith'
 import { getRelatedData, getRelatedDataStub, parseData, setBrInfo } from 'reducers/related'
 import { Spinner } from 'components'
 import { ControlPanel, BrInfo, TabsPanel, Footer } from 'widgets'
 import RelatedService from 'api/RelatedService'
 import Report from 'pages/Report'
 import styles from './styles.scss'
+
+
+const formatZkillTimestamp = ts => {
+  const date = new Date(ts * 1000)
+  let dateStr = date.getUTCFullYear()
+  const month = date.getUTCMonth() + 1
+  dateStr += month > 9 ? month : `0${month}`
+  const day = date.getUTCDate()
+  dateStr += day > 9 ? day : `0${day}`
+  dateStr += `${date.getUTCHours()}00`
+  return dateStr
+}
 
 
 class RelatedPage extends Component {
@@ -18,6 +31,14 @@ class RelatedPage extends Component {
 
   componentDidMount() {
     const { names, params: { systemID, time }, relatedSystemID, relatedDatetime } = this.props
+    // come from zkillboard, smth like this https://br.evetools.org/related/30000503/1560456000/
+    if (!startsWith(time, '2019')) {
+      const zTime = formatZkillTimestamp(time)
+      console.log(`transform timestamp ${time} to zTime: ${zTime}`)
+      window.location.replace(`${window.location.origin}/related/${systemID}/${zTime}`)
+      return
+    }
+
     const isNewRelated = parseInt(systemID, 10) !== relatedSystemID || time !== relatedDatetime
     if (names.isLoading || isNewRelated) {
       this.fetchData()

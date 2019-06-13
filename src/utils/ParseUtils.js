@@ -398,6 +398,10 @@ class ParseUtils {
       return diff === 0 ? b.id - a.id : diff
     })
 
+    if (!data[0]) {
+      return {}
+    }
+
     return {
       systemID: data[0].system,
       fromTime: data[0].time,
