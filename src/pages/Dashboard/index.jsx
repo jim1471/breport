@@ -27,6 +27,11 @@ class Dashboard extends Component {
       })
   }
 
+  getSystemNameFromLink = link => {
+    const [systemID] = link.replace('/related/', '').split('/')
+    return this.getSystemName(systemID)
+  }
+
   getSystemName(systemID) {
     const relSystemID = systemID - 30000000
     const system = SYSTEMS_DATA.systems.find(sys => sys[1] === relSystemID)
@@ -86,7 +91,7 @@ class Dashboard extends Component {
     if (!SYSTEMS_DATA.systems) return null
     const { related } = this.state
     if (related === 'single') {
-      return <InputZkillLinkPanel getSystemName={this.getSystemName} />
+      return <InputZkillLinkPanel getSystemName={this.getSystemNameFromLink} />
     }
     return (
       <div>
