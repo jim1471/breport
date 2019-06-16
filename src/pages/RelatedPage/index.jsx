@@ -6,23 +6,10 @@ import startsWith from 'lodash/startsWith'
 import { getRelatedData, getRelatedDataStub, parseData, setBrInfo } from 'reducers/related'
 import { Spinner } from 'components'
 import { ControlPanel, BrInfo, TabsPanel, Footer } from 'widgets'
+import { formatZkillTimestamp } from 'utils/FormatUtils'
 import RelatedService from 'api/RelatedService'
 import Report from 'pages/Report'
 import styles from './styles.scss'
-
-
-const formatZkillTimestamp = ts => {
-  const date = new Date(ts * 1000)
-  let dateStr = date.getUTCFullYear()
-  const month = date.getUTCMonth() + 1
-  dateStr += month > 9 ? month : `0${month}`
-  const day = date.getUTCDate()
-  dateStr += day > 9 ? day : `0${day}`
-  const hour = date.getUTCHours()
-  dateStr += hour > 9 ? hour : `0${hour}`
-  dateStr += '00'
-  return dateStr
-}
 
 
 class RelatedPage extends Component {

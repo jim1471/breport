@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 // import { Button } from 'components/common/blueprint'
 import { BrInfo, Footer } from 'widgets'
 import { SYSTEMS_DATA } from 'data/constants'
+import { parseZkillDatetime } from 'utils/FormatUtils'
 import RelatedService from 'api/RelatedService'
 import InputZkillLinkPanel from './InputZkillLinkPanel'
 import InputSystems from './InputSystems'
@@ -83,7 +84,9 @@ class Dashboard extends Component {
           <Link to={path}>
             {this.getSystemName(item.systemID)}
           </Link>
-          <div>{createdAt}</div>
+          {false && <div>{createdAt}</div>}
+          {false && <div>{`${item.datetime} - ${parseZkillDatetime(item.datetime)}`}</div>}
+          <div>{parseZkillDatetime(item.datetime)}</div>
         </div>
         <div className={styles.commentCell}>
           {`Killmails: ${item.kmsCount}`}
@@ -94,7 +97,7 @@ class Dashboard extends Component {
 
   renderRecent() {
     const { relateds } = this.state
-    if (relateds.count === 0) {
+    if (!relateds || relateds.length === 0) {
       return null
     }
     return (

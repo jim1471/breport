@@ -105,3 +105,30 @@ export const timestampToUTC = timestamp => {
   const date = new Date(timestamp)
   return getUTCTime(date)
 }
+
+export const formatZkillTimestamp = ts => {
+  const date = new Date(ts * 1000)
+  let dateStr = date.getUTCFullYear()
+  const month = date.getUTCMonth() + 1
+  dateStr += month > 9 ? month : `0${month}`
+  const day = date.getUTCDate()
+  dateStr += day > 9 ? day : `0${day}`
+  const hour = date.getUTCHours()
+  dateStr += hour > 9 ? hour : `0${hour}`
+  dateStr += '00'
+  return dateStr
+}
+
+export const parseZkillDatetime = dt => {
+  if (dt.length !== 12) return null
+  const year = dt.substring(0, 4)
+  const month = dt.substring(4, 6) - 1
+  const day = dt.substring(6, 8)
+  const hour = dt.substring(8, 10)
+  const min = dt.substring(10)
+  if (min !== '00') {
+    console.error('parseZkillDatetime: invalid min:', min)
+  }
+  const timestamp = Date.UTC(year, month, day, hour, min)
+  return (new Date(timestamp)).toUTCString().replace(':00:00', ':00')
+}
