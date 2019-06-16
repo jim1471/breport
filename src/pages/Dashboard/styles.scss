@@ -87,10 +87,10 @@
     color: #eee;
   }
 
-  .examples {
+  .recent {
     position: relative;
     width: 100%;
-    max-width: 600px;
+    max-width: 400px;
     font-size: 14px;
     margin-top: 40px;
 
@@ -107,6 +107,11 @@
       .commentCell {
         text-align: right;
         flex: 1 0;
+      }
+
+      .createdAt {
+        font-size: 10px;
+        color: #888;
       }
 
       > div:not(:last-child) {
