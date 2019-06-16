@@ -25,6 +25,7 @@ class TabsPanel extends Component {
           <Tab id='summary' title='Summary' />
           <Tab id='timeline' title='Timeline' />
           <Tab id='damage' title='Damage' />
+          <Tab id='composition' title='Composition' />
         </Tabs>
       </div>
     )

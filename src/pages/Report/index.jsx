@@ -6,6 +6,7 @@ import TeamInvolved from '../Team/TeamInvolved'
 import TeamSummary from '../Team/TeamSummary'
 import TeamTimeline from '../Team/TeamTimeline'
 import TeamDamage from '../Team/TeamDamage'
+import TeamComposition from '../Team/TeamComposition'
 import styles from './styles.scss'
 
 
@@ -25,6 +26,8 @@ class Report extends Component {
         return TeamTimeline
       case 'damage':
         return TeamDamage
+      case 'composition':
+        return TeamComposition
       default:
         return TeamInvolved
     }

@@ -92,6 +92,7 @@ export const getUTCTime = date => {
   let result = ''
   result += `${date.getUTCHours()}`
   result += `:${getMinutes(date.getUTCMinutes())}`
+  result += `:${getMinutes(date.getUTCSeconds())}`
   return result
 }
 
