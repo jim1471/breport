@@ -97,25 +97,39 @@
     .item {
       display: flex;
       flex-wrap: wrap;
+      flex-direction: column;
       width: 100%;
       margin-top: 20px;
 
       .systemCell {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
         color: #ccc;
+
+        > a {
+          margin-right: 10px;
+        }
       }
 
-      .commentCell {
-        text-align: right;
-        flex: 1 0;
+      .distanceCell {
+        font-size: 10px;
+        line-height: 18px;
+        color: #888;
+      }
+
+      .statsCell {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        color: #ccc;
       }
 
       .createdAt {
         font-size: 10px;
+        line-height: 18px;
         color: #888;
-      }
-
-      > div:not(:last-child) {
-        margin-right: 10px;
       }
     }
   }

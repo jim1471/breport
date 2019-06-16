@@ -135,11 +135,17 @@ export const getTeams = data => {
   }
   first.push(firstAllyID)
 
+  let firstAllyEnemyID
   const firstEnemy = victims.damageDealt[firstAllyID]
   if (!firstEnemy || !firstEnemy[0] || !firstEnemy[0][0]) {
-    return invalidReport(allGroups)
+    firstAllyEnemyID = sortedByImpact.shift()
+    if (!firstAllyEnemyID) {
+      return invalidReport(allGroups)
+    }
+  } else {
+    // max whored enemy ally
+    firstAllyEnemyID = firstEnemy[0][0] // eslint-disable-line
   }
-  const firstAllyEnemyID = firstEnemy[0][0] // max whored enemy ally
   second.push(firstAllyEnemyID)
 
   // remove firstAllyEnemyID from list also

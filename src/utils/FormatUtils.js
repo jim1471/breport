@@ -130,5 +130,5 @@ export const parseZkillDatetime = dt => {
     console.error('parseZkillDatetime: invalid min:', min)
   }
   const timestamp = Date.UTC(year, month, day, hour, min)
-  return (new Date(timestamp)).toUTCString().replace(':00:00', ':00')
+  return new Date(timestamp)
 }

@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+import { distanceInWordsToNow } from 'date-fns'
 // import { Button } from 'components/common/blueprint'
 import { BrInfo, Footer } from 'widgets'
 import { SYSTEMS_DATA } from 'data/constants'
-import { parseZkillDatetime } from 'utils/FormatUtils'
+import { parseZkillDatetime, formatSum } from 'utils/FormatUtils'
 import RelatedService from 'api/RelatedService'
 import InputZkillLinkPanel from './InputZkillLinkPanel'
 import InputSystems from './InputSystems'
@@ -43,20 +44,26 @@ class Dashboard extends Component {
     const key = `${item.systemID}/${item.datetime}`
     const path = `/related/${key}`
     const createdAt = (new Date(item.createdAt)).toLocaleString()
+    const relatedDate = parseZkillDatetime(item.datetime)
+    const relatedDateFmt = relatedDate.toUTCString().replace(':00:00', ':00')
     return (
       <div key={key} className={styles.item}>
         <div className={styles.systemCell}>
           <Link to={path}>
             {this.getSystemName(item.systemID)}
           </Link>
-          {false && <div>{`${item.datetime} - ${parseZkillDatetime(item.datetime)}`}</div>}
-          <div>{parseZkillDatetime(item.datetime)}</div>
+          <div>{relatedDateFmt}</div>
+        </div>
+        <div className={styles.distanceCell}>
+          {`${distanceInWordsToNow(relatedDate)} ago`}
+        </div>
+        <div className={styles.systemCell}>
+          <div className={styles.statsCell}>
+            {`Total lost: ${formatSum(item.totalLost) || '?'}, Killmails: ${item.kmsCount}`}
+          </div>
           <div className={styles.createdAt}>
             {`added: ${createdAt}`}
           </div>
-        </div>
-        <div className={styles.commentCell}>
-          {`Killmails: ${item.kmsCount}`}
         </div>
       </div>
     )

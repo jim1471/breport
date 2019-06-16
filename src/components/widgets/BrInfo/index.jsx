@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
+import { distanceInWordsToNow } from 'date-fns'
 import cn from 'classnames'
 import { SYSTEMS_DATA } from 'data/constants'
 import { getUTCTime, formatSum } from 'utils/FormatUtils'
@@ -27,13 +28,16 @@ class BrInfo extends Component {
   }
 
   renderGeneralStats() {
-    const { generalStats } = this.props
+    const { generalStats, systemStats = {} } = this.props
     if (!generalStats) {
       return null
     }
+    const { fromTime } = systemStats
+    const dateStart = new Date(fromTime)
     return (
       <div className={styles.generalStats}>
-        {`Total lost: ${formatSum(generalStats.totalLossValue)}, Pilots: ${generalStats.pilotsCount}`}
+        <div>{`${distanceInWordsToNow(dateStart)} ago`}</div>
+        <div>{`Total lost: ${formatSum(generalStats.totalLossValue)}, Pilots: ${generalStats.pilotsCount}`}</div>
       </div>
     )
   }
