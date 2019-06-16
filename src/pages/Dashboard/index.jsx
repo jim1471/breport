@@ -1,52 +1,61 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-import { Button } from 'components/common/blueprint'
+// import { Button } from 'components/common/blueprint'
 import { BrInfo, Footer } from 'widgets'
 import { SYSTEMS_DATA } from 'data/constants'
+import RelatedService from 'api/RelatedService'
 import InputZkillLinkPanel from './InputZkillLinkPanel'
 import InputSystems from './InputSystems'
 import styles from './styles.scss'
 
 
-const relateds = [
-  ['/related/30002833/201905040200/', 'The Kalevala Expanse'],
-  ['/related/30000478/201904120800/', 'capital brawl'],
-  ['/related/30004662/201904051900/', '4 titans and nyx'],
-  ['/related/30000511/201904051000/', '1077 killmails'],
-  ['/related/31002071/201903290500/', ''],
-  ['/related/30005259/201903281600/', ''],
-  ['/related/31000743/201903291600/', 'Marginis Fortzar'],
-  ['/related/30000842/201903240200/', ''],
-  ['/related/30001975/201903212200/', 'Fortizar in PB'],
-  ['/related/31002496/201903230200/', 'WH'],
-  ['/related/30000483/201903030500/', 'komodo'],
-  ['/related/30002435/201901161000/', '300 dreads'],
-  ['/related/30005176/201903161600/', ''],
-  ['/related/30000688/201902112000/', ''],
-  ['/related/30001111/201903161900/', ''],
-  ['/related/30005268/201903141400/', ''],
+// const stub = [
+//   ['/related/30002833/201905040200/', 'The Kalevala Expanse'],
+//   ['/related/30000478/201904120800/', 'capital brawl'],
+//   ['/related/30004662/201904051900/', '4 titans and nyx'],
+//   ['/related/30000511/201904051000/', '1077 killmails'],
+//   ['/related/31002071/201903290500/', ''],
+//   ['/related/30005259/201903281600/', ''],
+//   ['/related/31000743/201903291600/', 'Marginis Fortzar'],
+//   ['/related/30000842/201903240200/', ''],
+//   ['/related/30001975/201903212200/', 'Fortizar in PB'],
+//   ['/related/31002496/201903230200/', 'WH'],
+//   ['/related/30000483/201903030500/', 'komodo'],
+//   ['/related/30002435/201901161000/', '300 dreads'],
+//   ['/related/30005176/201903161600/', ''],
+//   ['/related/30000688/201902112000/', ''],
+//   ['/related/30001111/201903161900/', ''],
+//   ['/related/30005268/201903141400/', ''],
 
-  ['/related/30004828/201903091600/', ''],
-  ['/related/30000444/201903101600/', ''],
-  ['/related/30000694/201810121800/', ''],
-  ['/related/30000694/201810102000/', ''],
-  ['/related/30001029/201810312100/', ''],
-  ['/related/30000726/201811102000/', ''],
-  ['/related/30000721/201811201800/', ''],
-  ['/related/30000691/201811241900/', ''],
-  ['/related/30000657/201901171900/', ''],
-  ['/related/30003853/201902161000/', ''],
-]
+//   ['/related/30004828/201903091600/', ''],
+//   ['/related/30000444/201903101600/', ''],
+//   ['/related/30000694/201810121800/', ''],
+//   ['/related/30000694/201810102000/', ''],
+//   ['/related/30001029/201810312100/', ''],
+//   ['/related/30000726/201811102000/', ''],
+//   ['/related/30000721/201811201800/', ''],
+//   ['/related/30000691/201811241900/', ''],
+//   ['/related/30000657/201901171900/', ''],
+//   ['/related/30003853/201902161000/', ''],
+// ]
 
 class Dashboard extends Component {
 
   state = {
     related: 'single',
     // related: 'multiple',
+    relateds: [],
   }
 
-  getSystemName(link) {
-    const [systemID] = link.replace('/related/', '').split('/')
+  componentDidMount() {
+    RelatedService.getRecentRelateds()
+      .then(({ data }) => {
+        console.log('recent data:', data[0])
+        this.setState({ relateds: data })
+      })
+  }
+
+  getSystemName(systemID) {
     const relSystemID = systemID - 30000000
     const system = SYSTEMS_DATA.systems.find(sys => sys[1] === relSystemID)
     const region = system && SYSTEMS_DATA.regions[system[2]]
@@ -59,26 +68,39 @@ class Dashboard extends Component {
     }))
   }
 
-  renderExamples() {
-    if (process.env.NODE_ENV !== 'development') {
+  renderRecentRelated(item) {
+    const key = `${item.systemID}/${item.datetime}`
+    const path = `/related/${key}`
+    const createdAt = (new Date(item.createdAt)).toUTCString()
+    return (
+      <div key={key} className={styles.item}>
+        {false &&
+          <div className={styles.linkCell}>
+            {path}
+          </div>
+        }
+        <div className={styles.systemCell}>
+          <Link to={path}>
+            {this.getSystemName(item.systemID)}
+          </Link>
+          <div>{createdAt}</div>
+        </div>
+        <div className={styles.commentCell}>
+          {`Killmails: ${item.kmsCount}`}
+        </div>
+      </div>
+    )
+  }
+
+  renderRecent() {
+    const { relateds } = this.state
+    if (relateds.count === 0) {
       return null
     }
     return (
       <div className={styles.examples}>
-        <div>Example Battle Reports:</div>
-        {relateds.map(path => (
-          <div key={path[0]} className={styles.item}>
-            <div className={styles.linkCell}>
-              <Link to={path[0]}>{path[0]}</Link>
-            </div>
-            <div className={styles.systemCell}>
-              {this.getSystemName(path[0])}
-            </div>
-            <div className={styles.commentCell}>
-              {path[1]}
-            </div>
-          </div>
-        ))}
+        <div>Recent Battle Reports:</div>
+        {relateds.map(item => this.renderRecentRelated(item))}
       </div>
     )
   }
@@ -118,7 +140,7 @@ class Dashboard extends Component {
         <div className={styles.wrapper}>
           {this.renderControls()}
           {this.renderPanel()}
-          {this.renderExamples()}
+          {this.renderRecent()}
           <Footer />
         </div>
       </div>

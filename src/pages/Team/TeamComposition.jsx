@@ -83,7 +83,7 @@ export default class TeamComposition extends Component {
           })
 
           return (
-            <div className={styles.member}>
+            <div className={styles.member} key={allyID}>
               <div className={styles.ally}>
                 {allyID !== 'unaffiliated' &&
                   <AllyIcon allyID={allyID} names={names} />
@@ -95,7 +95,7 @@ export default class TeamComposition extends Component {
                   const corpName = names.corps[corpID]
                   const charsCount = members[allyID][corpID]
                   return (
-                    <div className={styles.corp}>
+                    <div className={styles.corp} key={corpID}>
                       <AllyIcon mini corpID={corpID} names={names} />
                       <div>{`(${charsCount}) ${corpName}`}</div>
                     </div>

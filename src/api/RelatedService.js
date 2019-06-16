@@ -18,6 +18,13 @@ class RelatedService extends BaseAPI {
     })
   }
 
+  getRecentRelateds() {
+    return this.call({
+      method: 'get',
+      url: `${base}/api/v1/recent`,
+    })
+  }
+
   saveComposition(teams, systemID, time) {
     return this.call({
       method: 'post',
