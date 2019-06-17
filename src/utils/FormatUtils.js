@@ -108,7 +108,7 @@ export const timestampToUTC = timestamp => {
 
 export const formatZkillTimestamp = ts => {
   const date = new Date(ts * 1000)
-  let dateStr = date.getUTCFullYear()
+  let dateStr = `${date.getUTCFullYear()}`
   const month = date.getUTCMonth() + 1
   dateStr += month > 9 ? month : `0${month}`
   const day = date.getUTCDate()
