@@ -12,30 +12,38 @@ function groupShipsNew(data) {
   data.forEach(ship => {
     if (ship.inv && ship.inv.ships) {
       Object.keys(ship.inv.ships).forEach(shipID => {
-        shipsGroups[shipID] = shipsGroups[shipID] || { inv: 0, losed: 0, sum: 0 }
-        const invShip = ship.inv.ships[shipID]
-        if (invShip.losses) {
-          invShip.losses.forEach(loss => {
+        if (shipID) {
+          shipsGroups[shipID] = shipsGroups[shipID] || { inv: 0, losed: 0, sum: 0 }
+          const invShip = ship.inv.ships[shipID]
+          if (invShip.losses) {
+            invShip.losses.forEach(loss => {
+              shipsGroups[shipID].inv += 1
+              shipsGroups[shipID].losed += 1
+              shipsGroups[shipID].sum += loss.lossValue
+            })
+          } else {
             shipsGroups[shipID].inv += 1
-            shipsGroups[shipID].losed += 1
-            shipsGroups[shipID].sum += loss.lossValue
-          })
-        } else {
-          shipsGroups[shipID].inv += 1
+          }
         }
       })
+
     } else {
-      shipsGroups[ship.id] = shipsGroups[ship.id] || { inv: 0, losed: 0, sum: 0 }
-      shipsGroups[ship.id].inv += 1
-      if (ship.loss) {
-        shipsGroups[ship.id].losed += 1
-        shipsGroups[ship.id].sum += ship.loss.lossValue
+      if (ship.id) {
+        shipsGroups[ship.id] = shipsGroups[ship.id] || { inv: 0, losed: 0, sum: 0 }
+        shipsGroups[ship.id].inv += 1
+        if (ship.loss) {
+          shipsGroups[ship.id].losed += 1
+          shipsGroups[ship.id].sum += ship.loss.lossValue
+        }
       }
+
       if (ship.podLoss) {
-        shipsGroups[ship.podLoss.ship] = shipsGroups[ship.podLoss.ship] || { inv: 0, losed: 0, sum: 0 }
-        shipsGroups[ship.podLoss.ship].inv += 1
-        shipsGroups[ship.podLoss.ship].losed += 1
-        shipsGroups[ship.podLoss.ship].sum += ship.podLoss.lossValue
+        if (ship.podLoss.ship) {
+          shipsGroups[ship.podLoss.ship] = shipsGroups[ship.podLoss.ship] || { inv: 0, losed: 0, sum: 0 }
+          shipsGroups[ship.podLoss.ship].inv += 1
+          shipsGroups[ship.podLoss.ship].losed += 1
+          shipsGroups[ship.podLoss.ship].sum += ship.podLoss.lossValue
+        }
       }
     }
   })
@@ -67,6 +75,9 @@ export default class TeamSummary extends Component {
   renderShipGroup(shipID) {
     const { shipsGroups } = this.state
     const { names } = this.props
+    if (!shipsGroups[shipID]) {
+      return null
+    }
     const shipName = names.types[shipID]
     const lossValue = shipsGroups[shipID].sum ? formatSum(shipsGroups[shipID].sum) : ''
     const lossValueClassName = classnames(
