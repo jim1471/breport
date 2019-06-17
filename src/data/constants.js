@@ -42,6 +42,8 @@ const CITADELS = [
   45006, // "♦ Sotiyo"
   35840, // Pharolux Cyno Beacon
   35841, // Ansiblex Jump Gate
+  37843, // Standup Super-heavy Torpedo
+  37844, // Standup XL Cruise Missile
   37846, // Standup Cruise Missile
   37847, // Standup Heavy Missile
   37848, // Standup Light Missile
