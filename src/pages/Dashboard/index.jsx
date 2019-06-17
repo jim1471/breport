@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router'
 import { distanceInWordsToNow } from 'date-fns'
-// import { Button } from 'components/common/blueprint'
+import { Button } from 'components/common/blueprint'
 import { BrInfo, Footer } from 'widgets'
 import { SYSTEMS_DATA } from 'data/constants'
 import { parseZkillDatetime, formatSum } from 'utils/FormatUtils'
@@ -22,7 +22,6 @@ class Dashboard extends Component {
   componentDidMount() {
     RelatedService.getRecentRelateds()
       .then(({ data }) => {
-        console.log('recent data:', data[0])
         this.setState({ relateds: data })
       })
   }
@@ -94,33 +93,34 @@ class Dashboard extends Component {
       return <InputZkillLinkPanel getSystemName={this.getSystemNameFromLink} />
     }
     return (
-      <div>
+      <Fragment>
         <BrInfo dashboard />
         <InputSystems SYSTEMS_DATA={SYSTEMS_DATA} />
-      </div>
+      </Fragment>
     )
   }
 
   renderControls() {
-    return null
-    // const { related } = this.state
-    // return (
-    //   <div className={styles.controls}>
-    //     <Button large active={related === 'single'} onClick={this.toggleRelated}>
-    //       Single
-    //     </Button>
-    //     <Button large active={related === 'multiple'} onClick={this.toggleRelated}>
-    //       Multiple
-    //     </Button>
-    //   </div>
-    // )
+    const { related } = this.state
+    return (
+      <div className={styles.controls}>
+        <Button large active={related === 'single'} onClick={this.toggleRelated}>
+          Single
+        </Button>
+        <Button large active={related === 'multiple'} onClick={this.toggleRelated}>
+          Multiple
+        </Button>
+      </div>
+    )
   }
 
   render() {
     return (
       <div className={styles.root}>
         <div className={styles.wrapper}>
-          {this.renderControls()}
+          <h1>Battle Report tool</h1>
+          <h4>This tool is for generating battle reports from killmails held on zKillboard.com.</h4>
+          {false && this.renderControls()}
           {this.renderPanel()}
           {this.renderRecent()}
           <Footer />

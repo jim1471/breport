@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { getBR, setStatus } from 'reducers/battlereport'
 import { brParseTeams, getRelatedData, getRelatedDataStub, parseData } from 'reducers/related'
 import { Spinner } from 'components'
-import { BrInfo, TabsPanel, Footer } from 'widgets'
+import { ControlPanel, BrInfo, TabsPanel, Footer } from 'widgets'
 import Report from 'pages/Report'
 import styles from './styles.scss'
 
@@ -36,10 +36,12 @@ class BattleReportPage extends Component {
     const { br, involvedNames, teamsLosses } = this.props
     if (prevProps.br !== br && !br.isLoading && !br.error) {
       const brData = (br.relateds || [])[0]
-      if (brData) {
-        console.log('relateds:', brData)
-      } else {
-        console.log('br:', br)
+      if (process.env.NODE_ENV === 'development') {
+        if (brData) {
+          console.log('relateds:', brData)
+        } else {
+          console.log('br:', br)
+        }
       }
     }
     if (prevProps.involvedNames.isLoading && !involvedNames.isLoading) {
@@ -47,27 +49,36 @@ class BattleReportPage extends Component {
       this.props.brParseTeams()
     }
     if (!prevProps.teamsLosses && teamsLosses) {
-      this.props.setStatus('parse completed')
+      const killmailsCount = br.relateds.reduce((sum, related) => sum + related.kmsCount, 0)
+      this.props.setStatus(`${killmailsCount} killmails`)
     }
   }
 
+  reloadBr = () => {
+    const { brID } = this.state
+    this.props.getBR(brID)
+  }
+
   render() {
-    const { status, teams, teamsLosses, router } = this.props
+    const { status, teams, teamsLosses, router, br, involvedNames } = this.props
+    const isLoading = br.isLoading || involvedNames.isLoading
     return (
       <div className={styles.root}>
-        {false && process.env.NODE_ENV === 'development' &&
-          <Fragment>
-            <div>BattleReportPage</div>
-            {status &&
-              <div>Status: <span>{status}</span></div>
-            }
-            <hr />
-          </Fragment>
-        }
+        <ControlPanel
+          header={status}
+          isLoading={isLoading}
+          // error={}
+          // saving={saving}
+          onReload={process.env.NODE_ENV === 'development' && this.reloadBr}
+          // onReparse={this.handleReparse}
+          // onSaveBR={this.handleSaveBR}
+          // canSave={this.isTeamsChanged()}
+        />
 
         {!teamsLosses &&
           <Spinner />
         }
+
         {teams && teamsLosses &&
           <Fragment>
             <BrInfo routerParams={router.params} />

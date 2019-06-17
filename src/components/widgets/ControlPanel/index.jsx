@@ -48,13 +48,17 @@ export default class ControlPanel extends Component {
         <div className={styles.head}>
           <div className={styles.buttons}>
             {this.renderBackButton()}
-            &nbsp;
-            <Button
-              loading={isLoading || error === 'processing'}
-              onClick={onReload}
-              text='Reload'
-            />
-            {process.env.NODE_ENV === 'development' &&
+            {onReload &&
+              <Fragment>
+                &nbsp;
+                <Button
+                  loading={isLoading || error === 'processing'}
+                  onClick={onReload}
+                  text='Reload'
+                />
+              </Fragment>
+            }
+            {process.env.NODE_ENV === 'development' && false && onReparse &&
               <Fragment>
                 &nbsp;
                 <Button

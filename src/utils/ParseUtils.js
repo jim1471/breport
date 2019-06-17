@@ -421,8 +421,6 @@ class ParseUtils {
     console.time('get teams')
     const teams = TeamsUtils.getTeams(data)
     console.timeEnd('get teams')
-
-    console.log('teams:', teams)
     return teams
   }
 

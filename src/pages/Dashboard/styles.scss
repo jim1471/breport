@@ -34,6 +34,10 @@
     padding: 0 15px;
 
     @media (max-width: 360px) { padding: 10px; }
+
+    h4 {
+      margin: 0;
+    }
   }
 
   .card {

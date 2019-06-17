@@ -77,15 +77,17 @@ class BrInfo extends Component {
             </small>
           </span>
 
-          {process.env.NODE_ENV === 'development' && relatedKey &&
-            <small>
-              &nbsp;
-              <Link to={`/related/${relatedKey}`}>link to related</Link>
-            </small>
-          }
           {this.renderStartEndTime()}
         </div>
         {this.renderGeneralStats()}
+
+        {process.env.NODE_ENV === 'development' && relatedKey &&
+          <small className={styles.related}>
+            <Link to={`/related/${relatedKey}`}>
+              link to related
+            </Link>
+          </small>
+        }
       </div>
     )
   }

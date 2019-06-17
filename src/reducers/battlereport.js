@@ -63,7 +63,7 @@ export default (state = initialState, action) => {
     case ADD_RELATED:
       return {
         ...state,
-        inputRelateds: state.inputRelateds.concat([action.relateds]),
+        inputRelateds: state.inputRelateds.concat([action.related]),
       }
 
     case SAVE_BR:
