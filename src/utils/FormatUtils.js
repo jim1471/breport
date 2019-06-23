@@ -126,7 +126,7 @@ export const parseZkillDatetime = dt => {
   const day = dt.substring(6, 8)
   const hour = dt.substring(8, 10)
   const min = dt.substring(10)
-  if (min !== '00') {
+  if (min !== '00' && min !== '30') {
     console.error('parseZkillDatetime: invalid min:', min)
   }
   const timestamp = Date.UTC(year, month, day, hour, min)

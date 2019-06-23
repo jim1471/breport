@@ -25,6 +25,13 @@ class RelatedService extends BaseAPI {
     })
   }
 
+  getRecentBattleReports() {
+    return this.call({
+      method: 'get',
+      url: `${base}/api/v1/recent-br`,
+    })
+  }
+
   saveComposition(teams, systemID, time) {
     return this.call({
       method: 'post',
