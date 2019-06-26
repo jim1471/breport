@@ -94,7 +94,7 @@
   .recent {
     position: relative;
     width: 100%;
-    max-width: 400px;
+    max-width: 560px;
     font-size: 14px;
     margin-top: 40px;
 
@@ -112,8 +112,26 @@
         align-items: center;
         color: #ccc;
 
+        @media (max-width: 420px) {
+          font-size: 12px;
+        }
+
         > a {
           margin-right: 10px;
+
+          @media (max-width: 400px) {
+            margin-right: 5px;
+          }
+        }
+
+        > div {
+          @media (max-width: 400px) {
+            font-size: 12px;
+          }
+
+          @media (max-width: 375px) {
+            font-size: 10px;
+          }
         }
       }
 
@@ -128,6 +146,7 @@
         flex-wrap: wrap;
         align-items: center;
         color: #ccc;
+        margin-right: 5px;
       }
 
       .createdAt {

@@ -20,6 +20,7 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
+    // RelatedService.getRecentBattleReports()
     RelatedService.getRecentRelateds()
       .then(({ data }) => {
         this.setState({ relateds: data })
@@ -49,7 +50,8 @@ class Dashboard extends Component {
     const path = `/related/${key}`
     const createdAt = (new Date(item.createdAt)).toLocaleString()
     const relatedDate = parseZkillDatetime(item.datetime)
-    const relatedDateFmt = relatedDate.toUTCString().replace(':00:00', ':00').replace(':30:00', ':30')
+    const relatedDateFmt = relatedDate.toUTCString()
+      .replace(':00:00', ':00').replace(':30:00', ':30').replace('GMT', 'ET')
     return (
       <div key={key} className={styles.item}>
         <div className={styles.systemCell}>
