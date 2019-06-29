@@ -11,7 +11,7 @@ export default class ShipInfo extends Component {
   }
 
   renderCharName() {
-    const { id, names, charID } = this.props
+    const { names, charID } = this.props
     const charName = names.chars[charID] || ''
     // if (id) return charName
     return (

@@ -65,7 +65,12 @@ export const getNames = killmailsData => (dispatch, getState) => {
 
 NamesUtils.printLocalStorageSpace()
 
-const savedNames = JSON.parse(localStorage.getItem('names')) || {}
+let savedNames = JSON.parse(localStorage.getItem('names')) || {}
+
+if (!savedNames.version || savedNames.version !== 1) {
+  localStorage.clear()
+  savedNames = null
+}
 
 const initialState = {
   involvedNames: {

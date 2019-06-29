@@ -50,8 +50,7 @@ export default class InvolvedRow extends Component {
   getShipName() {
     const { data: { id, weapons }, names } = this.state
     if (id) {
-      const shipName = names.types[id].replace(' Issue', '')
-      return shipName
+      return names.types[id]
     }
     // weapons ship
     let allWeaponsStr = 'unknown'

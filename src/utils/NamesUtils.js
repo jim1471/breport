@@ -112,6 +112,7 @@ class NamesUtils {
         chars: {},
         types: {},
         systems: {},
+        version: 1,
       }
     }
     return data.reduce((inv, elem) => {
@@ -130,10 +131,22 @@ class NamesUtils {
           break
         case 'inventory_type':
         default:
-          inv.types[elem.id] = elem.name
+          inv.types[elem.id] = this.transformName(elem.name)
       }
       return inv
     }, names)
+  }
+
+  transformName(sdeName) {
+    // eslint-disable-next-line
+    let result = sdeName.replace(' Issue', '').replace(" 'Auroral' 197-variant", '')
+    result = result.replace('Drifter Battleship', 'Drifter BS')
+    result = result.replace('Drifter Cruiser', 'Drifter Cr')
+    result = result.replace('Caldari Navy', 'Cal Navy')
+    result = result.replace('Imperial Navy', 'Imp Navy')
+    result = result.replace('Republic Fleet', 'Rep Fleet')
+    result = result.replace('Federation Navy', 'Fed Navy')
+    return result
   }
 
 }
