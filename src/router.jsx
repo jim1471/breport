@@ -27,13 +27,16 @@ const Legal = Loadable({
 })
 
 
+const isMaintenance = true
+
+
 const routes = () => (
   <Route path='/' component={App}>
     <IndexRoute component={Dashboard} />
 
-    <Route component={RelatedPage} path='related/:systemID/:time' />
+    {!isMaintenance && <Route component={RelatedPage} path='related/:systemID/:time' />}
 
-    <Route component={BattleReportPage} path='br/:brID' />
+    {!isMaintenance && <Route component={BattleReportPage} path='br/:brID' />}
 
     <Route component={Legal} path='legal' />
 
