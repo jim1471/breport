@@ -11,9 +11,6 @@ import InputSystems from './InputSystems'
 import styles from './styles.scss'
 
 
-const isMaintenance = true
-
-
 class Dashboard extends Component {
 
   state = {
@@ -24,7 +21,7 @@ class Dashboard extends Component {
 
   componentDidMount() {
     // RelatedService.getRecentBattleReports()
-    !isMaintenance && RelatedService.getRecentRelateds()
+    RelatedService.getRecentRelateds()
       .then(({ data }) => {
         this.setState({ relateds: data })
       })
@@ -119,27 +116,7 @@ class Dashboard extends Component {
     )
   }
 
-  renderBlackoutDashboard() {
-    return (
-      <div className={styles.root}>
-        <div className={styles.wrapper}>
-          <h1>Battle Report tool</h1>
-          <h4>This tool is for generating battle reports from killmails held on zKillboard.com.</h4>
-
-          <div className={styles.blackout}>
-            BLACKOUT IN PROGRESS...
-          </div>
-        </div>
-        <Footer />
-      </div>
-    )
-  }
-
   render() {
-    if (isMaintenance) {
-      return this.renderBlackoutDashboard()
-    }
-
     return (
       <div className={styles.root}>
         <div className={styles.wrapper}>
