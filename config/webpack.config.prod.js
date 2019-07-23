@@ -11,6 +11,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const ManifestPlugin = require('webpack-manifest-plugin')
 
 const eslintFormatter = require('react-dev-utils/eslintFormatter')
 const getClientEnvironment = require('./env')
@@ -140,6 +141,9 @@ module.exports = {
       to: outputDir,
       ignore: ['index.html'],
     }]),
+    new ManifestPlugin({
+      fileName: 'assets.json',
+    }),
     new HtmlWebpackPlugin({
       inject: true,
       template: path.resolve(appDirectory, 'public/index.html'),

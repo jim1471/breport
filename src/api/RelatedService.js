@@ -18,6 +18,17 @@ class RelatedService extends BaseAPI {
     })
   }
 
+  fetchRelatedSummaryData(systemID, time) {
+    return this.call({
+      method: 'post',
+      url: `${base}/api/v1/related-summary`,
+      data: {
+        systemID,
+        time,
+      },
+    })
+  }
+
   getRecentRelateds() {
     return this.call({
       method: 'get',

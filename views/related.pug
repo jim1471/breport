@@ -1,0 +1,47 @@
+doctype html
+head
+  title Battle Report Tool
+  meta(name='title' content=title)
+  meta(name='description' content='Battle Report tool for the MMO Game EVE Online. This tool is for generating battle reports from killmails held on zKillboard.com.')
+  meta(name='keywords' content='eveonline, eve, online, battle, report, tool, aar, ccp, ccp games')
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no')
+  meta(name='theme-color' content='#181818')
+  link(rel='manifest' href='/manifest.json')
+  link(rel='shortcut icon' type='image/png' href='/icons/favicon.ico')
+  link(rel='icon' type='image/png' sizes='16x16' href='/icons/favicon-16x16.png')
+  link(rel='icon' type='image/png' sizes='32x32' href='/icons/favicon-32x32.png')
+  link(rel='icon' type='image/png' sizes='96x96' href='/icons/favicon-96x96.png')
+  link(rel='icon' type='image/png' sizes='192x192' href='/icons/android-icon-192x192.png')
+  // Open Graph / Facebook
+  meta(property='og:locale' content='en_US')
+  meta(property='og:type' content='website')
+  meta(property='og:url' content='https://br.evetools.org')
+  meta(property='og:site_name' content='Battle Report')
+  meta(property='og:title' content=vars.title)
+  meta(property='og:description' content=vars.description)
+  meta(property='og:image' content='https://br.evetools.org/share-200.png')
+  meta(property='og:image:type' content='image/png')
+  meta(property='og:image:width' content='192')
+  meta(property='og:image:height' content='192')
+  meta(property='og:image:alt' content='A shiny Komodo taken down | view Battle Report on br.evetools.org')
+  // Twitter
+  meta(name='twitter:card' content='summary')
+  meta(name='twitter:url' content='https://br.evetools.org')
+  meta(name='twitter:site' content='@maullerz')
+  meta(name='twitter:creator' content='@maullerz')
+  script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-116228553-2')
+  script.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-116228553-2');
+  link(rel='preconnect' href='https://imageserver.eveonline.com')
+  link(rel='preconnect' href='https://infinite-forest-76055.herokuapp.com')
+  link(rel='preconnect' href='https://esi.evetech.net')
+  link(rel='stylesheet' href=vars.main_css)
+noscript You need to enable JavaScript to run this app.
+#react-root.development
+script(type='text/javascript' src=vars.manifest_js)
+script(type='text/javascript' src=vars.vendors_js)
+script(type='text/javascript' src=vars.main_js)
