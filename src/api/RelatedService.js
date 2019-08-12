@@ -21,7 +21,28 @@ class RelatedService extends BaseAPI {
   getRecentRelateds() {
     return this.call({
       method: 'get',
-      url: `${base}/api/v1/recent`,
+      url: `${base}/api/v1/recent-relateds`,
+    })
+  }
+
+  getRecentRelatedsBig() {
+    return this.call({
+      method: 'get',
+      url: `${base}/api/v1/recent-relateds-big`,
+    })
+  }
+
+  getRecentRelatedsHuge() {
+    return this.call({
+      method: 'get',
+      url: `${base}/api/v1/recent-relateds-huge`,
+    })
+  }
+
+  getRecentlyAddedRelateds() {
+    return this.call({
+      method: 'get',
+      url: `${base}/api/v1/recently-added`,
     })
   }
 

@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router'
 import { distanceInWordsToNow } from 'date-fns'
-import { Button } from 'components/common/blueprint'
+import { Button, Tabs, Tab } from 'components/common/blueprint'
 import { BrInfo, Footer } from 'widgets'
 import { SYSTEMS_DATA } from 'data/constants'
 import { parseZkillDatetime, formatSum } from 'utils/FormatUtils'
@@ -17,14 +17,27 @@ class Dashboard extends Component {
     related: 'single',
     // related: 'multiple',
     relateds: [],
+    currTab: 'recent',
   }
 
   componentDidMount() {
     // RelatedService.getRecentBattleReports()
-    RelatedService.getRecentRelateds()
-      .then(({ data }) => {
-        this.setState({ relateds: data })
-      })
+    this.fetchRecentRelateds()
+  }
+
+  getRecentPromise() {
+    const { currTab } = this.state
+    switch (currTab) {
+      case 'big':
+        return RelatedService.getRecentRelatedsBig()
+      case 'huge':
+        return RelatedService.getRecentRelatedsHuge()
+      case 'added':
+        return RelatedService.getRecentlyAddedRelateds()
+      case 'recent':
+      default:
+        return RelatedService.getRecentRelateds()
+    }
   }
 
   getSystemNameFromLink = link => {
@@ -39,10 +52,21 @@ class Dashboard extends Component {
     return `${system[0]} (${region})`
   }
 
+  handleTabChange = currTab => {
+    this.setState({ currTab }, this.fetchRecentRelateds)
+  }
+
   toggleRelated = () => {
     this.setState(state => ({
       related: state.related === 'single' ? 'multiple' : 'single',
     }))
+  }
+
+  fetchRecentRelateds() {
+    this.setState({ relateds: null })
+    this.getRecentPromise().then(({ data }) => {
+      this.setState({ relateds: data })
+    })
   }
 
   renderRecentRelated(item) {
@@ -68,7 +92,8 @@ class Dashboard extends Component {
             {`Total lost: ${formatSum(item.totalLost) || '?'}, Killmails: ${item.kmsCount}`}
           </div>
           <div className={styles.createdAt}>
-            {`added: ${createdAt}`}
+            <span className={styles.createdAtLabel}>added: </span>
+            <span>{createdAt}</span>
           </div>
         </div>
       </div>
@@ -76,14 +101,22 @@ class Dashboard extends Component {
   }
 
   renderRecent() {
-    const { relateds } = this.state
-    if (!relateds || relateds.length === 0) {
-      return null
-    }
+    const { relateds, currTab } = this.state
     return (
       <div className={styles.recent}>
-        <div>Recent Battle Reports:</div>
-        {relateds.map(item => this.renderRecentRelated(item))}
+        <Tabs
+          id='recent'
+          selectedTabId={currTab}
+          onChange={this.handleTabChange}
+        >
+          <Tab id='recent' title='Recent Reports' />
+          <Tab id='big' title='Recent >10kkk' />
+          <Tab id='huge' title='Recent >100kkk' />
+          <Tab id='added' title='Recently Added' />
+        </Tabs>
+        {relateds &&
+          relateds.map(item => this.renderRecentRelated(item))
+        }
       </div>
     )
   }
