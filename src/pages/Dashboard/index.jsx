@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router'
 import { distanceInWordsToNow } from 'date-fns'
+import { Spinner } from 'components'
 import { Button, Tabs, Tab } from 'components/common/blueprint'
 import { BrInfo, Footer } from 'widgets'
 import { SYSTEMS_DATA } from 'data/constants'
@@ -18,6 +19,7 @@ class Dashboard extends Component {
     // related: 'multiple',
     relateds: [],
     currTab: 'recent',
+    recentLoading: false,
   }
 
   componentDidMount() {
@@ -49,7 +51,8 @@ class Dashboard extends Component {
     const relSystemID = systemID - 30000000
     const system = SYSTEMS_DATA.systems.find(sys => sys[1] === relSystemID)
     const region = system && SYSTEMS_DATA.regions[system[2]]
-    return `${system[0]} (${region})`
+    // return `${system[0]} (${region})`
+    return `${region} / ${system[0]}`
   }
 
   handleTabChange = currTab => {
@@ -63,10 +66,10 @@ class Dashboard extends Component {
   }
 
   fetchRecentRelateds() {
-    this.setState({ relateds: null })
+    this.setState({ relateds: null, recentLoading: true })
     this.getRecentPromise().then(({ data }) => {
-      this.setState({ relateds: data })
-    })
+      this.setState({ relateds: data, recentLoading: false })
+    }).catch(err => this.setState({ recentLoading: false }))
   }
 
   renderRecentRelated(item) {
@@ -92,8 +95,8 @@ class Dashboard extends Component {
             {`Total lost: ${formatSum(item.totalLost) || '?'}, Killmails: ${item.kmsCount}`}
           </div>
           <div className={styles.createdAt}>
-            <span className={styles.createdAtLabel}>added: </span>
-            <span>{createdAt}</span>
+            <span className={styles.createdAtLabel}>added </span>
+            <span>{`${distanceInWordsToNow(new Date(item.createdAt))} ago`}</span>
           </div>
         </div>
       </div>
@@ -101,19 +104,25 @@ class Dashboard extends Component {
   }
 
   renderRecent() {
-    const { relateds, currTab } = this.state
+    const { relateds, currTab, recentLoading } = this.state
     return (
       <div className={styles.recent}>
         <Tabs
           id='recent'
           selectedTabId={currTab}
           onChange={this.handleTabChange}
+          animate={false}
         >
           <Tab id='recent' title='Recent Reports' />
           <Tab id='big' title='Recent >10kkk' />
           <Tab id='huge' title='Recent >100kkk' />
           <Tab id='added' title='Recently Added' />
         </Tabs>
+        {recentLoading &&
+          <div className={styles.spinnerWrapper}>
+            <Spinner />
+          </div>
+        }
         {relateds &&
           relateds.map(item => this.renderRecentRelated(item))
         }

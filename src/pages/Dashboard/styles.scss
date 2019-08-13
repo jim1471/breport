@@ -101,6 +101,14 @@
     font-size: 14px;
     margin-top: 40px;
 
+    .spinnerWrapper {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      min-height: 400px;
+      padding-top: 100px;
+    }
+
     .item {
       display: flex;
       flex-wrap: wrap;
@@ -121,9 +129,11 @@
 
         > a {
           margin-right: 10px;
+          font-size: 16px;
 
           @media (max-width: 400px) {
             margin-right: 5px;
+            font-size: 14px;
           }
         }
 
@@ -134,6 +144,12 @@
 
           @media (max-width: 375px) {
             font-size: 10px;
+          }
+        }
+
+        > div.statsCell {
+          @media (max-width: 400px) {
+            font-size: 12px;
           }
         }
       }
