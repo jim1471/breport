@@ -22,11 +22,11 @@ class TeamStats extends Component {
     return (
       <div className={styles.members}>
         {currTeam.map(allyID => {
-          let name = names.allys[allyID]
+          let name = names.allys[allyID] || allyID
           let corpID = null
           if (allyID.startsWith('corp:')) {
             corpID = allyID.replace('corp:', '')
-            name = names.corps[corpID]
+            name = names.corps[corpID] || allyID
           }
           const involvedCount = teamStats.membersCount[allyID]
           // TODO: how to separate "MTU-losses" and "incorrect assign of team"

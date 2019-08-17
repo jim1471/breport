@@ -6,7 +6,7 @@ const SAVE_BR = 'SAVE_BR'
 const GET_BR = 'GET_BR'
 const SET_STATUS = 'SET_STATUS'
 const ADD_RELATED = 'ADD_RELATED'
-
+const FETCH_INTERVAL = 1000
 
 export const setStatus = status => ({ type: SET_STATUS, status })
 
@@ -21,7 +21,10 @@ export const getBR = brID => dispatch => {
     type: GET_BR,
     apiCall: () => RelatedService.getComposition(brID),
   }).then(data => {
-    if (data.status === 'SUCCESS') {
+    if (data.status === 'processing') {
+      console.log('br still processing...')
+      setTimeout(() => dispatch(getBR(brID)), FETCH_INTERVAL)
+    } else if (data.status === 'SUCCESS') {
       const killmailsData = data.relateds.reduce((allKms, related) => allKms.concat(related.kms), [])
       dispatch(initializeBrData({
         systemID: data.relateds[0].systemID,

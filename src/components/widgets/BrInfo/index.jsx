@@ -81,9 +81,9 @@ class BrInfo extends Component {
         </div>
         {this.renderGeneralStats()}
 
-        {process.env.NODE_ENV === 'development' && relatedKey &&
+        {relatedKey &&
           <small className={styles.related}>
-            <Link to={`/related/${relatedKey}`}>
+            <Link to={`/related/${relatedKey}`} target='_blank' rel='noopener noreferrer'>
               link to related
             </Link>
           </small>

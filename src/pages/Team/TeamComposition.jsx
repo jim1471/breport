@@ -73,7 +73,7 @@ export default class TeamComposition extends Component {
     return (
       <div className={cn(styles.team, styles.composition)}>
         {members && allys.map(allyID => {
-          const allyName = names.allys[allyID] || 'Unaffiliated Corporations'
+          const allyName = names.allys[allyID] || allyID || 'Unaffiliated Corporations'
           const allyCharsCount = getAllyCharsCount(members[allyID])
           if (allyCharsCount === 0) return null
           const corps = Object.keys(members[allyID]).sort((corpA, corpB) => {
@@ -92,7 +92,7 @@ export default class TeamComposition extends Component {
               </div>
               <div className={styles.corps}>
                 {corps.map(corpID => {
-                  const corpName = names.corps[corpID]
+                  const corpName = names.corps[corpID] || corpID
                   const charsCount = members[allyID][corpID]
                   return (
                     <div className={styles.corp} key={corpID}>
