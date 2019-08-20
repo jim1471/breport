@@ -69,13 +69,13 @@ class Dashboard extends Component {
     this.setState({ relateds: null, recentLoading: true })
     this.getRecentPromise().then(({ data }) => {
       this.setState({ relateds: data, recentLoading: false })
-    }).catch(err => this.setState({ recentLoading: false }))
+    }).catch(() => this.setState({ recentLoading: false }))
   }
 
   renderRecentRelated(item) {
     const key = `${item.systemID}/${item.datetime}`
     const path = `/related/${key}`
-    const createdAt = (new Date(item.createdAt)).toLocaleString()
+    const createdAt = new Date(item.createdAt)
     const relatedDate = parseZkillDatetime(item.datetime)
     const relatedDateFmt = relatedDate.toUTCString()
       .replace(':00:00', ':00').replace(':30:00', ':30').replace('GMT', 'ET')
@@ -96,7 +96,7 @@ class Dashboard extends Component {
           </div>
           <div className={styles.createdAt}>
             <span className={styles.createdAtLabel}>added </span>
-            <span>{`${distanceInWordsToNow(new Date(item.createdAt))} ago`}</span>
+            <span>{`${distanceInWordsToNow(createdAt)} ago`}</span>
           </div>
         </div>
       </div>

@@ -92,7 +92,7 @@ class RelatedPage extends Component {
   renderContent() {
     const { reportType, saving } = this.state
     const { error, stillProcessing, data = [], teams, names, router, kmLoading } = this.props
-    const isError = error // || names.error
+    const isError = error || names.error
     // const isLoading = names.isLoading || kmLoading
     const isLoading = kmLoading
 
@@ -112,7 +112,7 @@ class RelatedPage extends Component {
         <ControlPanel
           header={header}
           isLoading={isLoading}
-          error={isError || names.error}
+          error={isError}
           saving={saving}
           onReload={this.fetchData}
           onReparse={this.handleReparse}

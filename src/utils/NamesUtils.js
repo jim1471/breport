@@ -45,14 +45,14 @@ class NamesUtils {
       if (!v) {
         console.log('WTF! where is victim?', km)
       } else {
-        // if (v.ally && !allNames.allys[v.ally]) all.allys[v.ally] = 1
-        // if (v.corp && !allNames.corps[v.corp]) all.corps[v.corp] = 1
-        // if (v.char && !allNames.chars[v.char]) all.chars[v.char] = 1
+        if (v.ally && !allNames.allys[v.ally]) all.allys[v.ally] = 1
+        if (v.corp && !allNames.corps[v.corp]) all.corps[v.corp] = 1
+        if (v.char && !allNames.chars[v.char]) all.chars[v.char] = 1
         if (v.ship && !allNames.types[v.ship]) all.types[v.ship] = 1
         km.attackers.forEach(att => {
-          // if (att.ally && !allNames.allys[att.ally]) all.allys[att.ally] = 1
-          // if (att.corp && !allNames.corps[att.corp]) all.corps[att.corp] = 1
-          // if (att.char && !allNames.chars[att.char]) all.chars[att.char] = 1
+          if (att.ally && !allNames.allys[att.ally]) all.allys[att.ally] = 1
+          if (att.corp && !allNames.corps[att.corp]) all.corps[att.corp] = 1
+          if (att.char && !allNames.chars[att.char]) all.chars[att.char] = 1
           if (att.ship && !allNames.types[att.ship]) all.types[att.ship] = 1
           if (att.weap && !allNames.types[att.weap]) all.types[att.weap] = 1
         })
@@ -117,15 +117,15 @@ class NamesUtils {
     }
     return data.reduce((inv, elem) => {
       switch (elem.category) {
-        // case 'character':
-        //   inv.chars[elem.id] = elem.name
-        //   break
-        // case 'corporation':
-        //   inv.corps[elem.id] = elem.name
-        //   break
-        // case 'alliance':
-        //   inv.allys[elem.id] = elem.name
-        //   break
+        case 'character':
+          inv.chars[elem.id] = elem.name
+          break
+        case 'corporation':
+          inv.corps[elem.id] = elem.name
+          break
+        case 'alliance':
+          inv.allys[elem.id] = elem.name
+          break
         case 'solar_system':
           inv.systems[elem.id] = elem.name
           break
