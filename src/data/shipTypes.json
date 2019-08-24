@@ -1168,6 +1168,14 @@
     "Ship"
   ],
   [
+    52252,
+    "Ikitursa",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
     11993,
     "Cerberus",
     358,
@@ -1672,6 +1680,14 @@
     "Ship"
   ],
   [
+    52254,
+    "Draugur",
+    1534,
+    "Command Destroyer",
+    6,
+    "Ship"
+  ],
+  [
     37480,
     "Bifrost",
     1534,
@@ -1794,6 +1810,14 @@
   [
     32788,
     "Cambion",
+    324,
+    "Assault Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    52250,
+    "Nergal",
     324,
     "Assault Frigate",
     6,

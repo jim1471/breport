@@ -2456,6 +2456,76 @@
     "categoryID": 65,
     "categoryName": "Structure"
   },
+  "35840": {
+    "name": "Pharolux Cyno Beacon",
+    "groupID": 2017,
+    "groupName": "Upwell Cyno Beacon",
+    "categoryID": 65,
+    "categoryName": "Structure"
+  },
+  "35841": {
+    "name": "Ansiblex Jump Gate",
+    "groupID": 1408,
+    "groupName": "Upwell Jump Gate",
+    "categoryID": 65,
+    "categoryName": "Structure"
+  },
+  "35923": {
+    "name": "Standup Guided Bomb Launcher I",
+    "groupID": 1328,
+    "groupName": "Structure Guided Bomb Launcher",
+    "categoryID": 66,
+    "categoryName": "Structure Module"
+  },
+  "35924": {
+    "name": "Standup XL Energy Neutralizer I",
+    "groupID": 1329,
+    "groupName": "Structure Energy Neutralizer",
+    "categoryID": 66,
+    "categoryName": "Structure Module"
+  },
+  "35925": {
+    "name": "Standup Heavy Energy Neutralizer I",
+    "groupID": 1329,
+    "groupName": "Structure Energy Neutralizer",
+    "categoryID": 66,
+    "categoryName": "Structure Module"
+  },
+  "35941": {
+    "name": "Standup Remote Sensor Dampener I",
+    "groupID": 1719,
+    "groupName": "Structure Disruption Battery",
+    "categoryID": 66,
+    "categoryName": "Structure Module"
+  },
+  "35943": {
+    "name": "Standup Stasis Webifier I",
+    "groupID": 1441,
+    "groupName": "Structure Stasis Webifier",
+    "categoryID": 66,
+    "categoryName": "Structure Module"
+  },
+  "35945": {
+    "name": "Standup Weapon Disruptor I",
+    "groupID": 1719,
+    "groupName": "Structure Disruption Battery",
+    "categoryID": 66,
+    "categoryName": "Structure Module"
+  },
+  "35947": {
+    "name": "Standup Target Painter I",
+    "groupID": 1719,
+    "groupName": "Structure Disruption Battery",
+    "categoryID": 66,
+    "categoryName": "Structure Module"
+  },
+  "35949": {
+    "name": "Standup Focused Warp Disruptor I",
+    "groupID": 1442,
+    "groupName": "Structure Warp Scrambler",
+    "categoryID": 66,
+    "categoryName": "Structure Module"
+  },
   "37135": {
     "name": "Endurance",
     "groupID": 1283,
@@ -2547,6 +2617,13 @@
     "categoryID": 6,
     "categoryName": "Ship"
   },
+  "37534": {
+    "name": "Tenebrex Cyno Jammer",
+    "groupID": 2016,
+    "groupName": "Upwell Cyno Jammer",
+    "categoryID": 65,
+    "categoryName": "Structure"
+  },
   "37599": {
     "name": "Cenobite I",
     "groupID": 1537,
@@ -2581,6 +2658,20 @@
     "groupName": "Force Auxiliary",
     "categoryID": 6,
     "categoryName": "Ship"
+  },
+  "37843": {
+    "name": "Standup Super-heavy Torpedo",
+    "groupID": 1546,
+    "groupName": "Structure Anti-Capital Missile",
+    "categoryID": 8,
+    "categoryName": "Charge"
+  },
+  "37844": {
+    "name": "Standup XL Cruise Missile",
+    "groupID": 1546,
+    "groupName": "Structure Anti-Capital Missile",
+    "categoryID": 8,
+    "categoryName": "Charge"
   },
   "37846": {
     "name": "Standup Cruise Missile",
@@ -2841,6 +2932,13 @@
     "categoryID": 87,
     "categoryName": "Fighter"
   },
+  "41030": {
+    "name": "'Excavator' Mining Drone",
+    "groupID": 101,
+    "groupName": "Mining Drone",
+    "categoryID": 18,
+    "categoryName": "Drone"
+  },
   "42124": {
     "name": "Vehement",
     "groupID": 485,
@@ -2911,6 +3009,13 @@
     "categoryID": 6,
     "categoryName": "Ship"
   },
+  "43681": {
+    "name": "'Excavator' Ice Harvesting Drone",
+    "groupID": 101,
+    "groupName": "Mining Drone",
+    "categoryID": 18,
+    "categoryName": "Drone"
+  },
   "44993": {
     "name": "Pacifier",
     "groupID": 830,
@@ -2931,6 +3036,13 @@
     "groupName": "Black Ops",
     "categoryID": 6,
     "categoryName": "Ship"
+  },
+  "45006": {
+    "name": "♦ Sotiyo",
+    "groupID": 1876,
+    "groupName": "♦ Engineering Complex",
+    "categoryID": 65,
+    "categoryName": "Structure"
   },
   "45530": {
     "name": "Virtuoso",
@@ -3282,6 +3394,118 @@
     "categoryID": 6,
     "categoryName": "Ship"
   },
+  "47298": {
+    "name": "Standup Multirole Missile Launcher II",
+    "groupID": 1562,
+    "groupName": "Structure Multirole Missile Launcher",
+    "categoryID": 66,
+    "categoryName": "Structure Module"
+  },
+  "47323": {
+    "name": "Standup Anticapital Missile Launcher II",
+    "groupID": 1327,
+    "groupName": "Structure XL Missile Launcher",
+    "categoryID": 66,
+    "categoryName": "Structure Module"
+  },
+  "47325": {
+    "name": "Standup Guided Bomb Launcher II",
+    "groupID": 1328,
+    "groupName": "Structure Guided Bomb Launcher",
+    "categoryID": 66,
+    "categoryName": "Structure Module"
+  },
+  "47327": {
+    "name": "Standup Point Defense Battery II",
+    "groupID": 1330,
+    "groupName": "Structure Area Denial Module",
+    "categoryID": 66,
+    "categoryName": "Structure Module"
+  },
+  "47330": {
+    "name": "Standup XL Energy Neutralizer II",
+    "groupID": 1329,
+    "groupName": "Structure Energy Neutralizer",
+    "categoryID": 66,
+    "categoryName": "Structure Module"
+  },
+  "47332": {
+    "name": "Standup Heavy Energy Neutralizer II",
+    "groupID": 1329,
+    "groupName": "Structure Energy Neutralizer",
+    "categoryID": 66,
+    "categoryName": "Structure Module"
+  },
+  "47334": {
+    "name": "Standup Focused Warp Disruptor II",
+    "groupID": 1442,
+    "groupName": "Structure Warp Scrambler",
+    "categoryID": 66,
+    "categoryName": "Structure Module"
+  },
+  "47364": {
+    "name": "Standup Weapon Disruptor II",
+    "groupID": 1719,
+    "groupName": "Structure Disruption Battery",
+    "categoryID": 66,
+    "categoryName": "Structure Module"
+  },
+  "47366": {
+    "name": "Standup Target Painter II",
+    "groupID": 1719,
+    "groupName": "Structure Disruption Battery",
+    "categoryID": 66,
+    "categoryName": "Structure Module"
+  },
+  "47368": {
+    "name": "Standup Remote Sensor Dampener II",
+    "groupID": 1719,
+    "groupName": "Structure Disruption Battery",
+    "categoryID": 66,
+    "categoryName": "Structure Module"
+  },
+  "47466": {
+    "name": "Praxis",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "47512": {
+    "name": "'Moreau' Fortizar'",
+    "groupID": 1657,
+    "groupName": "Citadel",
+    "categoryID": 65,
+    "categoryName": "Structure"
+  },
+  "47513": {
+    "name": "'Draccous' Fortizar'",
+    "groupID": 1657,
+    "groupName": "Citadel",
+    "categoryID": 65,
+    "categoryName": "Structure"
+  },
+  "47514": {
+    "name": "'Horizon' Fortizar'",
+    "groupID": 1657,
+    "groupName": "Citadel",
+    "categoryID": 65,
+    "categoryName": "Structure"
+  },
+  "47515": {
+    "name": "'Marginis' Fortizar'",
+    "groupID": 1657,
+    "groupName": "Citadel",
+    "categoryID": 65,
+    "categoryName": "Structure"
+  },
+  "47516": {
+    "name": "'Prometheus' Fortizar'",
+    "groupID": 1657,
+    "groupName": "Citadel",
+    "categoryID": 65,
+    "categoryName": "Structure"
+  },
   "48635": {
     "name": "Tiamat",
     "groupID": 833,
@@ -3321,6 +3545,27 @@
     "name": "Zarmazd",
     "groupID": 832,
     "groupName": "Logistics",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "52250": {
+    "name": "Nergal",
+    "groupID": 324,
+    "groupName": "Assault Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "52252": {
+    "name": "Ikitursa",
+    "groupID": 358,
+    "groupName": "Heavy Assault Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "52254": {
+    "name": "Draugur",
+    "groupID": 1534,
+    "groupName": "Command Destroyer",
     "categoryID": 6,
     "categoryName": "Ship"
   }
