@@ -9,86 +9,105 @@ import teamStyles from './styles.scss'
 
 
 function groupShipsNew(data) {
-  const shipsGroups = {}
+  const shipsTypes = {}
   data.forEach(ship => {
     if (ship.inv && ship.inv.ships) {
       Object.keys(ship.inv.ships).forEach(shipID => {
         if (shipID) {
-          shipsGroups[shipID] = shipsGroups[shipID] || { inv: 0, losed: 0, sum: 0 }
+          shipsTypes[shipID] = shipsTypes[shipID] || { inv: 0, losed: 0, sum: 0 }
           const invShip = ship.inv.ships[shipID]
           if (invShip.losses) {
             invShip.losses.forEach(loss => {
-              shipsGroups[shipID].inv += 1
-              shipsGroups[shipID].losed += 1
-              shipsGroups[shipID].sum += loss.lossValue
+              shipsTypes[shipID].inv += 1
+              shipsTypes[shipID].losed += 1
+              shipsTypes[shipID].sum += loss.lossValue
             })
           } else {
-            shipsGroups[shipID].inv += 1
+            shipsTypes[shipID].inv += 1
           }
         }
       })
 
     } else {
       if (ship.id) {
-        shipsGroups[ship.id] = shipsGroups[ship.id] || { inv: 0, losed: 0, sum: 0 }
-        shipsGroups[ship.id].inv += 1
+        shipsTypes[ship.id] = shipsTypes[ship.id] || { inv: 0, losed: 0, sum: 0 }
+        shipsTypes[ship.id].inv += 1
         if (ship.loss) {
-          shipsGroups[ship.id].losed += 1
-          shipsGroups[ship.id].sum += ship.loss.lossValue
+          shipsTypes[ship.id].losed += 1
+          shipsTypes[ship.id].sum += ship.loss.lossValue
         }
       }
 
       if (ship.podLoss) {
         if (ship.podLoss.ship) {
-          shipsGroups[ship.podLoss.ship] = shipsGroups[ship.podLoss.ship] || { inv: 0, losed: 0, sum: 0 }
-          shipsGroups[ship.podLoss.ship].inv += 1
-          shipsGroups[ship.podLoss.ship].losed += 1
-          shipsGroups[ship.podLoss.ship].sum += ship.podLoss.lossValue
+          shipsTypes[ship.podLoss.ship] = shipsTypes[ship.podLoss.ship] || { inv: 0, losed: 0, sum: 0 }
+          shipsTypes[ship.podLoss.ship].inv += 1
+          shipsTypes[ship.podLoss.ship].losed += 1
+          shipsTypes[ship.podLoss.ship].sum += ship.podLoss.lossValue
         }
       }
     }
   })
   // set group names
-  Object.keys(shipsGroups).forEach(key => {
+  Object.keys(shipsTypes).forEach(key => {
     const shipTypeID = parseInt(key, 10)
     const group = SHIP_GROUPS.find(grp => grp[0] === shipTypeID)
     if (group) {
       const [,, id, name] = group
-      shipsGroups[shipTypeID].groupID = id // group[2]
-      shipsGroups[shipTypeID].groupName = name // group[3]
+      shipsTypes[shipTypeID].groupID = id // group[2]
+      shipsTypes[shipTypeID].groupName = name // group[3]
     }
   })
 
-  return shipsGroups
+  return shipsTypes
 }
 
 
 export default class TeamSummary extends Component {
 
   state = {
-    shipsGroups: null,
-    shipsSorted: null,
+    groupedMode: true,
+    shipsTypes: null,
+    shipsTypesSorted: null,
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
     if (prevState.data !== nextProps.data) {
       const { data } = nextProps
-      const shipsGroups = groupShipsNew(data)
-      console.log('shipsGroups:', shipsGroups)
-      const shipsSorted = ParseUtils.sortCharShips(Object.keys(shipsGroups).map(id => parseInt(id, 10)))
+      const shipsTypes = groupShipsNew(data)
+      const shipsTypesSorted = ParseUtils.sortCharShips(Object.keys(shipsTypes).map(id => parseInt(id, 10)))
+      const shipsGroups = {}
+      const shipsGroupsSorted = []
+      shipsTypesSorted.forEach(typeID => {
+        const shipType = shipsTypes[typeID]
+        const { groupID } = shipType
+        shipsGroups[groupID] = shipsGroups[groupID] || { inv: 0, losed: 0, sum: 0, name: shipType.groupName }
+        shipsGroups[groupID].inv += shipType.inv
+        shipsGroups[groupID].losed += shipType.losed
+        shipsGroups[groupID].sum += shipType.sum
+        if (!shipsGroupsSorted.includes(groupID)) {
+          shipsGroupsSorted.push(groupID)
+        }
+      })
       return {
         data,
+        shipsTypes,
+        shipsTypesSorted,
         shipsGroups,
-        shipsSorted,
+        shipsGroupsSorted,
       }
     }
     return null
   }
 
-  renderShipGroup(shipID) {
-    const { shipsGroups } = this.state
+  toggleMode = () => {
+    this.setState(prevState => ({ groupedMode: !prevState.groupedMode }))
+  }
+
+  renderShipType(shipID) {
+    const { shipsTypes } = this.state
     const { names } = this.props
-    const shipType = shipsGroups[shipID]
+    const shipType = shipsTypes[shipID]
     if (!shipType) {
       return null
     }
@@ -130,12 +149,52 @@ export default class TeamSummary extends Component {
     )
   }
 
+  renderShipGroup(groupID) {
+    const { shipsGroups } = this.state
+    const shipGroup = shipsGroups[groupID]
+    if (!shipGroup) {
+      return null
+    }
+    const lossValue = shipGroup.sum ? formatSum(shipGroup.sum) : ''
+    const lossValueClassName = classnames(
+      styles.red,
+      lossValue && shipGroup.sum > 1000000000 && styles.bold,
+    )
+    return (
+      <div className={styles.root} key={groupID}>
+        <div className={classnames(styles.info, styles.group)}>
+          <div className={styles.names}>
+            {shipGroup.name}
+          </div>
+
+          <div className={styles.counts}>
+            <div>
+              {shipGroup.inv}
+            </div>
+            <div className={styles.red}>
+              {shipGroup.losed || ''}
+            </div>
+            <div className={lossValueClassName}>
+              {lossValue}
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   render() {
-    const { shipsSorted } = this.state
+    const { groupedMode, shipsTypesSorted, shipsGroupsSorted } = this.state
     return (
       <div className={teamStyles.team}>
-        {shipsSorted &&
-          shipsSorted.map(shipID => this.renderShipGroup(shipID))
+        <div className={styles.btnExpand} onClick={this.toggleMode}>
+          {groupedMode ? 'Ship Groups' : 'Ship Types'}
+        </div>
+        {!groupedMode && shipsTypesSorted &&
+          shipsTypesSorted.map(shipID => this.renderShipType(shipID))
+        }
+        {groupedMode && shipsGroupsSorted &&
+          shipsGroupsSorted.map(groupID => this.renderShipGroup(groupID))
         }
       </div>
     )
