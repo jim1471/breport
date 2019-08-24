@@ -15,10 +15,7 @@ function loadData() {
   const m2 = import('./SHIP_TYPES.json')
     .then(module => { SHIP_TYPES = module.default })
   const m3 = import('./shipTypes.json')
-    .then(module => {
-      // debugger
-      SHIP_GROUPS = module.default
-    })
+    .then(module => { SHIP_GROUPS = module.default })
   return Promise.all([m1, m2, m3])
 }
 

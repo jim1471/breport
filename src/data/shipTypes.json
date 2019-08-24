@@ -24,6 +24,46 @@
     "Structure"
   ],
   [
+    47512,
+    "'Moreau' Fortizar'",
+    1657,
+    "Citadel",
+    65,
+    "Structure"
+  ],
+  [
+    47513,
+    "'Draccous' Fortizar'",
+    1657,
+    "Citadel",
+    65,
+    "Structure"
+  ],
+  [
+    47514,
+    "'Horizon' Fortizar'",
+    1657,
+    "Citadel",
+    65,
+    "Structure"
+  ],
+  [
+    47515,
+    "'Marginis' Fortizar'",
+    1657,
+    "Citadel",
+    65,
+    "Structure"
+  ],
+  [
+    47516,
+    "'Prometheus' Fortizar'",
+    1657,
+    "Citadel",
+    65,
+    "Structure"
+  ],
+  [
     35833,
     "Fortizar",
     1657,
@@ -68,6 +108,38 @@
     "Raitaru",
     1404,
     "Engineering Complex",
+    65,
+    "Structure"
+  ],
+  [
+    37534,
+    "Tenebrex Cyno Jammer",
+    2016,
+    "Upwell Cyno Jammer",
+    65,
+    "Structure"
+  ],
+  [
+    35840,
+    "Pharolux Cyno Beacon",
+    2017,
+    "Upwell Cyno Beacon",
+    65,
+    "Structure"
+  ],
+  [
+    35841,
+    "Ansiblex Jump Gate",
+    1408,
+    "Upwell Jump Gate",
+    65,
+    "Structure"
+  ],
+  [
+    45006,
+    "♦ Sotiyo",
+    1876,
+    "♦ Engineering Complex",
     65,
     "Structure"
   ],
@@ -328,6 +400,22 @@
     "Ship"
   ],
   [
+    41030,
+    "'Excavator' Mining Drone",
+    101,
+    "Mining Drone",
+    18,
+    "Drone"
+  ],
+  [
+    43681,
+    "'Excavator' Ice Harvesting Drone",
+    101,
+    "Mining Drone",
+    18,
+    "Drone"
+  ],
+  [
     28844,
     "Rhea",
     902,
@@ -484,6 +572,102 @@
     "Orca",
     941,
     "Industrial Command Ship",
+    6,
+    "Ship"
+  ],
+  [
+    22442,
+    "Eos",
+    540,
+    "Command Ship",
+    6,
+    "Ship"
+  ],
+  [
+    22444,
+    "Sleipnir",
+    540,
+    "Command Ship",
+    6,
+    "Ship"
+  ],
+  [
+    22446,
+    "Vulture",
+    540,
+    "Command Ship",
+    6,
+    "Ship"
+  ],
+  [
+    22448,
+    "Absolution",
+    540,
+    "Command Ship",
+    6,
+    "Ship"
+  ],
+  [
+    22466,
+    "Astarte",
+    540,
+    "Command Ship",
+    6,
+    "Ship"
+  ],
+  [
+    22468,
+    "Claymore",
+    540,
+    "Command Ship",
+    6,
+    "Ship"
+  ],
+  [
+    22470,
+    "Nighthawk",
+    540,
+    "Command Ship",
+    6,
+    "Ship"
+  ],
+  [
+    22474,
+    "Damnation",
+    540,
+    "Command Ship",
+    6,
+    "Ship"
+  ],
+  [
+    29984,
+    "Tengu",
+    963,
+    "Strategic Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    29986,
+    "Legion",
+    963,
+    "Strategic Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    29988,
+    "Proteus",
+    963,
+    "Strategic Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    29990,
+    "Loki",
+    963,
+    "Strategic Cruiser",
     6,
     "Ship"
   ],
@@ -752,330 +936,10 @@
     "Ship"
   ],
   [
-    22442,
-    "Eos",
-    540,
-    "Command Ship",
-    6,
-    "Ship"
-  ],
-  [
-    22444,
-    "Sleipnir",
-    540,
-    "Command Ship",
-    6,
-    "Ship"
-  ],
-  [
-    22446,
-    "Vulture",
-    540,
-    "Command Ship",
-    6,
-    "Ship"
-  ],
-  [
-    22448,
-    "Absolution",
-    540,
-    "Command Ship",
-    6,
-    "Ship"
-  ],
-  [
-    22466,
-    "Astarte",
-    540,
-    "Command Ship",
-    6,
-    "Ship"
-  ],
-  [
-    22468,
-    "Claymore",
-    540,
-    "Command Ship",
-    6,
-    "Ship"
-  ],
-  [
-    22470,
-    "Nighthawk",
-    540,
-    "Command Ship",
-    6,
-    "Ship"
-  ],
-  [
-    22474,
-    "Damnation",
-    540,
-    "Command Ship",
-    6,
-    "Ship"
-  ],
-  [
-    29984,
-    "Tengu",
-    963,
-    "Strategic Cruiser",
-    6,
-    "Ship"
-  ],
-  [
-    29986,
-    "Legion",
-    963,
-    "Strategic Cruiser",
-    6,
-    "Ship"
-  ],
-  [
-    29988,
-    "Proteus",
-    963,
-    "Strategic Cruiser",
-    6,
-    "Ship"
-  ],
-  [
-    29990,
-    "Loki",
-    963,
-    "Strategic Cruiser",
-    6,
-    "Ship"
-  ],
-  [
-    49711,
-    "Drekavac",
-    419,
-    "Combat Battlecruiser",
-    6,
-    "Ship"
-  ],
-  [
-    33151,
-    "Brutix Navy Issue",
-    419,
-    "Combat Battlecruiser",
-    6,
-    "Ship"
-  ],
-  [
-    33153,
-    "Drake Navy Issue",
-    419,
-    "Combat Battlecruiser",
-    6,
-    "Ship"
-  ],
-  [
-    33155,
-    "Harbinger Navy Issue",
-    419,
-    "Combat Battlecruiser",
-    6,
-    "Ship"
-  ],
-  [
-    33157,
-    "Hurricane Fleet Issue",
-    419,
-    "Combat Battlecruiser",
-    6,
-    "Ship"
-  ],
-  [
-    4302,
-    "Oracle",
-    1201,
-    "Attack Battlecruiser",
-    6,
-    "Ship"
-  ],
-  [
-    4306,
-    "Naga",
-    1201,
-    "Attack Battlecruiser",
-    6,
-    "Ship"
-  ],
-  [
-    4308,
-    "Talos",
-    1201,
-    "Attack Battlecruiser",
-    6,
-    "Ship"
-  ],
-  [
-    4310,
-    "Tornado",
-    1201,
-    "Attack Battlecruiser",
-    6,
-    "Ship"
-  ],
-  [
-    16227,
-    "Ferox",
-    419,
-    "Combat Battlecruiser",
-    6,
-    "Ship"
-  ],
-  [
-    16229,
-    "Brutix",
-    419,
-    "Combat Battlecruiser",
-    6,
-    "Ship"
-  ],
-  [
-    24702,
-    "Hurricane",
-    419,
-    "Combat Battlecruiser",
-    6,
-    "Ship"
-  ],
-  [
-    24696,
-    "Harbinger",
-    419,
-    "Combat Battlecruiser",
-    6,
-    "Ship"
-  ],
-  [
-    24698,
-    "Drake",
-    419,
-    "Combat Battlecruiser",
-    6,
-    "Ship"
-  ],
-  [
-    16231,
-    "Cyclone",
-    419,
-    "Combat Battlecruiser",
-    6,
-    "Ship"
-  ],
-  [
-    16233,
-    "Prophecy",
-    419,
-    "Combat Battlecruiser",
-    6,
-    "Ship"
-  ],
-  [
-    24700,
-    "Myrmidon",
-    419,
-    "Combat Battlecruiser",
-    6,
-    "Ship"
-  ],
-  [
-    3756,
-    "Gnosis",
-    419,
-    "Combat Battlecruiser",
-    6,
-    "Ship"
-  ],
-  [
-    2836,
-    "Adrestia",
-    358,
-    "Heavy Assault Cruiser",
-    6,
-    "Ship"
-  ],
-  [
-    3518,
-    "Vangel",
-    358,
-    "Heavy Assault Cruiser",
-    6,
-    "Ship"
-  ],
-  [
-    32209,
-    "Mimir",
-    358,
-    "Heavy Assault Cruiser",
-    6,
-    "Ship"
-  ],
-  [
-    11993,
-    "Cerberus",
-    358,
-    "Heavy Assault Cruiser",
-    6,
-    "Ship"
-  ],
-  [
-    11999,
-    "Vagabond",
-    358,
-    "Heavy Assault Cruiser",
-    6,
-    "Ship"
-  ],
-  [
-    12003,
-    "Zealot",
-    358,
-    "Heavy Assault Cruiser",
-    6,
-    "Ship"
-  ],
-  [
-    12005,
-    "Ishtar",
-    358,
-    "Heavy Assault Cruiser",
-    6,
-    "Ship"
-  ],
-  [
-    12011,
-    "Eagle",
-    358,
-    "Heavy Assault Cruiser",
-    6,
-    "Ship"
-  ],
-  [
-    12015,
-    "Muninn",
-    358,
-    "Heavy Assault Cruiser",
-    6,
-    "Ship"
-  ],
-  [
-    12019,
-    "Sacrilege",
-    358,
-    "Heavy Assault Cruiser",
-    6,
-    "Ship"
-  ],
-  [
-    12023,
-    "Deimos",
-    358,
-    "Heavy Assault Cruiser",
+    47466,
+    "Praxis",
+    27,
+    "Battleship",
     6,
     "Ship"
   ],
@@ -1280,6 +1144,246 @@
     "Ship"
   ],
   [
+    2836,
+    "Adrestia",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    3518,
+    "Vangel",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    32209,
+    "Mimir",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    11993,
+    "Cerberus",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    11999,
+    "Vagabond",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    12003,
+    "Zealot",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    12005,
+    "Ishtar",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    12011,
+    "Eagle",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    12015,
+    "Muninn",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    12019,
+    "Sacrilege",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    12023,
+    "Deimos",
+    358,
+    "Heavy Assault Cruiser",
+    6,
+    "Ship"
+  ],
+  [
+    49711,
+    "Drekavac",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    33151,
+    "Brutix Navy Issue",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    33153,
+    "Drake Navy Issue",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    33155,
+    "Harbinger Navy Issue",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    33157,
+    "Hurricane Fleet Issue",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    4302,
+    "Oracle",
+    1201,
+    "Attack Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    4306,
+    "Naga",
+    1201,
+    "Attack Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    4308,
+    "Talos",
+    1201,
+    "Attack Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    4310,
+    "Tornado",
+    1201,
+    "Attack Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    16227,
+    "Ferox",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    16229,
+    "Brutix",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    24702,
+    "Hurricane",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    24696,
+    "Harbinger",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    24698,
+    "Drake",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    16231,
+    "Cyclone",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    16233,
+    "Prophecy",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    24700,
+    "Myrmidon",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    3756,
+    "Gnosis",
+    419,
+    "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    49712,
+    "Rodiva",
+    26,
+    "Cruiser",
+    6,
+    "Ship"
+  ],
+  [
     47270,
     "Vedmak",
     26,
@@ -1434,14 +1538,6 @@
   [
     34590,
     "Victorieux Luxury Yacht",
-    26,
-    "Cruiser",
-    6,
-    "Ship"
-  ],
-  [
-    49712,
-    "Rodiva",
     26,
     "Cruiser",
     6,
@@ -1768,46 +1864,6 @@
     "Ship"
   ],
   [
-    45530,
-    "Virtuoso",
-    834,
-    "Stealth Bomber",
-    6,
-    "Ship"
-  ],
-  [
-    11377,
-    "Nemesis",
-    834,
-    "Stealth Bomber",
-    6,
-    "Ship"
-  ],
-  [
-    12032,
-    "Manticore",
-    834,
-    "Stealth Bomber",
-    6,
-    "Ship"
-  ],
-  [
-    12034,
-    "Hound",
-    834,
-    "Stealth Bomber",
-    6,
-    "Ship"
-  ],
-  [
-    12038,
-    "Purifier",
-    834,
-    "Stealth Bomber",
-    6,
-    "Ship"
-  ],
-  [
     22452,
     "Heretic",
     541,
@@ -1932,6 +1988,62 @@
     "Buzzard",
     830,
     "Covert Ops",
+    6,
+    "Ship"
+  ],
+  [
+    33697,
+    "Prospect",
+    1283,
+    "Expedition Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    37135,
+    "Endurance",
+    1283,
+    "Expedition Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    45530,
+    "Virtuoso",
+    834,
+    "Stealth Bomber",
+    6,
+    "Ship"
+  ],
+  [
+    11377,
+    "Nemesis",
+    834,
+    "Stealth Bomber",
+    6,
+    "Ship"
+  ],
+  [
+    12032,
+    "Manticore",
+    834,
+    "Stealth Bomber",
+    6,
+    "Ship"
+  ],
+  [
+    12034,
+    "Hound",
+    834,
+    "Stealth Bomber",
+    6,
+    "Ship"
+  ],
+  [
+    12038,
+    "Purifier",
+    834,
+    "Stealth Bomber",
     6,
     "Ship"
   ],
@@ -2098,6 +2210,158 @@
   [
     47269,
     "Damavik",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    11940,
+    "Gold Magnate",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    11942,
+    "Silver Magnate",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    17619,
+    "Caldari Navy Hookbill",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    17703,
+    "Imperial Navy Slicer",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    17812,
+    "Republic Fleet Firetail",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    17841,
+    "Federation Navy Comet",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    17924,
+    "Succubus",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    17926,
+    "Cruor",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    17928,
+    "Daredevil",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    17930,
+    "Worm",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    17932,
+    "Dramiel",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    29248,
+    "Magnate",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    32880,
+    "Venture",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    33468,
+    "Astero",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    33816,
+    "Garmur",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    37453,
+    "Crucifier Navy Issue",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    37454,
+    "Vigil Fleet Issue",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    37455,
+    "Griffin Navy Issue",
+    25,
+    "Frigate",
+    6,
+    "Ship"
+  ],
+  [
+    37456,
+    "Maulus Navy Issue",
     25,
     "Frigate",
     6,
@@ -2292,174 +2556,6 @@
     "Vigil",
     25,
     "Frigate",
-    6,
-    "Ship"
-  ],
-  [
-    11940,
-    "Gold Magnate",
-    25,
-    "Frigate",
-    6,
-    "Ship"
-  ],
-  [
-    11942,
-    "Silver Magnate",
-    25,
-    "Frigate",
-    6,
-    "Ship"
-  ],
-  [
-    17619,
-    "Caldari Navy Hookbill",
-    25,
-    "Frigate",
-    6,
-    "Ship"
-  ],
-  [
-    17703,
-    "Imperial Navy Slicer",
-    25,
-    "Frigate",
-    6,
-    "Ship"
-  ],
-  [
-    17812,
-    "Republic Fleet Firetail",
-    25,
-    "Frigate",
-    6,
-    "Ship"
-  ],
-  [
-    17841,
-    "Federation Navy Comet",
-    25,
-    "Frigate",
-    6,
-    "Ship"
-  ],
-  [
-    17924,
-    "Succubus",
-    25,
-    "Frigate",
-    6,
-    "Ship"
-  ],
-  [
-    17926,
-    "Cruor",
-    25,
-    "Frigate",
-    6,
-    "Ship"
-  ],
-  [
-    17928,
-    "Daredevil",
-    25,
-    "Frigate",
-    6,
-    "Ship"
-  ],
-  [
-    17930,
-    "Worm",
-    25,
-    "Frigate",
-    6,
-    "Ship"
-  ],
-  [
-    17932,
-    "Dramiel",
-    25,
-    "Frigate",
-    6,
-    "Ship"
-  ],
-  [
-    29248,
-    "Magnate",
-    25,
-    "Frigate",
-    6,
-    "Ship"
-  ],
-  [
-    32880,
-    "Venture",
-    25,
-    "Frigate",
-    6,
-    "Ship"
-  ],
-  [
-    33468,
-    "Astero",
-    25,
-    "Frigate",
-    6,
-    "Ship"
-  ],
-  [
-    33816,
-    "Garmur",
-    25,
-    "Frigate",
-    6,
-    "Ship"
-  ],
-  [
-    37453,
-    "Crucifier Navy Issue",
-    25,
-    "Frigate",
-    6,
-    "Ship"
-  ],
-  [
-    37454,
-    "Vigil Fleet Issue",
-    25,
-    "Frigate",
-    6,
-    "Ship"
-  ],
-  [
-    37455,
-    "Griffin Navy Issue",
-    25,
-    "Frigate",
-    6,
-    "Ship"
-  ],
-  [
-    37456,
-    "Maulus Navy Issue",
-    25,
-    "Frigate",
-    6,
-    "Ship"
-  ],
-  [
-    33697,
-    "Prospect",
-    1283,
-    "Expedition Frigate",
-    6,
-    "Ship"
-  ],
-  [
-    37135,
-    "Endurance",
-    1283,
-    "Expedition Frigate",
     6,
     "Ship"
   ],
@@ -2720,6 +2816,878 @@
     "Ship"
   ],
   [
+    33328,
+    "Capsule - Genolution 'Auroral' 197-variant",
+    29,
+    "Capsule",
+    6,
+    "Ship"
+  ],
+  [
+    670,
+    "Capsule",
+    29,
+    "Capsule",
+    6,
+    "Ship"
+  ],
+  [
+    37843,
+    "Standup Super-heavy Torpedo",
+    1546,
+    "Structure Anti-Capital Missile",
+    8,
+    "Charge"
+  ],
+  [
+    37844,
+    "Standup XL Cruise Missile",
+    1546,
+    "Structure Anti-Capital Missile",
+    8,
+    "Charge"
+  ],
+  [
+    37846,
+    "Standup Cruise Missile",
+    1547,
+    "Structure Anti-Subcapital Missile",
+    8,
+    "Charge"
+  ],
+  [
+    37847,
+    "Standup Heavy Missile",
+    1547,
+    "Structure Anti-Subcapital Missile",
+    8,
+    "Charge"
+  ],
+  [
+    37848,
+    "Standup Light Missile",
+    1547,
+    "Structure Anti-Subcapital Missile",
+    8,
+    "Charge"
+  ],
+  [
+    37849,
+    "Standup Heavy Guided Bomb",
+    1548,
+    "Structure Guided Bomb",
+    8,
+    "Charge"
+  ],
+  [
+    37850,
+    "Standup Light Guided Bomb",
+    1548,
+    "Structure Guided Bomb",
+    8,
+    "Charge"
+  ],
+  [
+    35923,
+    "Standup Guided Bomb Launcher I",
+    1328,
+    "Structure Guided Bomb Launcher",
+    66,
+    "Structure Module"
+  ],
+  [
+    35924,
+    "Standup XL Energy Neutralizer I",
+    1329,
+    "Structure Energy Neutralizer",
+    66,
+    "Structure Module"
+  ],
+  [
+    35925,
+    "Standup Heavy Energy Neutralizer I",
+    1329,
+    "Structure Energy Neutralizer",
+    66,
+    "Structure Module"
+  ],
+  [
+    35943,
+    "Standup Stasis Webifier I",
+    1441,
+    "Structure Stasis Webifier",
+    66,
+    "Structure Module"
+  ],
+  [
+    35941,
+    "Standup Remote Sensor Dampener I",
+    1719,
+    "Structure Disruption Battery",
+    66,
+    "Structure Module"
+  ],
+  [
+    47368,
+    "Standup Remote Sensor Dampener II",
+    1719,
+    "Structure Disruption Battery",
+    66,
+    "Structure Module"
+  ],
+  [
+    35945,
+    "Standup Weapon Disruptor I",
+    1719,
+    "Structure Disruption Battery",
+    66,
+    "Structure Module"
+  ],
+  [
+    47364,
+    "Standup Weapon Disruptor II",
+    1719,
+    "Structure Disruption Battery",
+    66,
+    "Structure Module"
+  ],
+  [
+    35947,
+    "Standup Target Painter I",
+    1719,
+    "Structure Disruption Battery",
+    66,
+    "Structure Module"
+  ],
+  [
+    47366,
+    "Standup Target Painter II",
+    1719,
+    "Structure Disruption Battery",
+    66,
+    "Structure Module"
+  ],
+  [
+    35949,
+    "Standup Focused Warp Disruptor I",
+    1442,
+    "Structure Warp Scrambler",
+    66,
+    "Structure Module"
+  ],
+  [
+    47334,
+    "Standup Focused Warp Disruptor II",
+    1442,
+    "Structure Warp Scrambler",
+    66,
+    "Structure Module"
+  ],
+  [
+    47332,
+    "Standup Heavy Energy Neutralizer II",
+    1329,
+    "Structure Energy Neutralizer",
+    66,
+    "Structure Module"
+  ],
+  [
+    47330,
+    "Standup XL Energy Neutralizer II",
+    1329,
+    "Structure Energy Neutralizer",
+    66,
+    "Structure Module"
+  ],
+  [
+    47327,
+    "Standup Point Defense Battery II",
+    1330,
+    "Structure Area Denial Module",
+    66,
+    "Structure Module"
+  ],
+  [
+    47325,
+    "Standup Guided Bomb Launcher II",
+    1328,
+    "Structure Guided Bomb Launcher",
+    66,
+    "Structure Module"
+  ],
+  [
+    47323,
+    "Standup Anticapital Missile Launcher II",
+    1327,
+    "Structure XL Missile Launcher",
+    66,
+    "Structure Module"
+  ],
+  [
+    47298,
+    "Standup Multirole Missile Launcher II",
+    1562,
+    "Structure Multirole Missile Launcher",
+    66,
+    "Structure Module"
+  ],
+  [
+    47123,
+    "Standup Shadow",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47119,
+    "Standup Malleus II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47120,
+    "Standup Mantis II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47121,
+    "Standup Cyclops II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47122,
+    "Standup Tyrfing II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47127,
+    "Standup Ametat II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47128,
+    "Standup Termite II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47129,
+    "Standup Antaeus II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47130,
+    "Standup Gungnir II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47136,
+    "Standup Siren II",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47137,
+    "Standup Dromi II",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47134,
+    "Standup Cenobite II",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47135,
+    "Standup Scarab II",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47141,
+    "Standup Templar II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47142,
+    "Standup Dragonfly II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47143,
+    "Standup Firbolg II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47144,
+    "Standup Einherji II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47148,
+    "Standup Equite II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47149,
+    "Standup Locust II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47150,
+    "Standup Satyr II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47151,
+    "Standup Gram II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47124,
+    "Standup Ametat I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47125,
+    "Standup Termite I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47126,
+    "Standup Antaeus I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47038,
+    "Standup Mantis I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47039,
+    "Standup Gungnir I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47116,
+    "Standup Malleus I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47117,
+    "Standup Cyclops I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47118,
+    "Standup Tyrfing I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47037,
+    "Standup Siren I",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47131,
+    "Standup Cenobite I",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47132,
+    "Standup Scarab I",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47133,
+    "Standup Dromi I",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47035,
+    "Standup Templar I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47036,
+    "Standup Gram I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47138,
+    "Standup Dragonfly I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47139,
+    "Standup Firbolg I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47140,
+    "Standup Einherji I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47145,
+    "Standup Equite I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47146,
+    "Standup Locust I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    47147,
+    "Standup Satyr I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    2948,
+    "Shadow",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40560,
+    "Ametat II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40562,
+    "Antaeus II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40563,
+    "Cyclops II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40564,
+    "Gungnir II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40561,
+    "Malleus II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40567,
+    "Mantis II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40566,
+    "Termite II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40565,
+    "Tyrfing II",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40570,
+    "Siren II",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40571,
+    "Dromi II",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40568,
+    "Cenobite II",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40569,
+    "Scarab II",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40556,
+    "Templar II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40557,
+    "Dragonfly II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40558,
+    "Firbolg II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40559,
+    "Einherji II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40552,
+    "Equite II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40553,
+    "Gram II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40554,
+    "Locust II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40555,
+    "Satyr II",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    32325,
+    "Cyclops I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    32340,
+    "Malleus I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    32342,
+    "Tyrfing I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    32344,
+    "Mantis I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40362,
+    "Ametat I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40363,
+    "Termite I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40364,
+    "Antaeus I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40365,
+    "Gungnir I",
+    1653,
+    "Heavy Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40346,
+    "Siren I",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40347,
+    "Dromi I",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    37599,
+    "Cenobite I",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40345,
+    "Scarab I",
+    1537,
+    "Support Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    23055,
+    "Templar I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    23057,
+    "Dragonfly I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    23059,
+    "Firbolg I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    23061,
+    "Einherji I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40358,
+    "Equite I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40359,
+    "Locust I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40360,
+    "Satyr I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
+    40361,
+    "Gram I",
+    1652,
+    "Light Fighter",
+    87,
+    "Fighter"
+  ],
+  [
     2078,
     "Zephyr",
     1022,
@@ -2878,702 +3846,6 @@
     "Shuttle",
     6,
     "Ship"
-  ],
-  [
-    37846,
-    "Standup Cruise Missile",
-    1547,
-    "Structure Anti-Subcapital Missile",
-    8,
-    "Charge"
-  ],
-  [
-    37847,
-    "Standup Heavy Missile",
-    1547,
-    "Structure Anti-Subcapital Missile",
-    8,
-    "Charge"
-  ],
-  [
-    37848,
-    "Standup Light Missile",
-    1547,
-    "Structure Anti-Subcapital Missile",
-    8,
-    "Charge"
-  ],
-  [
-    37849,
-    "Standup Heavy Guided Bomb",
-    1548,
-    "Structure Guided Bomb",
-    8,
-    "Charge"
-  ],
-  [
-    37850,
-    "Standup Light Guided Bomb",
-    1548,
-    "Structure Guided Bomb",
-    8,
-    "Charge"
-  ],
-  [
-    2948,
-    "Shadow",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    32325,
-    "Cyclops I",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    32340,
-    "Malleus I",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    32342,
-    "Tyrfing I",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    32344,
-    "Mantis I",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40362,
-    "Ametat I",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40363,
-    "Termite I",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40364,
-    "Antaeus I",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40365,
-    "Gungnir I",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40560,
-    "Ametat II",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40561,
-    "Malleus II",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40562,
-    "Antaeus II",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40563,
-    "Cyclops II",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40564,
-    "Gungnir II",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40565,
-    "Tyrfing II",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40566,
-    "Termite II",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40567,
-    "Mantis II",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47038,
-    "Standup Mantis I",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47039,
-    "Standup Gungnir I",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47116,
-    "Standup Malleus I",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47117,
-    "Standup Cyclops I",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47118,
-    "Standup Tyrfing I",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47119,
-    "Standup Malleus II",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47120,
-    "Standup Mantis II",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47121,
-    "Standup Cyclops II",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47122,
-    "Standup Tyrfing II",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47123,
-    "Standup Shadow",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47124,
-    "Standup Ametat I",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47125,
-    "Standup Termite I",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47126,
-    "Standup Antaeus I",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47127,
-    "Standup Ametat II",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47128,
-    "Standup Termite II",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47129,
-    "Standup Antaeus II",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47130,
-    "Standup Gungnir II",
-    1653,
-    "Heavy Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    37599,
-    "Cenobite I",
-    1537,
-    "Support Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40345,
-    "Scarab I",
-    1537,
-    "Support Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40346,
-    "Siren I",
-    1537,
-    "Support Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40347,
-    "Dromi I",
-    1537,
-    "Support Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40568,
-    "Cenobite II",
-    1537,
-    "Support Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40569,
-    "Scarab II",
-    1537,
-    "Support Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40570,
-    "Siren II",
-    1537,
-    "Support Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40571,
-    "Dromi II",
-    1537,
-    "Support Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47037,
-    "Standup Siren I",
-    1537,
-    "Support Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47131,
-    "Standup Cenobite I",
-    1537,
-    "Support Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47132,
-    "Standup Scarab I",
-    1537,
-    "Support Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47133,
-    "Standup Dromi I",
-    1537,
-    "Support Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47134,
-    "Standup Cenobite II",
-    1537,
-    "Support Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47135,
-    "Standup Scarab II",
-    1537,
-    "Support Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47136,
-    "Standup Siren II",
-    1537,
-    "Support Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47137,
-    "Standup Dromi II",
-    1537,
-    "Support Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    23055,
-    "Templar I",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    23057,
-    "Dragonfly I",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    23059,
-    "Firbolg I",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    23061,
-    "Einherji I",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40358,
-    "Equite I",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40359,
-    "Locust I",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40360,
-    "Satyr I",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40361,
-    "Gram I",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40552,
-    "Equite II",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40553,
-    "Gram II",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40554,
-    "Locust II",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40555,
-    "Satyr II",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40556,
-    "Templar II",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40557,
-    "Dragonfly II",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40558,
-    "Firbolg II",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    40559,
-    "Einherji II",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47035,
-    "Standup Templar I",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47036,
-    "Standup Gram I",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47138,
-    "Standup Dragonfly I",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47139,
-    "Standup Firbolg I",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47140,
-    "Standup Einherji I",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47141,
-    "Standup Templar II",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47142,
-    "Standup Dragonfly II",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47143,
-    "Standup Firbolg II",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47144,
-    "Standup Einherji II",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47145,
-    "Standup Equite I",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47146,
-    "Standup Locust I",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47147,
-    "Standup Satyr I",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47148,
-    "Standup Equite II",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47149,
-    "Standup Locust II",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47150,
-    "Standup Satyr II",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
-  ],
-  [
-    47151,
-    "Standup Gram II",
-    1652,
-    "Light Fighter",
-    87,
-    "Fighter"
   ],
   [
     12198,
@@ -3782,21 +4054,5 @@
     "Mobile Micro Jump Unit",
     22,
     "Deployable"
-  ],
-  [
-    33328,
-    "Capsule - Genolution 'Auroral' 197-variant",
-    29,
-    "Capsule",
-    6,
-    "Ship"
-  ],
-  [
-    670,
-    "Capsule",
-    29,
-    "Capsule",
-    6,
-    "Ship"
   ]
 ]
