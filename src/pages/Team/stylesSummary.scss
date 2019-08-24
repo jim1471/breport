@@ -7,28 +7,52 @@
     align-items: center;
     padding: 0 5px;
     margin: 1px 0;
+    background: #222;
   }
 
   .info {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: left;
+    justify-content: space-between;
     padding-left: 10px;
-    flex-grow: 2;
 
-    .shipName {
-      font-weight: bold;
-      color: gold;
+    .names {
+      display: flex;
+      align-items: left;
+      flex-direction: column;
+      max-width: 114px;
+
+      .shipName {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-weight: bold;
+        color: gold;
+      }
+
+      .shipGroupName {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-weight: normal;
+        font-size: 10px;
+      }
     }
 
     .counts {
-      /*width: 60px;*/
       display: flex;
+      align-items: center;
+      justify-content: flex-end;
 
       > div {
-        width: 50%;
+        width: 44px;
+        min-width: 44px;
         text-align: right;
+      }
+
+      > div:last-child {
+        width: 64px;
+        min-width: 64px;
       }
     }
 

@@ -3,6 +3,7 @@ import classnames from 'classnames'
 import { ItemIcon } from 'components'
 import { formatSum } from 'utils/FormatUtils'
 import ParseUtils from 'utils/ParseUtils'
+import { SHIP_GROUPS } from 'data/constants'
 import styles from './stylesSummary.scss'
 import teamStyles from './styles.scss'
 
@@ -47,6 +48,17 @@ function groupShipsNew(data) {
       }
     }
   })
+  // set group names
+  Object.keys(shipsGroups).forEach(key => {
+    const shipTypeID = parseInt(key, 10)
+    const group = SHIP_GROUPS.find(grp => grp[0] === shipTypeID)
+    if (group) {
+      const [,, id, name] = group
+      shipsGroups[shipTypeID].groupID = id // group[2]
+      shipsGroups[shipTypeID].groupName = name // group[3]
+    }
+  })
+
   return shipsGroups
 }
 
@@ -62,6 +74,7 @@ export default class TeamSummary extends Component {
     if (prevState.data !== nextProps.data) {
       const { data } = nextProps
       const shipsGroups = groupShipsNew(data)
+      console.log('shipsGroups:', shipsGroups)
       const shipsSorted = ParseUtils.sortCharShips(Object.keys(shipsGroups).map(id => parseInt(id, 10)))
       return {
         data,
@@ -75,29 +88,38 @@ export default class TeamSummary extends Component {
   renderShipGroup(shipID) {
     const { shipsGroups } = this.state
     const { names } = this.props
-    if (!shipsGroups[shipID]) {
+    const shipType = shipsGroups[shipID]
+    if (!shipType) {
       return null
     }
     const shipName = names.types[shipID]
-    const lossValue = shipsGroups[shipID].sum ? formatSum(shipsGroups[shipID].sum) : ''
+
+    const lossValue = shipType.sum ? formatSum(shipType.sum) : ''
     const lossValueClassName = classnames(
       styles.red,
-      lossValue && shipsGroups[shipID].sum > 1000000000 && styles.bold,
+      lossValue && shipType.sum > 1000000000 && styles.bold,
     )
 
     return (
       <div className={styles.root} key={shipID}>
         <ItemIcon id={shipID} />
         <div className={styles.info}>
-          <div className={styles.shipName}>
-            {shipName}
+
+          <div className={styles.names}>
+            <div className={styles.shipName}>
+              {shipName}
+            </div>
+            <div className={styles.shipGroupName}>
+              {shipType.groupName}
+            </div>
           </div>
+
           <div className={styles.counts}>
             <div>
-              {shipsGroups[shipID].inv}
+              {shipType.inv}
             </div>
             <div className={styles.red}>
-              {shipsGroups[shipID].losed || ''}
+              {shipType.losed || ''}
             </div>
             <div className={lossValueClassName}>
               {lossValue}

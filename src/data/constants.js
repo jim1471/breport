@@ -1,5 +1,6 @@
 /* eslint import/no-mutable-exports: off */
 let SHIP_TYPES = null
+let SHIP_GROUPS = null
 let SYSTEMS_DATA = null
 
 function loadData() {
@@ -13,7 +14,12 @@ function loadData() {
     .then(module => { SYSTEMS_DATA = module.default })
   const m2 = import('./SHIP_TYPES.json')
     .then(module => { SHIP_TYPES = module.default })
-  return Promise.all([m1, m2])
+  const m3 = import('./shipTypes.json')
+    .then(module => {
+      // debugger
+      SHIP_GROUPS = module.default
+    })
+  return Promise.all([m1, m2, m3])
 }
 
 
@@ -121,6 +127,7 @@ export {
   loadData,
   SYSTEMS_DATA,
   SHIP_TYPES,
+  SHIP_GROUPS,
   CITADELS,
   NPC_SHIPS,
 }
