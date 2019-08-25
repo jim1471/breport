@@ -7,6 +7,10 @@
     border-radius: 2px;
     overflow: hidden;
 
+    &.mini {
+      width: 24px;
+    }
+
     &.empty {
       background-color: transparent;
     }
