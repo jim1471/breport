@@ -13,7 +13,7 @@ const Img = ({ alt, iconUrl, mini }) => (
   <img
     alt={alt}
     src={iconUrl}
-    width={mini ? 16 : 32}
+    width={mini ? 24 : 32}
     className={styles.icon}
   />
 )
@@ -43,13 +43,9 @@ export default class AllyIcon extends PureComponent {
       ? `allyID-${allyID}`
       : `corpID-${corpID}`
 
-    const icon = <Img alt={alt} iconUrl={iconUrl} mini={mini} />
-
-    if (mini) return icon
-
     return (
-      <div className={styles.iconCont} title={this.getTooltipContent()}>
-        {icon}
+      <div className={cn(styles.iconCont, mini && styles.mini)} title={this.getTooltipContent()}>
+        <Img alt={alt} iconUrl={iconUrl} mini={mini} />
       </div>
     )
   }

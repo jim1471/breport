@@ -40,7 +40,7 @@ class TeamStats extends Component {
                 onClick={() => this.props.moveToTeam(index, index - 1, allyID)}
                 className={styles.moveBtn}
                 icon='double-chevron-left'
-                iconSize={16}
+                iconSize={24}
               />
               <div className={styles.name}>
                 <AllyIcon mini allyID={corpID ? '' : allyID} corpID={corpID} names={names} />
@@ -53,7 +53,7 @@ class TeamStats extends Component {
                 onClick={() => this.props.moveToTeam(index, index + 1, allyID)}
                 className={styles.moveBtn}
                 icon='double-chevron-right'
-                iconSize={16}
+                iconSize={24}
               />
             </div>
           )

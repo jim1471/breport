@@ -1,6 +1,4 @@
-/* eslint react/jsx-filename-extension: off */
-// import React from 'react'
-import numeral from 'numeral'
+const numeral = require('numeral')
 
 const oneBillion = 1000000000
 const tenMillion = 10000000
@@ -42,37 +40,37 @@ const numberFormat = sum => {
 }
 
 
-export const formatSum = sum => {
+const formatSum = sum => {
   if (sum === 0 || !sum) {
     return '0'
   }
   return numeral(sum).format(numberFormat(sum))
 }
 
-export const formatDmg = dmg => {
+const formatDmg = dmg => {
   if (dmg === 0 || !dmg) {
     return '0'
   }
   return numeral(dmg).format(numberFormat(dmg))
 }
 
-export const dmgPercent = dmg => (
+const dmgPercent = dmg => (
   dmg === 0 || !dmg
     ? ''
     : `(${numeral(dmg).format('0,0.0%')})`
 )
 
-export const dmgPercentZero = dmg => (
+const dmgPercentZero = dmg => (
   dmg === 0 || !dmg
     ? '(0%)'
     : `(${numeral(dmg).format('0,0.0%')})`
 )
 
-export const cntWhored = cnt => (
+const cntWhored = cnt => (
   cnt === 0 || !cnt ? '' : ` [${cnt}]`
 )
 
-export const cntWhoredZero = cnt => (
+const cntWhoredZero = cnt => (
   cnt === 0 || !cnt ? '[0]' : ` [${cnt}]`
 )
 
@@ -81,32 +79,34 @@ const getMinutes = minutes => {
   return minutes
 }
 
-export const getLocalTime = date => {
+const getLocalTime = date => {
   let result = ''
   result += `${date.getHours()}`
   result += `:${getMinutes(date.getMinutes())}`
   return result
 }
 
-export const getUTCTime = date => {
+const getUTCTime = (date, withSeconds = true) => {
   let result = ''
   result += `${date.getUTCHours()}`
   result += `:${getMinutes(date.getUTCMinutes())}`
-  result += `:${getMinutes(date.getUTCSeconds())}`
+  if (withSeconds) {
+    result += `:${getMinutes(date.getUTCSeconds())}`
+  }
   return result
 }
 
-export const timestampToLocal = timestamp => {
+const timestampToLocal = timestamp => {
   const date = new Date(timestamp)
   return getLocalTime(date)
 }
 
-export const timestampToUTC = timestamp => {
+const timestampToUTC = timestamp => {
   const date = new Date(timestamp)
   return getUTCTime(date)
 }
 
-export const formatZkillTimestamp = ts => {
+const formatZkillTimestamp = ts => {
   const date = new Date(ts * 1000)
   let dateStr = `${date.getUTCFullYear()}`
   const month = date.getUTCMonth() + 1
@@ -119,7 +119,7 @@ export const formatZkillTimestamp = ts => {
   return dateStr
 }
 
-export const parseZkillDatetime = dt => {
+const parseZkillDatetime = dt => {
   if (dt.length !== 12) return null
   const year = dt.substring(0, 4)
   const month = dt.substring(4, 6) - 1
@@ -131,4 +131,19 @@ export const parseZkillDatetime = dt => {
   }
   const timestamp = Date.UTC(year, month, day, hour, min)
   return new Date(timestamp)
+}
+
+module.exports = {
+  formatSum,
+  formatDmg,
+  dmgPercent,
+  dmgPercentZero,
+  cntWhored,
+  cntWhoredZero,
+  getLocalTime,
+  getUTCTime,
+  timestampToLocal,
+  timestampToUTC,
+  formatZkillTimestamp,
+  parseZkillDatetime,
 }

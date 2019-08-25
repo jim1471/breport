@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import cn from 'classnames'
 import startsWith from 'lodash/startsWith'
 import AllyIcon from 'icons/AllyIcon'
@@ -47,6 +47,39 @@ function groupMembers(data) {
   }
 }
 
+const Ally = ({ id, name, chars, names }) => (
+  <div className={styles.ally}>
+    {id !== 'unaffiliated' &&
+      <Fragment>
+        <AllyIcon allyID={id} names={names} />
+        <a
+          className={styles.link}
+          href={`https://zkillboard.com/alliance/${id}/`}
+          target='_blank' rel='noopener noreferrer'
+        >
+          {`(${chars}) ${name}`}
+        </a>
+      </Fragment>
+    }
+    {id === 'unaffiliated' &&
+      <div>{`(${chars}) ${name}`}</div>
+    }
+  </div>
+)
+
+const Corp = ({ id, name, chars, names }) => (
+  <div className={styles.corp}>
+    <AllyIcon mini corpID={id} names={names} />
+    <a
+      className={styles.link}
+      href={`https://zkillboard.com/corporation/${id}/`}
+      target='_blank' rel='noopener noreferrer'
+    >
+      {`(${chars}) ${name}`}
+    </a>
+  </div>
+)
+
 
 export default class TeamComposition extends Component {
 
@@ -84,21 +117,25 @@ export default class TeamComposition extends Component {
 
           return (
             <div className={styles.member} key={allyID}>
-              <div className={styles.ally}>
-                {allyID !== 'unaffiliated' &&
-                  <AllyIcon allyID={allyID} names={names} />
-                }
-                <div>{`(${allyCharsCount}) ${allyName}`}</div>
-              </div>
+              <Ally
+                key={allyID}
+                id={allyID}
+                name={allyName}
+                chars={allyCharsCount}
+                names={names}
+              />
               <div className={styles.corps}>
                 {corps.map(corpID => {
                   const corpName = names.corps[corpID] || corpID
                   const charsCount = members[allyID][corpID]
                   return (
-                    <div className={styles.corp} key={corpID}>
-                      <AllyIcon mini corpID={corpID} names={names} />
-                      <div>{`(${charsCount}) ${corpName}`}</div>
-                    </div>
+                    <Corp
+                      key={corpID}
+                      id={corpID}
+                      name={corpName}
+                      chars={charsCount}
+                      names={names}
+                    />
                   )
                 })}
               </div>
