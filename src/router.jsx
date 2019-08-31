@@ -3,7 +3,11 @@ import React from 'react'
 import Loadable from 'react-loadable'
 import { browserHistory, Router, Route, IndexRoute, Redirect } from 'react-router'
 import { Spinner } from 'components'
+import MaintenancePage from 'pages/Dashboard/MaintenancePage'
 import App from './App'
+
+
+const MAINTENANCE = true
 
 
 const Dashboard = Loadable({
@@ -26,6 +30,13 @@ const Legal = Loadable({
   loading: () => <Spinner />,
 })
 
+const maintenanceRoutes = () => (
+  <Route component={App}>
+    <Route component={MaintenancePage} path='/' />
+    <Route component={Legal} path='legal' />
+    <Redirect from='*' to='/' />
+  </Route>
+)
 
 const routes = () => (
   <Route path='/' component={App}>
@@ -41,10 +52,12 @@ const routes = () => (
   </Route>
 )
 
-
 const RouterBridge = () => (
   <Router history={browserHistory}>
-    {routes()}
+    {MAINTENANCE
+      ? maintenanceRoutes()
+      : routes()
+    }
   </Router>
 )
 
