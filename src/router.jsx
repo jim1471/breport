@@ -7,7 +7,7 @@ import MaintenancePage from 'pages/Dashboard/MaintenancePage'
 import App from './App'
 
 
-const MAINTENANCE = true
+const MAINTENANCE = false
 
 
 const Dashboard = Loadable({
