@@ -189,6 +189,7 @@ export default class TeamSummary extends Component {
       <div className={teamStyles.team}>
         <div className={styles.btnExpand} onClick={this.toggleMode}>
           {groupedMode ? 'Ship Groups' : 'Ship Types'}
+          <span className={styles.hint}> (click to change)</span>
         </div>
         {!groupedMode && shipsTypesSorted &&
           shipsTypesSorted.map(shipID => this.renderShipType(shipID))

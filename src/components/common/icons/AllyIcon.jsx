@@ -37,8 +37,8 @@ export default class AllyIcon extends PureComponent {
     if (!allyID && !corpID) return <EmptyImg />
 
     const iconUrl = allyID
-      ? `https://imageserver.eveonline.com/Alliance/${allyID}_64.png`
-      : `https://imageserver.eveonline.com/Corporation/${corpID}_64.png`
+      ? `https://images.evetech.net/alliances/${allyID}/logo?size=64`
+      : `https://images.evetech.net/corporations/${corpID}/logo?size=64`
     const alt = allyID
       ? `allyID-${allyID}`
       : `corpID-${corpID}`

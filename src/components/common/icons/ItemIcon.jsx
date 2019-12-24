@@ -18,7 +18,7 @@ const ItemIcon = ({ id }) => {
       <img
         className={styles.itemIcon}
         alt={`typeID-${id}`}
-        src={`https://imageserver.eveonline.com/Type/${id}_${quality}.png`}
+        src={`https://images.evetech.net/types/${id}/icon?size=${quality}`}
       />
     )
   }

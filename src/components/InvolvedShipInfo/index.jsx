@@ -16,7 +16,7 @@ export default class InvolvedShipInfo extends Component {
       <img
         style={{ width: 32, height: 32, verticalAlign: 'middle' }}
         alt={`typeID-${shipID}`}
-        src={`https://imageserver.eveonline.com/Type/${shipID}_${64}.png`}
+        src={`https://images.evetech.net/types/${shipID}/icon?size=64`}
       />
     )
     if (!ship.losses) return icon
