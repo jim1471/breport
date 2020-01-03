@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
-import { Link } from 'react-router'
-import { distanceInWordsToNow } from 'date-fns'
+import { Link } from 'react-router-dom'
+import { formatDistanceToNow } from 'date-fns'
 import { Spinner } from 'components'
 import { Button, Tabs, Tab } from 'components/common/blueprint'
 import { BrInfo, Footer } from 'widgets'
@@ -88,7 +88,7 @@ class Dashboard extends Component {
           <div>{relatedDateFmt}</div>
         </div>
         <div className={styles.distanceCell}>
-          {`${distanceInWordsToNow(relatedDate)} ago`}
+          {`${formatDistanceToNow(relatedDate)} ago`}
         </div>
         <div className={styles.systemCell}>
           <div className={styles.statsCell}>
@@ -96,7 +96,7 @@ class Dashboard extends Component {
           </div>
           <div className={styles.createdAt}>
             <span className={styles.createdAtLabel}>added </span>
-            <span>{`${distanceInWordsToNow(createdAt)} ago`}</span>
+            <span>{`${formatDistanceToNow(createdAt)} ago`}</span>
           </div>
         </div>
       </div>

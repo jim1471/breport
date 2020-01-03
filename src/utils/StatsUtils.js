@@ -133,7 +133,7 @@ export const calcGeneralStats = teamsStats => {
     stat.efficiency = numeral(efficiency).format('0,0.0%')
   })
   if (process.env.NODE_ENV === 'development') {
-    console.log('generalStats:', generalStats)
+    console.debug('generalStats:', generalStats)
   }
   return generalStats
 }

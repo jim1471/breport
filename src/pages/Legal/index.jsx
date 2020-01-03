@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import { Navbar, Icon } from 'components/common/blueprint'
 import { Footer } from 'widgets'
 import styles from './styles.scss'

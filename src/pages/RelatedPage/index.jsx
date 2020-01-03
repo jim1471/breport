@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import { browserHistory } from 'react-router'
 import isEqual from 'lodash/isEqual'
 import startsWith from 'lodash/startsWith'
+import routerHistory from 'utils/routerHistory'
 import { getRelatedData, getRelatedDataStub, parseData, setBrInfo } from 'reducers/related'
 import { Spinner } from 'components'
 import { ControlPanel, BrInfo, TabsPanel, Footer } from 'widgets'
@@ -34,9 +34,9 @@ class RelatedPage extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(prevProps) {
     const { names } = this.props
-    if (names.isLoading && !nextProps.names.isLoading) {
+    if (prevProps.names.isLoading && !names.isLoading) {
       this.props.parseData()
     }
   }
@@ -72,7 +72,7 @@ class RelatedPage extends Component {
             relatedKey: `${systemID}/${time}`,
             teams,
           }])
-          browserHistory.push(`/br/${data.result.id}`)
+          routerHistory.push(`/br/${data.result.id}`)
         })
         .catch(err => {
           this.setState({ saving: false })
@@ -91,7 +91,7 @@ class RelatedPage extends Component {
 
   renderContent() {
     const { reportType, saving } = this.state
-    const { error, stillProcessing, data = [], teams, names, router, kmLoading } = this.props
+    const { error, stillProcessing, data = [], teams, names, params, kmLoading } = this.props
     const isError = error || names.error
     // const isLoading = names.isLoading || kmLoading
     const isLoading = kmLoading
@@ -121,13 +121,13 @@ class RelatedPage extends Component {
         />
         {!isError && !isLoading &&
           <Fragment>
-            <BrInfo routerParams={router.params} />
+            <BrInfo routerParams={params} />
             <TabsPanel />
             <Report
               teams={teams}
               isLoading={isLoading}
               reportType={reportType}
-              routerParams={router.params}
+              routerParams={params}
             />
           </Fragment>
         }
@@ -149,7 +149,7 @@ class RelatedPage extends Component {
 }
 
 const mapDispatchToProps = { getRelatedData, getRelatedDataStub, parseData, setBrInfo }
-const mapStateToProps = ({ related, names }) => ({
+const mapStateToProps = ({ related, names }, { match: { params } }) => ({
   isStub: related.isStub,
   error: related.error,
   data: related.kmData || [],
@@ -160,6 +160,7 @@ const mapStateToProps = ({ related, names }) => ({
   stillProcessing: related.stillProcessing,
   relatedSystemID: related.systemID,
   relatedDatetime: related.datetime,
+  params,
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(RelatedPage)

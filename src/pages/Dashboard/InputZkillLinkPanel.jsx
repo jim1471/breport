@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import cn from 'classnames'
 import startsWith from 'lodash/startsWith'
-import { browserHistory } from 'react-router'
+import routerHistory from 'utils/routerHistory'
 import { InputGroup, Button } from 'components/common/blueprint'
 import styles from './styles.scss'
 
@@ -33,7 +33,7 @@ export default class InputZkillLinkPanel extends Component {
   handleGetReport = () => {
     const { relatedLink } = this.state
     if (relatedLink) {
-      browserHistory.push(relatedLink)
+      routerHistory.push(relatedLink)
     }
   }
 

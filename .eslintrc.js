@@ -3,14 +3,13 @@ process.env.NODE_ENV = 'development'
 
 const config = {
   root: true,
-  plugins: ['react', 'node', 'security', 'babel'],
-  extends: ['react-app', 'airbnb'],
+  plugins: ['react', 'node', 'security', 'babel', 'react-hooks'],
+  extends: ['airbnb'],
   env: {
     node: true,
     es6: true
   },
   globals: {
-    NODE_ENV: 'development',
     it: true,
     expect: true,
     describe: true,
@@ -22,10 +21,17 @@ const config = {
     WebSocket: true,
     alert: true,
     Blob: true,
-    URL: true
+    URL: true,
+    localStorage: true,
   },
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2018,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
+    parser: 'babel-eslint',
   },
   rules: {
     // DISABLED
@@ -81,13 +87,16 @@ const config = {
     }],
 
     // New Eslint or Airbnb rules ----
+    'react/jsx-curly-newline': 'off',
     'react/jsx-one-expression-per-line': 'off',
     'react/destructuring-assignment': 'off',
+    'react/no-multi-comp': 'off',
+    'react/static-property-placement': 'off',
     'react/jsx-wrap-multilines': ['warn', {
       return: 'parens-new-line',
       arrow: 'parens-new-line',
     }],
-    'operator-linebreak': ['warn', 'before', { "overrides": { "&&": "after" } }],
+    'operator-linebreak': ['warn', 'before', { 'overrides': { '&&': 'after' } }],
     // -------------------------------
 
     // WARNINGS
@@ -100,7 +109,6 @@ const config = {
     'no-unreachable': 'warn',
     'spaced-comment': 'warn',
     'react/sort-comp': 'warn',
-    'react/no-multi-comp': 'warn',
     'react/no-unused-state': 'warn',
     'jsx-quotes': ['warn', 'prefer-single'],
     'react/jsx-no-bind': ['warn', {
@@ -109,6 +117,12 @@ const config = {
       'allowFunctions': false,
       'allowBind': false,
     }],
+    'react/jsx-fragments': ['warn', 'element'],
+    'react/state-in-constructor': ['warn', 'never'],
+
+
+    'react/no-deprecated': 'warn',
+    'react/jsx-props-no-spreading': 'off', // needed to cascade styles for Blueprint components
 
     // ENABLED
     'no-unused-expressions': ['error', { 'allowShortCircuit': true }],

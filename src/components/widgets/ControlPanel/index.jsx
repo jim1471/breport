@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import { Button } from 'components/common/blueprint'
 import styles from './styles.scss'
 

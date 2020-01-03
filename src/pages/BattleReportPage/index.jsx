@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
-import { browserHistory } from 'react-router'
 import { connect } from 'react-redux'
+import routerHistory from 'utils/routerHistory'
 import { getBR, setStatus } from 'reducers/battlereport'
 import { brParseTeams, getRelatedData, getRelatedDataStub, parseData } from 'reducers/related'
 import { Spinner } from 'components'
@@ -15,6 +15,7 @@ class BattleReportPage extends Component {
     super(props)
 
     const { params: { brID } } = this.props
+    // eslint-disable-next-line react/state-in-constructor
     this.state = {
       brID,
     }
@@ -23,7 +24,7 @@ class BattleReportPage extends Component {
   componentDidMount() {
     const { brID } = this.state
     if (!brID) {
-      browserHistory.push('/')
+      routerHistory.push('/')
       return
     }
     const { teamsLosses } = this.props
@@ -60,7 +61,7 @@ class BattleReportPage extends Component {
   }
 
   render() {
-    const { status, teams, teamsLosses, router, br, involvedNames } = this.props
+    const { status, teams, teamsLosses, params, br, involvedNames } = this.props
     const isLoading = br.isLoading || involvedNames.isLoading
     return (
       <div className={styles.root}>
@@ -81,13 +82,13 @@ class BattleReportPage extends Component {
 
         {teams && teamsLosses &&
           <Fragment>
-            <BrInfo routerParams={router.params} />
+            <BrInfo routerParams={params} />
             <TabsPanel />
             <Report
               teams={teams}
               isLoading={false}
               reportType='plane'
-              routerParams={router.params}
+              routerParams={params}
             />
           </Fragment>
         }
@@ -99,12 +100,13 @@ class BattleReportPage extends Component {
 }
 
 const mapDispatchToProps = { getBR, setStatus, brParseTeams, getRelatedData, getRelatedDataStub, parseData }
-const mapStateToProps = ({ names, related, battlereport }) => ({
+const mapStateToProps = ({ names, related, battlereport }, { match: { params } }) => ({
   involvedNames: names.involvedNames,
   status: battlereport.status,
   br: battlereport.br,
   saving: battlereport.saving,
   teams: related.teams,
   teamsLosses: related.teamsLosses,
+  params,
 })
 export default connect(mapStateToProps, mapDispatchToProps)(BattleReportPage)

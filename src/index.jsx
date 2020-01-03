@@ -2,9 +2,11 @@ import 'babel-polyfill'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
+import { Router } from 'react-router-dom'
 import { FocusStyleManager } from 'components/common/blueprint'
+import routerHistory from 'utils/routerHistory'
 import configureStore from './store'
-import Router from './router'
+import Root from './Root'
 
 FocusStyleManager.onlyShowFocusOnTabs()
 
@@ -12,7 +14,9 @@ const store = configureStore()
 
 const App = () => (
   <Provider store={store}>
-    <Router />
+    <Router history={routerHistory}>
+      <Root />
+    </Router>
   </Provider>
 )
 
@@ -38,20 +42,6 @@ console.debug = function() {
     args[i] = clear(args[i])
   }
   console.log.apply(console, args)
-}
-
-if (process.env.NODE_ENV === 'development') {
-  // remove annoying warning from React-Router 3:
-  // "Warning: [react-router] You cannot change <Router routes>; it will be ignored"
-  // https://github.com/reactjs/react-router/issues/2182
-  console.error = (() => {
-    const error = console.error
-    return function (exception) {
-      return (exception && typeof exception === 'string' && exception.match(/change <Router /))
-        ? undefined
-        : error.apply(console, arguments)
-    }
-  })()
 }
 /* eslint-enable */
 

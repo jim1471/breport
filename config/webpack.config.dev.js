@@ -3,9 +3,8 @@
 process.env.BABEL_ENV = 'development'
 process.env.NODE_ENV = 'development'
 const webpack = require('webpack')
-const path = require('path')
+const path = require('path') // eslint-disable-line import/no-extraneous-dependencies
 const fs = require('fs')
-const loaderUtils = require('loader-utils')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const eslintFormatter = require('react-dev-utils/eslintFormatter')
@@ -25,6 +24,7 @@ module.exports = {
     main: [
       'webpack-dev-server/client?http://0.0.0.0:3200', // WebpackDevServer host and port
       'webpack/hot/dev-server',
+      'react-hot-loader/patch',
       './src/index.jsx',
     ],
   },
@@ -32,6 +32,7 @@ module.exports = {
     extensions: ['*', '.js', '.jsx'],
     alias: {
       ...require('./aliases'),
+      'react-dom': '@hot-loader/react-dom',
     },
   },
   output: {
@@ -129,12 +130,7 @@ module.exports = {
         test: /\.(scss|css)$/,
         exclude: /node_modules/,
         use: [
-          {
-            loader: require.resolve('style-loader'),
-            options: {
-              hmr: false,
-            },
-          },
+          { loader: 'style-loader' },
           {
             loader: require.resolve('css-loader'),
             options: {
@@ -155,13 +151,6 @@ module.exports = {
               ident: 'postcss',
               plugins: () => [
                 require('postcss-flexbugs-fixes'),
-                require('autoprefixer')({
-                  browsers: [
-                    'last 5 versions',
-                    'Firefox ESR',
-                    'not ie < 11',
-                  ],
-                }),
               ],
             },
           },

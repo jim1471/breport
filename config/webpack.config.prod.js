@@ -3,7 +3,7 @@
 process.env.BABEL_ENV = 'production'
 process.env.NODE_ENV = 'production'
 const webpack = require('webpack')
-const path = require('path')
+const path = require('path') // eslint-disable-line import/no-extraneous-dependencies
 const fs = require('fs')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
@@ -230,13 +230,6 @@ module.exports = {
               ident: 'postcss',
               plugins: () => [
                 require('postcss-flexbugs-fixes'),
-                require('autoprefixer')({
-                  browsers: [
-                    'last 5 versions',
-                    'Firefox ESR',
-                    'not ie < 11',
-                  ],
-                }),
                 require('cssnano')({
                   svgo: false,
                   reduceIdents: false,

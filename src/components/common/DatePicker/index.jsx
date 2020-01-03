@@ -2,16 +2,19 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import dateFnsParse from 'date-fns/parse'
 import dateFnsFormat from 'date-fns/format'
+import { legacyParse } from '@date-fns/upgrade/v2'
 import { DateUtils } from 'react-day-picker'
 import DayPickerInput from 'react-day-picker/DayPickerInput'
 import 'react-day-picker/lib/style.css'
 import './styles.scss'
 
+
 // const FORMAT = 'DD/MM/YYYY'
-const FORMAT = 'YYYYMMDD'
+// const FORMAT = 'YYYYMMDD'
+const FORMAT = 'yyyyMMdd'
 
 function parseDate(str, format, locale) {
-  const parsed = dateFnsParse(str, format, { locale })
+  const parsed = dateFnsParse(legacyParse(str), format, { locale })
   if (DateUtils.isDate(parsed)) {
     return parsed
   }
@@ -19,7 +22,7 @@ function parseDate(str, format, locale) {
 }
 
 function formatDate(date, format, locale) {
-  return dateFnsFormat(date, format, { locale })
+  return dateFnsFormat(legacyParse(date), format, { locale })
 }
 
 

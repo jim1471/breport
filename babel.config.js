@@ -1,4 +1,4 @@
-module.exports = function (api) {
+module.exports = function getConfig(api) {
   api.cache(true)
 
   const presets = [
@@ -19,12 +19,43 @@ module.exports = function (api) {
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-proposal-object-rest-spread',
     '@babel/plugin-syntax-dynamic-import',
+    'react-loadable/babel',
     'lodash',
     'date-fns',
   ]
 
+  if (process.env.NODE_ENV === 'development') {
+    plugins.push('react-hot-loader/babel')
+  }
+
+  const env = {
+    test: {
+      presets: [
+        ['@babel/preset-env', { targets: { node: 'current' } }],
+      ],
+      plugins: [
+        [
+          '@babel/plugin-transform-runtime',
+          {
+            corejs: false,
+            helpers: true,
+            regenerator: true,
+            useESModules: true,
+          },
+        ],
+        '@babel/plugin-proposal-class-properties',
+        '@babel/plugin-proposal-object-rest-spread',
+        '@babel/plugin-syntax-dynamic-import',
+        'react-loadable/babel',
+        'lodash',
+        'date-fns',
+      ],
+    },
+  }
+
   return {
     presets,
     plugins,
+    env,
   }
 }

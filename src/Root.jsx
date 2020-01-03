@@ -1,7 +1,7 @@
 import { hot } from 'react-hot-loader'
 import React from 'react'
 import Loadable from 'react-loadable'
-import { browserHistory, Router, Route, IndexRoute, Redirect } from 'react-router'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import { Spinner } from 'components'
 import MaintenancePage from 'pages/Dashboard/MaintenancePage'
 import App from './App'
@@ -31,35 +31,30 @@ const Legal = Loadable({
 })
 
 const maintenanceRoutes = () => (
-  <Route component={App}>
+  <Switch>
     <Route component={MaintenancePage} path='/' />
     <Route component={Legal} path='legal' />
     <Redirect from='*' to='/' />
-  </Route>
+  </Switch>
 )
 
-const routes = () => (
-  <Route path='/' component={App}>
-    <IndexRoute component={Dashboard} />
-
-    <Route component={RelatedPage} path='related/:systemID/:time' />
-
-    <Route component={BattleReportPage} path='br/:brID' />
-
-    <Route component={Legal} path='legal' />
-
+const standardRoutes = () => (
+  <Switch>
+    <Route component={Dashboard} path='/' exact />
+    <Route component={RelatedPage} path='/related/:systemID/:time' />
+    <Route component={BattleReportPage} path='/br/:brID' />
+    <Route component={Legal} path='/legal' />
     <Redirect from='*' to='/' />
-  </Route>
+  </Switch>
 )
 
-const RouterBridge = () => (
-  <Router history={browserHistory}>
+const Root = () => (
+  <App>
     {MAINTENANCE
       ? maintenanceRoutes()
-      : routes()
+      : standardRoutes()
     }
-  </Router>
+  </App>
 )
 
-
-export default hot(module)(RouterBridge)
+export default hot(module)(Root)
