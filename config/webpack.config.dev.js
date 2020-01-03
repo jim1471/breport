@@ -135,12 +135,14 @@ module.exports = {
             loader: require.resolve('css-loader'),
             options: {
               importLoaders: 2,
-              // minimize: false,
-              import: false,
-              modules: false,
-              camelCase: true,
-              exportOnlyLocals: true,
-              localIdentName: '[path]-[local]-[hash:base64:5]',
+              import: true,
+              esModule: true,
+              onlyLocals: false,
+              localsConvention: 'camelCaseOnly',
+              modules: {
+                mode: 'global',
+                localIdentName: '[path]-[local]-[hash:base64:5]',
+              },
             },
           },
           {

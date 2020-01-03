@@ -6,7 +6,7 @@ const webpack = require('webpack')
 const path = require('path') // eslint-disable-line import/no-extraneous-dependencies
 const fs = require('fs')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
@@ -62,6 +62,13 @@ module.exports = {
   optimization: {
     minimizer: [
       new TerserPlugin({
+        extractComments: false,
+        // Use multi-process parallel running to improve the build speed
+        // Default number of concurrent runs: os.cpus().length - 1
+        parallel: true,
+        // Enable file caching
+        cache: true,
+        sourceMap: false,
         terserOptions: {
           parse: {
             // we want terser to parse ecma 8 code. However, we don't want it
@@ -92,12 +99,6 @@ module.exports = {
             ascii_only: true,
           },
         },
-        // Use multi-process parallel running to improve the build speed
-        // Default number of concurrent runs: os.cpus().length - 1
-        parallel: true,
-        // Enable file caching
-        cache: true,
-        sourceMap: false,
       }),
       new OptimizeCSSAssetsPlugin({
         cssProcessor: require('cssnano'),
@@ -215,11 +216,14 @@ module.exports = {
             loader: require.resolve('css-loader'),
             options: {
               importLoaders: 2,
-              minimize: false,
-              import: false,
-              modules: false,
-              camelCase: true,
-              localIdentName: '[hash:base64:8]',
+              import: true,
+              esModule: true,
+              onlyLocals: false,
+              localsConvention: 'camelCaseOnly',
+              modules: {
+                mode: 'global',
+                localIdentName: '[hash:base64:8]',
+              },
             },
           },
           {

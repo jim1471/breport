@@ -1,14 +1,15 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { formatDistanceToNow } from 'date-fns'
 import { Spinner } from 'components'
 import { Button, Tabs, Tab } from 'components/common/blueprint'
-import { BrInfo, Footer } from 'widgets'
+import { Footer } from 'widgets'
+// import { BrInfo, Footer } from 'widgets'
 import { SYSTEMS_DATA } from 'data/constants'
 import { parseZkillDatetime, formatSum } from 'utils/FormatUtils'
 import RelatedService from 'api/RelatedService'
 import InputZkillLinkPanel from './InputZkillLinkPanel'
-import InputSystems from './InputSystems'
+// import InputSystems from './InputSystems'
 import styles from './styles.scss'
 
 
@@ -136,12 +137,13 @@ class Dashboard extends Component {
     if (related === 'single') {
       return <InputZkillLinkPanel getSystemName={this.getSystemNameFromLink} />
     }
-    return (
-      <Fragment>
-        <BrInfo dashboard />
-        <InputSystems SYSTEMS_DATA={SYSTEMS_DATA} />
-      </Fragment>
-    )
+    return null
+    // return (
+    //   <Fragment>
+    //     <BrInfo dashboard />
+    //     <InputSystems SYSTEMS_DATA={SYSTEMS_DATA} />
+    //   </Fragment>
+    // )
   }
 
   renderControls() {
