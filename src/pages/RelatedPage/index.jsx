@@ -5,7 +5,7 @@ import startsWith from 'lodash/startsWith'
 import routerHistory from 'utils/routerHistory'
 import { getRelatedData, getRelatedDataStub, parseData, setBrInfo } from 'reducers/related'
 import { Spinner } from 'components'
-import { ControlPanel, BrInfo, TabsPanel, Footer } from 'widgets'
+import { ControlPanel, BrInfo, Footer } from 'widgets'
 import { formatZkillTimestamp } from 'utils/FormatUtils'
 import RelatedService from 'api/RelatedService'
 import Report from 'pages/Report'
@@ -122,7 +122,7 @@ class RelatedPage extends Component {
         {!isError && !isLoading &&
           <Fragment>
             <BrInfo routerParams={params} />
-            <TabsPanel />
+            <div className={styles.space} />
             <Report
               teams={teams}
               isLoading={isLoading}

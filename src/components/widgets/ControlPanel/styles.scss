@@ -1,10 +1,33 @@
 :local {
-  .headWrapper {
+
+  .navbar {
+    &:global(.bp3-navbar.bp3-dark) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #333;
+      padding: 0;
+
+      :global(.bp3-button) {
+        background-color: #444;
+      }
+    }
+  }
+
+  .tabsRoot {
+    width: 100%;
+    background: #181818;
+    border-bottom: 1px solid #444;
+  }
+
+  .headRoot {
     position: relative;
     width: 100%;
     max-width: 600px;
+
     padding: 10px 0;
     padding-bottom: 0;
+
     @media (max-width: 420px) {
       padding: 10px 5px;
       padding-bottom: 0;

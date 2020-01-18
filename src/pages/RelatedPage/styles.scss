@@ -7,5 +7,11 @@
     position: relative;
     user-select: text;
     color: #888;
+    padding-top: 100px; /* navbar with margin */
+  }
+
+  .space {
+    position: relative;
+    height: 10px;
   }
 }

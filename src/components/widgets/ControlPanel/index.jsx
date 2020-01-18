@@ -2,7 +2,9 @@
 import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { Button, Dialog, Switch } from 'components/common/blueprint'
+import cn from 'classnames'
+import { Navbar, Button, Dialog, Switch } from 'components/common/blueprint'
+import TabsPanel from 'widgets/TabsPanel'
 import { updateSettings } from 'reducers/settings'
 import styles from './styles.scss'
 
@@ -61,8 +63,8 @@ class ControlPanel extends Component {
     const { settingsIsOpen } = this.state
     const { ignoreDamageToStructures, countFightersAsSquad, showExtendedStatistics } = settings
 
-    return (
-      <div className={styles.headWrapper}>
+    const content = (
+      <div className={styles.headRoot}>
         <div className={styles.head}>
           <div className={styles.buttons}>
             {this.renderBackButton()}
@@ -151,6 +153,15 @@ class ControlPanel extends Component {
           this.renderError(error)
         }
       </div>
+    )
+
+    return (
+      <Navbar fixedToTop className={cn('bp3-dark', styles.navbar)}>
+        {content}
+        <div className={styles.tabsRoot}>
+          <TabsPanel />
+        </div>
+      </Navbar>
     )
   }
 }
