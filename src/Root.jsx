@@ -1,34 +1,18 @@
 import { hot } from 'react-hot-loader'
 import React from 'react'
-import Loadable from 'react-loadable'
+import loadable from '@loadable/component'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { Spinner } from 'components'
 import MaintenancePage from 'pages/Dashboard/MaintenancePage'
 import App from './App'
 
-
 const MAINTENANCE = false
 
+const Dashboard = loadable(() => import(/* webpackChunkName: "Dashboard" */'pages/Dashboard'), { fallback: <Spinner /> })
+const RelatedPage = loadable(() => import(/* webpackChunkName: "RelatedPage" */'pages/RelatedPage'), { fallback: <Spinner /> })
+const BattleReportPage = loadable(() => import(/* webpackChunkName: "BattleReportPage" */'pages/BattleReportPage'), { fallback: <Spinner /> })
+const Legal = loadable(() => import(/* webpackChunkName: "Legal" */'pages/Legal'), { fallback: <Spinner /> })
 
-const Dashboard = Loadable({
-  loader: () => import(/* webpackChunkName: "Dashboard" */'pages/Dashboard'),
-  loading: () => <Spinner />,
-})
-
-const RelatedPage = Loadable({
-  loader: () => import(/* webpackChunkName: "RelatedPage" */'pages/RelatedPage'),
-  loading: () => <Spinner />,
-})
-
-const BattleReportPage = Loadable({
-  loader: () => import(/* webpackChunkName: "BattleReportPage" */'pages/BattleReportPage'),
-  loading: () => <Spinner />,
-})
-
-const Legal = Loadable({
-  loader: () => import(/* webpackChunkName: "Legal" */'pages/Legal'),
-  loading: () => <Spinner />,
-})
 
 const maintenanceRoutes = () => (
   <Switch>

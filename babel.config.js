@@ -19,7 +19,6 @@ module.exports = function getConfig(api) {
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-proposal-object-rest-spread',
     '@babel/plugin-syntax-dynamic-import',
-    'react-loadable/babel',
     'lodash',
     'date-fns',
   ]
@@ -46,7 +45,6 @@ module.exports = function getConfig(api) {
         '@babel/plugin-proposal-class-properties',
         '@babel/plugin-proposal-object-rest-spread',
         '@babel/plugin-syntax-dynamic-import',
-        'react-loadable/babel',
         'lodash',
         'date-fns',
       ],

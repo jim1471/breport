@@ -206,7 +206,7 @@ class ParseUtils {
       if (!inv.ships || isEmpty(inv.ships)) {
         if (process.env.NODE_ENV === 'development') {
           const weapons = Object.keys(inv.unknown.weapons).map(weapID => names.types[weapID])
-          console.error('ship without ID', weapons)
+          console.error('ship without ID, weapons:', weapons, charIDKey, inv)
         }
         return {
           ...charStats,

@@ -80,6 +80,7 @@ class Dashboard extends Component {
     const relatedDate = parseZkillDatetime(item.datetime)
     const relatedDateFmt = relatedDate.toUTCString()
       .replace(':00:00', ':00').replace(':30:00', ':30').replace('GMT', 'ET')
+
     return (
       <div key={key} className={styles.item}>
         <div className={styles.systemCell}>
@@ -93,7 +94,7 @@ class Dashboard extends Component {
         </div>
         <div className={styles.systemCell}>
           <div className={styles.statsCell}>
-            {`Total lost: ${formatSum(item.totalLost) || '?'}, Killmails: ${item.kmsCount}`}
+            {`Total lost: ${formatSum(item.totalLost) || '?'}, Killmails: ${item.kmsCount}, Pilots: ${item.totalPilots}`}
           </div>
           <div className={styles.createdAt}>
             <span className={styles.createdAtLabel}>added </span>
