@@ -27,7 +27,7 @@ export default class InvolvedRow extends Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const isDataChanged = nextProps.data && !prevState.data && prevState.data !== nextProps.data
+    const isDataChanged = (nextProps.data && !prevState.data) || (prevState.data !== nextProps.data)
     if (isDataChanged) {
       const { data, names, totalDmg, maxDmg, maxCnt } = nextProps
       const { loss, dmg, cnt, allLossesValue } = data
@@ -35,9 +35,13 @@ export default class InvolvedRow extends Component {
       const isTopWhored = cnt === maxCnt && cnt > 0
       return {
         ...prevState,
+        data,
         isTopDmg,
         isTopWhored,
-        data, names, totalDmg, maxDmg, maxCnt,
+        names,
+        totalDmg,
+        maxDmg,
+        maxCnt,
         rawDmgValue: formatDmg(dmg),
         dmgPercentValue: dmgPercent(dmg / totalDmg),
         cntWhoredValue: cntWhored(cnt),

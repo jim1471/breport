@@ -1,3 +1,4 @@
+import { hot } from 'react-hot-loader'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Spinner } from 'components'
@@ -114,4 +115,4 @@ const mapStateToProps = ({ related, names, tabs, settings }) => ({
 
 const ConnectedReport = connect(mapStateToProps, mapDispatchToProps)(Report)
 
-export default ConnectedReport
+export default hot(module)(ConnectedReport)

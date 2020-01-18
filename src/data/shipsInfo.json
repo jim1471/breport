@@ -594,6 +594,13 @@
     "categoryID": 6,
     "categoryName": "Ship"
   },
+  "4318": {
+    "name": "InterBus Customs Office",
+    "groupID": 1025,
+    "groupName": "Orbital Infrastructure",
+    "categoryID": 46,
+    "categoryName": "Orbitals"
+  },
   "4363": {
     "name": "Miasmos Quafe Ultra Edition",
     "groupID": 28,
@@ -3566,6 +3573,13 @@
     "name": "Draugur",
     "groupID": 1534,
     "groupName": "Command Destroyer",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "52907": {
+    "name": "Zirnitra",
+    "groupID": 485,
+    "groupName": "Dreadnought",
     "categoryID": 6,
     "categoryName": "Ship"
   }

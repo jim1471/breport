@@ -26,10 +26,78 @@ export default class ShipInfo extends Component {
     )
   }
 
+  renderLeftPart(names, charID, podKillID) {
+    return (
+      <div className={styles.charName}>
+        <span title={names.chars[charID] || ''}>
+          {this.renderCharName()}
+        </span>
+        {podKillID &&
+          <a
+            className={styles.pod}
+            href={`https://zkillboard.com/detail/${podKillID}/`}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            [pod]
+          </a>
+        }
+      </div>
+    )
+  }
+
+  renderRightPart(inv, time, lossValue) {
+    let multipleTypesStr = ''
+    let multipleTypesInfo = null
+    if (inv) {
+      const typesCount = Object.keys(inv.ships).length
+      if (inv.structure) {
+        // console.log('inv.ships:', inv.ships)
+        if (typesCount > 1) {
+          if (process.env.NODE_ENV === 'development') {
+            console.warn('typesCount > 1:', inv)
+          }
+        }
+        // here we supposing that count === 1 - only known case - Pos modules
+        const typeID = Object.keys(inv.ships)[0]
+        const lostCount = inv.ships[typeID].loss
+        multipleTypesInfo = (
+          <span className={styles.moreStructuresLost}>
+            {`x${lostCount} lost`}
+          </span>
+        )
+
+      } else {
+        multipleTypesStr = typesCount === 1
+          ? `(${typesCount} type)`
+          : `(${typesCount} types)`
+
+        multipleTypesInfo = (
+          <span className={styles.moreShipsBtn} onClick={this.props.onToggleExpanded}>
+            {multipleTypesStr}
+          </span>
+        )
+      }
+    }
+
+    return (
+      <span>
+        {multipleTypesInfo}
+        {!time && lossValue &&
+          <span className={styles.lossValue}>
+            &nbsp;
+            {lossValue}
+          </span>
+        }
+        {time}
+      </span>
+    )
+  }
+
   render() {
     const {
       id, shipName, killID, podKillID, onRenderDmg,
-      inv, onToggleExpanded, lossValue, time, names, charID,
+      inv, lossValue, time, names, charID,
     } = this.props
 
     return (
@@ -47,38 +115,14 @@ export default class ShipInfo extends Component {
         {!killID &&
           <ItemIcon id={id} />
         }
+
         <span className={styles.ship}>
+
           <div className={styles.char}>
-            <div className={styles.charName}>
-              <span title={names.chars[charID] || ''}>
-                {this.renderCharName()}
-              </span>
-              {podKillID &&
-                <a
-                  className={styles.pod}
-                  href={`https://zkillboard.com/detail/${podKillID}/`}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  [pod]
-                </a>
-              }
-            </div>
-            <span>
-              {inv &&
-                <span className={styles.moreShipsBtn} onClick={onToggleExpanded}>
-                  {`(${Object.keys(inv.ships).length} ships)`}
-                </span>
-              }
-              {!time && lossValue &&
-                <span className={styles.lossValue}>
-                  &nbsp;
-                  {lossValue}
-                </span>
-              }
-              {time}
-            </span>
+            {this.renderLeftPart(names, charID, podKillID)}
+            {this.renderRightPart(inv, time, lossValue)}
           </div>
+
           <div className={styles.shiptype}>
             {shipName}
             {onRenderDmg && onRenderDmg()}

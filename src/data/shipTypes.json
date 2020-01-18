@@ -152,6 +152,14 @@
     "Orbitals"
   ],
   [
+    4318,
+    "InterBus Customs Office",
+    1025,
+    "Orbital Infrastructure",
+    46,
+    "Orbitals"
+  ],
+  [
     42126,
     "Vanquisher",
     30,
@@ -252,6 +260,14 @@
     "Aeon",
     659,
     "Supercarrier",
+    6,
+    "Ship"
+  ],
+  [
+    52907,
+    "Zirnitra",
+    485,
+    "Dreadnought",
     6,
     "Ship"
   ],

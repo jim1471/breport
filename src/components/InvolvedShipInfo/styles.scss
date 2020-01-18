@@ -3,7 +3,7 @@
     display: flex;
     /*align-items: center;*/
     justify-content: space-between;
-    margin-left: 20px;
+    margin-left: 15px;
     margin-bottom: 1px;
 
     &:hover:not(.destroyed) {
@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 10px;
+    margin-left: 5px;
     padding-right: 10px;
   }
 
@@ -24,12 +24,15 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    line-height: 14px;
   }
 
   .shipName {
-    font-weight: bold;
+    /*font-weight: bold;*/
     margin-bottom: 3px;
     line-height: 1.28581;
+    max-width: 160px;
+    overflow: hidden;
   }
 
   .destroyed {
@@ -41,7 +44,8 @@
   }
 
   .iconCont {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
+    padding: 2px;
   }
 }

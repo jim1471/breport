@@ -1,15 +1,25 @@
 import numeral from 'numeral'
-// TODO: tune fighter lossValue
-// Support Fighter // value * 3
-// Heavy Fighter // value * 6
-// Light Fighter // value * 9
-// Space Superiority Fighter // value * 12
+
+// TODO: split Damage to
+// - Structures
+// - Capitals (Supercapitals?)
+// - Subcapitals
+// TODO: besides Inflicted calculate Received damage if Teams > 2
 
 function calcTeamStats(invShips, invChars) {
   if (process.env.NODE_ENV === 'development') {
     console.log({ invShips, invChars })
   }
-  if (!invShips || invShips.length === 0) return {}
+  if (!invShips || invShips.length === 0) {
+    return {
+      totalDmg: 0,
+      maxDmg: 0,
+      maxCnt: 0,
+      pilotsCount: 0,
+      lossCount: 0,
+      totalLossValue: 0,
+    }
+  }
 
   const totalDmg = invShips.reduce((total, ship) => total + ship.dmg, 0)
 
@@ -23,6 +33,7 @@ function calcTeamStats(invShips, invChars) {
     return Math.max(max, ship.cnt)
   }, 0)
 
+  // TODO: split lossCount between Ships Lost and Structures Lost
   const lossCount = Object.keys(invChars).reduce((total, charIDKey) => {
     const inv = invChars[charIDKey]
     if (inv && inv.losses) {

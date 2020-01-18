@@ -3,7 +3,7 @@ import classnames from 'classnames'
 import { ItemIcon } from 'components'
 import { formatSum } from 'utils/FormatUtils'
 import ParseUtils from 'utils/ParseUtils'
-import { SHIP_GROUPS } from 'data/constants'
+import { SHIP_GROUPS, STRUCTURES } from 'data/constants'
 import styles from './stylesSummary.scss'
 import teamStyles from './styles.scss'
 
@@ -53,9 +53,20 @@ function groupShipsNew(data) {
     const shipTypeID = parseInt(key, 10)
     const group = SHIP_GROUPS.find(grp => grp[0] === shipTypeID)
     if (group) {
-      const [,, id, name] = group
+      // const [typeID, name, groupID, groupName, categoryID, categoryName] = group
+      const [,, id, name] = group // actually this is Category
       shipsTypes[shipTypeID].groupID = id // group[2]
       shipsTypes[shipTypeID].groupName = name // group[3]
+    } else {
+      // it is Structure probably
+      const structure = STRUCTURES.find(grp => grp[0] === shipTypeID)
+      if (structure) {
+        const [,, id, name] = structure // actually this is Category
+        shipsTypes[shipTypeID].groupID = id // group[2]
+        shipsTypes[shipTypeID].groupName = name // group[3]
+      } else if (process.env.NODE_ENV === 'development') {
+        console.warn('WTF, unknown GROUP for shipTypeID:', shipTypeID, shipsTypes[shipTypeID])
+      }
     }
   })
 

@@ -1,7 +1,10 @@
 /* eslint import/no-mutable-exports: off */
+/* eslint no-multi-spaces: off */
 let SHIP_TYPES = null
 let SHIP_GROUPS = null
 let SYSTEMS_DATA = null
+let STRUCTURES = null
+let STRUCTURES_IDS = null
 
 function loadData() {
   if (SHIP_TYPES && SYSTEMS_DATA) {
@@ -16,7 +19,13 @@ function loadData() {
     .then(module => { SHIP_TYPES = module.default })
   const m3 = import('./shipTypes.json')
     .then(module => { SHIP_GROUPS = module.default })
-  return Promise.all([m1, m2, m3])
+  const m4 = import('./structures.json')
+    .then(module => {
+      STRUCTURES = module.default
+      STRUCTURES_IDS = STRUCTURES.map(str => str[0])
+      STRUCTURES_IDS.forEach(id => CITADELS.push(id)) // eslint-disable-line no-use-before-define
+    })
+  return Promise.all([m1, m2, m3, m4])
 }
 
 
@@ -27,6 +36,7 @@ if (process.env.NODE_ENV === 'development') {
   npcs = []
 }
 
+// TODO: move completely to structures.json & fighters.json
 const CITADELS = [
   40340, // "Upwell Palatine Keepstar"
   35834, // "Keepstar"
@@ -45,6 +55,10 @@ const CITADELS = [
   45006, // "♦ Sotiyo"
   35840, // Pharolux Cyno Beacon
   35841, // Ansiblex Jump Gate
+  37534, // Tenebrex Cyno Jammer
+  2233,  // Customs Office
+  4318,  // InterBus Customs Office
+
   37843, // Standup Super-heavy Torpedo
   37844, // Standup XL Cruise Missile
   37846, // Standup Cruise Missile
@@ -126,5 +140,7 @@ export {
   SHIP_TYPES,
   SHIP_GROUPS,
   CITADELS,
+  STRUCTURES,
+  STRUCTURES_IDS,
   NPC_SHIPS,
 }

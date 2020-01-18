@@ -1,3 +1,4 @@
+import { hot } from 'react-hot-loader'
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import isEqual from 'lodash/isEqual'
@@ -163,4 +164,5 @@ const mapStateToProps = ({ related, names }, { match: { params } }) => ({
   params,
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(RelatedPage)
+const ConnectedRelatedPage = connect(mapStateToProps, mapDispatchToProps)(RelatedPage)
+export default hot(module)(ConnectedRelatedPage)

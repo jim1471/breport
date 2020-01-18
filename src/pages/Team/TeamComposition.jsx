@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import cn from 'classnames'
-import startsWith from 'lodash/startsWith'
+// import startsWith from 'lodash/startsWith'
 import AllyIcon from 'icons/AllyIcon'
 import styles from './styles.scss'
 
@@ -25,9 +25,10 @@ function groupMembers(data) {
     unaffiliated: {},
   }
   data.forEach(ship => {
-    if (startsWith(ship.charID, 'structure')) {
-      // skip
-    } else if (!ship.allyID) {
+    // if (startsWith(ship.charID, 'structure')) {
+    //   // skip
+    // } else
+    if (!ship.allyID) {
       addMember(members.unaffiliated, ship.corpID)
     } else {
       members[ship.allyID] = members[ship.allyID] || {}
