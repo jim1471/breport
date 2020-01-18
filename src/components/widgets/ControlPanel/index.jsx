@@ -1,9 +1,24 @@
+/* eslint react/jsx-no-bind: off */
 import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from 'components/common/blueprint'
+import { connect } from 'react-redux'
+import { Button, Dialog, Switch } from 'components/common/blueprint'
+import { updateSettings } from 'reducers/settings'
 import styles from './styles.scss'
 
-export default class ControlPanel extends Component {
+class ControlPanel extends Component {
+
+  state = {
+    settingsIsOpen: false,
+  }
+
+  handleOpenSettings = () => {
+    this.setState({ settingsIsOpen: true })
+  }
+
+  handleCloseSettings = () => {
+    this.setState({ settingsIsOpen: false })
+  }
 
   renderError(error) {
     if (error === 'processing') {
@@ -41,8 +56,11 @@ export default class ControlPanel extends Component {
   render() {
     const {
       header, isLoading, error, saving,
-      onReload, onReparse, onSaveBR, canSave,
+      onReload, onReparse, onSaveBR, canSave, settings,
     } = this.props
+    const { settingsIsOpen } = this.state
+    const { ignoreDamageToStructures, countFightersAsSquad, showExtendedStatistics } = settings
+
     return (
       <div className={styles.headWrapper}>
         <div className={styles.head}>
@@ -70,19 +88,64 @@ export default class ControlPanel extends Component {
             }
           </div>
 
-          <div className={styles.header}>
-            {header}
-          </div>
+          <div className={styles.headRight}>
+            <div className={styles.header}>
+              {header}
+            </div>
 
-          {canSave && !isLoading &&
+            {canSave && !isLoading &&
+              <Button
+                loading={saving}
+                onClick={onSaveBR}
+                text='Save'
+                icon='floppy-disk'
+              />
+            }
+
             <Button
               loading={saving}
-              onClick={onSaveBR}
-              text='Save'
-              icon='floppy-disk'
+              onClick={this.handleOpenSettings}
+              icon='cog'
             />
-          }
+          </div>
         </div>
+
+        <Dialog
+          icon='cog'
+          title='Settings'
+          isOpen={settingsIsOpen}
+          onClose={this.handleCloseSettings}
+          usePortal
+          autoFocus
+          enforceFocus
+          canEscapeKeyClose
+          canOutsideClickClose
+          className='bp3-dark'
+        >
+          <div className='bp3-dialog-body'>
+            <Switch
+              large
+              checked={ignoreDamageToStructures}
+              onChange={() => this.props.updateSettings({ ignoreDamageToStructures: !ignoreDamageToStructures })}
+            >
+              Ignore damage to structures (affects char dmg stat and Inflicted Damage)
+            </Switch>
+            <Switch
+              large
+              checked={countFightersAsSquad}
+              onChange={() => this.props.updateSettings({ countFightersAsSquad: !countFightersAsSquad })}
+            >
+              Count fighters as squad (affects ISK Lost and Efficiency)
+            </Switch>
+            <Switch
+              large
+              checked={showExtendedStatistics}
+              onChange={() => this.props.updateSettings({ showExtendedStatistics: !showExtendedStatistics })}
+            >
+              Show extended statistics for pilots
+            </Switch>
+          </div>
+        </Dialog>
 
         {error &&
           this.renderError(error)
@@ -91,3 +154,8 @@ export default class ControlPanel extends Component {
     )
   }
 }
+
+const mapDispatchToProps = { updateSettings }
+const mapStateToProps = ({ settings }) => ({ settings })
+
+export default connect(mapStateToProps, mapDispatchToProps)(ControlPanel)

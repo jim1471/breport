@@ -7,6 +7,20 @@ import * as StatsUtils from './StatsUtils'
 
 class ParseUtils {
 
+  DEFAULT_SETTINGS = {
+    ignoreDamageToStructures: true,
+    countFightersAsSquad: true,
+    showExtendedStatistics: true,
+  }
+
+  getTypeName(id) {
+    const type = SHIP_TYPES.find(item => id === item[0])
+    if (type) {
+      return type[1]
+    }
+    return `${id} not found`
+  }
+
   getLossesByTeam(data, allys) {
     let kms = []
     allys.forEach(allyID => {
@@ -59,6 +73,7 @@ class ParseUtils {
         char.ships[data.ship] = char.ships[data.ship] || {}
         const ship = char.ships[data.ship]
         // cnt & dmg by ship
+        // TODO: remove damage to CITADELS from ShipStat
         char.ships[data.ship].cnt = (ship.cnt || 0) + 1
         char.ships[data.ship].dmg = (ship.dmg || 0) + (data.dmg || 0)
       }
@@ -80,12 +95,17 @@ class ParseUtils {
     char.cnt = (char.cnt || 0) + 1
     char.dmg = char.dmg || 0
 
-    // TODO: need customization mechanic to filter damage to Structures / to Capitals / from Capitals / etc
-    // if (!CITADELS.includes(victim.ship)) {
-    //   char.dmg += (att.dmg || 0)
-    // }
-    char.dmg += (att.dmg || 0)
-
+    if (this.settings.ignoreDamageToStructures && CITADELS.includes(victim.ship)) {
+      // console.warn('CITADELS TADA!', this.settings)
+      // console.log('addCharStat(char, att, victim):', char, att, victim)
+      // console.warn('CITADELS TADA! victim.ship:', this.getTypeName(victim.ship))
+      // char.dmg += (att.dmg || 0)
+      this.settings.ignoredDmg += (att.dmg || 0)
+    } else {
+      char.dmg += (att.dmg || 0)
+    }
+    // TODO: need also customization mechanic to filter damage to Capitals / from Capitals / etc
+    // ...
     this.addShipStat(char, att, false)
   }
 
@@ -426,6 +446,11 @@ class ParseUtils {
 
   parseTeams(teams, data, names, isTeamsConstructed = false) {
     console.time('parse teams')
+    if (!this.settings) {
+      this.settings = { ...this.DEFAULT_SETTINGS }
+    }
+    this.settings.ignoredDmg = 0
+
     const systemStats = this.getSystemStat(data)
 
     const teamsLosses = []
@@ -456,6 +481,10 @@ class ParseUtils {
     const generalStats = StatsUtils.calcGeneralStats(teamsStats)
     console.timeEnd('parse teams')
 
+    if (this.settings.ignoredDmg) {
+      console.warn(`${this.settings.ignoredDmg} dmg to structures ignored!`)
+    }
+
     return {
       kmData: data,
       kmCount: data.length,
@@ -477,6 +506,9 @@ class ParseUtils {
     return this.parseTeams(teams, data, involvedNames, true)
   }
 
+  setSettings(settings) {
+    this.settings = { ...settings }
+  }
 }
 
 export default new ParseUtils()

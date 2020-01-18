@@ -8,6 +8,8 @@ import { Icon } from '@blueprintjs/core/lib/esm/components/icon/icon'
 import { FormGroup } from '@blueprintjs/core/lib/esm/components/forms/formGroup'
 import { InputGroup } from '@blueprintjs/core/lib/esm/components/forms/inputGroup'
 import { NumericInput } from '@blueprintjs/core/lib/esm/components/forms/numericInput'
+import { Switch } from '@blueprintjs/core/lib/esm/components/forms/controls'
+import { Dialog } from '@blueprintjs/core/lib/esm/components/dialog/dialog'
 
 export {
   FocusStyleManager,
@@ -20,4 +22,6 @@ export {
   FormGroup,
   InputGroup,
   NumericInput,
+  Switch,
+  Dialog,
 }

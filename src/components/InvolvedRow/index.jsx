@@ -27,7 +27,8 @@ export default class InvolvedRow extends Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.data && !prevState.data && prevState.data !== nextProps.data) {
+    const isDataChanged = nextProps.data && !prevState.data && prevState.data !== nextProps.data
+    if (isDataChanged) {
       const { data, names, totalDmg, maxDmg, maxCnt } = nextProps
       const { loss, dmg, cnt, allLossesValue } = data
       const isTopDmg = dmg === maxDmg && dmg > 0
@@ -103,6 +104,9 @@ export default class InvolvedRow extends Component {
   }
 
   renderDmg = () => {
+    const { showExtendedStatistics } = this.props
+    if (!showExtendedStatistics) return null
+
     const { rawDmgValue, dmgPercentValue, cntWhoredValue, isTopDmg, isTopWhored } = this.state
 
     return (
@@ -124,9 +128,10 @@ export default class InvolvedRow extends Component {
     )
   }
 
-  renderContent() {
+  render() {
     const { expanded, data, names, fmtLossValue, allLossesValue } = this.state
     const { killID, loss, id, charID, allyID, corpID } = data
+    const { showExtendedStatistics } = this.props
 
     return (
       <div className={styles.involvedRoot}>
@@ -142,6 +147,7 @@ export default class InvolvedRow extends Component {
             shipName={this.getShipName()}
             onRenderDmg={this.renderDmg}
             lossValue={allLossesValue || fmtLossValue}
+            showExtendedStatistics={showExtendedStatistics}
           />
           <AllyIcon corpID={corpID} names={names} />
           <AllyIcon allyID={allyID} names={names} />
@@ -151,9 +157,5 @@ export default class InvolvedRow extends Component {
         }
       </div>
     )
-  }
-
-  render() {
-    return this.renderContent()
   }
 }

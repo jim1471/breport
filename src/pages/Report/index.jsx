@@ -39,7 +39,7 @@ class Report extends Component {
 
   render() {
     const {
-      isLoading, names, teams,
+      isLoading, names, teams, settings,
       teamsInvolved, teamsShips, teamsStats, teamsLosses, kmData,
     } = this.props
     const { teamStatsCollapsed } = this.state
@@ -85,6 +85,7 @@ class Report extends Component {
                 teamLosses={teamsLosses[ix]}
                 kmData={kmData}
                 key={`team-${ix}`}
+                settings={settings}
               />
             ))}
             <div className={styles.autogrowSpace} />
@@ -97,7 +98,7 @@ class Report extends Component {
 }
 
 const mapDispatchToProps = {}
-const mapStateToProps = ({ related, names, tabs }) => ({
+const mapStateToProps = ({ related, names, tabs, settings }) => ({
   names: names.involvedNames,
   relateds: related.relateds,
   kmData: related.kmData,
@@ -108,6 +109,7 @@ const mapStateToProps = ({ related, names, tabs }) => ({
   teamsLosses: related.teamsLosses,
   systemStats: related.systemStats,
   currTab: tabs.currTab,
+  settings,
 })
 
 const ConnectedReport = connect(mapStateToProps, mapDispatchToProps)(Report)
