@@ -15,10 +15,13 @@ function loadData() {
   }
   const m1 = import('./systems.json')
     .then(module => { SYSTEMS_DATA = module.default })
+
   const m2 = import('./SHIP_TYPES.json')
     .then(module => { SHIP_TYPES = module.default })
+
   const m3 = import('./shipTypes.json')
     .then(module => { SHIP_GROUPS = module.default })
+
   const m4 = import('./structures.json')
     .then(module => {
       STRUCTURES = module.default
@@ -34,6 +37,49 @@ if (process.env.NODE_ENV === 'development') {
   npcs = require('./npcs.json')
 } else {
   npcs = []
+}
+
+
+const FIGHTERS_GROUPS = [1537, 1652, 1653]
+const SPACE_SUP_FIGHTER_TYPES = [
+  40358, // Equite I
+  40359, // Locust I
+  40360, // Satyr I
+  40361, // Gram I
+  40552, // Equite II
+  40553, // Gram II
+  40554, // Locust II
+  40555, // Satyr II
+  47036, // Standup Gram I
+  47145, // Standup Equite I
+  47146, // Standup Locust I
+  47147, // Standup Satyr I
+  47148, // Standup Equite II
+  47149, // Standup Locust II
+  47150, // Standup Satyr II
+  47151, // Standup Gram II
+]
+
+// tune fighter lossValue, including Citadel Fighters
+// 1537: Support Fighter // value * 3
+// 1653: Heavy Fighter // value * 6
+// 1652: Light Fighter // value * 9
+// 1652: Light Fighter - Space Superiority Fighter // value * 12
+function getFighterCoef(groupID, typeID) {
+  switch (groupID) {
+    case 1537:
+      return 3
+    case 1653:
+      return 6
+    case 1652: {
+      if (SPACE_SUP_FIGHTER_TYPES.includes(typeID)) {
+        return 12
+      }
+      return 9
+    }
+    default:
+      throw new Error(`Unknown fighter groupID: ${groupID}`)
+  }
 }
 
 // TODO: move completely to structures.json & fighters.json
@@ -143,4 +189,7 @@ export {
   STRUCTURES,
   STRUCTURES_IDS,
   NPC_SHIPS,
+  FIGHTERS_GROUPS,
+  SPACE_SUP_FIGHTER_TYPES,
+  getFighterCoef,
 }

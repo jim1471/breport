@@ -1,9 +1,12 @@
 /* eslint no-unused-vars: 0, no-empty: 0 */
+import numeral from 'numeral'
 import isEmpty from 'lodash/isEmpty'
-import { SHIP_TYPES, CITADELS, NPC_SHIPS } from 'data/constants'
+import {
+  SHIP_TYPES, SHIP_GROUPS, CITADELS, NPC_SHIPS,
+  FIGHTERS_GROUPS, getFighterCoef,
+} from 'data/constants'
 import * as TeamsUtils from './TeamsUtils'
 import * as StatsUtils from './StatsUtils'
-
 
 class ParseUtils {
 
@@ -239,9 +242,18 @@ class ParseUtils {
       const withoutPods = allShipsIds.filter(shipID => (shipID !== 33328 && shipID !== 670))
       const pods = allShipsIds.filter(shipID => (shipID === 33328 || shipID === 670))
       // calculate loss value of all char ship losses
-      const allLossesValue = Object.keys(inv.ships).reduce((totalSum, shipID) => {
-        const shipLosses = inv.ships[shipID].losses
+      const allLossesValue = Object.keys(inv.ships).reduce((totalSum, shipIDStr) => {
+        const shipLosses = inv.ships[shipIDStr].losses
         if (shipLosses) {
+          if (this.settings.countFightersAsSquad) {
+            const shipID = parseInt(shipIDStr, 10)
+            const group = SHIP_GROUPS.find(grp => grp[0] === shipID)
+            if (group && FIGHTERS_GROUPS.includes(group[2])) {
+              const coeff = getFighterCoef(group[2], shipID)
+              const shipLossesSum = shipLosses.reduce((sum, loss) => sum + loss.lossValue * coeff, 0)
+              return totalSum + shipLossesSum
+            }
+          }
           return totalSum + shipLosses.reduce((sum, loss) => sum + loss.lossValue, 0)
         }
         return totalSum
@@ -475,15 +487,15 @@ class ParseUtils {
       teamsLosses.push(selfLosses)
       teamsInvolved.push(involvedMembers)
       teamsShips.push(involvedByShips)
-      const stats = StatsUtils.calculateStatistics(involvedByShips, involvedMembers, team, names)
+      const stats = StatsUtils.calculateStatistics(involvedByShips, involvedMembers, team, names, this.settings.countFightersAsSquad)
       teamsStats.push(stats)
+
+      if (this.settings.ignoredDmg) {
+        console.log(`Team ${ix} - ${numeral(this.settings.ignoredDmg).format('0.00a')} dmg to structures ignored!`)
+      }
     })
     const generalStats = StatsUtils.calcGeneralStats(teamsStats)
     console.timeEnd('parse teams')
-
-    if (this.settings.ignoredDmg) {
-      console.warn(`${this.settings.ignoredDmg} dmg to structures ignored!`)
-    }
 
     return {
       kmData: data,

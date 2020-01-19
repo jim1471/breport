@@ -10,6 +10,28 @@ html, body {
 
 body {
   -webkit-overflow-scrolling: touch;
+
+  .bp3-dialog-container {
+    align-items: flex-start;
+  }
+
+  .bp3-dark .bp3-dialog-header {
+    background-color: #333;
+  }
+
+  .bp3-dialog.bp3-dark {
+    background-color: #222222;
+    border: 1px solid #444;
+    padding-bottom: 0;
+
+    .bp3-dialog-body {
+      background-color: #222222;
+    }
+
+    .bp3-control {
+      margin-bottom: 30px;
+    }
+  }
 }
 
 #react-root {

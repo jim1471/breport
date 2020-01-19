@@ -22,7 +22,7 @@ export const getBR = brID => dispatch => {
     apiCall: () => RelatedService.getComposition(brID),
   }).then(data => {
     if (data.status === 'processing') {
-      console.log('br still processing...')
+      console.log('br still being processed...')
       setTimeout(() => dispatch(getBR(brID)), FETCH_INTERVAL)
     } else if (data.status === 'SUCCESS') {
       const killmailsData = data.relateds.reduce((allKms, related) => allKms.concat(related.kms), [])

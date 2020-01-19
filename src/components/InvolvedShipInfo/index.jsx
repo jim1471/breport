@@ -1,11 +1,22 @@
 import React, { Component } from 'react'
 import cn from 'classnames'
 import { formatSum, formatDmg, dmgPercent, cntWhored } from 'utils/FormatUtils'
+import ParseUtils from 'utils/ParseUtils'
+import { SHIP_GROUPS, FIGHTERS_GROUPS, getFighterCoef } from 'data/constants'
 import styles from './styles.scss'
 
 
 const fmtLosses = losses => {
-  const lossesValue = losses && losses.reduce((sum, loss) => sum + loss.lossValue, 0)
+  const lossesValue = losses && losses.reduce((sum, loss) => {
+    if (ParseUtils.settings.countFightersAsSquad) {
+      const group = SHIP_GROUPS.find(grp => grp[0] === loss.ship)
+      if (group && FIGHTERS_GROUPS.includes(group[2])) {
+        const coeff = getFighterCoef(group[2], loss.ship)
+        return sum + loss.lossValue * coeff
+      }
+    }
+    return sum + loss.lossValue
+  }, 0)
   return formatSum(lossesValue)
 }
 

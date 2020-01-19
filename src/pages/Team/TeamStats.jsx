@@ -13,8 +13,9 @@ const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
 class TeamStats extends Component {
 
   renderTeam() {
-    const { team, names, index, teamStats, collapsed, onExpand } = this.props
+    const { team, names, index, teamStats, collapsed, onExpand, onCollapse } = this.props
     const isReallyCollapsed = collapsed && team.length > MAX_EXPANDED_SIZE
+    const isReallyExpanded = !collapsed && team.length > MAX_EXPANDED_SIZE
     const currTeam = isReallyCollapsed
       ? team.slice(0, MAX_EXPANDED_SIZE - 1)
       : team
@@ -59,7 +60,14 @@ class TeamStats extends Component {
           )
         })}
         {isReallyCollapsed &&
-          <div className={styles.btnExpand} onClick={onExpand}>...</div>
+          <div className={styles.btnExpand} onClick={onExpand}>
+            <Icon iconSize={16} icon='double-chevron-down' />
+          </div>
+        }
+        {isReallyExpanded &&
+          <div className={styles.btnExpand} onClick={onCollapse}>
+            <Icon iconSize={16} icon='double-chevron-up' />
+          </div>
         }
       </div>
     )

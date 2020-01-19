@@ -38,6 +38,10 @@ class Report extends Component {
     this.setState({ teamStatsCollapsed: false })
   }
 
+  handleCollapse = () => {
+    this.setState({ teamStatsCollapsed: true })
+  }
+
   render() {
     const {
       isLoading, names, teams, settings,
@@ -67,6 +71,7 @@ class Report extends Component {
                 teamStats={teamsStats[ix]}
                 collapsed={teamStatsCollapsed}
                 onExpand={this.handleExpand}
+                onCollapse={this.handleCollapse}
                 key={`teamstat-${ix}`}
               />
             ))}

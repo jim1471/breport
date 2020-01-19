@@ -52,11 +52,8 @@ export default class ShipInfo extends Component {
     if (inv) {
       const typesCount = Object.keys(inv.ships).length
       if (inv.structure) {
-        // console.log('inv.ships:', inv.ships)
-        if (typesCount > 1) {
-          if (process.env.NODE_ENV === 'development') {
-            console.warn('typesCount > 1:', inv)
-          }
+        if (process.env.NODE_ENV === 'development') {
+          if (typesCount > 1) console.warn('typesCount > 1:', inv)
         }
         // here we supposing that count === 1 - only known case - Pos modules
         const typeID = Object.keys(inv.ships)[0]

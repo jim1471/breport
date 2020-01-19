@@ -1,4 +1,5 @@
 import numeral from 'numeral'
+import { SHIP_GROUPS, FIGHTERS_GROUPS, getFighterCoef } from 'data/constants'
 
 // TODO: split Damage to
 // - Structures
@@ -6,7 +7,7 @@ import numeral from 'numeral'
 // - Subcapitals
 // TODO: besides Inflicted calculate Received damage if Teams > 2
 
-function calcTeamStats(invShips, invChars) {
+function calcTeamStats(invShips, invChars, countFightersAsSquad) {
   if (process.env.NODE_ENV === 'development') {
     console.log({ invShips, invChars })
   }
@@ -45,7 +46,16 @@ function calcTeamStats(invShips, invChars) {
   const totalLossValue = Object.keys(invChars).reduce((total, charIDKey) => {
     const inv = invChars[charIDKey]
     if (inv && inv.losses) {
-      const sum = inv.losses.reduce((totalValue, loss) => totalValue + loss.lossValue, 0)
+      const sum = inv.losses.reduce((totalValue, loss) => {
+        if (countFightersAsSquad) {
+          const group = SHIP_GROUPS.find(grp => grp[0] === loss.ship)
+          if (group && FIGHTERS_GROUPS.includes(group[2])) {
+            const coeff = getFighterCoef(group[2], loss.ship)
+            return totalValue + loss.lossValue * coeff
+          }
+        }
+        return totalValue + loss.lossValue
+      }, 0)
       return total + sum
     }
     return total
@@ -115,8 +125,8 @@ const calcInvolvedCounts = (team, involved, names) => {
   return counts
 }
 
-export const calculateStatistics = (involvedByShips, involvedMembers, team, names) => {
-  const stats = calcTeamStats(involvedByShips, involvedMembers)
+export const calculateStatistics = (involvedByShips, involvedMembers, team, names, countFightersAsSquad) => {
+  const stats = calcTeamStats(involvedByShips, involvedMembers, countFightersAsSquad)
   stats.membersCount = calcInvolvedCounts(team, involvedMembers, names)
   // sort Team by Count
   team.sort((a, b) => (stats.membersCount[b] - stats.membersCount[a]))

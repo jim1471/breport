@@ -1,10 +1,11 @@
+import { hot } from 'react-hot-loader'
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import routerHistory from 'utils/routerHistory'
 import { getBR, setStatus } from 'reducers/battlereport'
 import { brParseTeams, getRelatedData, getRelatedDataStub, parseData } from 'reducers/related'
 import { Spinner } from 'components'
-import { ControlPanel, BrInfo, TabsPanel, Footer } from 'widgets'
+import { ControlPanel, BrInfo, Footer } from 'widgets'
 import Report from 'pages/Report'
 import styles from './styles.scss'
 
@@ -83,7 +84,6 @@ class BattleReportPage extends Component {
         {teams && teamsLosses &&
           <Fragment>
             <BrInfo routerParams={params} />
-            <TabsPanel />
             <Report
               teams={teams}
               isLoading={false}
@@ -109,4 +109,6 @@ const mapStateToProps = ({ names, related, battlereport }, { match: { params } }
   teamsLosses: related.teamsLosses,
   params,
 })
-export default connect(mapStateToProps, mapDispatchToProps)(BattleReportPage)
+const ConnectedBRPage = connect(mapStateToProps, mapDispatchToProps)(BattleReportPage)
+
+export default hot(module)(ConnectedBRPage)

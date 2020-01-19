@@ -3,12 +3,12 @@ import classnames from 'classnames'
 import { ItemIcon } from 'components'
 import { formatSum } from 'utils/FormatUtils'
 import ParseUtils from 'utils/ParseUtils'
-import { SHIP_GROUPS, STRUCTURES } from 'data/constants'
+import { SHIP_GROUPS, FIGHTERS_GROUPS, STRUCTURES, getFighterCoef } from 'data/constants'
 import styles from './stylesSummary.scss'
 import teamStyles from './styles.scss'
 
 
-function groupShipsNew(data) {
+function groupShipsNew(data, countFightersAsSquad) {
   const shipsTypes = {}
   data.forEach(ship => {
     if (ship.inv && ship.inv.ships) {
@@ -18,9 +18,16 @@ function groupShipsNew(data) {
           const invShip = ship.inv.ships[shipID]
           if (invShip.losses) {
             invShip.losses.forEach(loss => {
+              let coeff = 1
+              if (countFightersAsSquad) {
+                const group = SHIP_GROUPS.find(grp => grp[0] === loss.ship)
+                if (group && FIGHTERS_GROUPS.includes(group[2])) {
+                  coeff = getFighterCoef(group[2], loss.ship)
+                }
+              }
               shipsTypes[shipID].inv += 1
               shipsTypes[shipID].losed += 1
-              shipsTypes[shipID].sum += loss.lossValue
+              shipsTypes[shipID].sum += loss.lossValue * coeff
             })
           } else {
             shipsTypes[shipID].inv += 1
@@ -83,9 +90,9 @@ export default class TeamSummary extends Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (prevState.data !== nextProps.data) {
-      const { data } = nextProps
-      const shipsTypes = groupShipsNew(data)
+    if (prevState.data !== nextProps.data || prevState.settings !== nextProps.settings) {
+      const { data, settings: { countFightersAsSquad } } = nextProps
+      const shipsTypes = groupShipsNew(data, countFightersAsSquad)
       const shipsTypesSorted = ParseUtils.sortCharShips(Object.keys(shipsTypes).map(id => parseInt(id, 10)))
       const shipsGroups = {}
       const shipsGroupsSorted = []

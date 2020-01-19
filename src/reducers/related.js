@@ -48,7 +48,7 @@ export const getRelatedData = (systemID, time, stillProcessing) => dispatch => {
   return RelatedService.fetchRelatedData(systemID, time)
     .then(({ data }) => {
       if (data.result === 'processing') {
-        console.log('related still processing.........')
+        console.log('related still being processed.........')
         setTimeout(() => dispatch(getRelatedData(systemID, time, true)), FETCH_INTERVAL)
         // dispatch({ type: GET_RELATED_DATA_ERROR })
       } else if (data.result === 'success') {
