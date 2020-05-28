@@ -34,6 +34,10 @@ class BrInfo extends Component {
     }
     const { fromTime } = systemStats
     const dateStart = new Date(fromTime)
+    if (!fromTime) {
+      console.error(`systemStats.fromTime ${fromTime}`)
+      return null
+    }
     return (
       <div className={styles.generalStats}>
         <div>{`${formatDistanceToNow(dateStart)} ago`}</div>
