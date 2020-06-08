@@ -6,7 +6,7 @@ import { Spinner } from 'components'
 import MaintenancePage from 'pages/Dashboard/MaintenancePage'
 import App from './App'
 
-const MAINTENANCE = false
+const MAINTENANCE = true
 
 const Dashboard = loadable(() => import(/* webpackChunkName: "Dashboard" */'pages/Dashboard'), { fallback: <Spinner /> })
 const RelatedPage = loadable(() => import(/* webpackChunkName: "RelatedPage" */'pages/RelatedPage'), { fallback: <Spinner /> })

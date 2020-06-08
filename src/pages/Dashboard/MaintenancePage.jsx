@@ -12,9 +12,12 @@ export default class MaintenancePage extends Component {
 
           <div className={styles.maintenanceRoot}>
             <div>Maintenance</div>
-            <a href='https://status.heroku.com/'>
-              https://status.heroku.com/
-            </a>
+            <div>...</div>
+            {false &&
+              <a href='https://status.heroku.com/'>
+                https://status.heroku.com/
+              </a>
+            }
           </div>
 
           <Footer />
