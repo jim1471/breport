@@ -1,5 +1,6 @@
 import BaseAPI from './BaseAPI'
 
+// const base = 'https://api.evetools.org'
 const base = process.env.API_SERVER
 
 class RelatedService extends BaseAPI {
