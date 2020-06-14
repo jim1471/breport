@@ -35,6 +35,13 @@ const devServerConfig = {
     warnings: false,
     errors: true,
   },
+  proxy: {
+    '/api': {
+      target: 'http://localhost:4000',
+      secure: false,
+      prependPath: false,
+    },
+  },
   compress: true,
   disableHostCheck: true,
   // more info here: https://webpack.js.org/configuration/stats/

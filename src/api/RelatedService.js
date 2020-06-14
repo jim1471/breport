@@ -1,20 +1,13 @@
 import BaseAPI from './BaseAPI'
 
-// const base = 'http://localhost:4000'
-// const base = 'http://192.168.0.15:4000'
 const base = process.env.API_SERVER
-
 
 class RelatedService extends BaseAPI {
 
   fetchRelatedData(systemID, time) {
     return this.call({
-      method: 'post',
-      url: `${base}/api/v1/related`,
-      data: {
-        systemID,
-        time,
-      },
+      method: 'get',
+      url: `${base}/api/v1/related/${systemID}/${time}`,
     })
   }
 

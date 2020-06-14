@@ -89,6 +89,14 @@
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+
+        .link {
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
 
       .moveBtn {

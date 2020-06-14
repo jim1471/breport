@@ -11,6 +11,34 @@ const MAX_EXPANDED_SIZE = 10
 const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
 
 class TeamStats extends Component {
+  renderName(allyID) {
+    const { names } = this.props
+    let name = names.allys[allyID] || allyID
+    let corpID = null
+    if (allyID.startsWith('corp:')) {
+      corpID = allyID.replace('corp:', '')
+      name = names.corps[corpID] || allyID
+      return (
+        <a
+          className={styles.link}
+          href={`https://zkillboard.com/corporation/${corpID}/`}
+          target='_blank' rel='noopener noreferrer'
+        >
+          {name}
+        </a>
+      )
+    }
+
+    return (
+      <a
+        className={styles.link}
+        href={`https://zkillboard.com/alliance/${allyID}/`}
+        target='_blank' rel='noopener noreferrer'
+      >
+        {name}
+      </a>
+    )
+  }
 
   renderTeam() {
     const { team, names, index, teamStats, collapsed, onExpand, onCollapse } = this.props
@@ -23,13 +51,8 @@ class TeamStats extends Component {
     return (
       <div className={styles.members}>
         {currTeam.map(allyID => {
-          let name = names.allys[allyID] || allyID
-          let corpID = null
-          if (allyID.startsWith('corp:')) {
-            corpID = allyID.replace('corp:', '')
-            name = names.corps[corpID] || allyID
-          }
           const involvedCount = teamStats.membersCount[allyID]
+          const corpID = allyID.startsWith('corp:') ? allyID.replace('corp:', '') : null
           // TODO: how to separate "MTU-losses" and "incorrect assign of team"
           // if (involvedCount === 0) {
           //   if (process.env.NODE_ENV === 'development') console.log('ZERO involvedCount', allyID)
@@ -48,7 +71,7 @@ class TeamStats extends Component {
                 &nbsp;
                 ({involvedCount})
                 &nbsp;
-                {name}
+                {this.renderName(allyID)}
               </div>
               <Icon
                 onClick={() => this.props.moveToTeam(index, index + 1, allyID)}

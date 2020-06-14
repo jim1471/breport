@@ -167,8 +167,11 @@ class Dashboard extends Component {
         <div className={styles.wrapper}>
           <h1>Battle Report tool</h1>
           <h4>This tool is for generating battle reports from killmails held on zKillboard.com.</h4>
+          <div className={styles.maintenanceRoot}>
+            <div>Work on new features in progress.</div>
+          </div>
           {false && this.renderControls()}
-          {this.renderPanel()}
+          {false && this.renderPanel()}
           {this.renderRecent()}
           <Footer />
         </div>

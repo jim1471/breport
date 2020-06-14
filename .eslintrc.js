@@ -97,6 +97,7 @@ const config = {
       arrow: 'parens-new-line',
     }],
     'operator-linebreak': ['warn', 'before', { 'overrides': { '&&': 'after' } }],
+    'no-multiple-empty-lines': 'off',
     // -------------------------------
 
     // WARNINGS
@@ -132,6 +133,17 @@ const config = {
     'quote-props': ['error', 'consistent-as-needed'],
     // its annoying when it triggers in .reduce() and others std cases
     'no-param-reassign': ['error', { props: false }],
+
+    // Adding next two rules to avoid bug in babel-eslint:
+    // https://github.com/babel/babel-eslint/issues/799
+    indent: [
+      'warn', 2,
+      {
+        SwitchCase: 1,
+        ignoredNodes: ['TemplateLiteral'],
+      }
+    ],
+    'template-curly-spacing': 'off',
   },
   settings: {
     'import/external-module-folders': ['node_modules'],
