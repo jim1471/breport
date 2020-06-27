@@ -1,16 +1,16 @@
 import { hot } from 'react-hot-loader/root'
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
+import cx from 'classnames'
 import { Link } from 'react-router-dom'
 import { formatDistanceToNow } from 'date-fns'
+
 import { Spinner } from 'components'
 import { Button, Tabs, Tab, Icon } from 'components/common/blueprint'
-import { Footer } from 'widgets'
-// import { BrInfo, Footer } from 'widgets'
+import { BrInfo, Footer } from 'widgets'
 import { SYSTEMS_DATA } from 'data/constants'
 import { parseZkillDatetime, formatSum } from 'utils/FormatUtils'
 import RelatedService from 'api/RelatedService'
-import InputZkillLinkPanel from './InputZkillLinkPanel'
-// import InputSystems from './InputSystems'
+import InputSystems from './InputSystems'
 import styles from './styles.scss'
 
 
@@ -84,7 +84,7 @@ class Dashboard extends Component {
 
     return (
       <div key={key} className={styles.item}>
-        <div className={styles.systemCell}>
+        <div className={cx(styles.systemCell, styles.column)}>
           <Link to={path}>
             {this.getSystemName(item.systemID)}
           </Link>
@@ -140,17 +140,13 @@ class Dashboard extends Component {
 
   renderPanel() {
     if (!SYSTEMS_DATA.systems) return null
-    const { related } = this.state
-    if (related === 'single') {
-      return <InputZkillLinkPanel getSystemName={this.getSystemNameFromLink} />
-    }
-    return null
-    // return (
-    //   <Fragment>
-    //     <BrInfo dashboard />
-    //     <InputSystems SYSTEMS_DATA={SYSTEMS_DATA} />
-    //   </Fragment>
-    // )
+
+    return (
+      <Fragment>
+        <BrInfo dashboard />
+        <InputSystems SYSTEMS_DATA={SYSTEMS_DATA} />
+      </Fragment>
+    )
   }
 
   renderControls() {
@@ -178,8 +174,8 @@ class Dashboard extends Component {
             &nbsp;
             Killmails presented currently only for 2020 year.
           </h4>
-          {false && this.renderControls()}
-          {false && this.renderPanel()}
+          {this.renderControls()}
+          {this.renderPanel()}
           {this.renderRecent()}
           <Footer />
         </div>

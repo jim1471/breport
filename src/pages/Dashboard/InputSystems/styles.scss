@@ -6,12 +6,11 @@
     justify-content: space-between;
 
     width: 100%;
-    max-width: 600px;
+    max-width: 682px;
     margin-top: 15px;
     padding: 20px;
     border-radius: 3px;
     border: 1px solid #555;
-    background: black;
 
     input {
       font-size: 16px;
@@ -19,6 +18,15 @@
 
     @media (max-width: 420px) {
       padding: 10px;
+    }
+  }
+
+  .flexWrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    > div:not(:last-child) {
+      margin-right: 10px;
     }
   }
 
@@ -45,6 +53,11 @@
     position: relative;
     flex: 1 1 100%;
 
+    .systemInput {
+      min-width: 260px;
+      max-width: 260px;
+    }
+
     .systemInput > :global(input.bp3-input) {
       @media (max-width: 420px) {
         height: 30px;
@@ -66,9 +79,9 @@
     left: 0;
     right: 10px;
     z-index: 1;
-    padding: 0 40px 10px;
-    height: 40px;
-    line-height: 40px;
+    padding: 0 30px 10px;
+    height: 30px;
+    line-height: 30px;
     font-size: 16px;
     font-weight: 400;
     user-select: none;

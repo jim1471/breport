@@ -3,6 +3,9 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { formatDistanceToNow } from 'date-fns'
 import cn from 'classnames'
+
+import RelatedService from 'api/RelatedService'
+import { Button } from 'components/common/blueprint'
 import { SYSTEMS_DATA } from 'data/constants'
 import { getUTCTime, formatSum } from 'utils/FormatUtils'
 import styles from './styles.scss'
@@ -12,6 +15,12 @@ class BrInfo extends Component {
   getDotlanLink(region, systemName) {
     const encodedRegion = region.replace(' ', '_')
     return `http://evemaps.dotlan.net/map/${encodedRegion}/${systemName}`
+  }
+
+  checkRel(url) {
+    RelatedService.checkRelatedKillmails(url)
+      .then(({ data }) => console.log('data:', data))
+      .catch(err => console.error(err))
   }
 
   renderStartEndTime() {
@@ -101,6 +110,16 @@ class BrInfo extends Component {
     return (
       <div className={cn(styles.systemStats, styles.dashboard)}>
         {`inputRelateds: ${inputRelateds.length}`}
+        {inputRelateds.map(url => {
+          console.log('url:', url)
+          return (
+            <div>
+              <div>{url}</div>
+              <br />
+              <Button text='Check URL' onClick={() => this.checkRel(url)} />
+            </div>
+          )
+        })}
       </div>
     )
   }

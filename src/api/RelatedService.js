@@ -1,6 +1,5 @@
 import BaseAPI from './BaseAPI'
 
-// const base = 'https://api.evetools.org'
 const base = process.env.API_SERVER
 
 class RelatedService extends BaseAPI {
@@ -9,6 +8,20 @@ class RelatedService extends BaseAPI {
     return this.call({
       method: 'get',
       url: `${base}/api/v1/related/${systemID}/${time}`,
+    })
+  }
+
+  fetchRelatedKillmails(systemID, start, end) {
+    return this.call({
+      method: 'get',
+      url: `${base}/api/v1/related-killmails/${systemID}/${start}/${end}`,
+    })
+  }
+
+  checkRelatedKillmails(url) {
+    return this.call({
+      method: 'get',
+      url: `${base}/api/v1${url}`,
     })
   }
 
