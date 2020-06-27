@@ -147,6 +147,7 @@ export default (state = initialState, action) => {
         kmData: data.kms,
         datetime: data.datetime,
         systemID: data.systemID,
+        viewed: data.viewed,
       }
     }
 
@@ -156,6 +157,7 @@ export default (state = initialState, action) => {
         kmData: state.kmData,
         datetime: state.datetime,
         systemID: state.systemID,
+        viewed: state.viewed,
       }
     }
 
@@ -194,6 +196,7 @@ export default (state = initialState, action) => {
         // TODO: multiple relateds systems / timings
         datetime: data.datetime,
         systemID: data.systemID,
+        viewed: data.viewed,
       }
     }
 

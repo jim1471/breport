@@ -28,7 +28,7 @@ class BrInfo extends Component {
   }
 
   renderGeneralStats() {
-    const { generalStats, systemStats = {} } = this.props
+    const { generalStats, systemStats = {}, viewed } = this.props
     if (!generalStats) {
       return null
     }
@@ -41,7 +41,7 @@ class BrInfo extends Component {
     return (
       <div className={styles.generalStats}>
         <div>{`${formatDistanceToNow(dateStart)} ago`}</div>
-        <div>{`Total lost: ${formatSum(generalStats.totalLossValue)}, Pilots: ${generalStats.pilotsCount}`}</div>
+        <div>{`Total lost: ${formatSum(generalStats.totalLossValue)}, Pilots: ${generalStats.pilotsCount}, Viewed: ${viewed}`}</div>
       </div>
     )
   }
@@ -116,6 +116,7 @@ class BrInfo extends Component {
 
 const mapDispatchToProps = {}
 const mapStateToProps = ({ related, battlereport }) => ({
+  viewed: related.viewed,
   systemStats: related.systemStats,
   relateds: related.relateds,
   generalStats: related.generalStats,

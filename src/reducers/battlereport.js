@@ -36,6 +36,7 @@ export const getBR = brID => dispatch => {
           systemID: rel.systemID,
           time: rel.time,
         })),
+        viewed: data.viewed,
       }))
       dispatch(setStatus('fetching names'))
       dispatch(getNames(killmailsData))
@@ -52,6 +53,7 @@ const initialState = {
     teams: [],
     status: '',
     isLoading: false,
+    viewed: 0,
   },
   inputRelateds: [],
   saving: {},

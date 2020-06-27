@@ -40,6 +40,7 @@
     h4 {
       margin: 0;
       text-align: center;
+      line-height: 20px;
     }
   }
 
@@ -165,7 +166,10 @@
         flex-wrap: wrap;
         align-items: center;
         color: #ccc;
-        margin-right: 5px;
+
+        span {
+          margin-right: 5px;
+        }
       }
 
       .createdAt {

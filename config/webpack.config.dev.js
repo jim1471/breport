@@ -12,6 +12,7 @@ const getClientEnvironment = require('./env')
 
 const appDirectory = fs.realpathSync(process.cwd())
 const outputDir = path.resolve(appDirectory, 'dist')
+const srcDir = path.resolve(appDirectory, 'src')
 // Get environment variables to inject into our app.
 const env = getClientEnvironment()
 
@@ -92,28 +93,27 @@ module.exports = {
         enforce: 'pre',
         use: [
           {
+            loader: 'eslint-loader',
             options: {
+              cache: true,
               formatter: eslintFormatter,
-              eslintPath: require.resolve('eslint'),
-
+              eslintPath: 'eslint',
+              fix: true,
             },
-            loader: require.resolve('eslint-loader'),
           },
         ],
-        include: path.resolve(appDirectory, 'src'),
+        include: srcDir,
       },
       {
         test: /\.(js|jsx)$/,
-        include: path.resolve(appDirectory, 'src'),
+        include: srcDir,
         use: [
           {
             loader: 'babel-loader',
             options: {
-              // This is a feature of `babel-loader` for Webpack (not Babel itself).
-              // It enables caching results in ./node_modules/.cache/babel-loader/
-              // directory for faster rebuilds.
-              cacheDirectory: true,
               plugins: ['lodash', 'date-fns', 'react-hot-loader/babel'],
+              cacheDirectory: true,
+              cacheCompression: false,
             },
           },
         ],
@@ -161,7 +161,7 @@ module.exports = {
             options: {
               includePaths: [
                 path.resolve(appDirectory, 'src/assets/styles'),
-                path.resolve(appDirectory, 'src'),
+                srcDir,
               ],
             },
           },

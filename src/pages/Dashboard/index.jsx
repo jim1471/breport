@@ -1,8 +1,9 @@
+import { hot } from 'react-hot-loader/root'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { formatDistanceToNow } from 'date-fns'
 import { Spinner } from 'components'
-import { Button, Tabs, Tab } from 'components/common/blueprint'
+import { Button, Tabs, Tab, Icon } from 'components/common/blueprint'
 import { Footer } from 'widgets'
 // import { BrInfo, Footer } from 'widgets'
 import { SYSTEMS_DATA } from 'data/constants'
@@ -78,7 +79,7 @@ class Dashboard extends Component {
     const path = `/related/${key}`
     const createdAt = new Date(item.createdAt)
     const relatedDate = parseZkillDatetime(item.datetime)
-    const relatedDateFmt = relatedDate.toUTCString()
+    const relatedDateFmt = relatedDate && relatedDate.toUTCString()
       .replace(':00:00', ':00').replace(':30:00', ':30').replace('GMT', 'ET')
 
     return (
@@ -89,16 +90,21 @@ class Dashboard extends Component {
           </Link>
           <div>{relatedDateFmt}</div>
         </div>
-        <div className={styles.distanceCell}>
-          {`${formatDistanceToNow(relatedDate)} ago`}
-        </div>
         <div className={styles.systemCell}>
-          <div className={styles.statsCell}>
-            {`Total lost: ${formatSum(item.totalLost) || '?'}, Killmails: ${item.kmsCount}, Pilots: ${item.totalPilots}`}
+          <div className={styles.distanceCell}>
+            {`${formatDistanceToNow(relatedDate)} ago`}
           </div>
           <div className={styles.createdAt}>
             <span className={styles.createdAtLabel}>added </span>
             <span>{`${formatDistanceToNow(createdAt)} ago`}</span>
+          </div>
+        </div>
+        <div className={styles.systemCell}>
+          <div className={styles.statsCell}>
+            <span>{`Total lost: ${formatSum(item.totalLost) || '?'},`}</span>
+            <span>{`Killmails: ${item.kmsCount},`}</span>
+            <span>{`Pilots: ${item.totalPilots},`}</span>
+            <span>{`Viewed: ${item.viewed}`}</span>
           </div>
         </div>
       </div>
@@ -167,9 +173,11 @@ class Dashboard extends Component {
         <div className={styles.wrapper}>
           <h1>Battle Report tool</h1>
           <h4>This tool is for generating battle reports from killmails held on zKillboard.com.</h4>
-          <div className={styles.maintenanceRoot}>
-            <div>Work on new features in progress.</div>
-          </div>
+          <h4>
+            <Icon iconSize={16} icon='issue' intent='warning' />
+            &nbsp;
+            Killmails presented currently only for 2020 year.
+          </h4>
           {false && this.renderControls()}
           {false && this.renderPanel()}
           {this.renderRecent()}
@@ -181,4 +189,4 @@ class Dashboard extends Component {
 
 }
 
-export default Dashboard
+export default hot(Dashboard)
