@@ -22,12 +22,16 @@ const Dashboard = loadable(
   () => import(/* webpackChunkName: "Dashboard" */'pages/Dashboard'),
   { fallback: <Spinner /> },
 )
+const CreateBattleReport = loadable(
+  () => import(/* webpackChunkName: "CreateBR" */'pages/CreateBattleReport'),
+  { fallback: <Spinner /> },
+)
 const RelatedPage = loadable(
   () => import(/* webpackChunkName: "RelatedPage" */'pages/RelatedPage'),
   { fallback: <Spinner /> },
 )
 const BattleReportPage = loadable(
-  () => import(/* webpackChunkName: "BattleReportPage" */'pages/BattleReportPage'),
+  () => import(/* webpackChunkName: "BRPage" */'pages/BattleReportPage'),
   { fallback: <Spinner /> },
 )
 const Legal = loadable(
@@ -65,6 +69,7 @@ class App extends React.Component {
     return (
       <Switch>
         <Route component={Dashboard} path='/' exact />
+        <Route component={CreateBattleReport} path='/create' exact />
         <Route component={RelatedPage} path='/related/:systemID/:time' />
         <Route component={BattleReportPage} path='/br/:brID' />
         <Route component={Legal} path='/legal' />

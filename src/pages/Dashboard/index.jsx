@@ -1,25 +1,21 @@
 import { hot } from 'react-hot-loader/root'
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import cx from 'classnames'
 import { Link } from 'react-router-dom'
 import { formatDistanceToNow } from 'date-fns'
 
 import { Spinner } from 'components'
 import { Button, Tabs, Tab, Icon } from 'components/common/blueprint'
-import { BrInfo, Footer } from 'widgets'
+import { Footer } from 'widgets'
 import { SYSTEMS_DATA } from 'data/constants'
 import { parseZkillDatetime, formatSum } from 'utils/FormatUtils'
 import RelatedService from 'api/RelatedService'
-import InputSystems from './InputSystems'
 import styles from './styles.scss'
 
 
 class Dashboard extends Component {
 
   state = {
-    related: 'single',
-    // related: 'multiple',
-    relateds: [],
     currTab: 'recent',
     recentLoading: false,
   }
@@ -53,8 +49,7 @@ class Dashboard extends Component {
     const relSystemID = systemID - 30000000
     const system = SYSTEMS_DATA.systems.find(sys => sys[1] === relSystemID)
     const region = system && SYSTEMS_DATA.regions[system[2]]
-    // return `${system[0]} (${region})`
-    return `${region} / ${system[0]}`
+    return `${system[0]} (${region})`
   }
 
   handleTabChange = currTab => {
@@ -138,31 +133,6 @@ class Dashboard extends Component {
     )
   }
 
-  renderPanel() {
-    if (!SYSTEMS_DATA.systems) return null
-
-    return (
-      <Fragment>
-        <BrInfo dashboard />
-        <InputSystems SYSTEMS_DATA={SYSTEMS_DATA} />
-      </Fragment>
-    )
-  }
-
-  renderControls() {
-    const { related } = this.state
-    return (
-      <div className={styles.controls}>
-        <Button large active={related === 'single'} onClick={this.toggleRelated}>
-          Single
-        </Button>
-        <Button large active={related === 'multiple'} onClick={this.toggleRelated}>
-          Multiple
-        </Button>
-      </div>
-    )
-  }
-
   render() {
     return (
       <div className={styles.root}>
@@ -174,9 +144,13 @@ class Dashboard extends Component {
             &nbsp;
             Killmails presented currently only for 2020 year.
           </h4>
-          {this.renderControls()}
-          {this.renderPanel()}
+
+          <Link to='/create' className={styles.createLink}>
+            <Button large intent='primary' text='CREATE BATTLE REPORT' />
+          </Link>
+
           {this.renderRecent()}
+
           <Footer />
         </div>
       </div>

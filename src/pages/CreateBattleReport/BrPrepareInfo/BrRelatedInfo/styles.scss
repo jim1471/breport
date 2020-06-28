@@ -3,7 +3,7 @@
     position: relative;
     width: 100%;
     max-width: 682px;
-    margin: 0 auto 0 auto;
+    margin: 0 auto 15px auto;
     padding: 15px;
     font-size: 16px;
     border: 1px solid #444;
@@ -22,17 +22,15 @@
     }
   }
 
-  .dashboard {
-    margin-top: 20px;
-  }
-
   .title {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 
     @media (max-width: 420px) {
-      display: block;
+      &.block {
+        display: block;
+      }
     }
 
     .systemName {
@@ -54,5 +52,13 @@
     font-size: 12px;
     display: flex;
     flex-direction: column;
+  }
+
+  .closeBtn {
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+
+    @media (max-width: 420px) { right: 10px; }
   }
 }

@@ -2,10 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { formatDistanceToNow } from 'date-fns'
-import cn from 'classnames'
 
-import RelatedService from 'api/RelatedService'
-import { Button } from 'components/common/blueprint'
 import { SYSTEMS_DATA } from 'data/constants'
 import { getUTCTime, formatSum, getDurationStr } from 'utils/FormatUtils'
 import styles from './styles.scss'
@@ -17,16 +14,8 @@ class BrInfo extends Component {
     return `http://evemaps.dotlan.net/map/${encodedRegion}/${systemName}`
   }
 
-  checkRel(url) {
-    RelatedService.checkRelatedKillmails(url)
-      .then(({ data }) => console.log('data:', data))
-      .catch(err => console.error(err))
-  }
-
-  renderStartEndTime() {
-    const { systemStats = {} } = this.props
-    const { systemID, fromTime, toTime } = systemStats
-    if (!systemID || !fromTime || !toTime) return null
+  renderStartEndTime(fromTime, toTime) {
+    if (!fromTime || !toTime) return null
     const dateStart = new Date(fromTime)
     const dateEnd = new Date(toTime)
 
@@ -39,7 +28,7 @@ class BrInfo extends Component {
   }
 
   renderGeneralStats() {
-    const { generalStats, systemStats = {}, viewed } = this.props
+    const { generalStats = {}, systemStats = {}, viewed } = this.props
     const { fromTime, toTime } = systemStats
     if (!generalStats || !fromTime || !toTime) return null
     let stats = `Total lost: ${formatSum(generalStats.totalLossValue)},`
@@ -58,11 +47,12 @@ class BrInfo extends Component {
     )
   }
 
-  renderSingle() {
+  render() {
     if (!SYSTEMS_DATA.systems) {
       return null
     }
-    const { routerParams = {}, relateds } = this.props
+    const { routerParams = {}, relateds, systemStats = {} } = this.props
+    const { fromTime, toTime } = systemStats
     let { systemID, time } = routerParams
     if (!systemID) {
       if (relateds && relateds[0]) {
@@ -94,7 +84,7 @@ class BrInfo extends Component {
           </span>
           {this.renderGeneralStats()}
         </div>
-        {this.renderStartEndTime()}
+        {this.renderStartEndTime(fromTime, toTime)}
 
         {relatedKey &&
           <small className={styles.related}>
@@ -105,33 +95,6 @@ class BrInfo extends Component {
         }
       </div>
     )
-  }
-
-  renderInputRelateds() {
-    const { inputRelateds } = this.props
-    return (
-      <div className={cn(styles.systemStats, styles.dashboard)}>
-        {`inputRelateds: ${inputRelateds.length}`}
-        {inputRelateds.map((url, ix) => {
-          console.log('url:', url)
-          return (
-            <div key={ix}>
-              <div>{url}</div>
-              <br />
-              <Button text='Check URL' onClick={() => this.checkRel(url)} />
-            </div>
-          )
-        })}
-      </div>
-    )
-  }
-
-  render() {
-    const { dashboard } = this.props
-    if (!dashboard) {
-      return this.renderSingle()
-    }
-    return this.renderInputRelateds()
   }
 }
 

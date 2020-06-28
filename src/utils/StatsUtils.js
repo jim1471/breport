@@ -158,3 +158,28 @@ export const calcGeneralStats = teamsStats => {
   }
   return generalStats
 }
+
+const getTotalPilots = kms => {
+  const charIds = {}
+  kms.forEach(km => {
+    if (km.victim) {
+      if (km.victim.char) charIds[km.victim.char] = 1
+    }
+    if (km.attackers) {
+      km.attackers.forEach(att => {
+        if (att.char) charIds[att.char] = 1
+      })
+    }
+  })
+  const totalPilots = Object.keys(charIds).length
+  return totalPilots
+}
+
+export const getKmsGeneralStats = kms => {
+  const generalStats = {
+    kmsCount: kms.length,
+    pilotsCount: getTotalPilots(kms),
+    totalLossValue: Math.trunc(kms.reduce((total, km) => total + km.totalValue, 0)),
+  }
+  return generalStats
+}

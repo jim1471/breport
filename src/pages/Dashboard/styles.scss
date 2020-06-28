@@ -10,18 +10,6 @@
     user-select: text;
   }
 
-  .controls {
-    display: flex;
-    justify-content: space-around;
-    width: 320px;
-    max-width: 320px;
-    padding-top: 20px;
-
-    :global(button.bp3-button.bp3-active.bp3-large) {
-      background-color: #aaa;
-    }
-  }
-
   .wrapper {
     position: relative;
     width: 100%;
@@ -44,43 +32,8 @@
     }
   }
 
-  .card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 682px;
-    margin-top: 15px;
-    padding: 20px;
-    border-radius: 3px;
-    border: 1px solid #555;
-    background: black;
-
-    input {
-      font-size: 16px;
-    }
-
-    > div {
-      margin-bottom: 10px;
-    }
-
-    @media (max-width: 400px) {
-      padding: 10px;
-    }
-
-    .cardRow {
-      display: flex;
-      flex-wrap: wrap;
-      color: red;
-
-      &.valid {
-        color: #42AFF0;
-      }
-
-      > span:not(:last-child) {
-        margin-right: 5px;
-      }
-    }
+  .createLink {
+    margin-top: 20px;
   }
 
   .matchedLink {

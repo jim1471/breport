@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import cn from 'classnames'
 import startsWith from 'lodash/startsWith'
-import { connect } from 'react-redux'
 
-import { addInputRelated } from 'reducers/battlereport'
 import { InputGroup, Button, Icon } from 'components/common/blueprint'
 import { getDurationStr } from 'utils/FormatUtils'
+import BrPrepareInfo from '../BrPrepareInfo'
 import DateInputComponent from '../DateInputComponent'
 import styles from './styles.scss'
 
@@ -61,10 +60,14 @@ class InputSystems extends Component {
       console.error('Maximum 10 relateds allowed.') // eslint-disable-line
       return
     }
-    const url = `/related-killmails/${system[1] + 30000000}/${startTS}/${endTS}`
-    relateds.push(url)
-    this.setState({ relateds: [...relateds] })
-    this.props.addInputRelated(url)
+    const related = {
+      systemID: system[1] + 30000000,
+      start: startTS,
+      end: endTS,
+      // url: `/related-killmails/${system[1] + 30000000}/${startTS}/${endTS}`,
+    }
+    relateds.push(related)
+    this.setState({ relateds: [...relateds], system: null })
   }
 
   handleStartChange = startTS => {
@@ -75,13 +78,23 @@ class InputSystems extends Component {
     this.setState({ endTS })
   }
 
-  renderValidation() {
-    const { system, startTS, endTS } = this.state
-    const sysID = system ? system[1] + 30000000 : '?'
+  handleRemove = ({ systemID }) => {
+    const { relateds } = this.state
+    this.setState({ relateds: relateds.filter(rel => rel.systemID !== systemID) })
+  }
+
+  validate() {
+    const { system, startTS, endTS, relateds } = this.state
+    const systemID = system ? system[1] + 30000000 : '?'
     const duration = (endTS || 0) - (startTS || 0)
 
     let isValid = false
     let validationStr = ''
+    const systemAlreadyAdded = relateds.find(rel => rel.systemID === systemID)
+
+    if (system && systemAlreadyAdded) {
+      validationStr = `System ${system[0]} already added`
+    }
     if (endTS <= startTS) {
       validationStr = 'End Time must be greater than Start Time'
     }
@@ -89,7 +102,7 @@ class InputSystems extends Component {
       validationStr = 'Maximum Battle duration is 12hr'
     }
     if (!system) {
-      validationStr = 'Input name of system'
+      validationStr = 'Input name of the System'
     }
     if (!endTS) {
       validationStr = 'Input End Time'
@@ -103,27 +116,29 @@ class InputSystems extends Component {
       validationStr = `Ready. Battle duration: ${getDurationStr(endTS, startTS)}`
     }
 
-    return (
+    const resultJsx = (
       <div className={cn(styles.helper, isValid && styles.valid)}>
-        <div>{`/${sysID}/${startTS || '?'}/${endTS || '?'}`}</div>
+        {isValid && <Icon iconSize={16} icon='tick-circle' intent='success' />}
+        {!isValid && <Icon iconSize={16} icon='delete' intent='danger' />}
         <div>{validationStr}</div>
       </div>
     )
+    return [isValid, resultJsx]
   }
 
-  render() {
+  renderInputPanel() {
     const { SYSTEMS_DATA } = this.props
-    const { system, string, matched, startTS, endTS } = this.state
+    const { system, string, matched } = this.state
     const value = system
       ? system[0]
       : string
 
-    const isValid = system && startTS && endTS && endTS > startTS
+    const [isValid, validation] = this.validate()
 
     return (
       <div className={styles.card}>
 
-        {this.renderValidation()}
+        {validation}
 
         <div className={styles.flexWrapper}>
 
@@ -188,17 +203,45 @@ class InputSystems extends Component {
 
         <Button
           text='ADD'
-          intent='primary'
+          intent={isValid ? 'success' : 'danger'}
           disabled={!isValid}
           onClick={this.handleSubmit}
         />
       </div>
     )
   }
+
+  createBattleReport = () => {
+    const { relateds } = this.state
+    console.log('relateds:', relateds)
+  }
+
+  render() {
+    const { relateds } = this.state
+    const isValid = relateds && relateds.length > 0
+
+    return (
+      <Fragment>
+        {this.renderInputPanel()}
+
+        <BrPrepareInfo
+          relateds={relateds}
+          onRemove={this.handleRemove}
+        />
+
+        <br />
+        <br />
+
+        <Button
+          large
+          text='Create'
+          intent={isValid ? 'primary' : 'danger'}
+          disabled={!isValid}
+          onClick={this.createBattleReport}
+        />
+      </Fragment>
+    )
+  }
 }
 
-const mapDispatchToProps = { addInputRelated }
-const mapStateToProps = ({ battlereport }) => ({
-  inputRelateds: battlereport.inputRelateds,
-})
-export default connect(mapStateToProps, mapDispatchToProps)(InputSystems)
+export default InputSystems

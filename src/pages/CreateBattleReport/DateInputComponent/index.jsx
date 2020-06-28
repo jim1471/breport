@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import cx from 'classnames'
-import { DateInput } from '@blueprintjs/datetime'
-import parse from 'date-fns/parse'
-import format from 'date-fns/format'
+// import { DateInput } from '@blueprintjs/datetime'
+import { DateInput } from '@blueprintjs/datetime/lib/esm/dateInput'
+import { parse, format, parseISO } from 'date-fns'
 import styles from './styles.scss'
 
 const FORMAT = 'yyyy-MM-dd HH:mm:ss'
 
+const dayPickerProps = {}
+
+const popoverProps = {
+  hasBackdrop: true,
+  // position: 'bottom',
+  position: 'top',
+}
+
 const timePickerProps = {
-  autoFocus: true,
+  autoFocus: false,
   precision: 'second',
   showArrowButtons: true,
   selectAllOnFocus: true,
@@ -28,17 +36,20 @@ const toUTCTimestamp = date => {
 }
 
 const getNowDatetime = () => {
-  const now = new Date()
+  const utcStr = new Date().toISOString()
+    .replace('T', ' ')
+    .replace('Z', '')
+  const now = parseISO(utcStr)
   now.setHours(now.getHours(), 0, 0, 0)
   return now
 }
 
 const DateInputComponent = ({ onChange }) => {
-  const currentHour = getNowDatetime()
-  const [datetime, setDatetime] = useState(currentHour)
+  const currentUTCHour = getNowDatetime()
+  const [datetime, setDatetime] = useState(currentUTCHour)
 
   useEffect(() => {
-    onChange(toUTCTimestamp(currentHour))
+    onChange(toUTCTimestamp(currentUTCHour))
   }, [])
 
   function formatDate(date) {
@@ -62,12 +73,15 @@ const DateInputComponent = ({ onChange }) => {
         value={datetime}
         onChange={handleChange}
         maxDate={new Date()}
+        dayPickerProps={dayPickerProps}
+        popoverProps={popoverProps}
         timePickerProps={timePickerProps}
         formatDate={formatDate}
         parseDate={parseDate}
         showActionsBar
         closeOnSelection={false}
-        todayButtonText='Now'
+        todayButtonText='Locale Date'
+        clearButtonText='ET hour'
         placeholder='YYYY-MM-DD hh:mm:ss'
       />
     </div>
