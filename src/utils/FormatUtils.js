@@ -1,4 +1,5 @@
 const numeral = require('numeral')
+const { intervalToDuration } = require('date-fns')
 
 const oneBillion = 1000000000
 const tenMillion = 10000000
@@ -130,6 +131,15 @@ const parseZkillDatetime = dt => {
   return new Date(timestamp)
 }
 
+const getDurationStr = (start, end) => {
+  const { hours, minutes, seconds } = intervalToDuration({ start, end })
+  const duration = []
+  if (hours > 0) duration.push(`${hours}h`)
+  if (minutes > 0) duration.push(`${minutes}m`)
+  if (seconds > 0) duration.push(`${seconds}s`)
+  return duration.join(' ')
+}
+
 module.exports = {
   formatSum,
   formatDmg,
@@ -143,4 +153,5 @@ module.exports = {
   timestampToUTC,
   formatZkillTimestamp,
   parseZkillDatetime,
+  getDurationStr,
 }

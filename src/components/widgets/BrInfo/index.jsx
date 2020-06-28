@@ -7,7 +7,7 @@ import cn from 'classnames'
 import RelatedService from 'api/RelatedService'
 import { Button } from 'components/common/blueprint'
 import { SYSTEMS_DATA } from 'data/constants'
-import { getUTCTime, formatSum } from 'utils/FormatUtils'
+import { getUTCTime, formatSum, getDurationStr } from 'utils/FormatUtils'
 import styles from './styles.scss'
 
 class BrInfo extends Component {
@@ -26,31 +26,34 @@ class BrInfo extends Component {
   renderStartEndTime() {
     const { systemStats = {} } = this.props
     const { systemID, fromTime, toTime } = systemStats
-    if (!systemID) return null
+    if (!systemID || !fromTime || !toTime) return null
     const dateStart = new Date(fromTime)
     const dateEnd = new Date(toTime)
+
     return (
       <div className={styles.timing}>
-        {`${dateStart.toLocaleDateString()}, ${getUTCTime(dateStart)} - ${getUTCTime(dateEnd)} ET`}
+        <div>{`${dateStart.toLocaleDateString()}, ${getUTCTime(dateStart)} - ${getUTCTime(dateEnd)} ET`}</div>
+        <div>{`${formatDistanceToNow(dateStart)} ago`}</div>
       </div>
     )
   }
 
   renderGeneralStats() {
     const { generalStats, systemStats = {}, viewed } = this.props
-    if (!generalStats) {
-      return null
-    }
-    const { fromTime } = systemStats
+    const { fromTime, toTime } = systemStats
+    if (!generalStats || !fromTime || !toTime) return null
+    let stats = `Total lost: ${formatSum(generalStats.totalLossValue)},`
+    stats += ` Pilots: ${generalStats.pilotsCount},`
+    stats += ` Viewed: ${viewed}`
+
     const dateStart = new Date(fromTime)
-    if (!fromTime) {
-      console.error(`systemStats.fromTime ${fromTime}`)
-      return null
-    }
+    const dateEnd = new Date(toTime)
+    const duration = getDurationStr(dateStart, dateEnd)
+
     return (
       <div className={styles.generalStats}>
-        <div>{`${formatDistanceToNow(dateStart)} ago`}</div>
-        <div>{`Total lost: ${formatSum(generalStats.totalLossValue)}, Pilots: ${generalStats.pilotsCount}, Viewed: ${viewed}`}</div>
+        <div>{stats}</div>
+        <div>{`Duration: ${duration}`}</div>
       </div>
     )
   }
@@ -89,10 +92,9 @@ class BrInfo extends Component {
               </a>
             </small>
           </span>
-
-          {this.renderStartEndTime()}
+          {this.renderGeneralStats()}
         </div>
-        {this.renderGeneralStats()}
+        {this.renderStartEndTime()}
 
         {relatedKey &&
           <small className={styles.related}>

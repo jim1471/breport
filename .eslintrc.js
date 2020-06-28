@@ -109,7 +109,7 @@ const config = {
     'no-unused-vars': 'warn',
     'no-unreachable': 'warn',
     'spaced-comment': 'warn',
-    'react/sort-comp': 'warn',
+    'react/sort-comp': 'off',
     'react/no-unused-state': 'warn',
     'jsx-quotes': ['warn', 'prefer-single'],
     'react/jsx-no-bind': ['warn', {
