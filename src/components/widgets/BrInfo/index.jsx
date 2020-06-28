@@ -112,10 +112,10 @@ class BrInfo extends Component {
     return (
       <div className={cn(styles.systemStats, styles.dashboard)}>
         {`inputRelateds: ${inputRelateds.length}`}
-        {inputRelateds.map(url => {
+        {inputRelateds.map((url, ix) => {
           console.log('url:', url)
           return (
-            <div>
+            <div key={ix}>
               <div>{url}</div>
               <br />
               <Button text='Check URL' onClick={() => this.checkRel(url)} />

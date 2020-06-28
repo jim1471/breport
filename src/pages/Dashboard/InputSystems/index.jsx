@@ -4,7 +4,8 @@ import startsWith from 'lodash/startsWith'
 import { connect } from 'react-redux'
 
 import { addInputRelated } from 'reducers/battlereport'
-import { InputGroup, Button } from 'components/common/blueprint'
+import { InputGroup, Button, Icon } from 'components/common/blueprint'
+import { getDurationStr } from 'utils/FormatUtils'
 import DateInputComponent from '../DateInputComponent'
 import styles from './styles.scss'
 
@@ -20,14 +21,13 @@ const DropdownItem = ({ item, onSelect }) => {
   )
 }
 
-
 class InputSystems extends Component {
   state = {
     string: '',
     system: null,
     matched: [],
-    startTS: Date.now(),
-    endTS: Date.now(),
+    startTS: 0,
+    endTS: 0,
     relateds: [],
   }
 
@@ -75,15 +75,38 @@ class InputSystems extends Component {
     this.setState({ endTS })
   }
 
-  renderHelper() {
+  renderValidation() {
     const { system, startTS, endTS } = this.state
     const sysID = system ? system[1] + 30000000 : '?'
-    const startValid = startTS > 0
-    const endValid = endTS > 0 && endTS > startTS
-    const isValid = system && startValid && endValid
+    const duration = (endTS || 0) - (startTS || 0)
+
+    let isValid = false
+    let validationStr = ''
+    if (endTS <= startTS) {
+      validationStr = 'End Time must be greater than Start Time'
+    }
+    if (endTS && startTS && duration > 43200) {
+      validationStr = 'Maximum Battle duration is 12hr'
+    }
+    if (!system) {
+      validationStr = 'Input name of system'
+    }
+    if (!endTS) {
+      validationStr = 'Input End Time'
+    }
+    if (!startTS) {
+      validationStr = 'Input Start Time'
+    }
+
+    if (!validationStr) {
+      isValid = true
+      validationStr = `Ready. Battle duration: ${getDurationStr(endTS, startTS)}`
+    }
+
     return (
       <div className={cn(styles.helper, isValid && styles.valid)}>
-        {`/${sysID}/${startTS || '?'}/${endTS || '?'}`}
+        <div>{`/${sysID}/${startTS || '?'}/${endTS || '?'}`}</div>
+        <div>{validationStr}</div>
       </div>
     )
   }
@@ -100,12 +123,14 @@ class InputSystems extends Component {
     return (
       <div className={styles.card}>
 
-        {this.renderHelper()}
+        {this.renderValidation()}
 
         <div className={styles.flexWrapper}>
 
           <div>
             <div className={styles.label}>
+              <Icon iconSize={16} icon='globe-network' intent='primary' />
+              &nbsp;
               System
             </div>
             <div className={styles.inputGroup}>
@@ -120,7 +145,6 @@ class InputSystems extends Component {
                 <InputGroup
                   className={cn('bp3-fill', styles.systemInput)}
                   value={value}
-                  leftIcon='globe-network'
                   placeholder='Enter system'
                   onChange={this.handleSystemChange}
                 />
@@ -143,6 +167,8 @@ class InputSystems extends Component {
 
           <div>
             <div className={styles.label}>
+              <Icon iconSize={16} icon='time' intent='primary' />
+              &nbsp;
               Start date time (ET)
             </div>
             <DateInputComponent onChange={this.handleStartChange} />
@@ -150,6 +176,8 @@ class InputSystems extends Component {
 
           <div>
             <div className={styles.label}>
+              <Icon iconSize={16} icon='time' intent='primary' />
+              &nbsp;
               End date time (ET)
             </div>
             <DateInputComponent onChange={this.handleEndChange} />

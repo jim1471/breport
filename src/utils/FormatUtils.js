@@ -7,6 +7,7 @@ const oneMillion = 1000000
 const tenThousand = 10000
 const oneThousand = 1000
 
+const MAX_TS = 2208988800 // 2040-01-01T00:00:00+00:00
 
 // only three significant digits
 const numberFormat = sum => {
@@ -132,7 +133,11 @@ const parseZkillDatetime = dt => {
 }
 
 const getDurationStr = (start, end) => {
-  const { hours, minutes, seconds } = intervalToDuration({ start, end })
+  const interval = { start, end }
+  if (start < MAX_TS) interval.start *= 1000
+  if (end < MAX_TS) interval.end *= 1000
+
+  const { hours, minutes, seconds } = intervalToDuration(interval)
   const duration = []
   if (hours > 0) duration.push(`${hours}h`)
   if (minutes > 0) duration.push(`${minutes}m`)
