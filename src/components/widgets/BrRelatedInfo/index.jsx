@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
 import { formatDistanceToNow } from 'date-fns'
 import cx from 'classnames'
+import isEmpty from 'lodash/isEmpty'
 
 import RelatedService from 'api/RelatedService'
-import { Spinner } from 'components'
 import { Button } from 'components/common/blueprint'
 import { SYSTEMS_DATA } from 'data/constants'
 import * as StatsUtils from 'utils/StatsUtils'
 import { getUTCTime, formatSum, getDurationStr } from 'utils/FormatUtils'
 import styles from './styles.scss'
 
-function BrRelatedInfo({ systemID, url, start, end, onRemove }) {
-  const [generalStats, setGeneralStats] = useState(null)
+function BrRelatedInfo({ systemID, start, end, onRemove, brPage, ...rest }) {
+  const initialStats = isEmpty(rest) ? null : rest
+  const [generalStats, setGeneralStats] = useState(initialStats)
   const [statsLoading, setStatsLoading] = useState(false)
 
   function getDotlanLink(region, systemName) {
@@ -23,7 +24,7 @@ function BrRelatedInfo({ systemID, url, start, end, onRemove }) {
     onRemove(systemID)
   }
 
-  function checkRel() {
+  function checkRelated() {
     setStatsLoading(true)
     RelatedService.checkRelatedKillmails({ systemID, start, end })
       .then(({ data }) => {
@@ -52,7 +53,9 @@ function BrRelatedInfo({ systemID, url, start, end, onRemove }) {
       <div className={styles.timing}>
         <div>{`Duration: ${duration}`}</div>
         <div>{`${dateStart.toLocaleDateString()}, ${getUTCTime(dateStart)} - ${getUTCTime(dateEnd)} ET`}</div>
-        <div>{`${formatDistanceToNow(dateStart)} ago`}</div>
+        {!brPage &&
+          <div>{`${formatDistanceToNow(dateStart)} ago`}</div>
+        }
       </div>
     )
   }
@@ -89,20 +92,24 @@ function BrRelatedInfo({ systemID, url, start, end, onRemove }) {
 
         {generalStats && !statsLoading && renderGeneralStats()}
 
-        {!generalStats && !statsLoading &&
-          <Button small text='Check' onClick={checkRel} intent='primary' />
-        }
-
-        {statsLoading &&
-          <Spinner small />
+        {!generalStats &&
+          <Button
+            small
+            text='Check'
+            onClick={checkRelated}
+            intent='primary'
+            loading={statsLoading}
+          />
         }
       </div>
 
       {renderStartEndTime(start * 1000, end * 1000)}
 
-      <div className={styles.closeBtn}>
-        <Button small icon='small-cross' intent='danger' onClick={handleRemove} />
-      </div>
+      {onRemove &&
+        <div className={styles.removeBtn}>
+          <Button small icon='small-cross' intent='danger' onClick={handleRemove} />
+        </div>
+      }
     </div>
   )
 }

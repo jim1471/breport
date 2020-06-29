@@ -1,11 +1,12 @@
 import RelatedService from 'api/RelatedService'
 import { getNames } from 'reducers/names'
 import { initializeBrData } from 'reducers/related'
+import * as StatsUtils from 'utils/StatsUtils'
 
 const SAVE_BR = 'SAVE_BR'
 const GET_BR = 'GET_BR'
+const SET_BR_DATA = 'SET_BR_DATA'
 const SET_STATUS = 'SET_STATUS'
-const ADD_RELATED = 'ADD_RELATED'
 const FETCH_INTERVAL = 1000
 
 export const setStatus = status => ({ type: SET_STATUS, status })
@@ -24,27 +25,47 @@ export const getBR = brID => dispatch => {
     if (data.status === 'processing') {
       console.log('br still being processed...')
       setTimeout(() => dispatch(getBR(brID)), FETCH_INTERVAL)
-    } else if (data.status === 'SUCCESS') {
+
+    } else if (data.status === 'success') {
       const killmailsData = data.relateds.reduce((allKms, related) => allKms.concat(related.kms), [])
-      dispatch(initializeBrData({
-        systemID: data.relateds[0].systemID,
-        time: data.relateds[0].time,
-        kmData: killmailsData,
-        teams: data.teams,
-        relateds: data.relateds.map(rel => ({
-          relatedKey: rel.relatedKey,
-          systemID: rel.systemID,
-          time: rel.time,
-        })),
-        viewed: data.viewed,
-      }))
+      if (data.new) {
+        const relatedsWithStats = data.relateds.map(rel => ({
+          ...rel,
+          ...StatsUtils.getKmsGeneralStats(rel.kms),
+        }))
+        const parsedBrData = {
+          ...data,
+          new: true,
+          systemID: data.relateds[0].systemID,
+          // time: data.relateds[0].time,
+          time: null,
+          kmData: killmailsData,
+          teams: data.teams,
+          relateds: relatedsWithStats,
+          viewed: data.viewed,
+        }
+        dispatch(initializeBrData(parsedBrData))
+        dispatch({ type: 'SET_BR_DATA', parsedBrData })
+      } else {
+        dispatch(initializeBrData({
+          systemID: data.relateds[0].systemID,
+          time: data.relateds[0].time,
+          kmData: killmailsData,
+          teams: data.teams,
+          relateds: data.relateds.map(rel => ({
+            relatedKey: rel.relatedKey,
+            systemID: rel.systemID,
+            time: rel.time,
+          })),
+          viewed: data.viewed,
+        }))
+      }
+
       dispatch(setStatus('fetching names'))
       dispatch(getNames(killmailsData))
     }
   })
 }
-
-export const addInputRelated = related => ({ type: ADD_RELATED, related })
 
 
 const initialState = {
@@ -55,7 +76,6 @@ const initialState = {
     isLoading: false,
     viewed: 0,
   },
-  inputRelateds: [],
   saving: {},
   status: '',
 }
@@ -64,12 +84,6 @@ const initialState = {
 export default (state = initialState, action) => {
 
   switch (action.type) {
-
-    case ADD_RELATED:
-      return {
-        ...state,
-        inputRelateds: state.inputRelateds.concat([action.related]),
-      }
 
     case SAVE_BR:
       return {
@@ -84,6 +98,14 @@ export default (state = initialState, action) => {
         ...state,
         br: {
           ...action.data,
+        },
+      }
+
+    case SET_BR_DATA:
+      return {
+        ...state,
+        br: {
+          ...action.parsedBrData,
         },
       }
 

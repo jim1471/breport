@@ -3,8 +3,8 @@
     position: relative;
     width: 100%;
     max-width: 682px;
-    margin: 0 auto 15px auto;
-    padding: 15px;
+    margin: 0 auto 5px auto;
+    padding: 5px 15px;
     font-size: 16px;
     border: 1px solid #444;
 
@@ -54,7 +54,7 @@
     flex-direction: column;
   }
 
-  .closeBtn {
+  .removeBtn {
     position: absolute;
     right: 15px;
     bottom: 10px;

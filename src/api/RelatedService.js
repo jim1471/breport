@@ -1,6 +1,6 @@
 import BaseAPI from './BaseAPI'
 
-const base = process.env.API_SERVER
+const base = process.env.NODE_ENV === 'development' ? '' : process.env.API_SERVER
 
 class RelatedService extends BaseAPI {
 
@@ -15,13 +15,6 @@ class RelatedService extends BaseAPI {
     return this.call({
       method: 'get',
       url: `${base}/api/v1/related-killmails/${systemID}/${start}/${end}`,
-    })
-  }
-
-  checkRelatedKillmails(url) {
-    return this.call({
-      method: 'get',
-      url: `${base}/api/v1${url}`,
     })
   }
 
@@ -68,6 +61,23 @@ class RelatedService extends BaseAPI {
     return this.call({
       method: 'get',
       url: `${base}/api/v1/recent-br`,
+    })
+  }
+
+  checkRelatedKillmails({ systemID, start, end }) {
+    return this.call({
+      method: 'get',
+      url: `${base}/api/v1/related-killmails/${systemID}/${start}/${end}`,
+    })
+  }
+
+  createBR(relateds) {
+    return this.call({
+      method: 'post',
+      url: `${base}/api/v1/br/create`,
+      data: {
+        relateds,
+      },
     })
   }
 

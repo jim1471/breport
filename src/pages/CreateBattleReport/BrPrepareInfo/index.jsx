@@ -1,6 +1,6 @@
 import React from 'react'
 
-import BrRelatedInfo from './BrRelatedInfo'
+import BrRelatedInfo from 'widgets/BrRelatedInfo'
 import styles from './styles.scss'
 
 function BrPrepareInfo({ relateds, onRemove }) {

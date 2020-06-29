@@ -3,13 +3,12 @@ import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import routerHistory from 'utils/routerHistory'
 import { getBR, setStatus } from 'reducers/battlereport'
-import { brParseTeams, getRelatedData, getRelatedDataStub, parseData } from 'reducers/related'
+import { brParseTeams, brParseNew, getRelatedData, getRelatedDataStub, parseData } from 'reducers/related'
 import { Spinner } from 'components'
-import { ControlPanel, BrInfo, Footer } from 'widgets'
+import { ControlPanel, BrInfo, BrRelatedInfo, Footer } from 'widgets'
 import Report from 'pages/Report'
 import styles from './styles.scss'
 
-// http://localhost:3200/br/5cc513267996865911654dca
 class BattleReportPage extends Component {
 
   constructor(props) {
@@ -37,28 +36,46 @@ class BattleReportPage extends Component {
   componentDidUpdate(prevProps) {
     const { br, involvedNames, teamsLosses } = this.props
     if (prevProps.br !== br && !br.isLoading && !br.error) {
-      const brData = (br.relateds || [])[0]
       if (process.env.NODE_ENV === 'development') {
-        if (brData) {
-          console.log('relateds:', brData)
-        } else {
-          console.log('br:', br)
-        }
+        console.log('br:', br)
       }
     }
     if (prevProps.involvedNames.isLoading && !involvedNames.isLoading) {
       this.props.setStatus('names fetched')
-      this.props.brParseTeams()
+      if (br.new) {
+        this.props.brParseNew()
+      } else {
+        this.props.brParseTeams()
+      }
     }
     if (!prevProps.teamsLosses && teamsLosses) {
-      const killmailsCount = br.relateds.reduce((sum, related) => sum + related.kmsCount, 0)
-      this.props.setStatus(`${killmailsCount} killmails`)
+      if (br.new) {
+        this.props.setStatus(`${br.kmData && br.kmData.length} killmails`)
+      } else {
+        const killmailsCount = br.relateds.reduce((sum, related) => sum + related.kmsCount, 0)
+        this.props.setStatus(`${killmailsCount} killmails`)
+      }
     }
   }
 
   reloadBr = () => {
     const { brID } = this.state
     this.props.getBR(brID)
+  }
+
+  renderBrInfos() {
+    const { br } = this.props
+    return (
+      <div className={styles.brInfoRoot}>
+        {br.relateds.map(relData => (
+          <BrRelatedInfo
+            {...relData}
+            key={relData.systemID}
+            brPage
+          />
+        ))}
+      </div>
+    )
   }
 
   render() {
@@ -83,7 +100,10 @@ class BattleReportPage extends Component {
 
         {teams && teamsLosses &&
           <Fragment>
-            <BrInfo routerParams={params} />
+            {br.new
+              ? this.renderBrInfos()
+              : <BrInfo routerParams={params} />
+            }
             <Report
               teams={teams}
               isLoading={false}
@@ -99,7 +119,9 @@ class BattleReportPage extends Component {
 
 }
 
-const mapDispatchToProps = { getBR, setStatus, brParseTeams, getRelatedData, getRelatedDataStub, parseData }
+const mapDispatchToProps = {
+  getBR, setStatus, brParseTeams, brParseNew, getRelatedData, getRelatedDataStub, parseData,
+}
 const mapStateToProps = ({ names, related, battlereport }, { match: { params } }) => ({
   involvedNames: names.involvedNames,
   status: battlereport.status,

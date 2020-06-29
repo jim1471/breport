@@ -25,10 +25,10 @@ const apiCallMiddleware = ({ dispatch, getState }) => next => action => {
 
   return apiCall()
     .then(({ data }) => {
-      if (data.status === 'SUCCESS') {
+      if (data.status === 'success') {
         dispatch({ type, subtype: successType, payload: { data }, params })
 
-      } else if (data.status === 'ERROR') {
+      } else if (data.status === 'error') {
         console.error(type, 'application error:', data.applicationError) // eslint-disable-line
         dispatch({ type, subtype: failureType, payload: { error: data.applicationError }, params })
 

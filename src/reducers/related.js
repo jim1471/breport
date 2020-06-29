@@ -97,6 +97,10 @@ export const brParseTeams = () => (dispatch, getState) => {
   dispatch({ type: REPARSE_TEAMS, involvedNames })
 }
 
+export const brParseNew = () => dispatch => {
+  dispatch(parseData())
+}
+
 
 const initialState = {
   isStub,
@@ -190,10 +194,10 @@ export default (state = initialState, action) => {
       const data = action.initialBrData
       return {
         ...initialState,
+        new: data.new,
         kmData: data.kmData,
         teams: data.teams,
         relateds: data.relateds,
-        // TODO: multiple relateds systems / timings
         datetime: data.datetime,
         systemID: data.systemID,
         viewed: data.viewed,

@@ -2,8 +2,10 @@ import React, { Component, Fragment } from 'react'
 import cn from 'classnames'
 import startsWith from 'lodash/startsWith'
 
+import RelatedService from 'api/RelatedService'
 import { InputGroup, Button, Icon } from 'components/common/blueprint'
 import { getDurationStr } from 'utils/FormatUtils'
+import routerHistory from 'utils/routerHistory'
 import BrPrepareInfo from '../BrPrepareInfo'
 import DateInputComponent from '../DateInputComponent'
 import styles from './styles.scss'
@@ -21,6 +23,7 @@ const DropdownItem = ({ item, onSelect }) => {
 }
 
 class InputSystems extends Component {
+
   state = {
     string: '',
     system: null,
@@ -213,11 +216,26 @@ class InputSystems extends Component {
 
   createBattleReport = () => {
     const { relateds } = this.state
+    this.setState({ isLoading: true })
     console.log('relateds:', relateds)
+    RelatedService.createBR(relateds)
+      .then(({ data }) => {
+        if (data && data.status === 'success') {
+          if (process.env.NODE_ENV === 'development') {
+            console.log('created BR data:', data)
+          }
+          routerHistory.push(`/br/${data.brID}`)
+        }
+        this.setState({ isLoading: false })
+      })
+      .catch(err => {
+        console.error(err)
+        this.setState({ isLoading: false })
+      })
   }
 
   render() {
-    const { relateds } = this.state
+    const { relateds, isLoading } = this.state
     const isValid = relateds && relateds.length > 0
 
     return (
@@ -237,6 +255,7 @@ class InputSystems extends Component {
           text='Create'
           intent={isValid ? 'primary' : 'danger'}
           disabled={!isValid}
+          loading={isLoading}
           onClick={this.createBattleReport}
         />
       </Fragment>

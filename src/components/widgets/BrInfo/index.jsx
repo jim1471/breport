@@ -99,12 +99,11 @@ class BrInfo extends Component {
 }
 
 const mapDispatchToProps = {}
-const mapStateToProps = ({ related, battlereport }) => ({
+const mapStateToProps = ({ related }) => ({
   viewed: related.viewed,
   systemStats: related.systemStats,
   relateds: related.relateds,
   generalStats: related.generalStats,
-  inputRelateds: battlereport.inputRelateds,
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(BrInfo)
