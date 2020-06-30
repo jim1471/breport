@@ -508,7 +508,7 @@ class ParseUtils {
       teamsShips,
       teamsStats,
       generalStats,
-      origTeams: isTeamsConstructed ? [...teams] : null,
+      origTeams: isTeamsConstructed ? teams.map(oneTeam => [...oneTeam]) : null,
     }
   }
 

@@ -135,7 +135,7 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div className={styles.root}>
+      <div className={cx('bp3-dark', styles.root)}>
         <div className={styles.wrapper}>
           <h1>Battle Report tool</h1>
           <h4>This tool is for generating battle reports from killmails held on zKillboard.com.</h4>
@@ -146,7 +146,7 @@ class Dashboard extends Component {
           </h4>
 
           <Link to='/create' className={styles.createLink}>
-            <Button large intent='primary' text='CREATE BATTLE REPORT' />
+            <Button large text='CREATE BATTLE REPORT' />
           </Link>
 
           {this.renderRecent()}

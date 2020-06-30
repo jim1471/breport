@@ -81,6 +81,17 @@ class RelatedService extends BaseAPI {
     })
   }
 
+  updateBR(brID, teams) {
+    return this.call({
+      method: 'post',
+      url: `${base}/api/v1/br/update`,
+      data: {
+        brID,
+        teams,
+      },
+    })
+  }
+
   saveComposition(teams, systemID, time) {
     return this.call({
       method: 'post',

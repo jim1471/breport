@@ -1,136 +1,124 @@
-import { hot } from 'react-hot-loader'
-import React, { Component, Fragment } from 'react'
-import { connect } from 'react-redux'
-import routerHistory from 'utils/routerHistory'
+import React, { Fragment, useState, useEffect, useRef } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import isEqual from 'lodash/isEqual'
+
+import RelatedService from 'api/RelatedService'
 import { getBR, setStatus } from 'reducers/battlereport'
-import { brParseTeams, brParseNew, getRelatedData, getRelatedDataStub, parseData } from 'reducers/related'
+import { brParseTeams } from 'reducers/related'
 import { Spinner } from 'components'
-import { ControlPanel, BrInfo, BrRelatedInfo, Footer } from 'widgets'
+import { ControlPanel, BrInfo, BrGroupInfo, Footer } from 'widgets'
 import Report from 'pages/Report'
 import styles from './styles.scss'
 
-class BattleReportPage extends Component {
+function usePrevious(value) {
+  const ref = useRef()
+  useEffect(() => {
+    ref.current = value
+  })
+  return ref.current
+}
 
-  constructor(props) {
-    super(props)
+const BattleReportPage = ({ match: { params } }) => {
+  const [saving, setSaving] = useState(false)
+  const [updateKey] = useState(localStorage.getItem(params.brID))
 
-    const { params: { brID } } = this.props
-    // eslint-disable-next-line react/state-in-constructor
-    this.state = {
-      brID,
-    }
+  const dispatch = useDispatch()
+  const store = useSelector(({ names, related, battlereport }) => ({
+    involvedNames: names.involvedNames,
+    status: battlereport.status,
+    br: battlereport.br,
+    teams: related.teams,
+    origTeams: related.origTeams,
+    teamsLosses: related.teamsLosses,
+  }))
+
+  const { br, involvedNames, teamsLosses, teams, origTeams, status } = store
+
+  function loadBR() {
+    dispatch(getBR(params.brID))
   }
 
-  componentDidMount() {
-    const { brID } = this.state
-    if (!brID) {
-      routerHistory.push('/')
-      return
-    }
-    const { teamsLosses } = this.props
+  useEffect(() => {
     if (!teamsLosses) {
-      this.props.getBR(brID)
+      loadBR()
     }
-  }
+  }, [teamsLosses])
 
-  componentDidUpdate(prevProps) {
-    const { br, involvedNames, teamsLosses } = this.props
-    if (prevProps.br !== br && !br.isLoading && !br.error) {
-      if (process.env.NODE_ENV === 'development') {
-        console.log('br:', br)
-      }
+  const prevInvolvedNames = usePrevious(involvedNames)
+  useEffect(() => {
+    if (!involvedNames.isLoading && prevInvolvedNames && prevInvolvedNames.isLoading) {
+      dispatch(setStatus('names fetched'))
+      dispatch(brParseTeams())
     }
-    if (prevProps.involvedNames.isLoading && !involvedNames.isLoading) {
-      this.props.setStatus('names fetched')
+  }, [involvedNames])
+
+  const prevTeamLosses = usePrevious(teamsLosses)
+  useEffect(() => {
+    if (teamsLosses && !prevTeamLosses) {
       if (br.new) {
-        this.props.brParseNew()
-      } else {
-        this.props.brParseTeams()
-      }
-    }
-    if (!prevProps.teamsLosses && teamsLosses) {
-      if (br.new) {
-        this.props.setStatus(`${br.kmData && br.kmData.length} killmails`)
+        dispatch(setStatus(`${br.kmData && br.kmData.length} killmails`))
       } else {
         const killmailsCount = br.relateds.reduce((sum, related) => sum + related.kmsCount, 0)
-        this.props.setStatus(`${killmailsCount} killmails`)
+        dispatch(setStatus(`${killmailsCount} killmails`))
       }
     }
+  }, [teamsLosses])
+
+  function isTeamsChanged() {
+    if (!teams) {
+      return false
+    }
+    return !isEqual(teams, origTeams)
   }
 
-  reloadBr = () => {
-    const { brID } = this.state
-    this.props.getBR(brID)
+  async function handleUpdateBR() {
+    setSaving(true)
+    try {
+      const { data } = await RelatedService.updateBR(params.brID, teams)
+      if (data.status === 'success') {
+        dispatch(brParseTeams())
+      }
+
+    } catch (err) {
+      console.error('UpdateBR: err:', err)
+    }
+    setSaving(false)
   }
 
-  renderBrInfos() {
-    const { br } = this.props
-    return (
-      <div className={styles.brInfoRoot}>
-        {br.relateds.map(relData => (
-          <BrRelatedInfo
-            {...relData}
-            key={relData.systemID}
-            brPage
+  const isLoading = br.isLoading || involvedNames.isLoading
+
+  return (
+    <div className={styles.root}>
+      <ControlPanel
+        header={status}
+        isLoading={isLoading}
+        onReload={loadBR}
+        saving={saving}
+        onSaveBR={handleUpdateBR}
+        canSave={updateKey && isTeamsChanged()}
+      />
+
+      {!teamsLosses &&
+        <Spinner />
+      }
+
+      {teams && teamsLosses &&
+        <Fragment>
+          {br.new
+            ? <BrGroupInfo relateds={br.relateds} />
+            : <BrInfo routerParams={params} />
+          }
+          <Report
+            teams={teams}
+            isLoading={false}
+            reportType='plane'
+            routerParams={params}
           />
-        ))}
-      </div>
-    )
-  }
-
-  render() {
-    const { status, teams, teamsLosses, params, br, involvedNames } = this.props
-    const isLoading = br.isLoading || involvedNames.isLoading
-    return (
-      <div className={styles.root}>
-        <ControlPanel
-          header={status}
-          isLoading={isLoading}
-          // error={}
-          // saving={saving}
-          onReload={process.env.NODE_ENV === 'development' && this.reloadBr}
-          // onReparse={this.handleReparse}
-          // onSaveBR={this.handleSaveBR}
-          // canSave={this.isTeamsChanged()}
-        />
-
-        {!teamsLosses &&
-          <Spinner />
-        }
-
-        {teams && teamsLosses &&
-          <Fragment>
-            {br.new
-              ? this.renderBrInfos()
-              : <BrInfo routerParams={params} />
-            }
-            <Report
-              teams={teams}
-              isLoading={false}
-              reportType='plane'
-              routerParams={params}
-            />
-          </Fragment>
-        }
-        <Footer />
-      </div>
-    )
-  }
-
+        </Fragment>
+      }
+      <Footer />
+    </div>
+  )
 }
 
-const mapDispatchToProps = {
-  getBR, setStatus, brParseTeams, brParseNew, getRelatedData, getRelatedDataStub, parseData,
-}
-const mapStateToProps = ({ names, related, battlereport }, { match: { params } }) => ({
-  involvedNames: names.involvedNames,
-  status: battlereport.status,
-  br: battlereport.br,
-  saving: battlereport.saving,
-  teams: related.teams,
-  teamsLosses: related.teamsLosses,
-  params,
-})
-const ConnectedBRPage = connect(mapStateToProps, mapDispatchToProps)(BattleReportPage)
-
-export default hot(module)(ConnectedBRPage)
+export default BattleReportPage

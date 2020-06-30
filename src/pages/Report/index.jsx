@@ -1,6 +1,7 @@
 import { hot } from 'react-hot-loader'
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
+import cx from 'classnames'
 import { Spinner } from 'components'
 import TeamStats from '../Team/TeamStats'
 import TeamInvolved from '../Team/TeamInvolved'
@@ -13,7 +14,6 @@ import styles from './styles.scss'
 
 class Report extends Component {
 
-  // example - /br/5cd5d7184a724f00173d85b9
   state = {
     teamStatsCollapsed: true,
   }
@@ -62,18 +62,22 @@ class Report extends Component {
           <div className={styles.teamsRoot}>
             <div className={styles.autogrowSpace} />
             {teams.map((team, ix) => (
-              <TeamStats
-                index={ix}
-                team={team}
-                names={names}
-                data={teamsShips[ix]}
-                involved={teamsInvolved[ix]}
-                teamStats={teamsStats[ix]}
-                collapsed={teamStatsCollapsed}
-                onExpand={this.handleExpand}
-                onCollapse={this.handleCollapse}
-                key={`teamstat-${ix}`}
-              />
+              <Fragment key={`teamstat-${ix}`}>
+                <TeamStats
+                  index={ix}
+                  team={team}
+                  names={names}
+                  data={teamsShips[ix]}
+                  involved={teamsInvolved[ix]}
+                  teamStats={teamsStats[ix]}
+                  collapsed={teamStatsCollapsed}
+                  onExpand={this.handleExpand}
+                  onCollapse={this.handleCollapse}
+                />
+                {ix < teams.length - 1 &&
+                  <div className={cx(styles.autogrowSpace, styles.between)} />
+                }
+              </Fragment>
             ))}
             <div className={styles.autogrowSpace} />
           </div>
@@ -81,18 +85,22 @@ class Report extends Component {
           <div className={styles.teamsRoot}>
             <div className={styles.autogrowSpace} />
             {teams.map((team, ix) => (
-              <TeamView
-                index={ix}
-                team={team}
-                names={names}
-                data={teamsShips[ix]}
-                involved={teamsInvolved[ix]}
-                teamStats={teamsStats[ix]}
-                teamLosses={teamsLosses[ix]}
-                kmData={kmData}
-                key={`team-${ix}`}
-                settings={settings}
-              />
+              <Fragment key={`team-${ix}`}>
+                <TeamView
+                  index={ix}
+                  team={team}
+                  names={names}
+                  data={teamsShips[ix]}
+                  involved={teamsInvolved[ix]}
+                  teamStats={teamsStats[ix]}
+                  teamLosses={teamsLosses[ix]}
+                  kmData={kmData}
+                  settings={settings}
+                />
+                {ix < teams.length - 1 &&
+                  <div className={cx(styles.autogrowSpace, styles.between)} />
+                }
+              </Fragment>
             ))}
             <div className={styles.autogrowSpace} />
           </div>

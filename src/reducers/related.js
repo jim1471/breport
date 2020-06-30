@@ -94,7 +94,7 @@ export const initializeBrData = initialBrData => dispatch => {
 
 export const brParseTeams = () => (dispatch, getState) => {
   const { names: { involvedNames } } = getState()
-  dispatch({ type: REPARSE_TEAMS, involvedNames })
+  dispatch({ type: REPARSE_TEAMS, involvedNames, isTeamsConstructed: true })
 }
 
 export const brParseNew = () => dispatch => {
@@ -182,11 +182,16 @@ export default (state = initialState, action) => {
     }
 
     case REPARSE_TEAMS: {
-      const parseResult = ParseUtils.parseTeams(state.teams, state.kmData, action.involvedNames)
+      const parseResult = ParseUtils.parseTeams(
+        state.teams,
+        state.kmData,
+        action.involvedNames,
+        action.isTeamsConstructed,
+      )
       return {
         ...state,
         ...parseResult,
-        origTeams: state.origTeams,
+        origTeams: action.isTeamsConstructed ? parseResult.origTeams : state.origTeams,
       }
     }
 

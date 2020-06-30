@@ -4,7 +4,7 @@
     width: 100%;
     max-width: 682px;
     margin: 0 auto 5px auto;
-    padding: 5px 15px;
+    padding: 10px 10px;
     font-size: 16px;
     border: 1px solid #444;
 
@@ -32,15 +32,6 @@
         display: block;
       }
     }
-
-    .systemName {
-      white-space: nowrap;
-      @media (max-width: 420px) { font-size: 16px; }
-
-      > small {
-        margin-left: 5px;
-      }
-    }
   }
 
   .timing {
@@ -56,9 +47,7 @@
 
   .removeBtn {
     position: absolute;
-    right: 15px;
+    right: 10px;
     bottom: 10px;
-
-    @media (max-width: 420px) { right: 10px; }
   }
 }

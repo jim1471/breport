@@ -1,0 +1,14 @@
+:local {
+  .systemName {
+    white-space: nowrap;
+    @media (max-width: 420px) { font-size: 16px; }
+
+    small {
+      margin-left: 5px;
+    }
+
+    > span:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+}

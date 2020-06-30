@@ -224,6 +224,9 @@ class InputSystems extends Component {
           if (process.env.NODE_ENV === 'development') {
             console.log('created BR data:', data)
           }
+          if (data.brID && data.ukey) {
+            localStorage.setItem(data.brID, data.ukey)
+          }
           routerHistory.push(`/br/${data.brID}`)
         }
         this.setState({ isLoading: false })

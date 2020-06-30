@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import numeral from 'numeral'
-import { Icon } from 'components/common/blueprint'
+import { EditableText, Icon } from 'components/common/blueprint'
 import AllyIcon from 'icons/AllyIcon'
 import { moveToTeam } from 'reducers/related'
 import styles from './styles.scss'
@@ -126,9 +126,19 @@ class TeamStats extends Component {
     return (
       <div className={styles.team}>
         <h4>Team {LETTERS[index]} ({pilotsCount})</h4>
+        {false &&
+          <h4>
+            <EditableText
+              maxLength={28}
+              value={`Team ${LETTERS[index]}`}
+            />
+            &nbsp;
+            ({pilotsCount})
+          </h4>
+        }
+        {this.renderStats()}
         {this.renderTeam()}
         <div className={styles.emptySpace} />
-        {this.renderStats()}
       </div>
     )
   }

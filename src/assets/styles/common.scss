@@ -33,12 +33,17 @@ body {
       margin-bottom: 30px;
     }
   }
+
 }
 
 #react-root {
   height: 100%;
   overflow: auto;
   position: relative;
+
+  button.bp3-button:not([class*="bp3-intent-"]) {
+    background-color: #444;
+  }
 }
 
 a, a:hover {

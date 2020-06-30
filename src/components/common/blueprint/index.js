@@ -10,6 +10,7 @@ import { InputGroup } from '@blueprintjs/core/lib/esm/components/forms/inputGrou
 import { NumericInput } from '@blueprintjs/core/lib/esm/components/forms/numericInput'
 import { Switch } from '@blueprintjs/core/lib/esm/components/forms/controls'
 import { Dialog } from '@blueprintjs/core/lib/esm/components/dialog/dialog'
+import { EditableText } from '@blueprintjs/core/lib/esm/components/editable-text/editableText'
 
 export {
   FocusStyleManager,
@@ -24,4 +25,5 @@ export {
   NumericInput,
   Switch,
   Dialog,
+  EditableText,
 }

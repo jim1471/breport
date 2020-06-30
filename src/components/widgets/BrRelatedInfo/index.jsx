@@ -5,20 +5,15 @@ import isEmpty from 'lodash/isEmpty'
 
 import RelatedService from 'api/RelatedService'
 import { Button } from 'components/common/blueprint'
-import { SYSTEMS_DATA } from 'data/constants'
 import * as StatsUtils from 'utils/StatsUtils'
 import { getUTCTime, formatSum, getDurationStr } from 'utils/FormatUtils'
+import SystemName from '../SystemName'
 import styles from './styles.scss'
 
-function BrRelatedInfo({ systemID, start, end, onRemove, brPage, ...rest }) {
+function BrRelatedInfo({ systemID, systems, start, end, onRemove, onEdit, brPage, ...rest }) {
   const initialStats = isEmpty(rest) ? null : rest
   const [generalStats, setGeneralStats] = useState(initialStats)
   const [statsLoading, setStatsLoading] = useState(false)
-
-  function getDotlanLink(region, systemName) {
-    const encodedRegion = region.replace(' ', '_')
-    return `http://evemaps.dotlan.net/map/${encodedRegion}/${systemName}`
-  }
 
   function handleRemove() {
     onRemove(systemID)
@@ -75,20 +70,13 @@ function BrRelatedInfo({ systemID, start, end, onRemove, brPage, ...rest }) {
     )
   }
 
-  const relSystemID = systemID - 30000000
-  const system = SYSTEMS_DATA.systems.find(sys => sys[1] === relSystemID)
-  const region = system && SYSTEMS_DATA.regions[system[2]]
-  const systemName = system && system[0]
-
   return (
-    <div className={styles.systemStats} key={systemID}>
+    <div className={cx('bp3-dark', styles.systemStats)} key={systemID}>
       <div className={cx(styles.title, generalStats && styles.block)}>
-        <span className={styles.systemName}>
-          <a href={getDotlanLink(region, systemName)} target='_blank' rel='noopener noreferrer'>
-            {`${systemName}`}
-          </a>
-          <small>{`(${region})`}</small>
-        </span>
+        <SystemName
+          systemID={systemID}
+          systems={systems}
+        />
 
         {generalStats && !statsLoading && renderGeneralStats()}
 
@@ -104,6 +92,12 @@ function BrRelatedInfo({ systemID, start, end, onRemove, brPage, ...rest }) {
       </div>
 
       {renderStartEndTime(start * 1000, end * 1000)}
+
+      {brPage && onEdit &&
+        <div className={styles.removeBtn}>
+          <Button small icon='edit' onClick={null} />
+        </div>
+      }
 
       {onRemove &&
         <div className={styles.removeBtn}>

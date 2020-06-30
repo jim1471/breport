@@ -1,0 +1,19 @@
+:local {
+  .brInfoRoot {
+    position: relative;
+    width: 100%;
+    max-width: 682px;
+    margin: 10px auto 0 auto;
+    font-size: 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .detailsBtn {
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+  }
+}

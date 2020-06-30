@@ -3,6 +3,7 @@ import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import isEqual from 'lodash/isEqual'
 import startsWith from 'lodash/startsWith'
+
 import routerHistory from 'utils/routerHistory'
 import { getRelatedData, getRelatedDataStub, parseData, setBrInfo } from 'reducers/related'
 import { Spinner } from 'components'
