@@ -93,8 +93,12 @@ export const initializeBrData = initialBrData => dispatch => {
 }
 
 export const brParseTeams = () => (dispatch, getState) => {
-  const { names: { involvedNames } } = getState()
-  dispatch({ type: REPARSE_TEAMS, involvedNames, isTeamsConstructed: true })
+  const { names: { involvedNames }, related: { teams } } = getState()
+  if (!teams || teams.length === 0) {
+    dispatch(parseData())
+  } else {
+    dispatch({ type: REPARSE_TEAMS, involvedNames, isTeamsConstructed: true })
+  }
 }
 
 export const brParseNew = () => dispatch => {
