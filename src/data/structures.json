@@ -24,34 +24,106 @@
     "Deployable"
   ],
   [
-    17184,
-    "Ballistic Deflection Array",
-    444,
-    "Shield Hardening Array",
+    12238,
+    "Reprocessing Array",
+    311,
+    "Reprocessing Array",
     23,
     "Starbase"
   ],
   [
-    17185,
-    "Explosion Dampening Array",
-    444,
-    "Shield Hardening Array",
+    19470,
+    "Intensive Reprocessing Array",
+    311,
+    "Reprocessing Array",
     23,
     "Starbase"
   ],
   [
-    17186,
-    "Heat Dissipation Array",
-    444,
-    "Shield Hardening Array",
+    12198,
+    "Mobile Small Warp Disruptor I",
+    361,
+    "Mobile Warp Disruptor",
+    22,
+    "Deployable"
+  ],
+  [
+    12199,
+    "Mobile Medium Warp Disruptor I",
+    361,
+    "Mobile Warp Disruptor",
+    22,
+    "Deployable"
+  ],
+  [
+    12200,
+    "Mobile Large Warp Disruptor I",
+    361,
+    "Mobile Warp Disruptor",
+    22,
+    "Deployable"
+  ],
+  [
+    26888,
+    "Mobile Large Warp Disruptor II",
+    361,
+    "Mobile Warp Disruptor",
+    22,
+    "Deployable"
+  ],
+  [
+    26890,
+    "Mobile Medium Warp Disruptor II",
+    361,
+    "Mobile Warp Disruptor",
+    22,
+    "Deployable"
+  ],
+  [
+    26892,
+    "Mobile Small Warp Disruptor II",
+    361,
+    "Mobile Warp Disruptor",
+    22,
+    "Deployable"
+  ],
+  [
+    28770,
+    "Syndicate Mobile Large Warp Disruptor",
+    361,
+    "Mobile Warp Disruptor",
+    22,
+    "Deployable"
+  ],
+  [
+    28772,
+    "Syndicate Mobile Medium Warp Disruptor",
+    361,
+    "Mobile Warp Disruptor",
+    22,
+    "Deployable"
+  ],
+  [
+    28774,
+    "Syndicate Mobile Small Warp Disruptor",
+    361,
+    "Mobile Warp Disruptor",
+    22,
+    "Deployable"
+  ],
+  [
+    12237,
+    "Ship Maintenance Array",
+    363,
+    "Ship Maintenance Array",
     23,
     "Starbase"
   ],
   [
-    17187,
-    "Photon Scattering Array",
-    444,
-    "Shield Hardening Array",
+    24646,
+    "X-Large Ship Maintenance Array",
+    363,
+    "Ship Maintenance Array",
     23,
     "Starbase"
   ],
@@ -392,166 +464,6 @@
     "Starbase"
   ],
   [
-    16690,
-    "Small Railgun Battery",
-    449,
-    "Mobile Hybrid Sentry",
-    23,
-    "Starbase"
-  ],
-  [
-    16691,
-    "Medium Railgun Battery",
-    449,
-    "Mobile Hybrid Sentry",
-    23,
-    "Starbase"
-  ],
-  [
-    16692,
-    "Large Railgun Battery",
-    449,
-    "Mobile Hybrid Sentry",
-    23,
-    "Starbase"
-  ],
-  [
-    17402,
-    "Large Blaster Battery",
-    449,
-    "Mobile Hybrid Sentry",
-    23,
-    "Starbase"
-  ],
-  [
-    17403,
-    "Medium Blaster Battery",
-    449,
-    "Mobile Hybrid Sentry",
-    23,
-    "Starbase"
-  ],
-  [
-    17404,
-    "Small Blaster Battery",
-    449,
-    "Mobile Hybrid Sentry",
-    23,
-    "Starbase"
-  ],
-  [
-    27542,
-    "Serpentis Large Blaster Battery",
-    449,
-    "Mobile Hybrid Sentry",
-    23,
-    "Starbase"
-  ],
-  [
-    27544,
-    "Shadow Large Blaster Battery",
-    449,
-    "Mobile Hybrid Sentry",
-    23,
-    "Starbase"
-  ],
-  [
-    27545,
-    "Serpentis Large Railgun Battery",
-    449,
-    "Mobile Hybrid Sentry",
-    23,
-    "Starbase"
-  ],
-  [
-    27547,
-    "Shadow Large Railgun Battery",
-    449,
-    "Mobile Hybrid Sentry",
-    23,
-    "Starbase"
-  ],
-  [
-    27613,
-    "Serpentis Medium Blaster Battery",
-    449,
-    "Mobile Hybrid Sentry",
-    23,
-    "Starbase"
-  ],
-  [
-    27615,
-    "Shadow Medium Blaster Battery",
-    449,
-    "Mobile Hybrid Sentry",
-    23,
-    "Starbase"
-  ],
-  [
-    27616,
-    "Serpentis Medium Railgun Battery",
-    449,
-    "Mobile Hybrid Sentry",
-    23,
-    "Starbase"
-  ],
-  [
-    27618,
-    "Shadow Medium Railgun Battery",
-    449,
-    "Mobile Hybrid Sentry",
-    23,
-    "Starbase"
-  ],
-  [
-    27619,
-    "Serpentis Small Blaster Battery",
-    449,
-    "Mobile Hybrid Sentry",
-    23,
-    "Starbase"
-  ],
-  [
-    27621,
-    "Shadow Small Blaster Battery",
-    449,
-    "Mobile Hybrid Sentry",
-    23,
-    "Starbase"
-  ],
-  [
-    27622,
-    "Serpentis Small Railgun Battery",
-    449,
-    "Mobile Hybrid Sentry",
-    23,
-    "Starbase"
-  ],
-  [
-    27624,
-    "Shadow Small Railgun Battery",
-    449,
-    "Mobile Hybrid Sentry",
-    23,
-    "Starbase"
-  ],
-  [
-    17621,
-    "Corporate Hangar Array",
-    471,
-    "Corporate Hangar Array",
-    23,
-    "Starbase"
-  ],
-  [
-    17701,
-    "Tracking Array",
-    473,
-    "Tracking Array",
-    23,
-    "Starbase"
-  ],
-  [
     13780,
     "Equipment Assembly Array",
     397,
@@ -680,22 +592,6 @@
     "Starbase"
   ],
   [
-    27897,
-    "Jump Bridge",
-    707,
-    "Jump Portal Array",
-    23,
-    "Starbase"
-  ],
-  [
-    27675,
-    "System Scanning Array",
-    709,
-    "Scanner Array",
-    23,
-    "Starbase"
-  ],
-  [
     14343,
     "Silo",
     404,
@@ -752,134 +648,6 @@
     "Starbase"
   ],
   [
-    27672,
-    "Energy Neutralizing Battery",
-    837,
-    "Energy Neutralizing Battery",
-    23,
-    "Starbase"
-  ],
-  [
-    27855,
-    "Sansha Energy Neutralizing Battery",
-    837,
-    "Energy Neutralizing Battery",
-    23,
-    "Starbase"
-  ],
-  [
-    27856,
-    "True Sansha Energy Neutralizing Battery",
-    837,
-    "Energy Neutralizing Battery",
-    23,
-    "Starbase"
-  ],
-  [
-    27857,
-    "Blood Energy Neutralizing Battery",
-    837,
-    "Energy Neutralizing Battery",
-    23,
-    "Starbase"
-  ],
-  [
-    27858,
-    "Dark Blood Energy Neutralizing Battery",
-    837,
-    "Energy Neutralizing Battery",
-    23,
-    "Starbase"
-  ],
-  [
-    27673,
-    "Cynosural Generator Array",
-    838,
-    "Cynosural Generator Array",
-    23,
-    "Starbase"
-  ],
-  [
-    27674,
-    "Cynosural System Jammer",
-    839,
-    "Cynosural System Jammer",
-    23,
-    "Starbase"
-  ],
-  [
-    12198,
-    "Mobile Small Warp Disruptor I",
-    361,
-    "Mobile Warp Disruptor",
-    22,
-    "Deployable"
-  ],
-  [
-    12199,
-    "Mobile Medium Warp Disruptor I",
-    361,
-    "Mobile Warp Disruptor",
-    22,
-    "Deployable"
-  ],
-  [
-    12200,
-    "Mobile Large Warp Disruptor I",
-    361,
-    "Mobile Warp Disruptor",
-    22,
-    "Deployable"
-  ],
-  [
-    26888,
-    "Mobile Large Warp Disruptor II",
-    361,
-    "Mobile Warp Disruptor",
-    22,
-    "Deployable"
-  ],
-  [
-    26890,
-    "Mobile Medium Warp Disruptor II",
-    361,
-    "Mobile Warp Disruptor",
-    22,
-    "Deployable"
-  ],
-  [
-    26892,
-    "Mobile Small Warp Disruptor II",
-    361,
-    "Mobile Warp Disruptor",
-    22,
-    "Deployable"
-  ],
-  [
-    28770,
-    "Syndicate Mobile Large Warp Disruptor",
-    361,
-    "Mobile Warp Disruptor",
-    22,
-    "Deployable"
-  ],
-  [
-    28772,
-    "Syndicate Mobile Medium Warp Disruptor",
-    361,
-    "Mobile Warp Disruptor",
-    22,
-    "Deployable"
-  ],
-  [
-    28774,
-    "Syndicate Mobile Small Warp Disruptor",
-    361,
-    "Mobile Warp Disruptor",
-    22,
-    "Deployable"
-  ],
-  [
     16216,
     "Research Laboratory",
     413,
@@ -912,36 +680,12 @@
     "Starbase"
   ],
   [
-    12237,
-    "Ship Maintenance Array",
-    363,
-    "Ship Maintenance Array",
-    23,
-    "Starbase"
-  ],
-  [
-    24646,
-    "X-Large Ship Maintenance Array",
-    363,
-    "Ship Maintenance Array",
-    23,
-    "Starbase"
-  ],
-  [
     16221,
     "Moon Harvesting Array",
     416,
     "Moon Mining",
     23,
     "Starbase"
-  ],
-  [
-    3962,
-    "Customs Office Gantry",
-    1106,
-    "Orbital Construction Platform",
-    46,
-    "Orbitals"
   ],
   [
     16696,
@@ -1014,198 +758,6 @@
     "Mobile Missile Sentry",
     23,
     "Starbase"
-  ],
-  [
-    33149,
-    "Personal Hangar Array",
-    1212,
-    "Personal Hangar",
-    23,
-    "Starbase"
-  ],
-  [
-    33474,
-    "Mobile Depot",
-    1246,
-    "Mobile Depot",
-    22,
-    "Deployable"
-  ],
-  [
-    33520,
-    "'Wetu' Mobile Depot",
-    1246,
-    "Mobile Depot",
-    22,
-    "Deployable"
-  ],
-  [
-    33522,
-    "'Yurt' Mobile Depot",
-    1246,
-    "Mobile Depot",
-    22,
-    "Deployable"
-  ],
-  [
-    33477,
-    "Small Mobile Siphon Unit",
-    1247,
-    "Mobile Siphon Unit",
-    22,
-    "Deployable"
-  ],
-  [
-    33581,
-    "Small Mobile 'Hybrid' Siphon Unit",
-    1247,
-    "Mobile Siphon Unit",
-    22,
-    "Deployable"
-  ],
-  [
-    33583,
-    "Small Mobile 'Rote' Siphon Unit",
-    1247,
-    "Mobile Siphon Unit",
-    22,
-    "Deployable"
-  ],
-  [
-    33476,
-    "Mobile Cynosural Inhibitor",
-    1249,
-    "Mobile Cyno Inhibitor",
-    22,
-    "Deployable"
-  ],
-  [
-    33475,
-    "Mobile Tractor Unit",
-    1250,
-    "Mobile Tractor Unit",
-    22,
-    "Deployable"
-  ],
-  [
-    33700,
-    "'Packrat' Mobile Tractor Unit",
-    1250,
-    "Mobile Tractor Unit",
-    22,
-    "Deployable"
-  ],
-  [
-    33702,
-    "'Magpie' Mobile Tractor Unit",
-    1250,
-    "Mobile Tractor Unit",
-    22,
-    "Deployable"
-  ],
-  [
-    33585,
-    "Amarr Encounter Surveillance System",
-    1273,
-    "Encounter Surveillance System",
-    22,
-    "Deployable"
-  ],
-  [
-    33595,
-    "Caldari Encounter Surveillance System",
-    1273,
-    "Encounter Surveillance System",
-    22,
-    "Deployable"
-  ],
-  [
-    33608,
-    "Gallente Encounter Surveillance System",
-    1273,
-    "Encounter Surveillance System",
-    22,
-    "Deployable"
-  ],
-  [
-    33610,
-    "Minmatar Encounter Surveillance System",
-    1273,
-    "Encounter Surveillance System",
-    22,
-    "Deployable"
-  ],
-  [
-    12238,
-    "Reprocessing Array",
-    311,
-    "Reprocessing Array",
-    23,
-    "Starbase"
-  ],
-  [
-    19470,
-    "Intensive Reprocessing Array",
-    311,
-    "Reprocessing Array",
-    23,
-    "Starbase"
-  ],
-  [
-    33589,
-    "Mobile Scan Inhibitor",
-    1275,
-    "Mobile Scan Inhibitor",
-    22,
-    "Deployable"
-  ],
-  [
-    33591,
-    "Mobile Micro Jump Unit",
-    1276,
-    "Mobile Micro Jump Unit",
-    22,
-    "Deployable"
-  ],
-  [
-    33990,
-    "Tournament Micro Jump Unit",
-    1276,
-    "Mobile Micro Jump Unit",
-    22,
-    "Deployable"
-  ],
-  [
-    12239,
-    "Compression Array",
-    1282,
-    "Compression Array",
-    23,
-    "Starbase"
-  ],
-  [
-    35825,
-    "Raitaru",
-    1404,
-    "Engineering Complex",
-    65,
-    "Structure"
-  ],
-  [
-    35826,
-    "Azbel",
-    1404,
-    "Engineering Complex",
-    65,
-    "Structure"
-  ],
-  [
-    35827,
-    "Sotiyo",
-    1404,
-    "Engineering Complex",
-    65,
-    "Structure"
   ],
   [
     16631,
@@ -1350,22 +902,6 @@
     "Mobile Projectile Sentry",
     23,
     "Starbase"
-  ],
-  [
-    35835,
-    "Athanor",
-    1406,
-    "Refinery",
-    65,
-    "Structure"
-  ],
-  [
-    35836,
-    "Tatara",
-    1406,
-    "Refinery",
-    65,
-    "Structure"
   ],
   [
     16694,
@@ -1608,14 +1144,6 @@
     "Starbase"
   ],
   [
-    35841,
-    "Ansiblex Jump Gate",
-    1408,
-    "Upwell Jump Gate",
-    65,
-    "Structure"
-  ],
-  [
     16869,
     "Complex Reactor Array",
     438,
@@ -1752,78 +1280,6 @@
     "Starbase"
   ],
   [
-    35832,
-    "Astrahus",
-    1657,
-    "Citadel",
-    65,
-    "Structure"
-  ],
-  [
-    35833,
-    "Fortizar",
-    1657,
-    "Citadel",
-    65,
-    "Structure"
-  ],
-  [
-    35834,
-    "Keepstar",
-    1657,
-    "Citadel",
-    65,
-    "Structure"
-  ],
-  [
-    40340,
-    "Upwell Palatine Keepstar",
-    1657,
-    "Citadel",
-    65,
-    "Structure"
-  ],
-  [
-    47512,
-    "'Moreau' Fortizar",
-    1657,
-    "Citadel",
-    65,
-    "Structure"
-  ],
-  [
-    47513,
-    "'Draccous' Fortizar",
-    1657,
-    "Citadel",
-    65,
-    "Structure"
-  ],
-  [
-    47514,
-    "'Horizon' Fortizar",
-    1657,
-    "Citadel",
-    65,
-    "Structure"
-  ],
-  [
-    47515,
-    "'Marginis' Fortizar",
-    1657,
-    "Citadel",
-    65,
-    "Structure"
-  ],
-  [
-    47516,
-    "'Prometheus' Fortizar",
-    1657,
-    "Citadel",
-    65,
-    "Structure"
-  ],
-  [
     17180,
     "Sensor Dampening Battery",
     440,
@@ -1918,6 +1374,550 @@
     "Warp Scrambling Battery",
     23,
     "Starbase"
+  ],
+  [
+    17184,
+    "Ballistic Deflection Array",
+    444,
+    "Shield Hardening Array",
+    23,
+    "Starbase"
+  ],
+  [
+    17185,
+    "Explosion Dampening Array",
+    444,
+    "Shield Hardening Array",
+    23,
+    "Starbase"
+  ],
+  [
+    17186,
+    "Heat Dissipation Array",
+    444,
+    "Shield Hardening Array",
+    23,
+    "Starbase"
+  ],
+  [
+    17187,
+    "Photon Scattering Array",
+    444,
+    "Shield Hardening Array",
+    23,
+    "Starbase"
+  ],
+  [
+    16690,
+    "Small Railgun Battery",
+    449,
+    "Mobile Hybrid Sentry",
+    23,
+    "Starbase"
+  ],
+  [
+    16691,
+    "Medium Railgun Battery",
+    449,
+    "Mobile Hybrid Sentry",
+    23,
+    "Starbase"
+  ],
+  [
+    16692,
+    "Large Railgun Battery",
+    449,
+    "Mobile Hybrid Sentry",
+    23,
+    "Starbase"
+  ],
+  [
+    17402,
+    "Large Blaster Battery",
+    449,
+    "Mobile Hybrid Sentry",
+    23,
+    "Starbase"
+  ],
+  [
+    17403,
+    "Medium Blaster Battery",
+    449,
+    "Mobile Hybrid Sentry",
+    23,
+    "Starbase"
+  ],
+  [
+    17404,
+    "Small Blaster Battery",
+    449,
+    "Mobile Hybrid Sentry",
+    23,
+    "Starbase"
+  ],
+  [
+    27542,
+    "Serpentis Large Blaster Battery",
+    449,
+    "Mobile Hybrid Sentry",
+    23,
+    "Starbase"
+  ],
+  [
+    27544,
+    "Shadow Large Blaster Battery",
+    449,
+    "Mobile Hybrid Sentry",
+    23,
+    "Starbase"
+  ],
+  [
+    27545,
+    "Serpentis Large Railgun Battery",
+    449,
+    "Mobile Hybrid Sentry",
+    23,
+    "Starbase"
+  ],
+  [
+    27547,
+    "Shadow Large Railgun Battery",
+    449,
+    "Mobile Hybrid Sentry",
+    23,
+    "Starbase"
+  ],
+  [
+    27613,
+    "Serpentis Medium Blaster Battery",
+    449,
+    "Mobile Hybrid Sentry",
+    23,
+    "Starbase"
+  ],
+  [
+    27615,
+    "Shadow Medium Blaster Battery",
+    449,
+    "Mobile Hybrid Sentry",
+    23,
+    "Starbase"
+  ],
+  [
+    27616,
+    "Serpentis Medium Railgun Battery",
+    449,
+    "Mobile Hybrid Sentry",
+    23,
+    "Starbase"
+  ],
+  [
+    27618,
+    "Shadow Medium Railgun Battery",
+    449,
+    "Mobile Hybrid Sentry",
+    23,
+    "Starbase"
+  ],
+  [
+    27619,
+    "Serpentis Small Blaster Battery",
+    449,
+    "Mobile Hybrid Sentry",
+    23,
+    "Starbase"
+  ],
+  [
+    27621,
+    "Shadow Small Blaster Battery",
+    449,
+    "Mobile Hybrid Sentry",
+    23,
+    "Starbase"
+  ],
+  [
+    27622,
+    "Serpentis Small Railgun Battery",
+    449,
+    "Mobile Hybrid Sentry",
+    23,
+    "Starbase"
+  ],
+  [
+    27624,
+    "Shadow Small Railgun Battery",
+    449,
+    "Mobile Hybrid Sentry",
+    23,
+    "Starbase"
+  ],
+  [
+    17621,
+    "Corporate Hangar Array",
+    471,
+    "Corporate Hangar Array",
+    23,
+    "Starbase"
+  ],
+  [
+    17701,
+    "Tracking Array",
+    473,
+    "Tracking Array",
+    23,
+    "Starbase"
+  ],
+  [
+    27897,
+    "Jump Bridge",
+    707,
+    "Jump Portal Array",
+    23,
+    "Starbase"
+  ],
+  [
+    27675,
+    "System Scanning Array",
+    709,
+    "Scanner Array",
+    23,
+    "Starbase"
+  ],
+  [
+    27672,
+    "Energy Neutralizing Battery",
+    837,
+    "Energy Neutralizing Battery",
+    23,
+    "Starbase"
+  ],
+  [
+    27855,
+    "Sansha Energy Neutralizing Battery",
+    837,
+    "Energy Neutralizing Battery",
+    23,
+    "Starbase"
+  ],
+  [
+    27856,
+    "True Sansha Energy Neutralizing Battery",
+    837,
+    "Energy Neutralizing Battery",
+    23,
+    "Starbase"
+  ],
+  [
+    27857,
+    "Blood Energy Neutralizing Battery",
+    837,
+    "Energy Neutralizing Battery",
+    23,
+    "Starbase"
+  ],
+  [
+    27858,
+    "Dark Blood Energy Neutralizing Battery",
+    837,
+    "Energy Neutralizing Battery",
+    23,
+    "Starbase"
+  ],
+  [
+    27673,
+    "Cynosural Generator Array",
+    838,
+    "Cynosural Generator Array",
+    23,
+    "Starbase"
+  ],
+  [
+    27674,
+    "Cynosural System Jammer",
+    839,
+    "Cynosural System Jammer",
+    23,
+    "Starbase"
+  ],
+  [
+    3962,
+    "Customs Office Gantry",
+    1106,
+    "Orbital Construction Platform",
+    46,
+    "Orbitals"
+  ],
+  [
+    33149,
+    "Personal Hangar Array",
+    1212,
+    "Personal Hangar",
+    23,
+    "Starbase"
+  ],
+  [
+    33474,
+    "Mobile Depot",
+    1246,
+    "Mobile Depot",
+    22,
+    "Deployable"
+  ],
+  [
+    33520,
+    "'Wetu' Mobile Depot",
+    1246,
+    "Mobile Depot",
+    22,
+    "Deployable"
+  ],
+  [
+    33522,
+    "'Yurt' Mobile Depot",
+    1246,
+    "Mobile Depot",
+    22,
+    "Deployable"
+  ],
+  [
+    33477,
+    "Small Mobile Siphon Unit",
+    1247,
+    "Mobile Siphon Unit",
+    22,
+    "Deployable"
+  ],
+  [
+    33581,
+    "Small Mobile 'Hybrid' Siphon Unit",
+    1247,
+    "Mobile Siphon Unit",
+    22,
+    "Deployable"
+  ],
+  [
+    33583,
+    "Small Mobile 'Rote' Siphon Unit",
+    1247,
+    "Mobile Siphon Unit",
+    22,
+    "Deployable"
+  ],
+  [
+    33476,
+    "Mobile Cynosural Inhibitor",
+    1249,
+    "Mobile Cyno Inhibitor",
+    22,
+    "Deployable"
+  ],
+  [
+    33475,
+    "Mobile Tractor Unit",
+    1250,
+    "Mobile Tractor Unit",
+    22,
+    "Deployable"
+  ],
+  [
+    33700,
+    "'Packrat' Mobile Tractor Unit",
+    1250,
+    "Mobile Tractor Unit",
+    22,
+    "Deployable"
+  ],
+  [
+    33702,
+    "'Magpie' Mobile Tractor Unit",
+    1250,
+    "Mobile Tractor Unit",
+    22,
+    "Deployable"
+  ],
+  [
+    33585,
+    "Amarr Encounter Surveillance System",
+    1273,
+    "Encounter Surveillance System",
+    22,
+    "Deployable"
+  ],
+  [
+    33595,
+    "Caldari Encounter Surveillance System",
+    1273,
+    "Encounter Surveillance System",
+    22,
+    "Deployable"
+  ],
+  [
+    33608,
+    "Gallente Encounter Surveillance System",
+    1273,
+    "Encounter Surveillance System",
+    22,
+    "Deployable"
+  ],
+  [
+    33610,
+    "Minmatar Encounter Surveillance System",
+    1273,
+    "Encounter Surveillance System",
+    22,
+    "Deployable"
+  ],
+  [
+    33589,
+    "Mobile Scan Inhibitor",
+    1275,
+    "Mobile Scan Inhibitor",
+    22,
+    "Deployable"
+  ],
+  [
+    33591,
+    "Mobile Micro Jump Unit",
+    1276,
+    "Mobile Micro Jump Unit",
+    22,
+    "Deployable"
+  ],
+  [
+    33990,
+    "Tournament Micro Jump Unit",
+    1276,
+    "Mobile Micro Jump Unit",
+    22,
+    "Deployable"
+  ],
+  [
+    12239,
+    "Compression Array",
+    1282,
+    "Compression Array",
+    23,
+    "Starbase"
+  ],
+  [
+    35825,
+    "Raitaru",
+    1404,
+    "Engineering Complex",
+    65,
+    "Structure"
+  ],
+  [
+    35826,
+    "Azbel",
+    1404,
+    "Engineering Complex",
+    65,
+    "Structure"
+  ],
+  [
+    35827,
+    "Sotiyo",
+    1404,
+    "Engineering Complex",
+    65,
+    "Structure"
+  ],
+  [
+    35835,
+    "Athanor",
+    1406,
+    "Refinery",
+    65,
+    "Structure"
+  ],
+  [
+    35836,
+    "Tatara",
+    1406,
+    "Refinery",
+    65,
+    "Structure"
+  ],
+  [
+    35841,
+    "Ansiblex Jump Gate",
+    1408,
+    "Upwell Jump Gate",
+    65,
+    "Structure"
+  ],
+  [
+    35832,
+    "Astrahus",
+    1657,
+    "Citadel",
+    65,
+    "Structure"
+  ],
+  [
+    35833,
+    "Fortizar",
+    1657,
+    "Citadel",
+    65,
+    "Structure"
+  ],
+  [
+    35834,
+    "Keepstar",
+    1657,
+    "Citadel",
+    65,
+    "Structure"
+  ],
+  [
+    40340,
+    "Upwell Palatine Keepstar",
+    1657,
+    "Citadel",
+    65,
+    "Structure"
+  ],
+  [
+    47512,
+    "'Moreau' Fortizar",
+    1657,
+    "Citadel",
+    65,
+    "Structure"
+  ],
+  [
+    47513,
+    "'Draccous' Fortizar",
+    1657,
+    "Citadel",
+    65,
+    "Structure"
+  ],
+  [
+    47514,
+    "'Horizon' Fortizar",
+    1657,
+    "Citadel",
+    65,
+    "Structure"
+  ],
+  [
+    47515,
+    "'Marginis' Fortizar",
+    1657,
+    "Citadel",
+    65,
+    "Structure"
+  ],
+  [
+    47516,
+    "'Prometheus' Fortizar",
+    1657,
+    "Citadel",
+    65,
+    "Structure"
   ],
   [
     37534,

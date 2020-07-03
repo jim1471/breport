@@ -33,10 +33,12 @@
   [23913, "Nyx"],
   [23917, "Wyvern"],
   [23919, "Aeon"],
+
   [52907, "Zirnitra"],
   [42124, "Vehement"],
   [42243, "Chemosh"],
   [45647, "Caiman"],
+
   [19720, "Revelation"],
   [19722, "Naglfar"],
   [19724, "Moros"],
@@ -90,6 +92,7 @@
   [29988, "Proteus"],
   [29990, "Loki"],
 
+  [54733, "Thunderchild"],
   [47271, "Leshak"],
   [26840, "Raven State Issue"],
   [26842, "Tempest Tribal Issue"],
@@ -185,6 +188,7 @@
   [24700, "Myrmidon"],
   [3756, "Gnosis"],
 
+  [54732, "Stormbringer"],
   [49712, "Rodiva"],
   [47270, "Vedmak"],
   [17715, "Gila"],
@@ -300,6 +304,7 @@
   [11200, "Taranis"],
   [11202, "Ares"],
 
+  [54731, "Skybreaker"],
   [47269, "Damavik"],
   [11940, "Gold Magnate"],
   [11942, "Silver Magnate"],

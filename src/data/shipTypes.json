@@ -688,6 +688,14 @@
     "Ship"
   ],
   [
+    54733,
+    "Thunderchild",
+    27,
+    "Battleship",
+    6,
+    "Ship"
+  ],
+  [
     47271,
     "Leshak",
     27,
@@ -1396,6 +1404,14 @@
     "Gnosis",
     419,
     "Combat Battlecruiser",
+    6,
+    "Ship"
+  ],
+  [
+    54732,
+    "Stormbringer",
+    26,
+    "Cruiser",
     6,
     "Ship"
   ],
@@ -2244,6 +2260,14 @@
     "Ares",
     831,
     "Interceptor",
+    6,
+    "Ship"
+  ],
+  [
+    54731,
+    "Skybreaker",
+    25,
+    "Frigate",
     6,
     "Ship"
   ],

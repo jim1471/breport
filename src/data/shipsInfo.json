@@ -3582,5 +3582,26 @@
     "groupName": "Dreadnought",
     "categoryID": 6,
     "categoryName": "Ship"
+  },
+  "54731": {
+    "name": "Skybreaker",
+    "groupID": 25,
+    "groupName": "Frigate",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "54732": {
+    "name": "Stormbringer",
+    "groupID": 26,
+    "groupName": "Cruiser",
+    "categoryID": 6,
+    "categoryName": "Ship"
+  },
+  "54733": {
+    "name": "Thunderchild",
+    "groupID": 27,
+    "groupName": "Battleship",
+    "categoryID": 6,
+    "categoryName": "Ship"
   }
 }
