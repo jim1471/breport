@@ -25,7 +25,7 @@ class TeamInvolved extends Component {
   }
 
   render() {
-    const { data, names, teamStats, settings } = this.props
+    const { data, names, teamStats, settings, currTab } = this.props
     const { totalDmg, maxDmg, maxCnt } = teamStats
 
     if (!data) {
@@ -52,6 +52,7 @@ class TeamInvolved extends Component {
               maxDmg={maxDmg}
               maxCnt={maxCnt}
               names={names}
+              currTab={currTab}
               showExtendedStatistics={settings.showExtendedStatistics}
             />
           )

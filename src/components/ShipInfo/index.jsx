@@ -47,31 +47,21 @@ export default class ShipInfo extends Component {
   }
 
   renderRightPart(inv, time, lossValue) {
-    let multipleTypesStr = ''
-    let multipleTypesInfo = null
+    // let multipleTypesStr = ''
+    let multipleCountsLost = null
     if (inv) {
       const typesCount = Object.keys(inv.ships).length
       if (inv.structure) {
+        // /related/30003106/202006170600
         if (process.env.NODE_ENV === 'development') {
           if (typesCount > 1) console.warn('typesCount > 1:', inv)
         }
         // here we supposing that count === 1 - only known case - Pos modules
         const typeID = Object.keys(inv.ships)[0]
         const lostCount = inv.ships[typeID].loss
-        multipleTypesInfo = (
+        multipleCountsLost = (
           <span className={styles.moreStructuresLost}>
             {`x${lostCount} lost`}
-          </span>
-        )
-
-      } else {
-        multipleTypesStr = typesCount === 1
-          ? `(${typesCount} type)`
-          : `(${typesCount} types)`
-
-        multipleTypesInfo = (
-          <span className={styles.moreShipsBtn} onClick={this.props.onToggleExpanded}>
-            {multipleTypesStr}
           </span>
         )
       }
@@ -79,7 +69,7 @@ export default class ShipInfo extends Component {
 
     return (
       <span>
-        {multipleTypesInfo}
+        {multipleCountsLost}
         {!time && lossValue &&
           <span className={styles.lossValue}>
             &nbsp;

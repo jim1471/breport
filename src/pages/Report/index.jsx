@@ -44,7 +44,7 @@ class Report extends Component {
 
   render() {
     const {
-      isLoading, names, teams, settings,
+      isLoading, names, teams, settings, currTab,
       teamsInvolved, teamsShips, teamsStats, teamsLosses, kmData,
     } = this.props
     const { teamStatsCollapsed } = this.state
@@ -96,6 +96,7 @@ class Report extends Component {
                   teamLosses={teamsLosses[ix]}
                   kmData={kmData}
                   settings={settings}
+                  currTab={currTab}
                 />
                 {ix < teams.length - 1 &&
                   <div className={cx(styles.autogrowSpace, styles.between)} />

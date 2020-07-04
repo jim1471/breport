@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import cn from 'classnames'
+import cx from 'classnames'
 import { formatSum, formatDmg, dmgPercent, cntWhored } from 'utils/FormatUtils'
 import { AllyIcon, ShipInfo } from 'components'
+import { Icon } from 'components/common/blueprint'
 import InvolvedShipInfo from 'components/InvolvedShipInfo'
 import styles from './styles.scss'
 
+const COLLAPSE_BUTTON = false
 
 export default class InvolvedRow extends Component {
 
@@ -22,7 +24,7 @@ export default class InvolvedRow extends Component {
   }
 
   state = {
-    expanded: false,
+    expanded: this.props.currTab === 'involved',
     data: null,
   }
 
@@ -87,6 +89,9 @@ export default class InvolvedRow extends Component {
   renderOtherShips() {
     const { data, names, totalDmg } = this.state
     const { inv, sortedShips } = data
+    if (inv.structure) {
+      return null
+    }
     const otherShips = (
       <div className={styles.otherShips}>
         {sortedShips.map(shipID => {
@@ -102,6 +107,11 @@ export default class InvolvedRow extends Component {
             />
           )
         })}
+        {COLLAPSE_BUTTON &&
+          <div className={styles.btnCollapse} onClick={this.toggleExpanded}>
+            <Icon iconSize={16} icon='double-chevron-up' />
+          </div>
+        }
       </div>
     )
     return otherShips
@@ -120,15 +130,43 @@ export default class InvolvedRow extends Component {
             <span>{rawDmgValue}</span>
           }
           {rawDmgValue !== '0' &&
-            <span className={cn(isTopDmg && styles.top)}>
+            <span className={cx(isTopDmg && styles.top)}>
               {`${rawDmgValue} ${dmgPercentValue}`}
             </span>
           }
-          <span className={cn(isTopWhored && styles.top)}>
+          <span className={cx(isTopWhored && styles.top)}>
             {cntWhoredValue}
           </span>
         </div>
       </span>
+    )
+  }
+
+  renderExpandButton() {
+    // if (!COLLAPSE_BUTTON) return null
+    const { expanded, data } = this.state
+    if (expanded || !data.inv || data.inv.structure) return null
+
+    const { inv } = data
+    let multipleTypesStr = ''
+    let multipleTypesInfo = null
+    const typesCount = Object.keys(inv.ships).length
+
+    multipleTypesStr = typesCount === 1
+      ? `${typesCount} total ship type`
+      : `${typesCount} total ship types`
+
+    multipleTypesInfo = (
+      <span className={styles.moreShipsBtn} onClick={this.props.onToggleExpanded}>
+        {multipleTypesStr}
+      </span>
+    )
+
+    return (
+      <div className={styles.btnExpand} onClick={this.toggleExpanded}>
+        <Icon iconSize={16} icon='double-chevron-down' />
+        {multipleTypesInfo}
+      </div>
     )
   }
 
@@ -156,9 +194,12 @@ export default class InvolvedRow extends Component {
           <AllyIcon corpID={corpID} names={names} />
           <AllyIcon allyID={allyID} names={names} />
         </div>
+
         {expanded && data.inv &&
           this.renderOtherShips()
         }
+
+        {this.renderExpandButton()}
       </div>
     )
   }

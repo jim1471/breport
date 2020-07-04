@@ -51,14 +51,6 @@
       }
     }
 
-    .moreShipsBtn {
-      cursor: pointer;
-      color: gold;
-      &:hover, &:active {
-        text-decoration: underline;
-      }
-    }
-
     .moreStructuresLost {
       font-weight: normal;
     }
