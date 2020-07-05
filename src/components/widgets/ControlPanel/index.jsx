@@ -47,8 +47,13 @@ class ControlPanel extends Component {
     return (
       <span className={styles.linkButton}>
         <Link to='/'>
-          <Button icon='double-chevron-left' title='return to Dashboard' small={false}>
-            <span className={styles.backBtn}>Back</span>
+          <Button title='return to Dashboard' className={styles.backBtnWrapper}>
+            <div className={styles.iconCont}>
+              <img src='/icons/favicon-32x32.png' alt='br-icon' />
+            </div>
+            <span className={styles.backBtn}>
+              Home
+            </span>
           </Button>
         </Link>
       </span>

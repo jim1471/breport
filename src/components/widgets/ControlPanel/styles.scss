@@ -52,10 +52,33 @@
     justify-content: space-between;
     align-items: center;
 
+    .buttons, .backBtnWrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .backBtnWrapper > :global(.bp3-button-text) {
+      display: flex;
+      align-items: center;
+    }
+
     .backBtn {
+      margin-left: 5px;
+
       @media (max-width: 420px) {
         display: none;
         margin-left: -5px;
+      }
+    }
+
+    .iconCont {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      overflow: hidden;
+
+      img {
+        width: 16px;
       }
     }
   }
