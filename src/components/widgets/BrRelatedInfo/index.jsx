@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { formatDistanceToNow } from 'date-fns'
 import cx from 'classnames'
 import isEmpty from 'lodash/isEmpty'
@@ -14,6 +15,7 @@ function BrRelatedInfo({ systemID, systems, start, end, onRemove, onEdit, brPage
   const initialStats = isEmpty(rest) ? null : rest
   const [generalStats, setGeneralStats] = useState(initialStats)
   const [statsLoading, setStatsLoading] = useState(false)
+  const { viewed } = useSelector(({ related }) => ({ viewed: related.viewed }))
 
   function handleRemove() {
     onRemove(systemID)
@@ -61,7 +63,8 @@ function BrRelatedInfo({ systemID, systems, start, end, onRemove, onEdit, brPage
     const { totalLossValue, pilotsCount, kmsCount } = generalStats
     let stats = `Lost: ${formatSum(totalLossValue)},`
     stats += ` Pilots: ${pilotsCount},`
-    stats += ` Killmails: ${kmsCount}`
+    stats += ` Killmails: ${kmsCount},`
+    stats += ` Viewed: ${viewed}`
 
     return (
       <div className={styles.generalStats}>
