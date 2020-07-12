@@ -61,11 +61,13 @@
   }
 
   .btnExpand, .btnCollapse {
+    display: flex;
+    align-items: center;
     cursor: pointer;
     width: 100%;
-    padding: 3px 0;
-    padding-left: 36px;
-    border-radius: 3px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    padding-left: 10px;
     background-color: #333;
 
     color: #888;
@@ -83,5 +85,9 @@
     .moreShipsBtn {
       margin-left: 10px;
     }
+  }
+
+  .btnCollapse {
+    background-color: #111;
   }
 }

@@ -1,13 +1,46 @@
 import React, { Component } from 'react'
+import cx from 'classnames'
+import { Button } from 'components/common/blueprint'
 import InvolvedRow from 'components/InvolvedRow'
 import styles from './styles.scss'
 
 
 class TeamInvolved extends Component {
 
+  state = {
+    expanded: this.props.settings.extraShipsExpanded,
+    currSetting: this.props.settings.extraShipsExpanded,
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (prevState.currSetting !== nextProps.settings.extraShipsExpanded) {
+      if (prevState.expanded !== nextProps.settings.extraShipsExpanded) {
+        return {
+          expanded: nextProps.settings.extraShipsExpanded,
+          currSetting: nextProps.settings.extraShipsExpanded,
+        }
+      }
+    }
+    return null
+  }
+
+  toggleExpanded = () => {
+    this.setState(state => ({ expanded: !state.expanded }))
+  }
+
   renderHeader() {
+    const { expanded } = this.state
+    const btnTitle = expanded
+      ? 'Collapse extra ship types'
+      : 'Expand extra ship types'
+    const icon = expanded
+      ? 'double-chevron-up'
+      : 'double-chevron-down'
     return (
-      <div className={styles.head}>
+      <div className={cx(styles.head, 'bp3-dark')}>
+        <div className={styles.extraShipsBtn}>
+          <Button small icon={icon} title={btnTitle} onClick={this.toggleExpanded} />
+        </div>
         <div className={styles.body}>
           <div className={styles.row}>
             <span style={{ color: 'gold' }}>Pilot</span>
@@ -42,6 +75,7 @@ class TeamInvolved extends Component {
     return (
       <div className={styles.team}>
         {this.renderHeader()}
+
         {shipsData.map(ship => {
           const shipKey = `${ship.charID}-${ship.id}`
           return (
@@ -54,6 +88,7 @@ class TeamInvolved extends Component {
               names={names}
               currTab={currTab}
               showExtendedStatistics={settings.showExtendedStatistics}
+              extraShipsExpanded={this.state.expanded}
             />
           )
         })}

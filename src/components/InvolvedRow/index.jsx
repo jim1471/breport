@@ -6,8 +6,6 @@ import { Icon } from 'components/common/blueprint'
 import InvolvedShipInfo from 'components/InvolvedShipInfo'
 import styles from './styles.scss'
 
-const COLLAPSE_BUTTON = false
-
 export default class InvolvedRow extends Component {
 
   static defaultProps = {
@@ -24,7 +22,8 @@ export default class InvolvedRow extends Component {
   }
 
   state = {
-    expanded: this.props.currTab === 'involved',
+    expanded: this.props.extraShipsExpanded,
+    currPropsExpanded: this.props.extraShipsExpanded,
     data: null,
   }
 
@@ -49,6 +48,12 @@ export default class InvolvedRow extends Component {
         cntWhoredValue: cntWhored(cnt),
         fmtLossValue: loss ? formatSum(loss.lossValue) : '',
         allLossesValue: allLossesValue ? formatSum(allLossesValue) : '',
+      }
+    }
+    if (prevState.currPropsExpanded !== nextProps.extraShipsExpanded) {
+      return {
+        expanded: nextProps.extraShipsExpanded,
+        currPropsExpanded: nextProps.extraShipsExpanded,
       }
     }
     return null
@@ -107,11 +112,12 @@ export default class InvolvedRow extends Component {
             />
           )
         })}
-        {COLLAPSE_BUTTON &&
-          <div className={styles.btnCollapse} onClick={this.toggleExpanded}>
-            <Icon iconSize={16} icon='double-chevron-up' />
-          </div>
-        }
+        <div className={styles.btnCollapse} onClick={this.toggleExpanded}>
+          <Icon iconSize={16} icon='double-chevron-up' />
+          <span className={styles.moreShipsBtn} onClick={this.props.onToggleExpanded}>
+            collapse extra ship types
+          </span>
+        </div>
       </div>
     )
     return otherShips
@@ -143,7 +149,6 @@ export default class InvolvedRow extends Component {
   }
 
   renderExpandButton() {
-    // if (!COLLAPSE_BUTTON) return null
     const { expanded, data } = this.state
     if (expanded || !data.inv || data.inv.structure) return null
 
@@ -157,7 +162,7 @@ export default class InvolvedRow extends Component {
       : `${typesCount} total ship types`
 
     multipleTypesInfo = (
-      <span className={styles.moreShipsBtn} onClick={this.props.onToggleExpanded}>
+      <span className={styles.moreShipsBtn}>
         {multipleTypesStr}
       </span>
     )

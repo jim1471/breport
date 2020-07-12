@@ -19,6 +19,7 @@
   }
 
   .head {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,6 +27,12 @@
     color: #fff;
     margin: 2px;
     padding-left: 32px;
+
+    .extraShipsBtn {
+      position: absolute;
+      left: 4px;
+      top: 9px;
+    }
 
     .body {
       display: flex;
@@ -146,6 +153,10 @@
         > span:last-child {
           font-weight: bold;
         }
+      }
+
+      .hidden {
+        visibility: hidden;
       }
     }
 

@@ -14,6 +14,7 @@ class ParseUtils {
     ignoreDamageToStructures: true,
     countFightersAsSquad: true,
     showExtendedStatistics: true,
+    extraShipsExpanded: false,
   }
 
   getTypeName(id) {
@@ -60,7 +61,7 @@ class ParseUtils {
     return otherTeams
   }
 
-  addShipStat(char, data, lossKm) {
+  addShipStat(char, data, lossKm, ignoreDmg = false) {
     char.ships = char.ships || {}
     if (!lossKm) {
       // kills
@@ -76,9 +77,10 @@ class ParseUtils {
         char.ships[data.ship] = char.ships[data.ship] || {}
         const ship = char.ships[data.ship]
         // cnt & dmg by ship
-        // TODO: remove damage to CITADELS from ShipStat
         char.ships[data.ship].cnt = (ship.cnt || 0) + 1
-        char.ships[data.ship].dmg = (ship.dmg || 0) + (data.dmg || 0)
+        if (!ignoreDmg) {
+          char.ships[data.ship].dmg = (ship.dmg || 0) + (data.dmg || 0)
+        }
       }
     } else {
       // losses
@@ -98,18 +100,20 @@ class ParseUtils {
     char.cnt = (char.cnt || 0) + 1
     char.dmg = char.dmg || 0
 
-    if (this.settings.ignoreDamageToStructures && CITADELS.includes(victim.ship)) {
-      // console.warn('CITADELS TADA!', this.settings)
-      // console.log('addCharStat(char, att, victim):', char, att, victim)
-      // console.warn('CITADELS TADA! victim.ship:', this.getTypeName(victim.ship))
-      // char.dmg += (att.dmg || 0)
-      this.settings.ignoredDmg += (att.dmg || 0)
+    let ignoreDmg = false
+    if (CITADELS.includes(victim.ship)) {
+      this.settings.dmgToStructures += (att.dmg || 0)
+      if (this.settings.ignoreDamageToStructures) {
+        ignoreDmg = true
+      } else {
+        char.dmg += (att.dmg || 0)
+      }
     } else {
       char.dmg += (att.dmg || 0)
     }
     // TODO: need also customization mechanic to filter damage to Capitals / from Capitals / etc
     // ...
-    this.addShipStat(char, att, false)
+    this.addShipStat(char, att, false, ignoreDmg)
   }
 
   addCharStatFromLoss(char, v, km) {
@@ -461,7 +465,6 @@ class ParseUtils {
     if (!this.settings) {
       this.settings = { ...this.DEFAULT_SETTINGS }
     }
-    this.settings.ignoredDmg = 0
 
     const systemStats = this.getSystemStat(data)
 
@@ -470,6 +473,7 @@ class ParseUtils {
     const teamsShips = []
     const teamsStats = []
     teams.forEach((team, ix) => {
+      this.settings.dmgToStructures = 0
       console.time(`parse kms: ${ix}`)
       const selfLosses = this.getLossesByTeam(data, team)
       const kills = this.filterLosses(data, selfLosses)
@@ -488,11 +492,13 @@ class ParseUtils {
       teamsInvolved.push(involvedMembers)
       teamsShips.push(involvedByShips)
       const stats = StatsUtils.calculateStatistics(involvedByShips, involvedMembers, team, names, this.settings.countFightersAsSquad)
+      if (this.settings.dmgToStructures) {
+        console.log(`Team ${ix} - ${numeral(this.settings.dmgToStructures).format('0.00a')} dmg to structures ignored!`)
+        // its total stats
+        stats.dmgToStructures = this.settings.dmgToStructures
+      }
       teamsStats.push(stats)
 
-      if (this.settings.ignoredDmg) {
-        console.log(`Team ${ix} - ${numeral(this.settings.ignoredDmg).format('0.00a')} dmg to structures ignored!`)
-      }
     })
     const generalStats = StatsUtils.calcGeneralStats(teamsStats)
     console.timeEnd('parse teams')

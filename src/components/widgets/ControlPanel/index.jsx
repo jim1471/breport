@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import cn from 'classnames'
 import { Navbar, Button, Dialog, Switch } from 'components/common/blueprint'
 import TabsPanel from 'widgets/TabsPanel'
-import { updateSettings } from 'reducers/settings'
+import { updateSettings, toggleSetting } from 'reducers/settings'
 import styles from './styles.scss'
 
 class ControlPanel extends Component {
@@ -66,7 +66,12 @@ class ControlPanel extends Component {
       onReload, onReparse, onSaveBR, canSave, settings,
     } = this.props
     const { settingsIsOpen } = this.state
-    const { ignoreDamageToStructures, countFightersAsSquad, showExtendedStatistics } = settings
+    const {
+      ignoreDamageToStructures,
+      countFightersAsSquad,
+      showExtendedStatistics,
+      extraShipsExpanded,
+    } = settings
 
     const content = (
       <div className={styles.headRoot}>
@@ -133,23 +138,30 @@ class ControlPanel extends Component {
             <Switch
               large
               checked={ignoreDamageToStructures}
-              onChange={() => this.props.updateSettings({ ignoreDamageToStructures: !ignoreDamageToStructures })}
+              onChange={() => this.props.toggleSetting('ignoreDamageToStructures')}
             >
               Ignore damage to structures (affects char dmg stat and Inflicted Damage)
             </Switch>
             <Switch
               large
               checked={countFightersAsSquad}
-              onChange={() => this.props.updateSettings({ countFightersAsSquad: !countFightersAsSquad })}
+              onChange={() => this.props.toggleSetting('countFightersAsSquad')}
             >
               Count fighters as squad (affects ISK Lost and Efficiency)
             </Switch>
             <Switch
               large
               checked={showExtendedStatistics}
-              onChange={() => this.props.updateSettings({ showExtendedStatistics: !showExtendedStatistics })}
+              onChange={() => this.props.toggleSetting('showExtendedStatistics')}
             >
               Show extended statistics for pilots
+            </Switch>
+            <Switch
+              large
+              checked={extraShipsExpanded}
+              onChange={() => this.props.toggleSetting('extraShipsExpanded')}
+            >
+              Expand Extra ships per Characters by default
             </Switch>
           </div>
         </Dialog>
@@ -171,7 +183,7 @@ class ControlPanel extends Component {
   }
 }
 
-const mapDispatchToProps = { updateSettings }
+const mapDispatchToProps = { updateSettings, toggleSetting }
 const mapStateToProps = ({ settings }) => ({ settings })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ControlPanel)

@@ -1,6 +1,7 @@
 /* eslint react/jsx-no-bind: 0 */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import cx from 'classnames'
 import numeral from 'numeral'
 import { EditableText, Icon } from 'components/common/blueprint'
 import AllyIcon from 'icons/AllyIcon'
@@ -97,12 +98,16 @@ class TeamStats extends Component {
   }
 
   renderStats() {
-    const { totalLossValue, lossCount, totalDmg, efficiency } = this.props.teamStats
+    const { totalLossValue, lossCount, totalDmg, efficiency, dmgToStructures } = this.props.teamStats
     return (
       <div className={styles.stats}>
         <div className={styles.statsRow}>
           <span>ISK Lost:</span>
           <span>{numeral(totalLossValue).format('0.00a')}</span>
+        </div>
+        <div className={styles.statsRow}>
+          <span>Efficiency:</span>
+          <span>{efficiency}</span>
         </div>
         <div className={styles.statsRow}>
           <span>Ships Lost:</span>
@@ -112,9 +117,9 @@ class TeamStats extends Component {
           <span>Inflicted Damage:</span>
           <span>{numeral(totalDmg).format('0.00a')}</span>
         </div>
-        <div className={styles.statsRow}>
-          <span>Efficiency:</span>
-          <span>{efficiency}</span>
+        <div className={cx(styles.statsRow, !dmgToStructures && styles.hidden)}>
+          <span>Damage to Structures:</span>
+          <span>{numeral(dmgToStructures || 0).format('0.00a')}</span>
         </div>
       </div>
     )
