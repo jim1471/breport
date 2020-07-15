@@ -3,6 +3,8 @@ import { getNames } from 'reducers/names'
 import { initializeBrData } from 'reducers/related'
 import * as StatsUtils from 'utils/StatsUtils'
 
+const stubData = require('./data/stub-br.json')
+
 const SAVE_BR = 'SAVE_BR'
 const GET_BR = 'GET_BR'
 const SET_BR_DATA = 'SET_BR_DATA'
@@ -16,9 +18,50 @@ export const saveBR = (teams, systemID, time) => ({
   apiCall: () => RelatedService.saveComposition(teams, systemID, time),
 })
 
+export const getStubBR = brID => dispatch => {
+  dispatch(setStatus('fetching br composition'))
+  const data = stubData
+  const killmailsData = data.relateds.reduce((allKms, related) => allKms.concat(related.kms), [])
+  if (data.new) {
+    const relatedsWithStats = data.relateds.map(rel => ({
+      ...rel,
+      ...StatsUtils.getKmsGeneralStats(rel.kms),
+    }))
+    const parsedBrData = {
+      ...data,
+      new: true,
+      systemID: data.relateds[0].systemID,
+      // time: data.relateds[0].time,
+      time: null,
+      kmData: killmailsData,
+      teams: data.teams,
+      relateds: relatedsWithStats,
+      viewed: data.viewed,
+    }
+    dispatch(initializeBrData(parsedBrData))
+    dispatch({ type: 'SET_BR_DATA', parsedBrData })
+  } else {
+    dispatch(initializeBrData({
+      systemID: data.relateds[0].systemID,
+      time: data.relateds[0].time,
+      kmData: killmailsData,
+      teams: data.teams,
+      relateds: data.relateds.map(rel => ({
+        relatedKey: rel.relatedKey,
+        systemID: rel.systemID,
+        time: rel.time,
+      })),
+      viewed: data.viewed,
+    }))
+  }
+
+  dispatch(setStatus('fetching names'))
+  dispatch(getNames(killmailsData))
+}
+
 export const getBR = brID => dispatch => {
   dispatch(setStatus('fetching br composition'))
-  dispatch({
+  return dispatch({
     type: GET_BR,
     apiCall: () => RelatedService.getComposition(brID),
   }).then(data => {

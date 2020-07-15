@@ -175,11 +175,30 @@ const getTotalPilots = kms => {
   return totalPilots
 }
 
+function getSystemStat(kms) {
+  if (!kms[0]) {
+    return {}
+  }
+
+  // Sort by timestamp, id ASC
+  kms.sort((a, b) => {
+    const diff = a.time - b.time
+    return diff === 0 ? b.id - a.id : diff
+  })
+
+  return {
+    systemID: kms[0].system,
+    fromTime: kms[0].time,
+    toTime: kms[kms.length - 1].time,
+  }
+}
+
 export const getKmsGeneralStats = kms => {
   const generalStats = {
     kmsCount: kms.length,
     pilotsCount: getTotalPilots(kms),
     totalLossValue: Math.trunc(kms.reduce((total, km) => total + km.totalValue, 0)),
+    ...getSystemStat(kms),
   }
   return generalStats
 }

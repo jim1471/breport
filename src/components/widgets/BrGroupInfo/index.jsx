@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import cx from 'classnames'
 
-import { Button } from 'components/common/blueprint'
+import { Button, Icon } from 'components/common/blueprint'
 import BrRelatedInfo from 'widgets/BrRelatedInfo'
 import styles from './styles.scss'
 
@@ -58,6 +58,13 @@ function BrGroupInfo({ relateds }) {
           brPage
         />
       ))}
+      {relateds.length > 1 &&
+        <div className={styles.btnCollapse} onClick={() => setGrouped(true)}>
+          <Icon iconSize={16} icon='double-chevron-up' />
+          &nbsp;
+          Collapse to General Statistics
+        </div>
+      }
     </div>
   )
 }

@@ -91,7 +91,9 @@ function BrRelatedInfo({ systemID, systems, start, end, onRemove, onEdit, brPage
     )
   }
 
-  const { fromTime, toTime } = systemStats
+  const { fromTime, toTime } = generalStats || {}
+
+  // console.log('generalStats:', generalStats)
 
   return (
     <div className={cx('bp3-dark', styles.systemStats)} key={systemID}>

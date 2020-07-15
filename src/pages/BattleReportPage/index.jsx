@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import isEqual from 'lodash/isEqual'
 
 import RelatedService from 'api/RelatedService'
-import { getBR, setStatus } from 'reducers/battlereport'
+import { getBR, getStubBR, setStatus } from 'reducers/battlereport'
 import { brParseTeams } from 'reducers/related'
 import { Spinner } from 'components'
 import { ControlPanel, BrInfo, BrGroupInfo, Footer } from 'widgets'
@@ -35,14 +35,22 @@ const BattleReportPage = ({ match: { params } }) => {
   const { br, involvedNames, teamsLosses, teams, origTeams, status } = store
 
   function loadBR() {
-    dispatch(getBR(params.brID))
+    if (process.env.NODE_ENV === 'development') {
+      dispatch(getStubBR(params.brID))
+    } else {
+      dispatch(getBR(params.brID))
+    }
   }
 
+  // useEffect(() => {
+  //   if (!teamsLosses) {
+  //     loadBR()
+  //   }
+  // }, [teamsLosses])
+
   useEffect(() => {
-    if (!teamsLosses) {
-      loadBR()
-    }
-  }, [teamsLosses])
+    loadBR()
+  }, [])
 
   const prevInvolvedNames = usePrevious(involvedNames)
   useEffect(() => {

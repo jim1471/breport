@@ -16,4 +16,27 @@
     right: 10px;
     bottom: 15px;
   }
+
+  .btnCollapse {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    background-color: #333;
+
+    color: #888;
+    text-align: left;
+    font-size: 12px;
+    user-select: none;
+
+    &:hover {
+      background-color: #555;
+    }
+    &:active, &:focus {
+      background-color: #777;
+    }
+  }
 }
