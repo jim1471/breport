@@ -37,6 +37,7 @@ function BrGroupInfo({ relateds }) {
         <BrRelatedInfo
           {...overallStats}
           brPage
+          grouped
         />
         <div className={styles.detailsBtn}>
           <Button

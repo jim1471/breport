@@ -1,8 +1,12 @@
 :local {
   .systemStats {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
     max-width: 682px;
+    min-height: 64px;
     margin: 0 auto 5px auto;
     padding: 10px 10px;
     font-size: 16px;
@@ -37,16 +41,19 @@
   .timing {
     font-size: 12px;
     white-space: nowrap;
+    line-height: 18px;
   }
 
   .battleDuration {
     font-size: 12px;
+    line-height: 18px;
     display: flex;
     flex-wrap: wrap;
   }
 
   .generalStats {
     font-size: 12px;
+    line-height: 22px;
     display: flex;
     flex-direction: column;
   }

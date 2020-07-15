@@ -1,3 +1,4 @@
+import { hot } from 'react-hot-loader/root'
 import React from 'react'
 
 import { SYSTEMS_DATA } from 'data/constants'
@@ -52,4 +53,4 @@ function SystemName({ systemID, systems }) {
   )
 }
 
-export default React.memo(SystemName)
+export default hot(SystemName)

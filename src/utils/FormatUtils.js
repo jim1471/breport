@@ -76,24 +76,24 @@ const cntWhoredZero = cnt => (
   cnt === 0 || !cnt ? '[0]' : ` [${cnt}]`
 )
 
-const getMinutes = minutes => {
-  if (minutes < 10) return `0${minutes}`
-  return minutes
+const leadingZero = value => {
+  if (value < 10) return `0${value}`
+  return value
 }
 
 const getLocalTime = date => {
   let result = ''
-  result += `${date.getHours()}`
-  result += `:${getMinutes(date.getMinutes())}`
+  result += `${leadingZero(date.getHours())}`
+  result += `:${leadingZero(date.leadingZero())}`
   return result
 }
 
 const getUTCTime = (date, withSeconds = true) => {
   let result = ''
-  result += `${date.getUTCHours()}`
-  result += `:${getMinutes(date.getUTCMinutes())}`
+  result += `${leadingZero(date.getUTCHours())}`
+  result += `:${leadingZero(date.getUTCMinutes())}`
   if (withSeconds) {
-    result += `:${getMinutes(date.getUTCSeconds())}`
+    result += `:${leadingZero(date.getUTCSeconds())}`
   }
   return result
 }

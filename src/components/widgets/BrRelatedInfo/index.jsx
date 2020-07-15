@@ -11,7 +11,7 @@ import { getUTCTime, formatSum, getDurationStr } from 'utils/FormatUtils'
 import SystemName from '../SystemName'
 import styles from './styles.scss'
 
-function BrRelatedInfo({ systemID, systems, start, end, onRemove, onEdit, brPage, ...rest }) {
+function BrRelatedInfo({ systemID, systems, start, end, onRemove, onEdit, brPage, grouped, ...rest }) {
   const initialStats = isEmpty(rest) ? null : rest
   const [generalStats, setGeneralStats] = useState(initialStats)
   const [statsLoading, setStatsLoading] = useState(false)
@@ -101,6 +101,7 @@ function BrRelatedInfo({ systemID, systems, start, end, onRemove, onEdit, brPage
         <SystemName
           systemID={systemID}
           systems={systems}
+          grouped={grouped}
         />
 
         {generalStats && !statsLoading && renderGeneralStats()}

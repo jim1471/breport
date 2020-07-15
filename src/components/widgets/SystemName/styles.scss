@@ -1,7 +1,20 @@
 :local {
   .systemName {
-    white-space: nowrap;
-    @media (max-width: 420px) { font-size: 16px; }
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    line-height: 26px;
+
+    @media (max-width: 420px) {
+      width: 100%;
+      font-size: 16px;
+    }
+
+
+    .item {
+      white-space: nowrap;
+    }
 
     small {
       margin-left: 5px;
