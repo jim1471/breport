@@ -1,0 +1,174 @@
+:local {
+  .recent {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    font-size: 14px;
+    margin-top: 40px;
+
+    .spinnerWrapper {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      min-height: 400px;
+      padding-top: 100px;
+    }
+
+    .item {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 20px;
+
+      .systemCell {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        color: #ccc;
+
+        &.column {
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+        }
+
+        @media (max-width: 420px) {
+          font-size: 12px;
+        }
+
+        > a {
+          margin-right: 10px;
+          font-size: 16px;
+
+          @media (max-width: 400px) {
+            margin-right: 5px;
+            font-size: 14px;
+          }
+        }
+
+        > div {
+          @media (max-width: 400px) {
+            font-size: 12px;
+          }
+
+          @media (max-width: 375px) {
+            font-size: 10px;
+          }
+        }
+
+        > div.statsCell {
+          @media (max-width: 400px) {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .distanceCell {
+        font-size: 10px;
+        line-height: 18px;
+        color: #888;
+      }
+
+      .statsCell {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        color: #ccc;
+
+        span {
+          margin-right: 5px;
+        }
+      }
+
+      .createdAt {
+        font-size: 10px;
+        line-height: 18px;
+        color: #888;
+      }
+
+      @media (max-width: 320px) {
+        .createdAtLabel {
+          display: none;
+        }
+      }
+    }
+
+    :global(.bp3-tab-list) {
+      align-items: center;
+      justify-content: center;
+    }
+
+    :global(.bp3-tab-list > *:not(:last-child)) {
+      margin-right: 30px;
+    }
+
+    :global(.bp3-tab) {
+      line-height: 18px;
+      font-size: 14px;
+      white-space: normal;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    :global(.bp3-tab)[aria-selected="false"] {
+      color: #888;
+    }
+    :global(.bp3-tab)[aria-disabled="true"] {
+      color: rgba(92, 112, 128, 0.5);
+    }
+    :global(.bp3-tab)[aria-selected="true"],
+    :global(.bp3-tab):not([aria-disabled="true"]):hover {
+      color: #eee;
+    }
+
+    :global(.bp3-tab-indicator-wrapper .bp3-tab-indicator) {
+      background-color: #eee;
+    }
+
+    @media (max-width: 620px) {
+      :global(.bp3-tab) {
+        font-size: 14px;
+        max-width: 100px;
+      }
+
+      :global(.bp3-tab-list > *:not(:last-child)) {
+        margin-right: 20px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      :global(.bp3-tab) {
+        font-size: 12px;
+        max-width: 83px;
+      }
+
+      :global(.bp3-tab-list > *:not(:last-child)) {
+        margin-right: 15px;
+      }
+    }
+
+    @media (max-width: 375px) {
+      :global(.bp3-tab) {
+        font-size: 12px;
+        max-width: 83px;
+      }
+
+      :global(.bp3-tab-list > *:not(:last-child)) {
+        margin-right: 10px;
+      }
+    }
+
+    @media (max-width: 320px) {
+      :global(.bp3-tab) {
+        font-size: 10px;
+        max-width: 63px;
+      }
+
+      :global(.bp3-tab-list > *:not(:last-child)) {
+        margin-right: 15px;
+      }
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import { hot } from 'react-hot-loader/root'
 import React, { Fragment, useState, useEffect, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import isEqual from 'lodash/isEqual'
@@ -42,15 +43,17 @@ const BattleReportPage = ({ match: { params } }) => {
     }
   }
 
-  // useEffect(() => {
-  //   if (!teamsLosses) {
-  //     loadBR()
-  //   }
-  // }, [teamsLosses])
-
-  useEffect(() => {
-    loadBR()
-  }, [])
+  if (process.env.NODE_ENV === 'development') {
+    useEffect(() => {
+      if (!teamsLosses) {
+        loadBR()
+      }
+    }, [teamsLosses])
+  } else {
+    useEffect(() => {
+      loadBR()
+    }, [])
+  }
 
   const prevInvolvedNames = usePrevious(involvedNames)
   useEffect(() => {
@@ -129,4 +132,4 @@ const BattleReportPage = ({ match: { params } }) => {
   )
 }
 
-export default BattleReportPage
+export default hot(BattleReportPage)
