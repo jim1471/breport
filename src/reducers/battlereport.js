@@ -18,7 +18,7 @@ export const saveBR = (teams, systemID, time) => ({
   apiCall: () => RelatedService.saveComposition(teams, systemID, time),
 })
 
-export const getStubBR = brID => dispatch => {
+export const getStubBR = () => dispatch => {
   dispatch(setStatus('fetching br composition'))
   const data = stubData
   const killmailsData = data.relateds.reduce((allKms, related) => allKms.concat(related.kms), [])

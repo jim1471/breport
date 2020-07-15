@@ -43,7 +43,7 @@ function BrGroupInfo({ relateds }) {
           <Button
             small
             icon='list-detail-view'
-            onClick={() => setGrouped(false)} // eslint-disable-line
+            onClick={() => setGrouped(true)} // eslint-disable-line
           />
         </div>
       </div>
@@ -60,7 +60,10 @@ function BrGroupInfo({ relateds }) {
         />
       ))}
       {relateds.length > 1 &&
-        <div className={styles.btnCollapse} onClick={() => setGrouped(true)}>
+        <div
+          className={styles.btnCollapse}
+          onClick={() => setGrouped(false)} // eslint-disable-line
+        >
           <Icon iconSize={16} icon='double-chevron-up' />
           &nbsp;
           Collapse to General Statistics

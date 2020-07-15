@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import cx from 'classnames'
-import { Button } from 'components/common/blueprint'
+import { Button, Icon } from 'components/common/blueprint'
 import InvolvedRow from 'components/InvolvedRow'
 import styles from './styles.scss'
 
+const MIN_ROWS = 100
 
 class TeamInvolved extends Component {
 
   state = {
+    minKms: this.props.data.length > MIN_ROWS,
     expanded: this.props.settings.extraShipsExpanded,
     currSetting: this.props.settings.extraShipsExpanded,
   }
@@ -26,6 +28,10 @@ class TeamInvolved extends Component {
 
   toggleExpanded = () => {
     this.setState(state => ({ expanded: !state.expanded }))
+  }
+
+  toggleMinKms = () => {
+    this.setState(state => ({ minKms: !state.minKms }))
   }
 
   renderHeader() {
@@ -60,16 +66,18 @@ class TeamInvolved extends Component {
   render() {
     const { data, names, teamStats, settings, currTab } = this.props
     const { totalDmg, maxDmg, maxCnt } = teamStats
+    const { minKms } = this.state
 
     if (!data) {
       console.error('undefined data:', data)
       return null
     }
 
+    let extraRowsNum = data.length
     let shipsData = data
-    if (process.env.NODE_ENV === 'development') {
-      shipsData = data
-      // shipsData = data.slice(0, 20)
+    if (minKms) {
+      shipsData = data.slice(0, MIN_ROWS)
+      extraRowsNum = data.length - MIN_ROWS
     }
 
     return (
@@ -92,6 +100,14 @@ class TeamInvolved extends Component {
             />
           )
         })}
+        {minKms &&
+          <div className={styles.btnExpandRows} onClick={this.toggleMinKms}>
+            <Icon iconSize={16} icon='double-chevron-down' />
+            &nbsp;
+            &nbsp;
+            {`Expand extra ${extraRowsNum} participants`}
+          </div>
+        }
       </div>
     )
   }
