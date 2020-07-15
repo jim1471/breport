@@ -15,7 +15,10 @@ function BrRelatedInfo({ systemID, systems, start, end, onRemove, onEdit, brPage
   const initialStats = isEmpty(rest) ? null : rest
   const [generalStats, setGeneralStats] = useState(initialStats)
   const [statsLoading, setStatsLoading] = useState(false)
-  const { viewed } = useSelector(({ related }) => ({ viewed: related.viewed }))
+  const { viewed, systemStats } = useSelector(({ related }) => ({
+    viewed: related.viewed,
+    systemStats: related.systemStats,
+  }))
 
   function handleRemove() {
     onRemove(systemID)
@@ -48,11 +51,26 @@ function BrRelatedInfo({ systemID, systems, start, end, onRemove, onEdit, brPage
 
     return (
       <div className={styles.timing}>
-        <div>{`Duration: ${duration}`}</div>
+        {/* <div>{`Duration: ${duration}`}</div> */}
         <div>{`${dateStart.toLocaleDateString()}, ${getUTCTime(dateStart)} - ${getUTCTime(dateEnd)} ET`}</div>
         {!brPage &&
           <div>{`${formatDistanceToNow(dateStart)} ago`}</div>
         }
+      </div>
+    )
+  }
+
+  function renderKillmailsStartEndTime(fromTime, toTime) {
+    if (!fromTime || !toTime) return null
+    const dateStart = new Date(fromTime)
+    const dateEnd = new Date(toTime)
+    const duration = getDurationStr(dateStart, dateEnd)
+
+    return (
+      <div className={styles.battleDuration}>
+        <div>{`Battle duration: ${duration},`}</div>
+        &nbsp;
+        <div>{`from ${getUTCTime(dateStart)} to ${getUTCTime(dateEnd)} ET`}</div>
       </div>
     )
   }
@@ -72,6 +90,8 @@ function BrRelatedInfo({ systemID, systems, start, end, onRemove, onEdit, brPage
       </div>
     )
   }
+
+  const { fromTime, toTime } = systemStats
 
   return (
     <div className={cx('bp3-dark', styles.systemStats)} key={systemID}>
@@ -95,6 +115,7 @@ function BrRelatedInfo({ systemID, systems, start, end, onRemove, onEdit, brPage
       </div>
 
       {renderStartEndTime(start * 1000, end * 1000)}
+      {renderKillmailsStartEndTime(fromTime, toTime)}
 
       {brPage && onEdit &&
         <div className={styles.removeBtn}>
