@@ -53,6 +53,9 @@ function RecentZkill() {
   function getSystemName(systemID) {
     const relSystemID = systemID - 30000000
     const system = SYSTEMS_DATA.systems.find(sys => sys[1] === relSystemID)
+    if (!system) {
+      return 'unknown'
+    }
     const region = system && SYSTEMS_DATA.regions[system[2]]
     return `${system[0]} (${region})`
   }
