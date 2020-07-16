@@ -36,7 +36,7 @@ const BattleReportPage = ({ match: { params } }) => {
   const { br, involvedNames, teamsLosses, teams, origTeams, status } = store
 
   function loadBR() {
-    if (process.env.NODE_ENV === 'development') {
+    if (false && process.env.NODE_ENV === 'development') {
       dispatch(getStubBR(params.brID))
     } else {
       dispatch(getBR(params.brID))

@@ -10,6 +10,7 @@ import styles from './styles.scss'
 class BrInfo extends Component {
 
   getDotlanLink(region, systemName) {
+    if (!region) return ''
     const encodedRegion = region.replace(' ', '_')
     return `http://evemaps.dotlan.net/map/${encodedRegion}/${systemName}`
   }

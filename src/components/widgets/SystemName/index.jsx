@@ -5,6 +5,7 @@ import { SYSTEMS_DATA } from 'data/constants'
 import styles from './styles.scss'
 
 function getDotlanLink(region, system) {
+  if (!region) return ''
   const encodedRegion = region.replace(' ', '_')
   return `http://evemaps.dotlan.net/map/${encodedRegion}/${system}`
 }
