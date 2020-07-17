@@ -16,7 +16,7 @@ FocusStyleManager.onlyShowFocusOnTabs()
 
 const store = configureStore()
 
-const MAINTENANCE = false
+const MAINTENANCE = true
 
 const Dashboard = loadable(
   () => import(/* webpackChunkName: "Dashboard" */'pages/Dashboard'),
