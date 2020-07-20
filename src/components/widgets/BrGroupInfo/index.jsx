@@ -43,7 +43,7 @@ function BrGroupInfo({ relateds }) {
           <Button
             small
             icon='list-detail-view'
-            onClick={() => setGrouped(true)} // eslint-disable-line
+            onClick={() => setGrouped(false)} // eslint-disable-line
           />
         </div>
       </div>
@@ -52,6 +52,16 @@ function BrGroupInfo({ relateds }) {
 
   return (
     <div className={styles.brInfoRoot}>
+      {relateds.length > 1 &&
+        <div
+          className={styles.btnCollapse}
+          onClick={() => setGrouped(true)} // eslint-disable-line
+        >
+          <Icon iconSize={16} icon='double-chevron-up' />
+          &nbsp;
+          Collapse to Grouped Statistics
+        </div>
+      }
       {relateds.map(relData => (
         <BrRelatedInfo
           {...relData}
@@ -59,16 +69,6 @@ function BrGroupInfo({ relateds }) {
           brPage
         />
       ))}
-      {relateds.length > 1 &&
-        <div
-          className={styles.btnCollapse}
-          onClick={() => setGrouped(false)} // eslint-disable-line
-        >
-          <Icon iconSize={16} icon='double-chevron-up' />
-          &nbsp;
-          Collapse to General Statistics
-        </div>
-      }
     </div>
   )
 }
