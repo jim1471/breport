@@ -32,6 +32,26 @@
     margin-top: 20px;
   }
 
+  .recentLinks {
+    width: 100%;
+    max-width: 560px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+
+    > a, a:hover {
+      cursor: pointer;
+      color: grey !important;
+
+      &:global(.active) {
+        cursor: default;
+        color: white !important;
+        text-decoration: underline;
+      }
+    }
+  }
+
   .maintenanceRoot {
     max-width: 682px;
     border: 1px solid #555;

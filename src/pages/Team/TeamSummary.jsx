@@ -84,7 +84,7 @@ function groupShipsNew(data, countFightersAsSquad) {
 export default class TeamSummary extends Component {
 
   state = {
-    groupedMode: true,
+    groupedMode: false,
     shipsTypes: null,
     shipsTypesSorted: null,
   }

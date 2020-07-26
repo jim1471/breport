@@ -1,0 +1,127 @@
+:local {
+  .recent {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    max-width: 1024px;
+    font-size: 14px;
+    margin-top: 20px;
+    color: #ccc;
+    overflow-x: auto;
+
+    .table {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-width: 1024px;
+      min-height: 528px;
+    }
+
+    .body {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a:hover {
+      text-decoration: none;
+      background: rgba(150, 206, 246, 0.15);
+    }
+
+    .head {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 48px;
+      padding: 0 10px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 138.5%;
+      color: rgba(255, 255, 255, 0.87);
+      background: #343640;
+      border-radius: 4px;
+      border: 2px solid transparent;
+    }
+
+    .headCell {
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      padding-left: 10px;
+      padding-right: 0;
+
+      &.flexEnd {
+        justify-content: flex-end;
+        padding-left: 0;
+        padding-right: 10px;
+      }
+    }
+
+    .row {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 200%;
+      color: rgba(255, 255, 255, 0.87);
+      border: 2px solid transparent;
+      border-bottom: 1px solid rgba(239, 242, 247, 0.38);
+
+      &.zkill {
+        color: #888;
+      }
+    }
+
+    .spinnerWrapper {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      min-height: 400px;
+      padding-top: 100px;
+    }
+
+    .involvedCell {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      padding-top: 10px;
+      color: grey;
+      font-size: 12px;
+    }
+
+    .invRow {
+      display: flex;
+      align-items: center;
+    }
+
+    .inv {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      min-width: 34px;
+    }
+
+    .nowrap {
+      white-space: nowrap;
+    }
+
+    .thumbsBtns {
+      width: 100%;
+      margin-bottom: 10px;
+      > button {
+        margin-right: 10px;
+      }
+    }
+  }
+}

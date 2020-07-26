@@ -86,7 +86,7 @@ const config = {
       optionalDependencies: false,
     }],
 
-    // New Eslint or Airbnb rules ----
+    // DISABLED
     'react/jsx-curly-newline': 'off',
     'react/jsx-one-expression-per-line': 'off',
     'react/destructuring-assignment': 'off',
@@ -98,6 +98,7 @@ const config = {
     }],
     'operator-linebreak': ['warn', 'before', { 'overrides': { '&&': 'after' } }],
     'no-multiple-empty-lines': 'off',
+    'no-underscore-dangle': 'off',
     // -------------------------------
 
     // WARNINGS

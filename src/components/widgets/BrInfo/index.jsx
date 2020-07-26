@@ -34,7 +34,7 @@ class BrInfo extends Component {
     if (!generalStats || !fromTime || !toTime) return null
     let stats = `Total lost: ${formatSum(generalStats.totalLossValue)},`
     stats += ` Pilots: ${generalStats.pilotsCount},`
-    stats += ` Viewed: ${viewed}`
+    stats += ` Views: ${viewed}`
 
     const dateStart = new Date(fromTime)
     const dateEnd = new Date(toTime)

@@ -68,12 +68,11 @@ class App extends React.Component {
   renderStandardRoutes() {
     return (
       <Switch>
-        <Route component={Dashboard} path='/' exact />
         <Route component={CreateBattleReport} path='/create' exact />
         <Route component={RelatedPage} path='/related/:systemID/:time' />
         <Route component={BattleReportPage} path='/br/:brID' />
         <Route component={Legal} path='/legal' />
-        <Redirect from='*' to='/' />
+        <Route component={Dashboard} path='/' />
       </Switch>
     )
   }

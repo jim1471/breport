@@ -9,12 +9,18 @@ const MIN_ROWS = 100
 class TeamInvolved extends Component {
 
   state = {
+    dataLength: this.props.data.length,
     minKms: this.props.data.length > MIN_ROWS,
     expanded: this.props.settings.extraShipsExpanded,
     currSetting: this.props.settings.extraShipsExpanded,
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.data.length !== prevState.dataLength) {
+      return {
+        minKms: nextProps.data.length > MIN_ROWS,
+      }
+    }
     if (prevState.currSetting !== nextProps.settings.extraShipsExpanded) {
       if (prevState.expanded !== nextProps.settings.extraShipsExpanded) {
         return {

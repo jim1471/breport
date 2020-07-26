@@ -6,7 +6,9 @@ import NamesUtils from 'utils/NamesUtils'
 const PARSE_NAMES_STARTED = 'PARSE_NAMES_STARTED'
 const PARSE_NAMES = 'PARSE_NAMES'
 const PARSE_NAMES_FAILED = 'PARSE_NAMES_FAILED'
+const STOP_LOADING = 'STOP_LOADING'
 
+export const stopLoading = () => ({ type: STOP_LOADING })
 
 export const getNames = killmailsData => (dispatch, getState) => {
   const { names: { involvedNames } } = getState()
@@ -85,6 +87,16 @@ const initialState = {
 export default (state = initialState, action) => {
 
   switch (action.type) {
+
+    case STOP_LOADING: {
+      return {
+        ...state,
+        involvedNames: {
+          ...state.involvedNames,
+          isLoading: false,
+        },
+      }
+    }
 
     case PARSE_NAMES_STARTED: {
       return {

@@ -90,7 +90,7 @@ function RecentZkill() {
             <span>{`Total lost: ${formatSum(item.totalLost) || '?'},`}</span>
             <span>{`Killmails: ${item.kmsCount},`}</span>
             <span>{`Pilots: ${item.totalPilots},`}</span>
-            <span>{`Viewed: ${item.viewed}`}</span>
+            <span>{`Views: ${item.viewed}`}</span>
           </div>
         </div>
       </div>

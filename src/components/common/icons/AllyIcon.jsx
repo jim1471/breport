@@ -22,6 +22,8 @@ export default class AllyIcon extends PureComponent {
 
   getTooltipContent() {
     const { allyID, corpID, names } = this.props
+    if (!names) return null
+
     if (process.env.NODE_ENV === 'production') {
       return allyID
         ? `${names.allys[allyID]}`

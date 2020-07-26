@@ -1,5 +1,5 @@
 import RelatedService from 'api/RelatedService'
-import { getNames } from 'reducers/names'
+import { getNames, stopLoading } from 'reducers/names'
 import { initializeBrData } from 'reducers/related'
 import * as StatsUtils from 'utils/StatsUtils'
 
@@ -9,14 +9,17 @@ const SAVE_BR = 'SAVE_BR'
 const GET_BR = 'GET_BR'
 const SET_BR_DATA = 'SET_BR_DATA'
 const SET_STATUS = 'SET_STATUS'
+const RESET_BR = 'RESET_BR'
 const FETCH_INTERVAL = 1000
 
-export const setStatus = status => ({ type: SET_STATUS, status })
+export const setStatus = (status, error = '') => ({ type: SET_STATUS, status, error })
 
 export const saveBR = (teams, systemID, time) => ({
   type: GET_BR,
   apiCall: () => RelatedService.saveComposition(teams, systemID, time),
 })
+
+export const resetBr = () => ({ type: RESET_BR })
 
 export const getStubBR = () => dispatch => {
   dispatch(setStatus('fetching br composition'))
@@ -68,6 +71,10 @@ export const getBR = brID => dispatch => {
     if (data.status === 'processing') {
       console.log('br still being processed...')
       setTimeout(() => dispatch(getBR(brID)), FETCH_INTERVAL)
+
+    } else if (data.status === 'error') {
+      dispatch(setStatus(data.status, data.error))
+      dispatch(stopLoading())
 
     } else if (data.status === 'success') {
       const killmailsData = data.relateds.reduce((allKms, related) => allKms.concat(related.kms), [])
@@ -156,7 +163,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         status: action.status,
+        error: action.error,
       }
+
+    case RESET_BR:
+      return initialState
 
     default:
       return state

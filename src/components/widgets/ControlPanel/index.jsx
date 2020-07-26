@@ -122,6 +122,10 @@ class ControlPanel extends Component {
           </div>
         </div>
 
+        {error &&
+          this.renderError(error)
+        }
+
         <Dialog
           icon='cog'
           title='Settings'
@@ -165,10 +169,6 @@ class ControlPanel extends Component {
             </Switch>
           </div>
         </Dialog>
-
-        {error &&
-          this.renderError(error)
-        }
       </div>
     )
 

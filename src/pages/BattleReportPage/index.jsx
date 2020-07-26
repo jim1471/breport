@@ -4,12 +4,14 @@ import { useSelector, useDispatch } from 'react-redux'
 import isEqual from 'lodash/isEqual'
 
 import RelatedService from 'api/RelatedService'
-import { getBR, getStubBR, setStatus } from 'reducers/battlereport'
+import { getBR, getStubBR, setStatus, resetBr } from 'reducers/battlereport'
 import { brParseTeams } from 'reducers/related'
 import { Spinner } from 'components'
 import { ControlPanel, BrInfo, BrGroupInfo, Footer } from 'widgets'
 import Report from 'pages/Report'
 import styles from './styles.scss'
+
+const DEBUG = false
 
 function usePrevious(value) {
   const ref = useRef()
@@ -27,37 +29,31 @@ const BattleReportPage = ({ match: { params } }) => {
   const store = useSelector(({ names, related, battlereport }) => ({
     involvedNames: names.involvedNames,
     status: battlereport.status,
+    error: battlereport.error,
     br: battlereport.br,
     teams: related.teams,
     origTeams: related.origTeams,
     teamsLosses: related.teamsLosses,
   }))
 
-  const { br, involvedNames, teamsLosses, teams, origTeams, status } = store
+  const { br, involvedNames, teamsLosses, teams, origTeams } = store
 
   function loadBR() {
-    if (false && process.env.NODE_ENV === 'development') {
+    if (DEBUG && process.env.NODE_ENV === 'development') {
       dispatch(getStubBR(params.brID))
     } else {
       dispatch(getBR(params.brID))
     }
   }
 
-  if (process.env.NODE_ENV === 'development') {
-    useEffect(() => {
-      if (!teamsLosses) {
-        loadBR()
-      }
-    }, [teamsLosses])
-  } else {
-    useEffect(() => {
-      loadBR()
-    }, [])
-  }
+  useEffect(() => {
+    loadBR()
+    return () => dispatch(resetBr())
+  }, [params.brID])
 
   const prevInvolvedNames = usePrevious(involvedNames)
   useEffect(() => {
-    if (!involvedNames.isLoading && prevInvolvedNames && prevInvolvedNames.isLoading) {
+    if (!store.error && !involvedNames.isLoading && prevInvolvedNames && prevInvolvedNames.isLoading) {
       dispatch(setStatus('names fetched'))
       dispatch(brParseTeams())
     }
@@ -101,7 +97,8 @@ const BattleReportPage = ({ match: { params } }) => {
   return (
     <div className={styles.root}>
       <ControlPanel
-        header={status}
+        header={store.status}
+        error={store.error}
         isLoading={isLoading}
         onReload={loadBR}
         saving={saving}
@@ -109,7 +106,7 @@ const BattleReportPage = ({ match: { params } }) => {
         canSave={updateKey && isTeamsChanged()}
       />
 
-      {!teamsLosses &&
+      {isLoading &&
         <Spinner />
       }
 

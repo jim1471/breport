@@ -79,7 +79,7 @@ function BrRelatedInfo({ systemID, systems, start, end, onRemove, onEdit, brPage
     let stats = `Lost: ${formatSum(totalLossValue)},`
     stats += ` Pilots: ${pilotsCount},`
     stats += ` Killmails: ${kmsCount},`
-    stats += ` Viewed: ${viewed}`
+    stats += ` Views: ${viewed}`
 
     return (
       <div className={styles.generalStats}>

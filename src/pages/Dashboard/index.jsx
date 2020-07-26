@@ -1,14 +1,15 @@
 import { hot } from 'react-hot-loader/root'
 import React, { Component } from 'react'
+import { Switch, Route, Redirect, Link, NavLink } from 'react-router-dom'
 import cx from 'classnames'
-import { Link } from 'react-router-dom'
+
 
 import { Button, Icon } from 'components/common/blueprint'
 import { Footer } from 'widgets'
 
 import RecentZkill from './RecentZkill'
+import RecentBrs from './RecentBrs'
 import styles from './styles.scss'
-
 
 class Dashboard extends Component {
 
@@ -28,7 +29,20 @@ class Dashboard extends Component {
             <Button large text='CREATE BATTLE REPORT' />
           </Link>
 
-          <RecentZkill />
+          <div className={styles.recentLinks}>
+            <NavLink to='/recent-brs'>
+              Recent Battle Reports
+            </NavLink>
+            <NavLink to='/recent-zkill'>
+              Recent Zkill Reports
+            </NavLink>
+          </div>
+
+          <Switch>
+            <Route component={RecentBrs} path='/recent-brs' exact />
+            <Route component={RecentZkill} path='/recent-zkill' exact />
+            <Redirect from='*' to='/recent-brs' />
+          </Switch>
 
           <Footer />
         </div>

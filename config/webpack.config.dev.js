@@ -95,7 +95,7 @@ module.exports = {
           {
             loader: 'eslint-loader',
             options: {
-              cache: true,
+              // cache: true,
               formatter: eslintFormatter,
               eslintPath: 'eslint',
               fix: true,

@@ -1,5 +1,5 @@
 const numeral = require('numeral')
-const { intervalToDuration } = require('date-fns')
+const { format, intervalToDuration, formatDistanceToNow } = require('date-fns')
 
 const oneBillion = 1000000000
 const tenMillion = 10000000
@@ -145,6 +145,25 @@ const getDurationStr = (start, end) => {
   return duration.join(' ')
 }
 
+const shortTimeAgo = date => {
+  const str = formatDistanceToNow(date, { addSuffix: true })
+  return str
+    .replace('about ', '')
+    .replace('hours', 'hrs')
+    .replace('hour', 'hr')
+    .replace('minutes', 'min')
+    .replace('minute', 'min')
+}
+
+const formatDate = date => format(date, 'd/MMM/yy HH:mm')
+
+const formatPeriod = (start, end) => {
+  // TODO: if year !== current => 'd MMM yyyy HH:mm'
+  let result = format(new Date(start * 1000), 'd MMM HH:mm')
+  result += `-${format(new Date(end * 1000), 'HH:mm')}`
+  return result
+}
+
 module.exports = {
   formatSum,
   formatDmg,
@@ -159,4 +178,7 @@ module.exports = {
   formatZkillTimestamp,
   parseZkillDatetime,
   getDurationStr,
+  shortTimeAgo,
+  formatDate,
+  formatPeriod,
 }
