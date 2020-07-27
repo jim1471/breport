@@ -3,7 +3,7 @@ import { getNames, stopLoading } from 'reducers/names'
 import { initializeBrData } from 'reducers/related'
 import * as StatsUtils from 'utils/StatsUtils'
 
-const stubData = require('./data/stub-br.json')
+const stubData = {} // require('./data/stub-br.json')
 
 const SAVE_BR = 'SAVE_BR'
 const GET_BR = 'GET_BR'
