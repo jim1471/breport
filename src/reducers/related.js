@@ -23,6 +23,7 @@ const PARSE_DATA = 'PARSE_DATA'
 const MOVE_TO_TEAM = 'MOVE_TO_TEAM'
 const INITIALIZE_BR_DATA = 'INITIALIZE_BR_DATA'
 const SET_BR_INFO = 'SET_BR_INFO'
+const RESET_BR = 'RESET_BR'
 
 
 export const setBrInfo = relateds => ({
@@ -218,6 +219,10 @@ export default (state = initialState, action) => {
         ...state,
         relateds: action.relateds,
       }
+    }
+
+    case RESET_BR: {
+      return initialState
     }
 
     default:

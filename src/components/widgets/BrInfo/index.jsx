@@ -56,7 +56,7 @@ class BrInfo extends Component {
     const { fromTime, toTime } = systemStats
     let { systemID, time } = routerParams
     if (!systemID) {
-      if (relateds && relateds[0]) {
+      if (relateds && relateds[0] && relateds[0].relatedKey) {
         [systemID, time] = relateds[0].relatedKey.split('/')
       } else {
         return null
