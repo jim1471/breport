@@ -10,6 +10,7 @@ import BrPrepareInfo from '../BrPrepareInfo'
 import DateInputComponent from '../DateInputComponent'
 import styles from './styles.scss'
 
+const MAX_BATTLE_DURATION = 24 * 60 * 60 // 86400
 
 const DropdownItem = ({ item, onSelect }) => {
   function handleSelect() {
@@ -101,8 +102,8 @@ class InputSystems extends Component {
     if (endTS <= startTS) {
       validationStr = 'End Time must be greater than Start Time'
     }
-    if (endTS && startTS && duration > 43200) {
-      validationStr = 'Maximum Battle duration is 12hr'
+    if (endTS && startTS && duration > MAX_BATTLE_DURATION) {
+      validationStr = 'Maximum Battle duration is 24hr'
     }
     if (!system) {
       validationStr = 'Input name of the System'

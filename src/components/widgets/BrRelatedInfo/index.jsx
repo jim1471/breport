@@ -57,17 +57,25 @@ function BrRelatedInfo({ systemID, systems, start, end, onRemove, onEdit, brPage
     )
   }
 
-  function renderKillmailsStartEndTime(fromTime, toTime) {
-    if (!fromTime || !toTime) return null
-    const dateStart = new Date(fromTime)
-    const dateEnd = new Date(toTime)
+  function renderDuration(dateStart, dateEnd) {
     const duration = getDurationStr(dateStart, dateEnd)
+    return <div>{`Battle duration: ${duration}`}</div>
+  }
+
+  function renderKillmailsStartEndTime(fromTime, toTime) {
+    const dateStart = new Date(fromTime || start)
+    const dateEnd = new Date(toTime || end)
 
     return (
       <div className={styles.battleDuration}>
-        <div>{`Battle duration: ${duration},`}</div>
-        &nbsp;
-        <div>{`from ${getUTCTime(dateStart)} to ${getUTCTime(dateEnd)} ET`}</div>
+        {renderDuration(dateStart, dateEnd)}
+        {fromTime && toTime &&
+          <React.Fragment>
+            ,
+            &nbsp;
+            <div>{`from ${getUTCTime(dateStart)} to ${getUTCTime(dateEnd)} ET`}</div>
+          </React.Fragment>
+        }
       </div>
     )
   }

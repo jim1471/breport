@@ -99,6 +99,12 @@ export default class InvolvedRow extends Component {
     }
     const otherShips = (
       <div className={styles.otherShips}>
+        <div className={styles.btnCollapse} onClick={this.toggleExpanded}>
+          <Icon iconSize={16} icon='double-chevron-up' />
+          <span className={styles.moreShipsBtn} onClick={this.props.onToggleExpanded}>
+            collapse extra ship types
+          </span>
+        </div>
         {sortedShips.map(shipID => {
           // if (parseInt(shipID, 10) === rootID) return null
           const ship = inv.ships[shipID]
@@ -112,12 +118,6 @@ export default class InvolvedRow extends Component {
             />
           )
         })}
-        <div className={styles.btnCollapse} onClick={this.toggleExpanded}>
-          <Icon iconSize={16} icon='double-chevron-up' />
-          <span className={styles.moreShipsBtn} onClick={this.props.onToggleExpanded}>
-            collapse extra ship types
-          </span>
-        </div>
       </div>
     )
     return otherShips

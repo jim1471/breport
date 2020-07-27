@@ -142,6 +142,7 @@ const getDurationStr = (start, end) => {
   if (hours > 0) duration.push(`${hours}h`)
   if (minutes > 0) duration.push(`${minutes}m`)
   if (seconds > 0) duration.push(`${seconds}s`)
+  if (duration.length === 0) return '0'
   return duration.join(' ')
 }
 

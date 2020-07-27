@@ -7,7 +7,7 @@
     width: 100%;
     max-width: 682px;
     min-height: 64px;
-    margin: 0 auto 5px auto;
+    margin: 0 auto 0 auto;
     padding: 10px 10px;
     font-size: 16px;
     border: 1px solid #444;
@@ -24,6 +24,10 @@
         bottom: 10px;
       }
     }
+  }
+
+  .systemStats:not(:first-child) {
+    margin-top: 5px;
   }
 
   .title {
