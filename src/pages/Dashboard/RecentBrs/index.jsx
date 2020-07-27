@@ -38,27 +38,22 @@ function RecentBrs() {
     const relSystemID = systemID - 30000000
     const system = SYSTEMS_DATA.systems.find(sys => sys[1] === relSystemID)
     const region = system && SYSTEMS_DATA.regions[system[2]]
-    return `${system[0]} (${region})`
+    return [system[0], region]
   }
 
   function renderTiming(timing) {
-    if (!timing.systemID) {
+    let system = timing.systemID
+
+    if (!system) {
       const { relatedKey } = timing
-      const [systemID] = relatedKey.split('/')
-      return (
-        <div key={timing.relatedKey} className={styles.item}>
-          <div className={cx(styles.systemCell, styles.column)}>
-            {getSystemName(systemID)}
-          </div>
-        </div>
-      )
+      const [sys] = relatedKey.split('/')
+      system = sys
     }
+    const [systemName, regionName] = getSystemName(system)
 
     return (
-      <div key={timing.systemID} className={styles.item}>
-        <div className={cx(styles.systemCell, styles.column)}>
-          {getSystemName(timing.systemID)}
-        </div>
+      <div key={system} className={styles.system}>
+        <span>{systemName}</span>{`(${regionName})`}
       </div>
     )
   }
@@ -105,9 +100,9 @@ function RecentBrs() {
 
     return (
       <React.Fragment>
-        <div>{relatedDateFmt}</div>
         <div>{timeAgo}</div>
-        <div style={{ color: 'grey' }}>from Zkill</div>
+        <div>{relatedDateFmt}</div>
+        <div style={{ color: 'grey' }}>from Zkill, dur: 3 hr</div>
       </React.Fragment>
     )
   }
@@ -120,9 +115,11 @@ function RecentBrs() {
 
     return (
       <React.Fragment>
-        <div>{time}</div>
         <div>{timeAgo}</div>
-        <div style={{ color: 'grey' }}>{`duration: ${duration}`}</div>
+        <div>{time}</div>
+        <div style={{ color: 'grey' }}>
+          {`duration: ${duration}`}
+        </div>
       </React.Fragment>
     )
   }
@@ -131,6 +128,9 @@ function RecentBrs() {
     return (
       <Link to={`/br/${item._id}`} key={item._id}>
         <div className={styles.row}>
+          <div style={{ flexBasis: '20%', textAlign: 'left' }}>
+            {item.timings.map(timing => renderTiming(timing))}
+          </div>
           <div style={{ flexBasis: '20%', textAlign: 'left' }}>
             {item.new
               ? renderBrTime(item)
@@ -142,10 +142,9 @@ function RecentBrs() {
             <div className={styles.nowrap}>
               {`${item.totalPilots} pilots, ${item.kmsCount} kms`}
             </div>
-            <div>views: {item.viewed}</div>
-          </div>
-          <div style={{ flexBasis: '25%', textAlign: 'left' }}>
-            {item.timings.map(timing => renderTiming(timing))}
+            <div style={{ color: 'grey' }}>
+              views: {item.viewed}
+            </div>
           </div>
           <div style={{ flexBasis: '35%' }} className={styles.involvedCell}>
             {renderAllys(item)}
@@ -168,13 +167,13 @@ function RecentBrs() {
           <div className={styles.table}>
             <div className={styles.head}>
               <div className={styles.headCell} style={{ flexBasis: '20%' }}>
+                Systems
+              </div>
+              <div className={styles.headCell} style={{ flexBasis: '20%' }}>
                 Time
               </div>
               <div className={styles.headCell} style={{ flexBasis: '20%' }}>
                 Stats
-              </div>
-              <div className={styles.headCell} style={{ flexBasis: '25%' }}>
-                Systems
               </div>
               <div className={cx(styles.headCell, styles.flexEnd)} style={{ flexBasis: '35%' }}>
                 Involved
