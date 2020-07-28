@@ -40,8 +40,16 @@ function groupShipsNew(data, countFightersAsSquad) {
         shipsTypes[ship.id] = shipsTypes[ship.id] || { inv: 0, losed: 0, sum: 0 }
         shipsTypes[ship.id].inv += 1
         if (ship.loss) {
+          let coeff = 1
+          if (countFightersAsSquad) {
+            const group = SHIP_GROUPS.find(grp => grp[0] === ship.id)
+            if (group && FIGHTERS_GROUPS.includes(group[2])) {
+              coeff = getFighterCoef(group[2], ship.id)
+              console.log('ship.id:', ship.id, group[2], coeff)
+            }
+          }
           shipsTypes[ship.id].losed += 1
-          shipsTypes[ship.id].sum += ship.loss.lossValue
+          shipsTypes[ship.id].sum += ship.loss.lossValue * coeff
         }
       }
 
