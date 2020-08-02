@@ -1,5 +1,6 @@
-:local {
+@import 'vars';
 
+:local {
   .navbar {
     &:global(.bp3-navbar.bp3-dark) {
       display: flex;
@@ -23,7 +24,7 @@
   .headRoot {
     position: relative;
     width: 100%;
-    max-width: 682px;
+    @include panel-max-width;
 
     padding: 10px 0;
     padding-bottom: 0;
@@ -38,7 +39,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    max-width: 682px;
+    @include panel-max-width;
     min-height: 60px;
     padding: 10px 0;
     color: red;

@@ -1,15 +1,35 @@
 :local {
   .iconCont {
     width: 32px;
+    img {
+      width: 32px;
+    }
+
+    @media (min-width: 1024px) {
+      width: 48px;
+      img {
+        width: 48px;
+      }
+    }
+
+    &.mini {
+      width: 32px;
+      img {
+        width: 32px;
+      }
+      @media (max-width: 767px) {
+        width: 24px;
+        img {
+          width: 24px;
+        }
+      }
+    }
+
     flex-shrink: 0;
     margin: 1px;
     background-color: #222;
     border-radius: 2px;
     overflow: hidden;
-
-    &.mini {
-      width: 24px;
-    }
 
     &.empty {
       background-color: transparent;
@@ -23,11 +43,16 @@
   .emptyIcon {
     width: 32px;
     height: 32px;
+    @media (min-width: 1024px) {
+      width: 48px;
+      height: 48px;
+    }
     flex-shrink: 0;
   }
 
   .itemIconCont {
     width: 32px;
+    @media (min-width: 1024px) { width: 48px; }
     flex-shrink: 0;
     margin: 1px 0;
     border-radius: 2px;
@@ -35,6 +60,7 @@
 
     img {
       width: 32px;
+      @media (min-width: 1024px) { width: 48px; }
       vertical-align: middle;
     }
   }

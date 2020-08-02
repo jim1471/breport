@@ -1,11 +1,14 @@
+@import 'vars';
+
 :local {
   .systemStats {
     position: relative;
     width: 100%;
-    max-width: 682px;
+    @include panel-max-width;
     margin: 0 auto 0 auto;
     padding: 15px;
     font-size: 16px;
+    @include fontsize;
     border: 1px solid #444;
 
     @media (max-width: 420px) { padding: 10px; }
@@ -46,12 +49,12 @@
   }
 
   .timing {
-    font-size: 12px;
+    /*font-size: 12px;*/
     white-space: nowrap;
   }
 
   .generalStats {
-    font-size: 12px;
+    /*font-size: 12px;*/
     display: flex;
     flex-direction: column;
   }

@@ -1,8 +1,10 @@
+@import 'vars';
+
 :local {
   .root {
     position: relative;
     width: 100%;
-    max-width: 682px;
+    @include panel-max-width;
     min-height: 40px;
     margin: 0 auto 0 auto;
     padding: 0 15px 2px;

@@ -61,7 +61,7 @@ class InputSystems extends Component {
   handleSubmit = () => {
     const { system, startTS, endTS, relateds } = this.state
     if (relateds.length >= 10) {
-      console.error('Maximum 10 relateds allowed.') // eslint-disable-line
+      console.error('Maximum 10 Systems allowed.') // eslint-disable-line
       return
     }
     const related = {
@@ -218,7 +218,7 @@ class InputSystems extends Component {
   createBattleReport = () => {
     const { relateds } = this.state
     this.setState({ isLoading: true })
-    console.log('relateds:', relateds)
+    // console.log('relateds:', relateds)
     RelatedService.createBR(relateds)
       .then(({ data }) => {
         if (data && data.status === 'success') {

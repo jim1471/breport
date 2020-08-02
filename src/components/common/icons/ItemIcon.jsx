@@ -10,7 +10,7 @@ const ItemIcon = ({ id }) => {
       <img
         className={styles.itemIcon}
         alt='typeID-undefined-ship'
-        src='https://zkillboard.com/img/eve-question.png'
+        src='/icons/eve-question.png'
       />
     )
   } else {

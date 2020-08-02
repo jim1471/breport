@@ -1,3 +1,5 @@
+@import 'vars';
+
 :local {
   .root {
     width: 100%;
@@ -5,7 +7,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5px;
+    padding-left: 3px;
+    padding-right: 5px;
     margin: 1px 0;
     background: #222;
   }
@@ -29,11 +32,13 @@
 
     .names {
       display: flex;
-      align-items: left;
+      align-items: flex-start;
       flex-direction: column;
-      max-width: 122px;
+      max-width: 154px;
+      @media (min-width: 1024px) { max-width: 208px; }
 
       .shipName {
+        width: 100%;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -42,11 +47,13 @@
       }
 
       .shipGroupName {
+        width: 100%;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
         font-weight: normal;
         font-size: 10px;
+        @media (min-width: 1024px) { font-size: 12px; }
       }
     }
 
@@ -56,14 +63,22 @@
       justify-content: flex-end;
 
       > div {
-        width: 40px;
-        min-width: 40px;
+        width: 30px;
+        min-width: 30px;
+        @media (min-width: 1024px) {
+          width: 40px;
+          min-width: 40px;
+        }
         text-align: right;
       }
 
       > div:last-child {
-        width: 64px;
-        min-width: 64px;
+        width: 54px;
+        min-width: 54px;
+        @media (min-width: 1024px) {
+          width: 64px;
+          min-width: 64px;
+        }
       }
     }
 
