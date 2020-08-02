@@ -1,0 +1,9 @@
+$max-width-mobile: 682px;
+$max-width-tablet: 768px;
+$max-width-desktop: 1024px;
+
+@mixin panel-max-width {
+  @media (max-width: 767px) { max-width: $max-width-mobile; }
+  @media (min-width: 768px) { max-width: $max-width-tablet; }
+  @media (min-width: 1024px) { max-width: $max-width-desktop; }
+}

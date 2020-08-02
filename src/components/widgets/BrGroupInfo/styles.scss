@@ -1,8 +1,10 @@
+@import 'vars';
+
 :local {
   .brInfoRoot {
     position: relative;
     width: 100%;
-    max-width: 682px;
+    @include panel-max-width;
     margin: 0 auto 0 auto;
     margin-bottom: 10px;
     font-size: 16px;

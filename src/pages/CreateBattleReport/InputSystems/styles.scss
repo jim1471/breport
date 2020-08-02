@@ -1,3 +1,5 @@
+@import 'vars';
+
 :local {
   .card {
     position: relative;
@@ -6,7 +8,7 @@
     justify-content: space-between;
 
     width: 100%;
-    max-width: 682px;
+    @include panel-max-width;
     margin-top: 15px;
     padding: 20px;
     border-radius: 3px;
