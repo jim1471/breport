@@ -19,4 +19,10 @@
       margin-right: 5px;
     }
   }
+
+  .links {
+    min-width: 120px;
+    display: flex;
+    justify-content: space-between;
+  }
 }

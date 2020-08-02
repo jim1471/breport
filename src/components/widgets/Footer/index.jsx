@@ -24,9 +24,15 @@ export default class Footer extends Component {
         <div>
           {this.linkToLegal('CCP Copyright Notice')}
         </div>
-        <a href='https://github.com/maullerz/breport' target='_blank' rel='noopener noreferrer'>
-          GitHub
-        </a>
+        <div className={styles.links}>
+          <a href='https://github.com/maullerz/breport' target='_blank' rel='noopener noreferrer'>
+            GitHub
+          </a>
+          &nbsp;
+          <a href='https://discord.gg/HyPnAU7' target='_blank' rel='noopener noreferrer'>
+            Discord
+          </a>
+        </div>
       </div>
     )
   }

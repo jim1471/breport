@@ -63,5 +63,18 @@
       @media (min-width: 1024px) { width: 48px; }
       vertical-align: middle;
     }
+
+    &.mini {
+      width: 32px;
+      img {
+        width: 32px;
+      }
+      @media (max-width: 767px) {
+        width: 24px;
+        img {
+          width: 24px;
+        }
+      }
+    }
   }
 }

@@ -67,7 +67,7 @@ function RecentBrs() {
           const corp = ally.startsWith('corp:') ? ally.replace('corp:', '') : null
           return (
             <span key={ally} className={styles.inv}>
-              <AllyIcon mini={false} allyID={corp ? '' : ally} corpID={corp} />
+              <AllyIcon mini allyID={corp ? '' : ally} corpID={corp} />
               <span>{pilots}</span>
             </span>
           )
@@ -83,7 +83,7 @@ function RecentBrs() {
       <div className={styles.invRow}>
         {item.ships.map(([ship, count]) => (
           <span key={ship} className={styles.inv}>
-            <ItemIcon id={ship} mini={false} />
+            <ItemIcon id={ship} mini />
             <span>{count}</span>
           </span>
         ))}
