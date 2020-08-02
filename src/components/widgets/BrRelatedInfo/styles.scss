@@ -12,6 +12,7 @@
     margin: 0 auto 0 auto;
     padding: 10px 10px;
     font-size: 16px;
+    @include fontsize;
     border: 1px solid #444;
 
     @media (max-width: 420px) { padding: 10px; }
@@ -45,21 +46,21 @@
   }
 
   .timing {
-    font-size: 12px;
+    /*font-size: 12px;*/
     white-space: nowrap;
-    line-height: 18px;
+    /*line-height: 18px;*/
   }
 
   .battleDuration {
-    font-size: 12px;
-    line-height: 18px;
+    /*font-size: 12px;*/
+    /*line-height: 18px;*/
     display: flex;
     flex-wrap: wrap;
   }
 
   .generalStats {
-    font-size: 12px;
-    line-height: 22px;
+    /*font-size: 12px;*/
+    /*line-height: 22px;*/
     display: flex;
     flex-direction: column;
   }

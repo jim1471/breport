@@ -48,15 +48,16 @@ class TeamInvolved extends Component {
     const icon = expanded
       ? 'double-chevron-up'
       : 'double-chevron-down'
+
     return (
       <div className={cx(styles.head, 'bp3-dark')}>
         <div className={styles.extraShipsBtn}>
           <Button small icon={icon} title={btnTitle} onClick={this.toggleExpanded} />
         </div>
         <div className={styles.body}>
-          <div className={styles.row}>
-            <span style={{ color: 'gold' }}>Pilot</span>
-            <span style={{ color: 'gold' }}>used ships | loss value</span>
+          <div className={cx(styles.row, styles.gold)}>
+            <span>Pilot</span>
+            <span>used ships | loss value</span>
           </div>
           <div className={styles.row}>
             <span>Ship</span>

@@ -16,7 +16,7 @@ export default class ShipInfo extends Component {
     // if (id) return charName
     return (
       <a
-        className={styles.unknownShip}
+        className={styles.charName}
         href={`https://zkillboard.com/character/${charID}/`}
         target='_blank'
         rel='noopener noreferrer'

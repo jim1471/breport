@@ -7,3 +7,42 @@ $max-width-desktop: 1024px;
   @media (min-width: 768px) { max-width: $max-width-tablet; }
   @media (min-width: 1024px) { max-width: $max-width-desktop; }
 }
+
+$team-width-mobile: 320px;
+$team-width-tablet: 362px;
+$team-width-desktop: 420px;
+
+@mixin team-width {
+  @media (max-width: 767px) {
+    min-width: $team-width-mobile;
+    max-width: $team-width-mobile;
+  }
+  @media (min-width: 768px) {
+    min-width: $team-width-tablet;
+    max-width: $team-width-tablet;
+  }
+  @media (min-width: 1024px) {
+    min-width: $team-width-desktop;
+    max-width: $team-width-desktop;
+  }
+}
+
+@mixin fontsize {
+  font-size: 12px;
+  line-height: 16px;
+
+  @media (min-width: 1024px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@mixin teamrow-fontsize {
+  font-size: 12px;
+  line-height: 16px;
+
+  @media (min-width: 1024px) {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
